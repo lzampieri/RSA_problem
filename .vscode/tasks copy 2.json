@@ -1,0 +1,38 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "C/C++: g++.exe compila il file attivo",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${fileDirname}\\*.cpp",
+                "-o",
+                "${fileDirname}\\main.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Attività generata dal debugger.",
+            "dependsOn": [
+                "C/C++: pulisci i file exe"
+            ]
+        }, {
+            "type": "cppbuild",
+            "label": "C/C++: pulisci i file exe",
+            "command": "del",
+            "args": [
+                "${fileDirname}\\*.exe",
+            ],
+        }
+    ],
+    "version": "2.0.0"
+}

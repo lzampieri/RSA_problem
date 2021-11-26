@@ -1,0 +1,33 @@
+{
+    "tasks": [
+        {
+            "type": "shell",
+            "label": "Compile_all",
+            "command": "C:\\MinGW\\bin\\g++.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${workspaceFolder}\\*.cpp",
+                "-o",
+                "${workspaceFolder}\\exe_and_dll\\main.exe",
+                "-I${workspaceFolder}\\exe_and_dll",
+                "-L${workspaceFolder}\\exe_and_dll",
+                "-llibfftw3-3"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
+            },
+            "dependsOn": [
+                "Cpp_clean"
+            ]
+        }, {
+            "type": "shell",
+            "label": "Cpp_clean",
+            "command": "del",
+            "args": [
+                "${workspaceFolder}\\exe_and_dll\\*.exe",
+            ],
+        }
+    ],
+    "version": "2.0.0"
+}
