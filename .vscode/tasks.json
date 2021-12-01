@@ -12,7 +12,7 @@
                 "${workspaceFolder}\\exe_and_dll\\main.exe",
                 "-I${workspaceFolder}\\exe_and_dll",
                 "-L${workspaceFolder}\\exe_and_dll",
-                "-llibfftw3-3"
+                "-llibfftw3-3",
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

@@ -1,5 +1,16 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "thread": "cpp",
+        "initializer_list": "cpp",
+        "list": "cpp",
+        "type_traits": "cpp",
+        "xhash": "cpp",
+        "xstring": "cpp",
+        "xutility": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp",
+        "fstream": "cpp",
+        "queue": "cpp"
     }
 }
