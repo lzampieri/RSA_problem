@@ -13,6 +13,7 @@
                 "-I${workspaceFolder}\\exe_and_dll",
                 "-L${workspaceFolder}\\exe_and_dll",
                 "-llibfftw3-3",
+                "-std=c++2a"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

@@ -1,6 +1,6 @@
 #include "Grid.h"
 
-// Todo sistemare
+using namespace std;
 
 Grid::Grid(int d1) : Grid(d1, d1) {};
 
@@ -11,32 +11,47 @@ Grid::Grid(int d1, int d2) : d1(d1), d2(d2) {
     reverse_plan= fftw_plan_r2r_2d(d1,d2,f->data(),h->data(), FFTW_REDFT00, FFTW_REDFT00, FFTW_ESTIMATE);
 }
 
-void Grid::populate_iid() {
-    srand(time(NULL));
-    for(int i=0; i < d1*d2; i++ )
-        h->at(i) = ((double)rand()) / RAND_MAX;
-}
-
-void Grid::populate_coscos(double fact1, double fact2) {
-    for(int i=0; i < d1*d2; i++ )
-        h->at(i) = cos( fact1 * ( i % d1 ) ) * cos( fact2 * ( i / d1 ) );
-}
-
-void Grid::populate_square(int side) {
-    for( int i= ( d1 - side ) / 2; i < ( d1 + side) / 2 + 1; i++ ) 
-        for( int j= ( d2 - side ) / 2; j < ( d2 + side) / 2 + 1; j++ )
-            h->at( i * d1 + j ) = 0.5;
-}
-
 void Grid::fourier_transform(double reverse) {
     if(reverse) fftw_execute( reverse_plan );
     else fftw_execute( direct_plan );
+    normalize( !reverse );
 }
 
-void Grid::multiply_fft(double gamma) {
+void Grid::multiply_fft_old(double gamma) {
     f->at(0) = 0;
-    for(int i=1; i<d1*d2; i++)
-        f->at(i) = f->at(i) * pow( d(i,0), (gamma-1)/2 );
+    pair< int, int > xy;
+    double q;
+    for(int i=1; i<d1*d2; i++) {
+        xy = _xy(i);
+        q = sqrt( xy.first * xy.first + xy.second * xy.second );
+        f->at(i) = f->at(i) * pow( q, (gamma-1)/2 );
+    }
+    normalize( true );
+}
+
+void Grid::multiply_fft_new(double gamma) {
+    pair< int, int > xy;
+    double q,S;
+    double beta = ( gamma - 2 ) / 2;
+    double pref = 2 * M_PI / tgamma( beta + 1 );
+
+    for(int i=1; i<d1*d2; i++) {
+        q = _abs( _q(i) );
+        S = pref * pow( q / 2 , beta ) * cyl_bessel_k( abs(beta), q );
+        f->at(i) = f->at(i) * sqrt( S );
+    }
+    normalize( true );
+}
+
+void Grid::normalize(double fourier) {
+    vector<double>* v = fourier ? f : h;
+    double maximum = v->at(0);
+    for(int i=1; i<d1*d2; i++) {
+        maximum = max( maximum, v->at(i) );
+    }
+    for(int i=0; i<d1*d2; i++) {
+        v->at(i) /= maximum;
+    }
 }
 
 void Grid::print_data(const char* filename, double fourier) const {
@@ -64,20 +79,38 @@ double Grid::operator()(const int x, const int y, double fourier) const {
 
 // PBC
 
-const int Grid::_pbc_x( const int x ) const {
+const int Grid::_pbc_x( int x ) const {
+    while( x < 0 ) x += d1;
     return x % d1;
 }
 
-const int Grid::_pbc_y( const int y ) const {
+const int Grid::_pbc_y( int y ) const {
+    while( y < 0 ) y += d1;
     return y % d2;
 }
 
-const int Grid::_pbc_i( const int i ) const {
+const int Grid::_pbc_i( int i ) const {
+    while( i < 0 ) i += d1*d2;
     return i % (d1*d2);
 }
 
 const pair< int, int > Grid::_pbc( const pair< int, int > xy ) const {
     return make_pair( _pbc_x( xy.first ), _pbc_y( xy.second ) );
+}
+
+const pair< double, double > Grid::_q( pair< int, int > xy ) const {
+    return make_pair(
+        2.0 * M_PI / d1 * xy.first,
+        2.0 * M_PI / d2 * xy.second
+    );
+}
+
+const pair< double, double > Grid::_q( int i ) const {
+    return _q( _xy(i) );
+}
+
+const double Grid::_abs( pair< double, double > xy ) const {
+    return sqrt( xy.first * xy.first + xy.second * xy.second );
 }
 
 // Coordinates converting

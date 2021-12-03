@@ -7,26 +7,32 @@
 using namespace std;
 
 int main() {
-    Grid g(100);
-    g.populate_iid();
+    Grid g(500);
+    cout<<"Created"<<endl;
 
-    CorrFuncCalcolator::print_corr( &g, "../data/cf1.txt" );
+    GridFiller::iid(g);
+    cout<<"Populated"<<endl;
 
-    // // g.print_data("../data/real.txt");
+    CorrFuncCalcolator::print_corr( &g, "../data/cf1.txt", 50 );
+    cout<<"Corr Func calcolated"<<endl;
+
+    // g.print_data("../data/real.txt");
 
     g.fourier_transform();
 
-    // // g.print_data("../data/fft.txt", true);
+    // g.print_data("../data/fft.txt", true);
 
-    g.multiply_fft( 0.02 );
+    g.multiply_fft_new( 0.4 );
 
-    // // g.print_data("../data/fft2.txt", true);
+    // g.print_data("../data/fft2.txt", true);
 
     g.fourier_transform(true);
+    cout<<"Correlated"<<endl;
 
-    // // g.print_data("../data/real2.txt");
+    // g.print_data("../data/real2.txt");
     
-    CorrFuncCalcolator::print_corr( &g, "../data/cf2.txt" );
+    CorrFuncCalcolator::print_corr( &g, "../data/cf2.txt", 50 );
+    cout<<"Corr Func calcolated"<<endl;
 
     system("PAUSE");
 }
