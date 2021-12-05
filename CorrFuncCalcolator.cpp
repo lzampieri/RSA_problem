@@ -1,15 +1,15 @@
 #include "CorrFuncCalcolator.h"
-#include "Grid.h"
 
 using namespace std;
 
-void CorrFuncCalcolator::_thread_postman(
-        const Grid* grid, queue< CorrFunc_Work >* todolist,
-        vector< CorrFunc_RawDatapoint >* results, mutex* m ) {
+template<class T>
+void CorrFuncCalcolator<T>::_thread_postman(
+    const Grid<T>* const grid, const std::vector< CorrFunc_Work* >* const todolist, int& i,
+        std::vector< CorrFunc_RawDatapoint >* const results, std::mutex* m  ) {
     m->lock();
-    while( !todolist->empty() ) {
-        CorrFunc_Work todo = todolist->front();
-        todolist->pop();
+    while( i < todolist->size() ) {
+        CorrFunc_Work todo = *( todolist->at( i ) );
+        i += 1;
         m->unlock();
 
         CorrFunc_RawDatapoint r = _thread_worker( grid, todo.first, todo.second );
@@ -17,13 +17,12 @@ void CorrFuncCalcolator::_thread_postman(
         m->lock();
         results->push_back( r );
     }
-
     m->unlock();
 }
 
-CorrFunc_RawDatapoint CorrFuncCalcolator::_thread_worker(
-        const Grid* grid, const int v1, const int v2 ) {
-
+template<class T>
+CorrFunc_RawDatapoint CorrFuncCalcolator<T>::_thread_worker(
+    const Grid<T>* const grid, const int v1, const int v2 ) {
     double sum = 0, sum2 = 0;
     int count = 0;
 
@@ -71,28 +70,38 @@ CorrFunc_RawDatapoint CorrFuncCalcolator::_thread_worker(
     );
 }
 
-vector< CorrFunc_Datapoint >* CorrFuncCalcolator::compute_corr_function(const Grid* grid, int max_range) {
-    queue<thread*> threads;
-    queue<CorrFunc_Work> works;
-    mutex* m = new mutex();
+template<class T>
+vector< CorrFunc_Datapoint >* CorrFuncCalcolator<T>::compute_corr_function(
+    const Grid<T>* grid, int max_range) {
+    vector<thread*> threads;
+    vector<CorrFunc_Work* >* works = new vector< CorrFunc_Work* >();
+    mutex m;
     vector< CorrFunc_RawDatapoint >* raw_results = new vector< CorrFunc_RawDatapoint >();
 
-    for( int v1 = 0; v1 < max_range; v1++ ) {
-        for( int v2 = v1; v2 < max_range; v2++ ) {
-            works.push( make_pair( v1, v2) );
+    for( int v1 = 0; v1 < min( max_range, grid->d1 / 2 ); v1++ ) {
+        for( int v2 = v1; v2 < min( max_range, grid->d2 / 2 ); v2++ ) {
+            works->push_back( new CorrFunc_Work( v1, v2 ) );
         }
     }
+    
+    raw_results->reserve( works->size() );
+    threads.reserve( CORRFUNC_MAX_THREADS );
+    int iter = 0;
 
     for( int i = 0; i < CORRFUNC_MAX_THREADS; i++ ) {
-        threads.push( 
-                new thread( _thread_postman, grid, &works, raw_results, m )
+        threads.push_back( 
+                new thread( _thread_postman, grid, works, ref(iter), raw_results, &m )
             );
     }
 
     for( int i = 0; i < threads.size(); i++ ) {
-        threads.front()->join();
-        threads.pop();
+        threads[i]->join();
     }
+
+    threads.clear();
+    works->clear();
+    delete works;
+
 
     sort(
         raw_results->begin(),
@@ -125,28 +134,24 @@ vector< CorrFunc_Datapoint >* CorrFuncCalcolator::compute_corr_function(const Gr
 
     raw_results->clear();
     delete raw_results;
-    delete m;
 
     return results;
 }
 
-void CorrFuncCalcolator::print_corr(const Grid* grid, const char* filename, int max_range) {
-    ofstream out(filename);
+template<class T>
+void CorrFuncCalcolator<T>::print_corr(const Grid<T>* grid, const char* filename, int max_range) {
+    ostream* out;
+    if( strlen( filename ) > 0 )
+        out = new ofstream(filename);
+    else
+        out = &cout;
+
     vector< CorrFunc_Datapoint >* cf = compute_corr_function(grid, max_range);
     for( CorrFunc_Datapoint d : *cf) {
-        out<<get<0>(d)<<'\t'<<get<1>(d)<<'\t'<<get<2>(d)<<'\n';
+        (*out)<<get<0>(d)<<'\t'<<get<1>(d)<<'\t'<<get<2>(d)<<'\n';
     }
 
     cf->clear();
     delete cf;
-    out.close();
-}
-void CorrFuncCalcolator::display_corr(const Grid* grid, int max_range) {
-    auto cf = compute_corr_function(grid, max_range);
-    for( auto d : *cf) {
-        cout<<get<0>(d)<<'\t'<<get<1>(d)<<'\t'<<get<2>(d)<<'\n';
-    }
-
-    cf->clear();
-    delete cf;
+    delete out;
 }

@@ -3,7 +3,7 @@
         {
             "type": "shell",
             "label": "Compile_all",
-            "command": "C:\\MinGW\\bin\\g++.exe",
+            "command": "C:\\mingw64\\bin\\g++.exe",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
@@ -13,7 +13,9 @@
                 "-I${workspaceFolder}\\exe_and_dll",
                 "-L${workspaceFolder}\\exe_and_dll",
                 "-llibfftw3-3",
-                "-std=c++2a"
+                "-std=c++2a",
+                "-static-libstdc++",
+                "-static-libgcc"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
