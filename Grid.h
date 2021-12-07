@@ -22,15 +22,18 @@ protected:
 
 public:
     const int d1, d2;
+    const int imax() const { return d1*d2; };
 
     Grid(int d1, int d2);
     Grid(int d1);
 
     void normalize();
+    void gaussian_center_and_normalize();
 
     void print_data(const char* filename) const;
 
     // Access
+    T& operator[](const int i) const; // i \in [0,d1*d2[
     T& operator()(const int i) const; // i \in [0,d1*d2[
     T& operator()(const std::pair<int,int> xy) const; // x \in [0,d1[, y \in [0,d2[
     T& operator()(const int x, const int y) const; // x \in [0,d1[, y \in [0,d2[

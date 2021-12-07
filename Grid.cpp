@@ -22,6 +22,23 @@ void Grid<T>::normalize() {
 }
 
 template<class T>
+void Grid<T>::gaussian_center_and_normalize() {
+    double sum = 0;
+    double sum2 = 0;
+    for(int i=0; i<d1*d2; i++) {
+        sum += u->at(i);
+        sum2+= u->at(i)*u->at(i);
+    }
+    double avg = sum / (d1*d2);
+    double sigma = sqrt( ( sum2 - pow( sum, 2 ) / (d1*d2) ) / ( d1*d2 - 1 ) );
+
+    for(int i=0; i<d1*d2; i++) {
+        u->at(i) = ( u->at(i) - avg ) / sigma;
+    }
+}
+
+
+template<class T>
 void Grid<T>::print_data(const char* filename) const {
     ofstream out(filename);
     for(int i=0; i<d1; i++)
@@ -31,6 +48,11 @@ void Grid<T>::print_data(const char* filename) const {
 }
 
 // Access
+
+template<class T>
+T& Grid<T>::operator[](const int i) const {
+    return operator()(i);
+}
 
 template<class T>
 T& Grid<T>::operator()(const int i) const {
@@ -98,9 +120,9 @@ template<class T>
 const double Grid<T>::d(int x1, int y1, int x2, int y2) const{
     int deltaX = _pbc_x( x1 - x2 );
     deltaX = min( deltaX, d1 - deltaX );
-    int deltaY = _pbc_x( y1 - y2 );
+    int deltaY = _pbc_y( y1 - y2 );
     deltaY = min( deltaY, d2 - deltaY );
-    return sqrt( pow( deltaX, 2 ) + pow( deltaY, 2 ) );
+    return sqrt( deltaX * deltaX + deltaY * deltaY );
 }
 
 template<class T>

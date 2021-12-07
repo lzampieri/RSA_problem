@@ -4,9 +4,11 @@
 using namespace std;
 
 void GridFiller::iid(Grid<double>& g) {
-    srand(time(NULL));
+    static default_random_engine engine;
+    engine.seed( time(NULL) );
+    normal_distribution<double> distribution(0.0,1.0);
     for(int i=0; i < g.d1 * g.d2; i++ )
-        g.u->at(i) = ((double)rand()) / RAND_MAX;
+        g.u->at(i) = distribution(engine);
 }
 
 void GridFiller::coscos(Grid<double>& g, double fact1, double fact2) {
@@ -28,26 +30,12 @@ void GridFiller::clean(Grid<int>& toclean, int cleanto) {
         toclean(i) = cleanto;
 }
 
-void GridFiller::montecarlo(Grid<int>& tofill, Grid<double> accept_probs, int count) {
-    srand( time( NULL ) );
-    while( count ) {
-        // Pick a position
-        pair<int,int> xy = make_pair(
-            rand() % tofill.d1,
-            rand() % tofill.d2
-        );
+void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double> ranks,const int count) {
+    vector<double> p = *(ranks.u);
+    nth_element(p.begin(),p.begin()+count,p.end());
 
-        // Check not already filled
-        if( tofill(xy) ) continue;
-
-        // Pick a random number
-        double accepted = rand();
-
-        // Check if the pick is accepted
-        if( accepted > accept_probs( xy ) * RAND_MAX ) {
-            // The item is placed!
-            tofill(xy) = 1;
-            count--;
-        }
+    for(int i=0; i < ranks.imax(); i++){
+        if( ranks(i) < p[count] )
+            tofill(i) = 1;
     }
 }

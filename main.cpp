@@ -16,15 +16,71 @@ void populate_defects(Grid<int>& g, FourierCoupledGrids& fcg, double gamma, int 
     fcg.multiply_fft_new( gamma );
     fcg.fourier_transform(true);
 
-    GridFiller::montecarlo( g, fcg.h, howmuch);
+    GridFiller::ranked_insertion( g, fcg.h, howmuch);
 }
 
+// #include "fftw3.h"
+
 int main() {
-    int side = 200;
+
+    int side = 2000;
     int corr_range = 30;
     double defects_frac = 0.2;
     double gamma = 0.4;
-    int N = 2000;
+    int N = 5;
+
+    // ofstream out1("../data/powerspectra_test.txt");
+
+    // vector<double> f1(side,0), f2(side,0), h1(side,0), h2(side,0);
+    // vector<double> h1_(side,0), h2_(side,0), f1_(side,0), f2_(side,0);
+    // fftw_plan plan1 = fftw_plan_r2r_1d( side, f1.data(), h1.data(), FFTW_REDFT00, FFTW_ESTIMATE),
+    //           plan2 = fftw_plan_r2r_1d( side, f2.data(), h2.data(), FFTW_REDFT00, FFTW_ESTIMATE),
+    //           plan1_rev = fftw_plan_r2r_1d( side, h1_.data(), f1_.data(), FFTW_REDFT00, FFTW_ESTIMATE),
+    //           plan2_rev = fftw_plan_r2r_1d( side, h2_.data(), f2_.data(), FFTW_REDFT00, FFTW_ESTIMATE);
+
+    // int d = 1;
+    // bool radq = false;
+
+    // for(double q = 0; q < side; q++ ) {
+
+    //     // Populate f with the expected power law
+    //     double Sold = pow( q, (gamma-1) );
+    //     double q1 = radq ? sqrt( Sold ) : Sold;
+    //     double beta = ( gamma - 1 ) / 2;
+    //     double pref = tgamma( beta + 1 );
+    //     double qrn = M_PI * q / ( side - 1 );
+    //     double S = pref * pow( qrn / 2 , beta ) * cyl_bessel_k( abs(beta), qrn );
+    //     double q2 = radq ? sqrt( S ) : S;
+    //     f1[q] = q1;
+    //     f2[q] = q2;
+
+    //     // Populate h_ with the expected corr. function
+    //     h1_[q] = pow( q, -gamma );
+    //     h2_[q] = pow( 1 + q*q, -gamma / 2 );
+    // }
+    // h1_[0] = 1;
+    // f1[0] = 0;
+    // f2[0] = 0;
+    // fftw_execute( plan1 );
+    // fftw_execute( plan2 );
+    // fftw_execute( plan1_rev );
+    // fftw_execute( plan2_rev );
+    // for(double q = 0; q < side; q++ ) {
+    //     out1<<q<<'\t'<<f1[q]<<'\t'<<f2[q]<<'\t'<<h1[q]<<'\t'<<h2[q]<<'\t'<<f1_[q]<<'\t'<<f2_[q]<<'\t'<<h1_[q]<<'\t'<<h2_[q]<<'\n';
+    // }
+    // return 0;
+
+    // FourierCoupledGrids fcg(side);
+    // GridFiller::iid( fcg.h );
+    // fcg.h.print_data("../data/h1.txt");
+    // CorrFuncCalcolator<double>::print_corr( &fcg.h, "../data/cf1.txt", corr_range );
+    // fcg.fourier_transform();
+    // fcg.multiply_fft_new( gamma );
+    // fcg.fourier_transform(true);
+    // fcg.h.print_data("../data/h2.txt");
+    // CorrFuncCalcolator<double>::print_corr( &fcg.h, "../data/cf2.txt", corr_range );
+
+    // return 0;
 
     ofstream out("../data/cf_defects.txt");
 
