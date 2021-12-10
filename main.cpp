@@ -23,11 +23,11 @@ void populate_defects(Grid<int>& g, FourierCoupledGrids& fcg, double gamma, int 
 
 int main() {
 
-    int side = 2000;
+    int side = 1024;
     int corr_range = 30;
-    double defects_frac = 0.2;
+    double defects_frac = 0.3;
     double gamma = 0.4;
-    int N = 5;
+    int N = 10;
 
     // ofstream out1("../data/powerspectra_test.txt");
 
@@ -82,40 +82,52 @@ int main() {
 
     // return 0;
 
-    ofstream out("../data/cf_defects.txt");
-
     corr_range = min( side, corr_range );
-    vector< pair<int, double> > corr_func_avg ( corr_range, make_pair(0,0) );
+    vector< pair<int, double> > corr_func_avg_h ( corr_range, make_pair(0,0) );
+    vector< pair<int, double> > corr_func_avg_d ( corr_range, make_pair(0,0) );
 
     FourierCoupledGrids fcg(side);
     Grid<int> g(side);
 
-    for( int j=0; j < corr_range; j++ ) corr_func_avg[j].first = j;
+    for( int j=0; j < corr_range; j++ ) {
+        corr_func_avg_h[j].first = j;
+        corr_func_avg_d[j].first = j;
+    }
 
     GridFiller::iid( fcg.h );
-    CorrFuncCalcolator<double>::print_corr( &fcg.h, "../data/cf1.txt", corr_range );
 
     for( int i=0; i < N; i++ ) {
 
         populate_defects( g, fcg, gamma, defects_frac * side * side );
+        vector< CorrFunc_Datapoint >* cfh = CorrFuncCalcolator<double>::compute_corr_function ( &(fcg.h), corr_range );
         vector< CorrFunc_Datapoint >* cfd = CorrFuncCalcolator<int>::compute_corr_function ( &g, corr_range );
 
-        if( i == 0 )
-            CorrFuncCalcolator<double>::print_corr( &fcg.h, "../data/cf2.txt", corr_range );
+        // fcg.h.print_data("../data/fcg_h.txt");
+        // g.print_data("../data/g.txt");
 
-        for( int j=0; j < min( corr_range, (int)cfd->size() ); j++ ) {
-            corr_func_avg[j].second = corr_func_avg[j].second + get<1>(cfd->at(j));
+        for( int j=0; j < min( corr_range, min( (int)cfh->size(), (int)cfd->size() ) ); j++ ) {
+            corr_func_avg_h[j].second = corr_func_avg_h[j].second + get<1>(cfh->at(j));
+            corr_func_avg_d[j].second = corr_func_avg_d[j].second + get<1>(cfd->at(j));
         }
 
+        cfh->clear();
+        delete cfh;
         cfd->clear();
         delete cfd;
         
-        if( i % 10 == 0 ) cout<<i<<endl;
+        if( i % ( N/100 + 1 ) == 0 ) cout<<i<<endl;
     }
 
+    ofstream out("../data/corr_func_avg_h.txt");
     for( int j=0; j < corr_range; j++ ) {
-        corr_func_avg[j].second /= N;
-        out<< corr_func_avg[j].first << '\t' << corr_func_avg[j].second << '\n';
+        corr_func_avg_h[j].second /= N;
+        out<< corr_func_avg_h[j].first << '\t' << corr_func_avg_h[j].second << '\n';
+    }
+
+    ofstream out2("../data/corr_func_avg_d.txt");
+    for( int j=0; j < corr_range; j++ ) {
+        corr_func_avg_d[j].second /= N;
+        out2<< corr_func_avg_d[j].first << '\t' << corr_func_avg_d[j].second << '\n';
     }
 
     // bool corr_func = true;
