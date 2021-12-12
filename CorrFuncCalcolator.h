@@ -19,7 +19,7 @@
 #include <thread>
 #include <mutex>
 
-#define CORRFUNC_MAX_THREADS 8
+#define CORRFUNC_MAX_THREADS 30
 
 #include <iostream>
 

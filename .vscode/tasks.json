@@ -15,7 +15,8 @@
                 "-llibfftw3-3",
                 "-std=c++2a",
                 "-static-libstdc++",
-                "-static-libgcc"
+                "-static-libgcc",
+                "-O3"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"

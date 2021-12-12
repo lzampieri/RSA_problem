@@ -4,7 +4,7 @@
 using namespace std;
 
 void GridFiller::iid(Grid<double>& g) {
-    static default_random_engine engine;
+    static mt19937 engine;
     engine.seed( time(NULL) );
     normal_distribution<double> distribution(0.0,1.0);
     for(int i=0; i < g.d1 * g.d2; i++ )

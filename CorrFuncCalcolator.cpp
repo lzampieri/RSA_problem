@@ -80,7 +80,9 @@ vector< CorrFunc_Datapoint >* CorrFuncCalcolator<T>::compute_corr_function(
 
     for( int v1 = 0; v1 < min( max_range, grid->d1 / 2 ); v1++ ) {
         for( int v2 = v1; v2 < min( max_range, grid->d2 / 2 ); v2++ ) {
-            works->push_back( new CorrFunc_Work( v1, v2 ) );
+            if( grid->d( 0, 0, v1, v2 ) < max_range + 1 ) {
+                works->push_back( new CorrFunc_Work( v1, v2 ) );
+            }
         }
     }
     
