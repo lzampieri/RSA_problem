@@ -3,7 +3,7 @@
 
 #include <cstdlib>
 #include <vector>
-#include <tuple>
+#include <map>
 #include <cmath>
 #include <fstream>
 #include <algorithm>
@@ -11,11 +11,6 @@
 #include <cstring>
 #include "Grid.h"
 
-// #undef _WIN32_WINNT
-// #define _WIN32_WINNT 0x0A00  // Windows 10
-// #define SRWLOCK_INIT {0}
-// #include "mingw_thread/mingw.thread.h"
-// #include "mingw_thread/mingw.mutex.h"
 #include <thread>
 #include <mutex>
 
@@ -23,28 +18,81 @@
 
 #include <iostream>
 
-typedef std::tuple< double, int, double, double > CorrFunc_RawDatapoint; // d, count, sum, sum2
-typedef std::tuple< int, double, double > CorrFunc_Datapoint; // d, expval, std
+namespace CorrFunc {
 
-typedef std::pair< int, int > CorrFunc_Work; // v1,v2
+    struct Work {
+        int v1;
+        int v2;
+        int raw_data_i;
+    };
 
-template<class T>
-class CorrFuncCalcolator {
-private:  
-    static void _thread_postman(
-        const Grid<T>* const grid, const std::vector< CorrFunc_Work* >* const todolist, int& i,
-        std::vector< CorrFunc_RawDatapoint >* const results, std::mutex* m );
+    struct RawDatapoint {
+        double sum;
+        double sum2;
+        double count;
 
-    static CorrFunc_RawDatapoint _thread_worker(
-        const Grid<T>* const grid, const int v1, const int v2 );
+        RawDatapoint& operator+=(const RawDatapoint& rhs) {
+            sum += rhs.sum;
+            sum2 += rhs.sum2;
+            count += rhs.count;
+            return *this;
+        }
+    };
 
-public:
-    static std::vector< CorrFunc_Datapoint >* compute_corr_function(const Grid<T>* grid, int max_range = INT_MAX); // x, y, std_y
+    struct Datapoint {
+        double d;
+        double value;
+        double std;
+    };
 
-    static void print_corr(const Grid<T>* grid, const char* filename, int max_range = INT_MAX);
-};
+    template<class T>
+    class BaseClass {
 
-template class CorrFuncCalcolator<double>;
-template class CorrFuncCalcolator<int>;
+    private:
+        std::mutex works_i_mutex;
+        int works_i;
+        std::mutex raw_data_mutex;
+
+        void _thread_postman( );
+        void _thread_worker( Work* work );
+        void _thread_update_rawdata( RawDatapoint rdp, int raw_data_i );
+
+        const Grid<T>* grid;
+
+    protected:
+        std::vector< Work* >* works;
+        std::vector< RawDatapoint >* raw_data;
+        std::vector< Datapoint >* final_data;
+
+        BaseClass( const Grid<T>* grid );
+
+        void auto_populate_works(std::map<int,int>& to_add,int max_v=-1);
+
+    public:
+        std::vector< Datapoint >* compute_corr_function();
+        void print_corr(const char* filename);
+
+    };
+
+    template<class T>
+    class Equispaced : public BaseClass<T> {
+    public:
+        Equispaced(const Grid<T>* grid, int start, int end, int step);
+    };
+
+    template<class T>
+    class Expospaced : public BaseClass<T> {
+    public:
+        Expospaced(const Grid<T>* grid, double base, int maxval, int exp_step);
+    };
+
+    template class BaseClass<double>;
+    template class BaseClass<int>;    
+    template class Equispaced<double>;
+    template class Equispaced<int>;    
+    template class Expospaced<double>;
+    template class Expospaced<int>;
+
+}
 
 #endif

@@ -29,6 +29,8 @@ void run_replies(int side, double defects_frac, double gamma, int n_replies, int
 
     FourierCoupledGrids fcg(side);
     Grid<int> g(side);
+    CorrFunc::Expospaced<double> CF_H( &fcg.h, 1.4, corr_range, 1 );
+    CorrFunc::Expospaced<int>    CF_D( &g    , 1.4, corr_range, 1 );
 
     for( int j=0; j < corr_range; j++ ) {
         corr_func_avg_h[j].first = j;
@@ -42,12 +44,12 @@ void run_replies(int side, double defects_frac, double gamma, int n_replies, int
         populate_defects( g, fcg, gamma, defects_frac * side * side );
 
         if( corr_range > 0 ) {
-            vector< CorrFunc_Datapoint >* cfh = CorrFuncCalcolator<double>::compute_corr_function ( &(fcg.h), corr_range );
-            vector< CorrFunc_Datapoint >* cfd = CorrFuncCalcolator<int>::compute_corr_function ( &g, corr_range );
+            vector< CorrFunc::Datapoint >* cfh = CF_H.compute_corr_function ( );
+            vector< CorrFunc::Datapoint >* cfd = CF_D.compute_corr_function ( );
 
             for( int j=0; j < min( corr_range, min( (int)cfh->size(), (int)cfd->size() ) ); j++ ) {
-                corr_func_avg_h[j].second = corr_func_avg_h[j].second + get<1>(cfh->at(j));
-                corr_func_avg_d[j].second = corr_func_avg_d[j].second + get<1>(cfd->at(j));
+                corr_func_avg_h[j].second = corr_func_avg_h[j].second + cfh->at(j).value;
+                corr_func_avg_d[j].second = corr_func_avg_d[j].second + cfd->at(j).value;
             }
             
             cfh->clear();
@@ -86,13 +88,13 @@ void run_replies(int side, double defects_frac, double gamma, int n_replies, int
 int main() {
 
     int side = 2048;
-    int corr_range = 30;
+    int corr_range = 2048; // 30
     double defects_frac = 0.3;
     double gamma = 0.4;
-    int n_replies = 10;
+    int n_replies = 1;
     string path;
     int progress = 0;
-    bool ask = true;
+    bool ask = false;
 
     do {
         path = date::format("%Y%m%d", chrono::system_clock::now()) + "_" + to_string( progress++ );

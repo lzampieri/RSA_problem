@@ -1,30 +1,28 @@
 #include "CorrFuncCalcolator.h"
 
 using namespace std;
+using namespace CorrFunc;
 
 template<class T>
-void CorrFuncCalcolator<T>::_thread_postman(
-    const Grid<T>* const grid, const std::vector< CorrFunc_Work* >* const todolist, int& i,
-        std::vector< CorrFunc_RawDatapoint >* const results, std::mutex* m  ) {
-    m->lock();
-    while( i < todolist->size() ) {
-        CorrFunc_Work todo = *( todolist->at( i ) );
-        i += 1;
-        m->unlock();
+void BaseClass<T>::_thread_postman( ) {
+    works_i_mutex.lock();
+    while( works_i < works->size() ) {
+        Work* todo = works->at( works_i );
+        works_i += 1;
+        works_i_mutex.unlock();
 
-        CorrFunc_RawDatapoint r = _thread_worker( grid, todo.first, todo.second );
+        _thread_worker( todo );
 
-        m->lock();
-        results->push_back( r );
+        works_i_mutex.lock();
     }
-    m->unlock();
+    works_i_mutex.unlock();
 }
 
 template<class T>
-CorrFunc_RawDatapoint CorrFuncCalcolator<T>::_thread_worker(
-    const Grid<T>* const grid, const int v1, const int v2 ) {
+void BaseClass<T>::_thread_worker( Work* work ) {
     double sum = 0, sum2 = 0;
     int count = 0;
+    int v1 = work->v1, v2 = work->v2;
 
     pair<int, int> xy1, xy2, xy3, xy4, xy5;
     double val1, val2, val3, val4, val5;
@@ -62,98 +60,129 @@ CorrFunc_RawDatapoint CorrFuncCalcolator<T>::_thread_worker(
         }
     }
 
-    return make_tuple(
-        grid->d( 0, 0, v1, v2 ),
-        count,
-        sum,
-        sum2
+    _thread_update_rawdata(
+        RawDatapoint(sum, sum2, count),
+        work->raw_data_i
     );
 }
 
 template<class T>
-vector< CorrFunc_Datapoint >* CorrFuncCalcolator<T>::compute_corr_function(
-    const Grid<T>* grid, int max_range) {
-    vector<thread*> threads;
-    vector<CorrFunc_Work* >* works = new vector< CorrFunc_Work* >();
-    mutex m;
-    vector< CorrFunc_RawDatapoint >* raw_results = new vector< CorrFunc_RawDatapoint >();
-
-    for( int v1 = 0; v1 < min( max_range, grid->d1 / 2 ); v1++ ) {
-        for( int v2 = v1; v2 < min( max_range, grid->d2 / 2 ); v2++ ) {
-            if( grid->d( 0, 0, v1, v2 ) < max_range + 1 ) {
-                works->push_back( new CorrFunc_Work( v1, v2 ) );
-            }
-        }
-    }
-    
-    raw_results->reserve( works->size() );
-    threads.reserve( CORRFUNC_MAX_THREADS );
-    int iter = 0;
-
-    for( int i = 0; i < CORRFUNC_MAX_THREADS; i++ ) {
-        threads.push_back( 
-                new thread( _thread_postman, grid, works, ref(iter), raw_results, &m )
-            );
-    }
-
-    for( int i = 0; i < threads.size(); i++ ) {
-        threads[i]->join();
-    }
-
-    threads.clear();
-    works->clear();
-    delete works;
-
-
-    sort(
-        raw_results->begin(),
-        raw_results->end(),
-        [](const CorrFunc_RawDatapoint p1, const CorrFunc_RawDatapoint p2) { return get<0>(p1) < get<0>(p2); } );
-
-    vector< CorrFunc_Datapoint >* results = new vector< CorrFunc_Datapoint >();
-    int d = 0;
-    double sum = 0, sum2 = 0;
-    int count = 0;
-    for( CorrFunc_RawDatapoint dp : *raw_results ) {
-        if( (int)get<0>(dp) > d ) {
-            if( count > 0 ) {
-                results->push_back( make_tuple (
-                    d,
-                    sum / count,
-                    sqrt( ( sum2 - pow( sum, 2 ) / count ) / ( count - 1 ) )
-                ));
-                sum = 0;
-                sum2 = 0;
-                count = 0;
-                d = (int)get<0>(dp);
-            }
-        }
-
-        count+= get<1>(dp);
-        sum += get<2>(dp);
-        sum2+= get<3>(dp);
-    }
-
-    raw_results->clear();
-    delete raw_results;
-
-    return results;
+void BaseClass<T>::_thread_update_rawdata( RawDatapoint rdp, int raw_data_i ) {
+    raw_data_mutex.lock();
+    raw_data->at(raw_data_i) += rdp;
+    raw_data_mutex.unlock();
 }
 
 template<class T>
-void CorrFuncCalcolator<T>::print_corr(const Grid<T>* grid, const char* filename, int max_range) {
+BaseClass<T>::BaseClass( const Grid<T>* grid ) : grid(grid) {
+    works = new vector< Work* >();
+    raw_data = new vector< RawDatapoint >();
+    final_data = new vector< Datapoint >();
+}
+
+template<class T>
+void BaseClass<T>::auto_populate_works(map<int,int>& to_add, int max_v) {
+    if( max_v == -1 ) max_v = grid->d1;
+    for(int v1 = 0; v1 < max_v; v1++ ) {
+        for(int v2 = v1; v2 < max_v; v2++) {
+            auto i = to_add.find( grid->d(0,0,v1,v2) );
+            if( i != to_add.end() ) {
+                this->works->push_back( new Work( v1, v2, i->second ) );
+            }
+        }
+    }
+}
+
+template<class T>
+vector< Datapoint >* BaseClass<T>::compute_corr_function() {
+    vector<thread*> threads;
+    threads.reserve( CORRFUNC_MAX_THREADS );
+
+    // Clean raw_data
+    for( int i = 0; i < raw_data->size(); i++ ) {
+        raw_data->at(i).sum = 0;
+        raw_data->at(i).sum2 = 0;
+        raw_data->at(i).count = 0;
+    }
+
+    works_i = 0;
+
+    // Launch threads
+    for( int i = 0; i < CORRFUNC_MAX_THREADS; i++ ) {
+        threads.push_back( 
+                new thread( _thread_postman, this )
+            );
+    }
+
+    // Joint threads
+    for( int i = 0; i < threads.size(); i++ ) {
+        threads[i]->join();
+    }
+    threads.clear();
+
+    // Compute real data
+    for( int i = 0; i < raw_data->size(); i++ ) {
+        final_data->at(i).value = raw_data->at(i).sum / raw_data->at(i).count;
+        final_data->at(i).std   = sqrt(
+                            ( raw_data->at(i).sum2 - pow( raw_data->at(i).sum, 2 ) / raw_data->at(i).count )
+                            /
+                            ( raw_data->at(i).count - 1 )
+                        );
+    }
+
+    return final_data;
+}
+
+template<class T>
+void BaseClass<T>::print_corr( const char* filename ) {
     ostream* out;
     if( strlen( filename ) > 0 )
         out = new ofstream(filename);
     else
         out = &cout;
 
-    vector< CorrFunc_Datapoint >* cf = compute_corr_function(grid, max_range);
-    for( CorrFunc_Datapoint d : *cf) {
-        (*out)<<get<0>(d)<<'\t'<<get<1>(d)<<'\t'<<get<2>(d)<<'\n';
+    compute_corr_function();
+
+    for( Datapoint d : *final_data ) {
+        (*out)<<d.d<<'\t'<<d.value<<'\t'<<d.std<<'\n';
     }
 
-    cf->clear();
-    delete cf;
     delete out;
+}
+
+template<class T>
+Equispaced<T>::Equispaced(const Grid<T>* grid, int start, int end, int step) : BaseClass<T>(grid) {
+    map<int,int> themap;
+
+    for( int i = start; i < end; i+=step ) {
+        this->final_data->push_back( Datapoint( i, 0, 0 ) );
+        this->raw_data->push_back( RawDatapoint( 0, 0, 0 ) );
+        themap[i] = this->final_data->size() - 1 ;
+    }
+
+    this->auto_populate_works(themap, end);
+}
+
+template<class T>
+Expospaced<T>::Expospaced(const Grid<T>* grid, double base, int maxval, int exp_step) : BaseClass<T>(grid) {
+    map<int,int> themap;
+
+    int exp = 0;
+    int val = 1;
+    auto update_val = [&exp, &val, maxval, exp_step, base] () {
+        int old_val = val;
+        do {
+            exp+=exp_step;
+            val = pow(base,exp);
+        } while( old_val == val );
+        return val < maxval;
+    };
+
+    do {
+        this->final_data->push_back( Datapoint( val, 0, 0 ) );
+        this->raw_data->push_back( RawDatapoint( 0, 0, 0 ) );
+        themap[val] = this->final_data->size() - 1 ;
+    } while( update_val() );
+
+    this->auto_populate_works(themap, maxval);
 }
