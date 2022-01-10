@@ -15,6 +15,13 @@
 class FourierCoupledGrids;
 class GridFiller;
 
+class GridSite {
+public:
+    static const int Defect = 1;
+    static const int Free = 0;
+    static const int Atom = -1;
+};
+
 template<class T>
 class Grid {
 protected:

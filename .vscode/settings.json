@@ -53,6 +53,21 @@
         "xmemory": "cpp",
         "xmemory0": "cpp",
         "xstddef": "cpp",
-        "xtr1common": "cpp"
+        "xtr1common": "cpp",
+        "filesystem": "cpp",
+        "string": "cpp",
+        "cctype": "cpp",
+        "iomanip": "cpp",
+        "iterator": "cpp",
+        "locale": "cpp",
+        "map": "cpp",
+        "random": "cpp",
+        "sstream": "cpp",
+        "string_view": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp",
+        "xlocmon": "cpp",
+        "xloctime": "cpp",
+        "xtree": "cpp"
     }
 }

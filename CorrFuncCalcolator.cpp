@@ -76,6 +76,7 @@ void BaseClass<T>::_thread_update_rawdata( RawDatapoint rdp, int raw_data_i ) {
 template<class T>
 BaseClass<T>::BaseClass( const Grid<T>* grid ) : grid(grid) {
     works = new vector< Work* >();
+    is = new vector< int >();
     raw_data = new vector< RawDatapoint >();
     final_data = new vector< Datapoint >();
 }
@@ -144,8 +145,8 @@ void BaseClass<T>::print_corr( const char* filename ) {
 
     compute_corr_function();
 
-    for( Datapoint d : *final_data ) {
-        (*out)<<d.d<<'\t'<<d.value<<'\t'<<d.std<<'\n';
+    for( int i = 0; i < final_data->size(); i++ ) {
+        (*out)<< is->at(i) <<'\t'<< final_data->at(i).value <<'\t'<< final_data->at(i).std <<'\n';
     }
 
     delete out;
@@ -156,7 +157,8 @@ Equispaced<T>::Equispaced(const Grid<T>* grid, int start, int end, int step) : B
     map<int,int> themap;
 
     for( int i = start; i < end; i+=step ) {
-        this->final_data->push_back( Datapoint( i, 0, 0 ) );
+        this->is->push_back( i );
+        this->final_data->push_back( Datapoint( 0, 0 ) );
         this->raw_data->push_back( RawDatapoint( 0, 0, 0 ) );
         themap[i] = this->final_data->size() - 1 ;
     }
@@ -180,7 +182,8 @@ Expospaced<T>::Expospaced(const Grid<T>* grid, double base, int maxval, int exp_
     };
 
     do {
-        this->final_data->push_back( Datapoint( val, 0, 0 ) );
+        this->is->push_back( val );
+        this->final_data->push_back( Datapoint( 0, 0 ) );
         this->raw_data->push_back( RawDatapoint( 0, 0, 0 ) );
         themap[val] = this->final_data->size() - 1 ;
     } while( update_val() );

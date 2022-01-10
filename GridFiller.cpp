@@ -35,6 +35,6 @@ void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double> ranks,con
     nth_element(p.begin(),p.begin()+count,p.end());
 
     for(int i=0; i < ranks.imax(); i++){
-        tofill(i) = ranks(i) < p[count] ? 1 : -1;
+        tofill(i) = ranks(i) < p[count] ? GridSite::Defect : GridSite::Free;
     }
 }

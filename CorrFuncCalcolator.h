@@ -40,7 +40,6 @@ namespace CorrFunc {
     };
 
     struct Datapoint {
-        double d;
         double value;
         double std;
     };
@@ -69,6 +68,7 @@ namespace CorrFunc {
         void auto_populate_works(std::map<int,int>& to_add,int max_v=-1);
 
     public:
+        std::vector< int >* is;
         std::vector< Datapoint >* compute_corr_function();
         void print_corr(const char* filename);
 
