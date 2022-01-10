@@ -91,6 +91,7 @@ void BaseClass<T>::auto_populate_works(map<int,int>& to_add, int max_v) {
             }
         }
     }
+    cout<<"Number of works to be carried out: "<<this->works->size()<<endl;
 }
 
 template<class T>

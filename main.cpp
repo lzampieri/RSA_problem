@@ -23,7 +23,7 @@ void populate_defects(Grid<int>& g, FourierCoupledGrids& fcg, double gamma, int 
 }
 
 void run_replies(int side, double defects_frac, double gamma, int n_replies, int corr_range, string path) {
-    corr_range = min( side, corr_range );
+    corr_range = min( side/2, corr_range );
     vector< pair<int, double> > corr_func_avg_h ( corr_range, make_pair(0,0) );
     vector< pair<int, double> > corr_func_avg_d ( corr_range, make_pair(0,0) );
 
@@ -87,8 +87,8 @@ void run_replies(int side, double defects_frac, double gamma, int n_replies, int
 
 int main() {
 
-    int side = 2048;
-    int corr_range = 2048; // 30
+    int side = 1000;
+    int corr_range = side/2; // 30
     double defects_frac = 0.3;
     double gamma = 0.4;
     int n_replies = 1;
