@@ -33,6 +33,8 @@ public:
 
     Grid(int d1, int d2);
     Grid(int d1);
+    Grid(const Grid&) = delete; // Copy costruction forbidden
+    ~Grid();
 
     void normalize();
     void gaussian_center_and_normalize();

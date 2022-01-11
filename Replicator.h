@@ -42,6 +42,7 @@ protected:
 
 public:
     Replicator( int side, double defects_frac, double gamma, int n_replies, std::string save_path = "" );
+    ~Replicator();
 
     void enable_correlators( int corr_range = INT_MAX );
 

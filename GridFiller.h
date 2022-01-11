@@ -13,7 +13,7 @@ public:
     static void square(Grid<double>& g, int side);
 
     static void clean(Grid<int>& toclean, int cleanto = GridSite::Free );
-    static void ranked_insertion(Grid<int>& tofill,const Grid<double> ranks,const int count);
+    static void ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,const int count);
 };
 
 

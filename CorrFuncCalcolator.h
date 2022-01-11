@@ -68,8 +68,10 @@ namespace CorrFunc {
         void auto_populate_works(std::map<int,int>& to_add,int max_v=-1);
 
     public:
+        ~BaseClass();
+        
         std::vector< int >* is;
-        std::vector< Datapoint >* compute_corr_function();
+        const std::vector< Datapoint >* compute_corr_function();
         void print_corr(const char* filename);
 
     };

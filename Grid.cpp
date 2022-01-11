@@ -11,6 +11,12 @@ Grid<T>::Grid(int d1, int d2) : d1(d1), d2(d2) {
 }
 
 template<class T>
+Grid<T>::~Grid() {
+    u->clear();
+    delete u;
+}
+
+template<class T>
 void Grid<T>::normalize() {
     T maximum = u->at(0);
     for(int i=1; i<d1*d2; i++) {

@@ -1,0 +1,1 @@
+del exe_and_dll\final.exe && C:\mingw64\bin\g++.exe *.cpp -o exe_and_dll\final.exe -Iexe_and_dll -Lexe_and_dll -llibfftw3-3 -std=c++2a -static-libstdc++ -static-libgcc -O3 && PAUSE

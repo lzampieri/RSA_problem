@@ -2,6 +2,8 @@
 #include <iostream>
 #include <fstream>
 #include "Replicator.h"
+#include <chrono>
+#include "date.h"
 
 using namespace std;
 
@@ -28,9 +30,10 @@ int main() {
     };
 
     ofstream log( "log.txt", ios_base::app );
-    log << "===\n PATHNAME\t|SIDE\t|DEFECTS_FRAC\t|GAMMA\t|N_REPLIES\t|CORR_RANGE\n";
+    log << "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
+    log << "PATHNAME\t | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE |\n";
     for( ReplicatorParams r : rp )
-        log << Replicator::run_replicator( r ) << '\n';
+        log << Replicator::run_replicator( r ) << endl;
 
     system("PAUSE");
 }

@@ -12,11 +12,16 @@ Replicator::Replicator( int side, double defects_frac, double gamma, int n_repli
         this->save_path = save_path;
 }
 
+Replicator::~Replicator() {
+    delete CF_H;
+    delete CF_D;
+}
+
 void Replicator::enable_correlators( int corr_range ) {
     this->corr_range = min( corr_range, side / 2 );
 
     CF_H = new CorrFunc::Expospaced<double>( &fcg.h, 1.4, this->corr_range, 1 );
-    CF_D = new CorrFunc::Expospaced<int>( &g    , 1.4, this->corr_range, 1 );
+    CF_D = new CorrFunc::Expospaced<int>   ( &g    , 1.4, this->corr_range, 1 );
 }
 
 void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D_avg ) {
@@ -31,8 +36,8 @@ void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D
     GridFiller::ranked_insertion( g, fcg.h, defects_frac * side * side );
     
     if( corr_range > 0 ) { // If correlation calcolation is enabled
-        vector< CorrFunc::Datapoint >* cfh = CF_H->compute_corr_function ( );
-        vector< CorrFunc::Datapoint >* cfd = CF_D->compute_corr_function ( );
+        const vector< CorrFunc::Datapoint >* cfh = CF_H->compute_corr_function ( );
+        const vector< CorrFunc::Datapoint >* cfd = CF_D->compute_corr_function ( );
 
         for( int i=0; i < CF_H_avg->size(); i++ ) {
             CF_H_avg->at(i) += cfh->at(i).value;
@@ -41,12 +46,6 @@ void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D
         for( int i=0; i < CF_D_avg->size(); i++ ) {
             CF_D_avg->at(i) += cfh->at(i).value;
         }
-        
-        cfh->clear();
-        delete cfh;
-        cfd->clear();
-        delete cfd;
-        // todo optimize this creation and deletion of stuff
     }
 
 }
@@ -54,7 +53,7 @@ void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D
 string Replicator::run() {
     // String for indexing
     stringstream ss;
-    string sep = "\t| ";
+    string sep = " | ";
 
     // Compute save path
     int progressive = 0;
@@ -63,14 +62,18 @@ string Replicator::run() {
     string actual_path = save_path + "_" + to_string( progressive );
     if( !filesystem::exists( actual_path ) )
         filesystem::create_directory( actual_path );
-    ss << actual_path << sep;
+    ss << actual_path << '\t' << sep;
 
     // Print details
     ofstream out_details( actual_path + "/details.txt");
     out_details<<"{\n\"side\":\t"<<side<<",\n\"defects_frac\":\t"<<defects_frac<<
                ",\n\"gamma\":\t"<<gamma<<",\n\"replies\":"<<n_replies<<
                ",\n\"corr_range\":\t"<<corr_range<<"\n}"<<endl;
-    ss << side << sep << defects_frac << sep << gamma << sep << n_replies << sep << corr_range << sep;
+    ss << setw( 4 ) << side << sep 
+       << setw( 12 )<< defects_frac << sep
+       << setw( 5 ) << gamma << sep 
+       << setw( 9 ) << n_replies << sep 
+       << setw( 10 )<< corr_range << sep;
 
     // Correlation function management
     vector< double >* CF_H_avg = nullptr;
@@ -81,12 +84,12 @@ string Replicator::run() {
     }
 
     // Run replicas
-    cout<<"Starting with replicas..."<<endl;
+    cout<<"[log] Starting replicas performing..."<<endl;
     for( int i=0; i < n_replies; i++ ) {
         run_replica( CF_H_avg, CF_D_avg );
-        if( i % ( n_replies/100 + 1 ) == 0 ) cout<<i<<endl;
+        cout<< "[prg] " << i << "\t/" << n_replies << '\r' <<flush;
     }
-    cout<<"End replicas."<<endl;
+    cout<<"[log] End replicas.  "<<endl;
 
     // Print correlation function stuff
     if( corr_range > 0 ) {
@@ -102,6 +105,10 @@ string Replicator::run() {
             out_corr<< CF_D->is->at(i) << '\t' << CF_D_avg->at(i) << '\n';
         }
     }
+
+    // Clean
+    delete CF_H_avg;
+    delete CF_D_avg;
 
     // Return a string in the form PATHNAME | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE
     return ss.str();

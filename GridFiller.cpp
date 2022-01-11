@@ -30,7 +30,7 @@ void GridFiller::clean(Grid<int>& toclean, int cleanto) {
         toclean(i) = cleanto;
 }
 
-void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double> ranks,const int count) {
+void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,const int count) {
     vector<double> p = *(ranks.u);
     nth_element(p.begin(),p.begin()+count,p.end());
 

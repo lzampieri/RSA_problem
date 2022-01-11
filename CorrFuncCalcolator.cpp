@@ -82,6 +82,15 @@ BaseClass<T>::BaseClass( const Grid<T>* grid ) : grid(grid) {
 }
 
 template<class T>
+BaseClass<T>::~BaseClass() {
+    works->clear();
+    delete works;
+    delete is;
+    delete raw_data;
+    delete final_data;
+}
+
+template<class T>
 void BaseClass<T>::auto_populate_works(map<int,int>& to_add, int max_v) {
     if( max_v == -1 ) max_v = grid->d1;
     for(int v1 = 0; v1 < max_v; v1++ ) {
@@ -92,11 +101,11 @@ void BaseClass<T>::auto_populate_works(map<int,int>& to_add, int max_v) {
             }
         }
     }
-    cout<<"Number of works to be carried out: "<<this->works->size()<<endl;
+    cout<<"[log] Operations necessary for computing correlator: "<< this->works->size() <<endl;
 }
 
 template<class T>
-vector< Datapoint >* BaseClass<T>::compute_corr_function() {
+const vector< Datapoint >* BaseClass<T>::compute_corr_function() {
     vector<thread*> threads;
     threads.reserve( CORRFUNC_MAX_THREADS );
 
