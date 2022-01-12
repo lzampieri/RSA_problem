@@ -69,6 +69,8 @@ string Replicator::run() {
     out_details<<"{\n\"side\":\t"<<side<<",\n\"defects_frac\":\t"<<defects_frac<<
                ",\n\"gamma\":\t"<<gamma<<",\n\"replies\":"<<n_replies<<
                ",\n\"corr_range\":\t"<<corr_range<<"\n}"<<endl;
+    out_details.close();
+
     ss << setw( 4 ) << side << sep 
        << setw( 12 )<< defects_frac << sep
        << setw( 5 ) << gamma << sep 
@@ -98,14 +100,14 @@ string Replicator::run() {
             CF_H_avg->at(i) /= n_replies;
             out_corr<< CF_H->is->at(i) << '\t' << CF_H_avg->at(i) << '\n';
         }
+        out_corr.close();
 
         ofstream out2_corr( actual_path + "/CF_D_avg.txt");
-        cout<<"Size: "<<CF_D->is->size()<<endl;
         for( int i=0; i < CF_D->is->size(); i++ ) {
             CF_D_avg->at(i) /= n_replies;
             out2_corr<< CF_D->is->at(i) << '\t' << CF_D_avg->at(i) << '\n';
-            cout<<"Out "<<i<<endl;
         }
+        out2_corr.close();
     }
 
     // Clean
