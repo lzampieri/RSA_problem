@@ -11,22 +11,22 @@ int main() {
 
     ReplicatorParams rp[] = {
         // Size DefectsFracs Gamma NReplies CorrRange
-        ReplicatorParams( 1024, 0.2, 0.2, 100, 100 ),
-        ReplicatorParams( 1024, 0.2, 0.6, 100, 100 ),
-        ReplicatorParams( 1024, 0.2, 1.0, 100, 100 ),
-        ReplicatorParams( 1024, 0.2, 1.4, 100, 100 ),
-        ReplicatorParams( 1024, 0.3, 0.2, 100, 100 ),
-        ReplicatorParams( 1024, 0.3, 0.6, 100, 100 ),
-        ReplicatorParams( 1024, 0.3, 1.0, 100, 100 ),
-        ReplicatorParams( 1024, 0.3, 1.4, 100, 100 ),
-        ReplicatorParams( 1024, 0.4, 0.2, 100, 100 ),
-        ReplicatorParams( 1024, 0.4, 0.6, 100, 100 ),
-        ReplicatorParams( 1024, 0.4, 1.0, 100, 100 ),
-        ReplicatorParams( 1024, 0.4, 1.4, 100, 100 ),
-        ReplicatorParams( 1024, 0.5, 0.2, 100, 100 ),
-        ReplicatorParams( 1024, 0.5, 0.6, 100, 100 ),
-        ReplicatorParams( 1024, 0.5, 1.0, 100, 100 ),
-        ReplicatorParams( 1024, 0.5, 1.4, 100, 100 )
+        ReplicatorParams( 10, 0.2, 0.2, 100, 100 ),
+        ReplicatorParams( 10, 0.2, 0.6, 100, 100 ),
+        ReplicatorParams( 10, 0.2, 1.0, 100, 100 ),
+        // ReplicatorParams( 10, 0.2, 1.4, 100, 100 ),
+        // ReplicatorParams( 10, 0.3, 0.2, 100, 100 ),
+        // ReplicatorParams( 10, 0.3, 0.6, 100, 100 ),
+        // ReplicatorParams( 10, 0.3, 1.0, 100, 100 ),
+        // ReplicatorParams( 10, 0.3, 1.4, 100, 100 ),
+        // ReplicatorParams( 10, 0.4, 0.2, 100, 100 ),
+        // ReplicatorParams( 10, 0.4, 0.6, 100, 100 ),
+        // ReplicatorParams( 10, 0.4, 1.0, 100, 100 ),
+        // ReplicatorParams( 10, 0.4, 1.4, 100, 100 ),
+        // ReplicatorParams( 10, 0.5, 0.2, 100, 100 ),
+        // ReplicatorParams( 10, 0.5, 0.6, 100, 100 ),
+        // ReplicatorParams( 10, 0.5, 1.0, 100, 100 ),
+        // ReplicatorParams( 10, 0.5, 1.4, 100, 100 )
     };
 
     ofstream log( "log.txt", ios_base::app );

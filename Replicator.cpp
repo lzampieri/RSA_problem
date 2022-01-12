@@ -44,7 +44,7 @@ void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D
         }
         
         for( int i=0; i < CF_D_avg->size(); i++ ) {
-            CF_D_avg->at(i) += cfh->at(i).value;
+            CF_D_avg->at(i) += cfd->at(i).value;
         }
     }
 
