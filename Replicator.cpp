@@ -100,9 +100,11 @@ string Replicator::run() {
         }
 
         ofstream out2_corr( actual_path + "/CF_D_avg.txt");
+        cout<<"Size: "<<CF_D->is->size()<<endl;
         for( int i=0; i < CF_D->is->size(); i++ ) {
             CF_D_avg->at(i) /= n_replies;
-            out_corr<< CF_D->is->at(i) << '\t' << CF_D_avg->at(i) << '\n';
+            out2_corr<< CF_D->is->at(i) << '\t' << CF_D_avg->at(i) << '\n';
+            cout<<"Out "<<i<<endl;
         }
     }
 
