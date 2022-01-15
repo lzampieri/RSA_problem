@@ -4,7 +4,7 @@
 using namespace std;
 
 void GridFiller::iid(Grid<double>& g) {
-    static mt19937 engine;
+    static minstd_rand engine(random_device{}());
     engine.seed( time(NULL) );
     normal_distribution<double> distribution(0.0,1.0);
     for(int i=0; i < g.d1 * g.d2; i++ )
@@ -37,4 +37,52 @@ void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,co
     for(int i=0; i < ranks.imax(); i++){
         tofill(i) = ranks(i) < p[count] ? GridSite::Defect : GridSite::Free;
     }
+}
+
+int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
+
+    AdvVector variants( polys.N );
+    vector< AdvVector > sites;
+    for( int i=0; i < polys.N; i++ )
+        sites.push_back( AdvVector( tofill.imax() ) );
+
+    // Remove not-free sites
+    for( int v=0; v < polys.N; v++ ) {
+        for( int i=0; i < tofill.imax(); i++ )
+            if( !tofill(i) == GridSite::Free )
+                sites[v].remove(i);
+
+        if( sites[v].empty() ) variants.remove( v );
+    }
+
+    int dep_atoms = 0;
+    int var, site;
+
+    // Deposition:
+    while( !variants.empty() ) {
+        // Select a random variant and ensure sites are available
+        var = variants.rnd();
+
+        // Select a random site
+        site = sites[var].rnd();
+
+        // If the site can host the polymer
+        if( polys[var]->canStay( sites[var], site ) ) {
+
+            // Deposit and remove occupied sites
+            polys[var]->depositAndClean( tofill, sites[var], site );
+            dep_atoms += polys.N;
+            
+        } else {
+            
+            // Else remove the site
+            sites[var].remove( site );
+        }
+
+        // If this variant cannot be more deposited, remove
+        if( sites[var].empty() )
+            variants.remove( var );
+    }
+
+    return dep_atoms;
 }

@@ -2,6 +2,8 @@
 #define GRIDFILLER_H
 
 #include "Grid.h"
+#include "Polymer.h"
+#include "AdvVector.h"
 #include <ctime>
 #include <cstdlib>
 #include <random>
@@ -14,6 +16,8 @@ public:
 
     static void clean(Grid<int>& toclean, int cleanto = GridSite::Free );
     static void ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,const int count);
+
+    static int fillWithPolymers(Grid<int>& tofill, Polymers& polys);
 };
 
 
