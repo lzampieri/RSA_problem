@@ -21,11 +21,11 @@ void FourierCoupledGrids::fourier_transform(double reverse) {
 
 void FourierCoupledGrids::multiply_fft_old(double gamma) {
     f.u->at(0) = 0;
-    pair< int, int > xy;
+    GridSite xy( 0,0,f );
     double q;
     for(int i=1; i< f.d1 * f.d2; i++) {
         xy = f._xy(i);
-        q = sqrt( xy.first * xy.first + xy.second * xy.second );
+        q = sqrt( xy.X * xy.X + xy.Y * xy.Y );
         f.u->at(i) = f.u->at(i) * pow( q, (gamma-1)/2 );
     }
     f.normalize();
@@ -38,17 +38,17 @@ void FourierCoupledGrids::multiply_fft_new(double gamma) {
     double pref = tgamma( beta + 1 );
 
     for(int i=1; i< f.d1 * f.d2; i++) {
-        q = f._abs( _q(i) );
+        q = abs( _q(i) );
         S = pref * pow( q / 2 , beta ) * cyl_bessel_k( abs(beta), q );
         f.u->at(i) = f.u->at(i) * sqrt( S );
     }
     f.normalize();
 }
 
-const std::pair< double, double > FourierCoupledGrids::_q( std::pair< int, int > xy ) const {
+const std::pair< double, double > FourierCoupledGrids::_q( const GridSite& xy ) const {
     return make_pair(
-        M_PI / ( h.d1 - 1 ) * xy.first,
-        M_PI / ( h.d2 - 1 ) * xy.second
+        M_PI / ( h.d1 - 1 ) * xy.X,
+        M_PI / ( h.d2 - 1 ) * xy.Y
     );
 }
 

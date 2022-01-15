@@ -22,16 +22,19 @@ template<class T>
 void BaseClass<T>::_thread_worker( Work* work ) {
     double sum = 0, sum2 = 0;
     int count = 0;
-    int v1 = work->v1, v2 = work->v2;
+    GridSite v = work->v;
+    GridSite u = GridSite( v.Y, v.X, v );
+    GridSite vR = GridSite( v.X, -v.Y, v );
+    GridSite uR = GridSite( v.Y, -v.X, v );
 
-    pair<int, int> xy1, xy2, xy3, xy4, xy5;
+    GridSite xy1( v ), xy2( v ), xy3( v ), xy4( v ), xy5( v ); // Random initialization to allocate space
     double val1, val2, val3, val4, val5;
     for( int i = 0; i < grid->d1 * grid->d2; i++ ) {
-        xy1 = grid->_xy( i );
-        xy2 = make_pair( xy1.first + v1, xy1.second + v2 );
-        xy3 = make_pair( xy1.first + v2, xy1.second + v1 );
-        xy4 = make_pair( xy1.first + v1, xy1.second - v2 );
-        xy5 = make_pair( xy1.first + v2, xy1.second - v1 );
+        GridSite xy1 = grid->_xy( i );
+        GridSite xy2 = xy1 + v;
+        GridSite xy3 = xy1 + u;
+        GridSite xy4 = xy1 + vR;
+        GridSite xy5 = xy1 - uR;
 
         val1 = grid->operator()( xy1 );
         val2 = grid->operator()( xy2 );
@@ -43,7 +46,7 @@ void BaseClass<T>::_thread_worker( Work* work ) {
         sum2+= val1*val2*val1*val2;
         count++;
         
-        if( v1 != v2 ) {
+        if( v != u ) {
             sum += val1*val3;
             sum2+= val1*val3*val1*val3;
             count++;
@@ -53,7 +56,7 @@ void BaseClass<T>::_thread_worker( Work* work ) {
         sum2+= val1*val4*val1*val4;
         count++;
         
-        if( v1 != v2 ) {
+        if( v != u ) {
             sum += val1*val5;
             sum2+= val1*val5*val1*val5;
             count++;
@@ -97,7 +100,7 @@ void BaseClass<T>::auto_populate_works(map<int,int>& to_add, int max_v) {
         for(int v2 = v1; v2 < max_v; v2++) {
             auto i = to_add.find( grid->d(0,0,v1,v2) );
             if( i != to_add.end() ) {
-                this->works->push_back( new Work( v1, v2, i->second ) );
+                this->works->push_back( new Work( GridSite( v1, v2, *grid ), i->second ) );
             }
         }
     }

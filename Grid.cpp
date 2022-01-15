@@ -2,11 +2,132 @@
 
 using namespace std;
 
-template<class T>
-Grid<T>::Grid(int d1) : Grid(d1, d1) {};
+// GridProps
+// Constructors
+GridProps::GridProps(int d1, int d2) : d1(d1), d2(d2) {}
+GridProps::GridProps(int d) : d1(d), d2(d) {}
+GridProps::GridProps(const GridProps& G) : d1(G.d1), d2(G.d2) {}
+
+// PBC
+int GridProps::_pbc_x( int x ) const {
+    while( x < 0 ) x += d1;
+    return x % d1;
+}
+
+int GridProps::_pbc_y( int y ) const {
+    while( y < 0 ) y += d2;
+    return y % d2;
+}
+
+int GridProps::_pbc_i( int i ) const {
+    while( i < 0 ) i += d1*d2;
+    return i % (d1*d2);
+}
+
+// Coordinates converting
+
+double GridProps::_i(const int x, const int y) const {
+    return _pbc_x(x) * d2 + _pbc_y(y);
+}
+
+GridSite GridProps::_xy(const int i) const {
+    return GridSite( _pbc_i(i) / d2, _pbc_i(i) % d2, *this );   
+}
+
+// Distances
+
+double GridProps::d(int i1, int i2) const{
+    return d( _xy(i1), _xy(i2) );
+}
+
+double GridProps::d(int x1, int y1, int x2, int y2) const {
+    double deltaX = _pbc_x( x1 - x2 );
+    deltaX = min( deltaX, d1 - deltaX );
+    double deltaY = _pbc_y( y1 - y2 );
+    deltaY = min( deltaY, d2 - deltaY );
+    return sqrt( deltaX * deltaX + deltaY * deltaY );
+}
+
+double GridProps::d(const GridSite& xy1, const GridSite& xy2 ) const {
+    return d( xy1.X, xy1.Y, xy2.X, xy2.Y );
+}
+
+// GridSite
+// Constructors
+
+GridSite::GridSite(int X, int Y, const GridProps& gp) : GridProps(gp) { setX(X); setY(Y); }
+template<class T> GridSite::GridSite(int I, const GridProps& gp) : GridSite( gp._xy(I) ) {}
+GridSite::GridSite(const GridSite& G) : GridProps( G ) { setX(G.X); setY(G.Y); }
+
+// Access to I
+int GridSite::I() const {
+    return _i( X, Y );
+}
+
+// Operators
+
+void GridSite::setX(int newX) {
+    _X = _pbc_x(newX);
+}
+
+void GridSite::setY(int newY) {
+    _Y = _pbc_y(newY);
+}
+
+GridSite& GridSite::operator= (const GridSite& gs) {
+    d1 = gs.d1;
+    d2 = gs.d2;
+    setX( gs.X );
+    setY( gs.Y );
+    return *this;
+}
+
+GridSite& GridSite::operator+(const GridSite& xy2) {
+    setX( X + xy2.X );
+    setY( Y + xy2.Y );
+    return *this;
+}
+
+GridSite operator+(const GridSite& xy, const GridSite& xy2) {
+    return GridSite( xy.X + xy2.X, xy.Y + xy2.Y, xy );
+}
+
+GridSite& GridSite::operator-(const GridSite& xy2) {
+    setX( X - xy2.X );
+    setY( Y - xy2.Y );
+    return *this;
+}
+
+GridSite operator-(const GridSite& xy, const GridSite& xy2) {
+    return GridSite( xy.X - xy2.X, xy.Y - xy2.Y, xy );
+}
+
+bool operator== (const GridSite& xy1, const GridSite& xy2) {
+    return xy1.X == xy2.X && xy1.Y == xy2.Y;
+}
+
+bool operator!= (const GridSite& xy1, const GridSite& xy2) {
+    return !( xy1 == xy2 );
+}
+
+double GridSite::abs() const {
+    return sqrt( (double)X * X + (double)Y * Y );
+}
+
+// Distances
+
+double GridSite::d(const GridSite& xy2) {
+    return d(*this, xy2);
+}
+
+// Grid
+// Constructors
 
 template<class T>
-Grid<T>::Grid(int d1, int d2) : d1(d1), d2(d2) {
+Grid<T>::Grid(int d) : Grid<T>(d, d) {};
+
+template<class T>
+Grid<T>::Grid(int d1, int d2) : GridProps(d1,d2) {
     u = new vector<T>(d1*d2, 0);
 }
 
@@ -43,7 +164,6 @@ void Grid<T>::gaussian_center_and_normalize() {
     }
 }
 
-
 template<class T>
 void Grid<T>::print_data(const char* filename) const {
     ofstream out(filename);
@@ -66,72 +186,11 @@ T& Grid<T>::operator()(const int i) const {
 }
 
 template<class T>
-T& Grid<T>::operator()(const pair<int,int> xy) const {
-    return operator()( xy.first, xy.second );
+T& Grid<T>::operator()(const GridSite xy) const {
+    return u->at( xy.I() );
 }
 
 template<class T>
 T& Grid<T>::operator()(const int x, const int y) const {
-    return u->at( _i(x,y) );
-}
-
-// PBC
-
-template<class T>
-const int Grid<T>::_pbc_x( int x ) const {
-    while( x < 0 ) x += d1;
-    return x % d1;
-}
-
-template<class T>
-const int Grid<T>::_pbc_y( int y ) const {
-    while( y < 0 ) y += d1;
-    return y % d2;
-}
-
-template<class T>
-const int Grid<T>::_pbc_i( int i ) const {
-    while( i < 0 ) i += d1*d2;
-    return i % (d1*d2);
-}
-
-template<class T>
-const pair< int, int > Grid<T>::_pbc( const pair< int, int > xy ) const {
-    return make_pair( _pbc_x( xy.first ), _pbc_y( xy.second ) );
-}
-
-template<class T>
-const double Grid<T>::_abs( pair< double, double > xy ) const {
-    return sqrt( xy.first * xy.first + xy.second * xy.second );
-}
-
-// Coordinates converting
-template<class T>
-const double Grid<T>::_i(const int x, const int y) const {
-    return _pbc_x(x) * d2 + _pbc_y(y);
-}
-
-template<class T>
-const pair< int, int > Grid<T>::_xy(const int i) const {
-    return make_pair< int, int >( _pbc_i(i) / d2, _pbc_i(i) % d2 );   
-}
-
-// Distances
-template<class T>
-const double Grid<T>::d(int i1, int i2) const{
-    return d( _xy(i1), _xy(i2) );
-}
-
-template<class T>
-const double Grid<T>::d(int x1, int y1, int x2, int y2) const{
-    int deltaX = _pbc_x( x1 - x2 );
-    deltaX = min( deltaX, d1 - deltaX );
-    int deltaY = _pbc_y( y1 - y2 );
-    deltaY = min( deltaY, d2 - deltaY );
-    return sqrt( deltaX * deltaX + deltaY * deltaY );
-}
-
-template<class T>
-const double Grid<T>::d( pair< int, int > xy1, pair< int, int > xy2 ) const {
-    return d( xy1.first, xy1.second, xy2.first, xy2.second );
+    return operator()( GridSite( x, y, *this ) );
 }

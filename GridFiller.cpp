@@ -14,7 +14,7 @@ void GridFiller::iid(Grid<double>& g) {
 void GridFiller::coscos(Grid<double>& g, double fact1, double fact2) {
     for(int i=0; i < g.d1 * g.d2; i++ ) {
         auto xy = g._xy(i);
-        g.u->at(i) = cos( fact1 * xy.first ) * cos( fact2 * xy.second );
+        g.u->at(i) = cos( fact1 * xy.X ) * cos( fact2 * xy.Y );
     }
 }
 

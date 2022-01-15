@@ -9,30 +9,87 @@
 #include <tuple>
 #include <iostream>
 #include <fstream>
+#include <algorithm>
 
 #define M_PI 3.14159265
 
 class FourierCoupledGrids;
 class GridFiller;
+class GridSite;
 
-class GridSite {
+class GridProps {
 public:
+    int d1, d2;
+    int imax() const { return d1*d2; };
+
+    GridProps(int d1, int d2);
+    GridProps(int d);
+    GridProps(const GridProps& G);
+
+protected:
+    // PBC
+    int _pbc_x( int x ) const;
+    int _pbc_y( int y ) const;
+    int _pbc_i( int i ) const;
+
+public:
+    // Coordinates converting
+    double _i(const int x, const int y) const; // x \in [0,d1[, y \in [0,d2[
+    GridSite _xy(const int i) const;  // i \in [0,d1*d2[
+
+public:
+    // Distances
+    double d(int i1, int i2) const; // i1,i2 \in [0,d1*d2[
+    double d(int x1, int y1, int x2, int y2) const; // x1,x2 \in [0,d1[; y1,y2 \in [0,d2[
+    double d(const GridSite& xy1, const GridSite& xy2 ) const; // x1,x2 \in [0,d1[; y1,y2 \in [0,d2[
+
+};
+
+class GridSite : public GridProps {
+private:
+    int _X, _Y;
+
+public:
+    GridSite(int X, int Y, const GridProps& gp);
+    template<class T> GridSite(int I, const GridProps& gp);
+    GridSite(const GridSite& G);
+
+    // Read-only access to X and Y
+    const int& X = _X;
+    const int& Y = _Y;
+
+    // Access to I
+    int I() const;
+
+    // Operators
+    void setX(int newX);
+    void setY(int newY);
+    GridSite& operator= (const GridSite& gs);
+    GridSite& operator+(const GridSite& xy2);
+    friend GridSite operator+(const GridSite& xy, const GridSite& xy2);
+    GridSite& operator-(const GridSite& xy2);
+    friend GridSite operator-(const GridSite& xy, const GridSite& xy2);
+    friend bool operator== (const GridSite& xy1, const GridSite& xy2);
+    friend bool operator!= (const GridSite& xy1, const GridSite& xy2);
+    double abs() const;
+
+    // Distances
+    using GridProps::d;
+    double d(const GridSite& xy2);
+
     static const int Defect = 1;
     static const int Free = 0;
     static const int Atom = -1;
 };
 
 template<class T>
-class Grid {
+class Grid : public GridProps {
 protected:
     std::vector<T>* u;
 
 public:
-    const int d1, d2;
-    const int imax() const { return d1*d2; };
-
     Grid(int d1, int d2);
-    Grid(int d1);
+    Grid(int d);
     Grid(const Grid&) = delete; // Copy costruction forbidden
     ~Grid();
 
@@ -44,28 +101,10 @@ public:
     // Access
     T& operator[](const int i) const; // i \in [0,d1*d2[
     T& operator()(const int i) const; // i \in [0,d1*d2[
-    T& operator()(const std::pair<int,int> xy) const; // x \in [0,d1[, y \in [0,d2[
+    T& operator()(const GridSite xy) const; // x \in [0,d1[, y \in [0,d2[
     T& operator()(const int x, const int y) const; // x \in [0,d1[, y \in [0,d2[
 
-protected:
-    // PBC
-    const int _pbc_x( int x ) const;
-    const int _pbc_y( int y ) const;
-    const int _pbc_i( int i ) const;
-    const std::pair< int, int > _pbc( const std::pair< int, int > xy ) const;
-    const double _abs( std::pair< double, double > xy ) const;
-
 public:
-    // Coordinates converting
-    const double _i(const int x, const int y) const; // x \in [0,d1[, y \in [0,d2[
-    const std::pair< int, int > _xy(const int i) const;  // i \in [0,d1*d2[
-
-public:
-    // Distances
-    const double d(int i1, int i2) const; // i1,i2 \in [0,d1*d2[
-    const double d(int x1, int y1, int x2, int y2) const; // x1,x2 \in [0,d1[; y1,y2 \in [0,d2[
-    const double d( std::pair< int, int > xy1, std::pair< int, int > xy2 ) const; // x1,x2 \in [0,d1[; y1,y2 \in [0,d2[
-
     // Friend classes
     friend class GridFiller;
     friend class FourierCoupledGrids;

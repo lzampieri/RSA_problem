@@ -21,8 +21,7 @@
 namespace CorrFunc {
 
     struct Work {
-        int v1;
-        int v2;
+        GridSite v;
         int raw_data_i;
     };
 

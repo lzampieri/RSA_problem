@@ -4,6 +4,7 @@
 #include <cstdlib>
 #include "Grid.h"
 #include "fftw3.h"
+#include "utils.h"
 
 class FourierCoupledGrids {
 protected:
@@ -21,9 +22,8 @@ public:
     void multiply_fft_old(double gamma);
     void multiply_fft_new(double gamma);
 
-    const std::pair< double, double > _q( std::pair< int, int > xy ) const;
+    const std::pair< double, double > _q( const GridSite& xy ) const;
     const std::pair< double, double > _q( int i ) const;
-
 };
 
 #endif
