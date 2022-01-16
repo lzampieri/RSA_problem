@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <random>
+#include <string>
 #include "Grid.h"
 #include "AdvVector.h"
 
@@ -16,61 +17,28 @@ private:
 public:
     Polymer( std::vector< GridSite > gss );
 
-    bool canStay( AdvVector& sites, int position );
+    bool canStay( Grid<int>& grid, int position );
     void depositAndClean( Grid<int>& thegrid, AdvVector& sites, int position );
+    void clean( AdvVector& sites, int position );
 };
 
 class Polymers {
 public:
     std::vector< Polymer* > variants;
     int N;
+    std::string keyname;
 
-    Polymers();
+    Polymers( std::string keyname );
     void addVariant( Polymer* p );
     Polymer* operator[]( int i );
+
+    Polymers(const Polymers&) = delete; // Copy costruction forbidden
 };
 
 namespace StdPolymers {
-
-    Polymers LinearTrimer( GridProps& gp ) {
-        Polymers ps;
-        ps.addVariant( new Polymer( vector< GridSite >{
-            GridSite( 0, 0, gp),
-            GridSite( 0, 1, gp),
-            GridSite( 0, 2, gp)
-        } ) );
-        ps.addVariant( new Polymer( vector< GridSite >{
-            GridSite( 0, 0, gp),
-            GridSite( 1, 0, gp),
-            GridSite( 2, 0, gp)
-        } ) );
-        return ps;
-    }
-
-    Polymers Dimers( GridProps& gp ) {
-        Polymers ps;
-        ps.addVariant( new Polymer( vector< GridSite >{
-            GridSite( 0, 0, gp),
-            GridSite( 0, 1, gp)
-        } ) );
-        ps.addVariant( new Polymer( vector< GridSite >{
-            GridSite( 0, 0, gp),
-            GridSite( 1, 0, gp)
-        } ) );
-        return ps;
-    }
-
-    Polymers Squared( GridProps& gp ) {
-        Polymers ps;
-        ps.addVariant( new Polymer( vector< GridSite >{
-            GridSite( 0, 0, gp),
-            GridSite( 0, 1, gp),
-            GridSite( 1, 0, gp),
-            GridSite( 1, 1, gp)
-        } ) );
-        return ps;
-    }
-
+    Polymers* LinearTrimer( GridProps& gp );
+    Polymers* Dimers( GridProps& gp );
+    Polymers* Squared( GridProps& gp );
 }
 
 #endif

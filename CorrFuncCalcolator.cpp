@@ -86,7 +86,7 @@ BaseClass<T>::BaseClass( const Grid<T>* grid ) : grid(grid) {
 
 template<class T>
 BaseClass<T>::~BaseClass() {
-    works->clear();
+    if( works ) works->clear();
     delete works;
     delete is;
     delete raw_data;

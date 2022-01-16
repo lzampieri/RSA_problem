@@ -38,9 +38,9 @@ bool Polymer::compatiblePosition_lazy( GridSite delta ) {
     return true;
 }
 
-bool Polymer::canStay( AdvVector& sites, int position ) {
+bool Polymer::canStay( Grid<int>& grid, int position ) {
     for( int i=0; i < atoms->size(); i++ ) {
-        if( !sites.isfree( atoms->at(i) + position ) )
+        if( grid( atoms->at(i) + position ) != GridSite::Free )
             return false;
     }
     return true;
@@ -56,12 +56,61 @@ void Polymer::depositAndClean( Grid<int>& thegrid, AdvVector& sites, int positio
     }
 }
 
-Polymers::Polymers() : N(0) {}
+void Polymer::clean( AdvVector& sites, int position ) {
+    for( int i=0; i < atoms->size(); i++ ) {
+        sites.remove( atoms->at(i) + position );
+    }
+    for( int i=0; i < neighbors->size(); i++ ) {
+        sites.remove( neighbors->at(i) + position );
+    }
+}
+
+Polymers::Polymers( std::string keyname ) : keyname(keyname), N(0) {}
 
 void Polymers::addVariant( Polymer* p ) {
     variants.push_back( p );
+    N++;
 }
 
 Polymer* Polymers::operator[]( int i ) {
     return variants[i];
+}
+
+Polymers* StdPolymers::LinearTrimer( GridProps& gp ) {
+    Polymers* ps = new Polymers("Linear trimer");
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 0, 1, gp),
+        GridSite( 0, 2, gp)
+    } ) );
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 1, 0, gp),
+        GridSite( 2, 0, gp)
+    } ) );
+    return ps;
+}
+
+Polymers* StdPolymers::Dimers( GridProps& gp ) {
+    Polymers* ps = new Polymers("Dimers");
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 0, 1, gp)
+    } ) );
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 1, 0, gp)
+    } ) );
+    return ps;
+}
+
+Polymers* StdPolymers::Squared( GridProps& gp ) {
+    Polymers* ps = new Polymers("Squared");
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 0, 1, gp),
+        GridSite( 1, 0, gp),
+        GridSite( 1, 1, gp)
+    } ) );
+    return ps;
 }

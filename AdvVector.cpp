@@ -23,7 +23,8 @@ bool AdvVector::isfree( int i ) {
 }
 
 bool AdvVector::remove( int i ) {
-    if( whereis[i] >= 0 ) {
+    i %= size;
+    if( whereis[i] >= 0 && last_id > 0 ) {
         data[ whereis[i] ] = data[ --last_id ];
         whereis[ data[ whereis[i] ] ] = whereis[i];
         whereis[i] = -1;

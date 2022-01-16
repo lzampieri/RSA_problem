@@ -13,8 +13,10 @@ Replicator::Replicator( int side, double defects_frac, double gamma, int n_repli
 }
 
 Replicator::~Replicator() {
-    delete CF_H;
-    delete CF_D;
+    if( corr_range > 0 ) {
+        delete CF_H;
+        delete CF_D;
+    }
 }
 
 void Replicator::enable_correlators( int corr_range ) {
@@ -24,7 +26,11 @@ void Replicator::enable_correlators( int corr_range ) {
     CF_D = new CorrFunc::Expospaced<int>   ( &g    , 1.4, this->corr_range, 1 );
 }
 
-void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D_avg ) {
+void Replicator::enable_deposition ( Polymers* to_deposit ) {
+    this->to_deposit = to_deposit;
+}
+
+void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D_avg, std::vector< int >* pol_dep ) {
 
     GridFiller::clean(g);
 
@@ -48,6 +54,9 @@ void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D
         }
     }
 
+    if( to_deposit != nullptr ) {
+        pol_dep->push_back( GridFiller::fillWithPolymers( g, *to_deposit ) );
+    }
 }
 
 string Replicator::run() {
@@ -68,14 +77,15 @@ string Replicator::run() {
     ofstream out_details( actual_path + "/details.txt");
     out_details<<"{\n\"side\":\t"<<side<<",\n\"defects_frac\":\t"<<defects_frac<<
                ",\n\"gamma\":\t"<<gamma<<",\n\"replies\":"<<n_replies<<
-               ",\n\"corr_range\":\t"<<corr_range<<"\n}"<<endl;
+               ",\n\"corr_range\":\t"<<corr_range<<",\n\"dep_polymers\":\t"<<to_deposit->keyname<<"\n}"<<endl;
     out_details.close();
 
     ss << setw( 4 ) << side << sep 
        << setw( 12 )<< defects_frac << sep
        << setw( 5 ) << gamma << sep 
        << setw( 9 ) << n_replies << sep 
-       << setw( 10 )<< corr_range << sep;
+       << setw( 10 )<< corr_range << sep
+       <<              to_deposit->keyname << sep;
 
     // Correlation function management
     vector< double >* CF_H_avg = nullptr;
@@ -85,10 +95,17 @@ string Replicator::run() {
         CF_D_avg = new vector< double > ( CF_D->is->size(), 0 );
     }
 
+    // Polymers deposition management
+    vector< int >* pol_dep = nullptr;
+    if( to_deposit != nullptr ) {
+        pol_dep = new vector< int > ();
+        pol_dep->reserve( n_replies );
+    }
+
     // Run replicas
     cout<<"[log] Starting replicas performing..."<<endl;
     for( int i=0; i < n_replies; i++ ) {
-        run_replica( CF_H_avg, CF_D_avg );
+        run_replica( CF_H_avg, CF_D_avg, pol_dep );
         cout<< "[prg] " << i << "\t/" << n_replies << '\r' <<flush;
     }
     cout<<"[log] End replicas.  "<<endl;
@@ -110,9 +127,30 @@ string Replicator::run() {
         out2_corr.close();
     }
 
+    // Print polymers deposition stuff
+    if( to_deposit != nullptr ) {
+        double sum = 0, sum2 = 0;
+        for( int i=0; i < n_replies; i++ ) {
+            sum += pol_dep->at(i);
+            sum2+= ( pol_dep->at(i)*pol_dep->at(i) );
+        }
+        double avg = sum / n_replies;
+        double std = sqrt( ( sum2 - sum*sum/n_replies ) / ( n_replies - 1 ) );
+
+        ofstream out_deposition( actual_path + "/deposition.txt");
+        out_deposition<<"{\n\"dep_polymers\":\t"<<to_deposit->keyname
+                   <<",\n\"occupation_average\":\t"<<avg
+                   <<",\n\"occupation_std\":\t"<<std
+                   <<",\n\"occupation_fraction_average\":\t"<< avg / (side*side)
+                   <<",\n\"occupation_fraction_std\":\t"<<std / (side*side)
+                   <<"\n}"<<endl;
+        out_deposition.close();
+    }
+
     // Clean
     delete CF_H_avg;
     delete CF_D_avg;
+    delete pol_dep;
 
     // Return a string in the form PATHNAME | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE
     return ss.str();
@@ -122,5 +160,6 @@ string Replicator::run() {
 std::string Replicator::run_replicator( ReplicatorParams params ) {
     Replicator r( params.side, params.defects_frac, params.gamma, params.n_replies );
     if( params.corr_range > 0 ) r.enable_correlators( params.corr_range );
+    if( params.to_deposit != nullptr ) r.enable_deposition( params.to_deposit );
     return r.run();
 }

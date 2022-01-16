@@ -67,21 +67,29 @@ int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
         site = sites[var].rnd();
 
         // If the site can host the polymer
-        if( polys[var]->canStay( sites[var], site ) ) {
+        if( polys[var]->canStay( tofill, site ) ) {
 
             // Deposit and remove occupied sites
-            polys[var]->depositAndClean( tofill, sites[var], site );
-            dep_atoms += polys.N;
+            for( int i=0; i < polys.N; i++ ) {
+                if( i == var ) 
+                    polys[i]->depositAndClean( tofill, sites[i], site );
+                else
+                    polys[i]->clean( sites[i], site );
+
+                // If this variant cannot be more deposited, remove
+                if( sites[i].empty() )
+                    variants.remove( i );
+            }
+
+            dep_atoms += polys[var]->atoms->size();
             
         } else {
             
             // Else remove the site
             sites[var].remove( site );
+            if( sites[var].empty() )
+                variants.remove( var );
         }
-
-        // If this variant cannot be more deposited, remove
-        if( sites[var].empty() )
-            variants.remove( var );
     }
 
     return dep_atoms;
