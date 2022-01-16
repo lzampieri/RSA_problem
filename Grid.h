@@ -51,7 +51,7 @@ private:
 
 public:
     GridSite(int X, int Y, const GridProps& gp);
-    template<class T> GridSite(int I, const GridProps& gp);
+    GridSite(int I, const GridProps& gp);
     GridSite(const GridSite& G);
 
     // Read-only access to X and Y
@@ -65,9 +65,9 @@ public:
     void setX(int newX);
     void setY(int newY);
     GridSite& operator= (const GridSite& gs);
-    GridSite& operator+(const GridSite& xy2);
+    GridSite& operator+=(const GridSite& xy2);
     friend GridSite operator+(const GridSite& xy, const GridSite& xy2);
-    GridSite& operator-(const GridSite& xy2);
+    GridSite& operator-=(const GridSite& xy2);
     friend GridSite operator-(const GridSite& xy, const GridSite& xy2);
     friend bool operator== (const GridSite& xy1, const GridSite& xy2);
     friend bool operator!= (const GridSite& xy1, const GridSite& xy2);
@@ -77,9 +77,9 @@ public:
     using GridProps::d;
     double d(const GridSite& xy2);
 
-    static const int Defect = 1;
+    static const int Defect = -1;
     static const int Free = 0;
-    static const int Atom = -1;
+    static const int Atom = 1;
 };
 
 template<class T>

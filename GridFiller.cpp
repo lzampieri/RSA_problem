@@ -71,10 +71,10 @@ int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
 
             // Deposit and remove occupied sites
             for( int i=0; i < polys.N; i++ ) {
-                if( i == var ) 
+                if( i == var )
                     polys[i]->depositAndClean( tofill, sites[i], site );
                 else
-                    polys[i]->clean( sites[i], site );
+                    polys[i]->clean( tofill, sites[i], site );
 
                 // If this variant cannot be more deposited, remove
                 if( sites[i].empty() )

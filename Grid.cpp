@@ -56,7 +56,7 @@ double GridProps::d(const GridSite& xy1, const GridSite& xy2 ) const {
 // Constructors
 
 GridSite::GridSite(int X, int Y, const GridProps& gp) : GridProps(gp) { setX(X); setY(Y); }
-template<class T> GridSite::GridSite(int I, const GridProps& gp) : GridSite( gp._xy(I) ) {}
+GridSite::GridSite(int I, const GridProps& gp) : GridSite( gp._xy(I) ) {}
 GridSite::GridSite(const GridSite& G) : GridProps( G ) { setX(G.X); setY(G.Y); }
 
 // Access to I
@@ -67,11 +67,11 @@ int GridSite::I() const {
 // Operators
 
 void GridSite::setX(int newX) {
-    _X = _pbc_x(newX);
+    _X = _pbc_x( newX );
 }
 
 void GridSite::setY(int newY) {
-    _Y = _pbc_y(newY);
+    _Y = _pbc_y( newY );
 }
 
 GridSite& GridSite::operator= (const GridSite& gs) {
@@ -82,17 +82,17 @@ GridSite& GridSite::operator= (const GridSite& gs) {
     return *this;
 }
 
-GridSite& GridSite::operator+(const GridSite& xy2) {
+GridSite& GridSite::operator+= (const GridSite& xy2) {
     setX( X + xy2.X );
     setY( Y + xy2.Y );
     return *this;
 }
 
-GridSite operator+(const GridSite& xy, const GridSite& xy2) {
+GridSite operator+ (const GridSite& xy, const GridSite& xy2) {
     return GridSite( xy.X + xy2.X, xy.Y + xy2.Y, xy );
 }
 
-GridSite& GridSite::operator-(const GridSite& xy2) {
+GridSite& GridSite::operator-=(const GridSite& xy2) {
     setX( X - xy2.X );
     setY( Y - xy2.Y );
     return *this;
@@ -168,8 +168,9 @@ template<class T>
 void Grid<T>::print_data(const char* filename) const {
     ofstream out(filename);
     for(int i=0; i<d1; i++)
-        for(int j=0; j<d2; j++)
+        for(int j=0; j<d2; j++) {
             out<<i<<'\t'<<j<<'\t'<<operator()(i,j)<<'\n';
+        }
     out.close();
 }
 

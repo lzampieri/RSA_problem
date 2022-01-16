@@ -9,8 +9,8 @@
 
 class Polymer : public GridProps {
 public:
-    std::vector< int >* atoms;
-    std::vector< int >* neighbors;
+    std::vector< GridSite >* atoms;
+    std::vector< GridSite >* neighbors;
 
 private:
     bool compatiblePosition_lazy( GridSite delta );
@@ -19,7 +19,7 @@ public:
 
     bool canStay( Grid<int>& grid, int position );
     void depositAndClean( Grid<int>& thegrid, AdvVector& sites, int position );
-    void clean( AdvVector& sites, int position );
+    void clean( const GridProps& gp, AdvVector& sites, int position );
 };
 
 class Polymers {
@@ -36,7 +36,8 @@ public:
 };
 
 namespace StdPolymers {
-    Polymers* LinearTrimer( GridProps& gp );
+    Polymers* LinearTrimers( GridProps& gp );
+    Polymers* LinearPentamers( GridProps& gp );
     Polymers* Dimers( GridProps& gp );
     Polymers* Squared( GridProps& gp );
 }

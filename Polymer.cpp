@@ -6,11 +6,11 @@ Polymer::Polymer( std::vector< GridSite > gss ) : GridProps( gss[0] ) {
     int maxx = -INT_MAX, maxy = -INT_MAX;
     int minx =  INT_MAX, miny =  INT_MAX;
 
-    atoms = new vector<int>();
-    neighbors = new vector<int>();
+    atoms = new vector< GridSite >();
+    neighbors = new vector< GridSite >();
 
     for( int i=0; i < gss.size(); i++ ) {
-        atoms->push_back( gss[i].I() );
+        atoms->push_back( gss[i] );
         maxx = max( maxx, gss[i].X );
         maxy = min( maxy, gss[i].Y );
         minx = max( minx, gss[i].X );
@@ -21,7 +21,7 @@ Polymer::Polymer( std::vector< GridSite > gss ) : GridProps( gss[0] ) {
         for( int y=miny; y <= maxy; y++ ) {
             GridSite delta( x, y, *this );
             if( !compatiblePosition_lazy( delta ) ) {
-                neighbors->push_back( delta.I() );
+                neighbors->push_back( delta );
             }
         }
     }
@@ -29,9 +29,9 @@ Polymer::Polymer( std::vector< GridSite > gss ) : GridProps( gss[0] ) {
 
 bool Polymer::compatiblePosition_lazy( GridSite delta ) {
     for( int i=0; i < atoms->size(); i++ ) {
-        int moved_i = ( _xy( atoms->at(i) ) + delta ).I();
+        GridSite moved = atoms->at(i) + delta;
         for( int j=0; j < atoms->size(); j++ ) {
-            if( moved_i == atoms->at(i) )
+            if( moved == atoms->at(i) )
                 return false;
         }
     }
@@ -40,28 +40,30 @@ bool Polymer::compatiblePosition_lazy( GridSite delta ) {
 
 bool Polymer::canStay( Grid<int>& grid, int position ) {
     for( int i=0; i < atoms->size(); i++ ) {
-        if( grid( atoms->at(i) + position ) != GridSite::Free )
+        if( grid( atoms->at(i) + GridSite( position, grid ) ) != GridSite::Free )
             return false;
     }
     return true;
 }
 
 void Polymer::depositAndClean( Grid<int>& thegrid, AdvVector& sites, int position ) {
+    GridSite pos( position, thegrid );
     for( int i=0; i < atoms->size(); i++ ) {
-        sites.remove( atoms->at(i) + position );
-        thegrid( atoms->at(i) + position ) = GridSite::Atom;
+        sites.remove( ( atoms->at(i) + pos ).I() );
+        thegrid( atoms->at(i) + pos ) = GridSite::Atom;
     }
     for( int i=0; i < neighbors->size(); i++ ) {
-        sites.remove( neighbors->at(i) + position );
+        sites.remove( ( neighbors->at(i) + pos ).I() );
     }
 }
 
-void Polymer::clean( AdvVector& sites, int position ) {
+void Polymer::clean( const GridProps& gp, AdvVector& sites, int position ) {
+    GridSite pos( position, gp );
     for( int i=0; i < atoms->size(); i++ ) {
-        sites.remove( atoms->at(i) + position );
+        sites.remove( ( atoms->at(i) + pos ).I() );
     }
     for( int i=0; i < neighbors->size(); i++ ) {
-        sites.remove( neighbors->at(i) + position );
+        sites.remove( ( neighbors->at(i) + pos ).I() );
     }
 }
 
@@ -76,7 +78,7 @@ Polymer* Polymers::operator[]( int i ) {
     return variants[i];
 }
 
-Polymers* StdPolymers::LinearTrimer( GridProps& gp ) {
+Polymers* StdPolymers::LinearTrimers( GridProps& gp ) {
     Polymers* ps = new Polymers("Linear trimer");
     ps->addVariant( new Polymer( std::vector< GridSite >{
         GridSite( 0, 0, gp),
@@ -87,6 +89,25 @@ Polymers* StdPolymers::LinearTrimer( GridProps& gp ) {
         GridSite( 0, 0, gp),
         GridSite( 1, 0, gp),
         GridSite( 2, 0, gp)
+    } ) );
+    return ps;
+}
+
+Polymers* StdPolymers::LinearPentamers( GridProps& gp ) {
+    Polymers* ps = new Polymers("Linear trimer");
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 0, 1, gp),
+        GridSite( 0, 2, gp),
+        GridSite( 0, 3, gp),
+        GridSite( 0, 4, gp)
+    } ) );
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 1, 0, gp),
+        GridSite( 2, 0, gp),
+        GridSite( 3, 0, gp),
+        GridSite( 4, 0, gp)
     } ) );
     return ps;
 }

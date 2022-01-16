@@ -4,7 +4,8 @@ using namespace std;
 
 Replicator::Replicator( int side, double defects_frac, double gamma, int n_replies, std::string save_path ) :
     side( side ), defects_frac( defects_frac ), gamma( gamma ), n_replies( n_replies ),
-    corr_range( -1 ), fcg( side ), g( side ) {
+    corr_range( -1 ), to_deposit( nullptr ), draw( false ),
+    fcg( side ), g( side ) {
     
     if( save_path == "" )
         this->save_path = date::format("%Y%m%d", chrono::system_clock::now());
@@ -30,7 +31,11 @@ void Replicator::enable_deposition ( Polymers* to_deposit ) {
     this->to_deposit = to_deposit;
 }
 
-void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D_avg, std::vector< int >* pol_dep ) {
+void Replicator::enable_drawing() {
+    draw = true;
+}
+
+void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D_avg, vector< int >* pol_dep, string draw_file ) {
 
     GridFiller::clean(g);
 
@@ -57,6 +62,11 @@ void Replicator::run_replica( vector< double >* CF_H_avg, vector< double >* CF_D
     if( to_deposit != nullptr ) {
         pol_dep->push_back( GridFiller::fillWithPolymers( g, *to_deposit ) );
     }
+
+    if( draw_file != "" ) {
+        // Print drawing
+        g.print_data( draw_file.c_str() );
+    }
 }
 
 string Replicator::run() {
@@ -77,7 +87,7 @@ string Replicator::run() {
     ofstream out_details( actual_path + "/details.txt");
     out_details<<"{\n\"side\":\t"<<side<<",\n\"defects_frac\":\t"<<defects_frac<<
                ",\n\"gamma\":\t"<<gamma<<",\n\"replies\":"<<n_replies<<
-               ",\n\"corr_range\":\t"<<corr_range<<",\n\"dep_polymers\":\t"<<to_deposit->keyname<<"\n}"<<endl;
+               ",\n\"corr_range\":\t"<<corr_range<<",\n\"dep_polymers\":\t"<< (to_deposit == nullptr ? "" : to_deposit->keyname) <<"\n}"<<endl;
     out_details.close();
 
     ss << setw( 4 ) << side << sep 
@@ -85,7 +95,7 @@ string Replicator::run() {
        << setw( 5 ) << gamma << sep 
        << setw( 9 ) << n_replies << sep 
        << setw( 10 )<< corr_range << sep
-       <<              to_deposit->keyname << sep;
+       << (to_deposit == nullptr ? "" : to_deposit->keyname) << sep;
 
     // Correlation function management
     vector< double >* CF_H_avg = nullptr;
@@ -105,7 +115,7 @@ string Replicator::run() {
     // Run replicas
     cout<<"[log] Starting replicas performing..."<<endl;
     for( int i=0; i < n_replies; i++ ) {
-        run_replica( CF_H_avg, CF_D_avg, pol_dep );
+        run_replica( CF_H_avg, CF_D_avg, pol_dep, draw ? actual_path + "/draw_" + to_string(i) + ".txt" : "" );
         cout<< "[prg] " << i << "\t/" << n_replies << '\r' <<flush;
     }
     cout<<"[log] End replicas.  "<<endl;
@@ -161,5 +171,6 @@ std::string Replicator::run_replicator( ReplicatorParams params ) {
     Replicator r( params.side, params.defects_frac, params.gamma, params.n_replies );
     if( params.corr_range > 0 ) r.enable_correlators( params.corr_range );
     if( params.to_deposit != nullptr ) r.enable_deposition( params.to_deposit );
+    if( params.draw ) r.enable_drawing( );
     return r.run();
 }
