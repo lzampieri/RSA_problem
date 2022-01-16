@@ -42,17 +42,17 @@ void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,co
 int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
 
     AdvVector variants( polys.N );
-    vector< AdvVector > sites;
+    vector< AdvVector* > sites;
     for( int i=0; i < polys.N; i++ )
-        sites.push_back( AdvVector( tofill.imax() ) );
+        sites.push_back( new AdvVector( tofill.imax() ) );
 
     // Remove not-free sites
     for( int v=0; v < polys.N; v++ ) {
         for( int i=0; i < tofill.imax(); i++ )
             if( !tofill(i) == GridSite::Free )
-                sites[v].remove(i);
+                sites[v]->remove(i);
 
-        if( sites[v].empty() ) variants.remove( v );
+        if( sites[v]->empty() ) variants.remove( v );
     }
 
     int dep_atoms = 0;
@@ -64,7 +64,7 @@ int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
         var = variants.rnd();
 
         // Select a random site
-        site = sites[var].rnd();
+        site = sites[var]->rnd();
 
         // If the site can host the polymer
         if( polys[var]->canStay( tofill, site ) ) {
@@ -72,12 +72,12 @@ int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
             // Deposit and remove occupied sites
             for( int i=0; i < polys.N; i++ ) {
                 if( i == var )
-                    polys[i]->depositAndClean( tofill, sites[i], site );
+                    polys[i]->depositAndClean( tofill, *sites[i], site );
                 else
-                    polys[i]->clean( tofill, sites[i], site );
+                    polys[i]->clean( tofill, *sites[i], site );
 
                 // If this variant cannot be more deposited, remove
-                if( sites[i].empty() )
+                if( sites[i]->empty() )
                     variants.remove( i );
             }
 
@@ -86,11 +86,15 @@ int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
         } else {
             
             // Else remove the site
-            sites[var].remove( site );
-            if( sites[var].empty() )
+            sites[var]->remove( site );
+            if( sites[var]->empty() )
                 variants.remove( var );
         }
     }
+
+    // Clean
+    for( int i=0; i < polys.N; i++ )
+        delete sites[i];
 
     return dep_atoms;
 }

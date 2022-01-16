@@ -16,6 +16,7 @@ private:
     bool compatiblePosition_lazy( GridSite delta );
 public:
     Polymer( std::vector< GridSite > gss );
+    ~Polymer();
 
     bool canStay( Grid<int>& grid, int position );
     void depositAndClean( Grid<int>& thegrid, AdvVector& sites, int position );
@@ -29,6 +30,8 @@ public:
     std::string keyname;
 
     Polymers( std::string keyname );
+    ~Polymers();
+    
     void addVariant( Polymer* p );
     Polymer* operator[]( int i );
 

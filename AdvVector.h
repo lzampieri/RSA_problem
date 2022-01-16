@@ -14,6 +14,8 @@ private:
 
 public:
     AdvVector( int size );
+    AdvVector(const AdvVector&) = delete; // Copy costruction forbidden
+    ~AdvVector();
     void reset();
 
     bool isfree( int i );

@@ -10,6 +10,11 @@ AdvVector::AdvVector( int size ) : size( size ) {
     reset();
 }
 
+AdvVector::~AdvVector() {
+    delete[] data;
+    delete[] whereis;
+}
+
 void AdvVector::reset() {
     for( int i=0; i < size; i++ ) {
         data[i] = i;

@@ -27,6 +27,13 @@ Polymer::Polymer( std::vector< GridSite > gss ) : GridProps( gss[0] ) {
     }
 }
 
+Polymer::~Polymer() {
+    atoms->clear();
+    delete atoms;
+    neighbors->clear();
+    delete neighbors;
+}
+
 bool Polymer::compatiblePosition_lazy( GridSite delta ) {
     for( int i=0; i < atoms->size(); i++ ) {
         GridSite moved = atoms->at(i) + delta;
@@ -68,6 +75,10 @@ void Polymer::clean( const GridProps& gp, AdvVector& sites, int position ) {
 }
 
 Polymers::Polymers( std::string keyname ) : keyname(keyname), N(0) {}
+
+Polymers::~Polymers() {
+    variants.clear();
+}
 
 void Polymers::addVariant( Polymer* p ) {
     variants.push_back( p );
