@@ -90,7 +90,7 @@ Polymer* Polymers::operator[]( int i ) {
 }
 
 Polymers* StdPolymers::LinearTrimers( GridProps& gp ) {
-    Polymers* ps = new Polymers("Linear trimer");
+    Polymers* ps = new Polymers("Linear trimers");
     ps->addVariant( new Polymer( std::vector< GridSite >{
         GridSite( 0, 0, gp),
         GridSite( 0, 1, gp),
@@ -104,8 +104,43 @@ Polymers* StdPolymers::LinearTrimers( GridProps& gp ) {
     return ps;
 }
 
+Polymers* StdPolymers::Trimers( GridProps& gp ) {
+    Polymers* ps = new Polymers("Trimers");
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 0, 1, gp),
+        GridSite( 0, 2, gp)
+    } ) );
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 1, 0, gp),
+        GridSite( 2, 0, gp)
+    } ) );
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 1, 0, gp),
+        GridSite( 1, 1, gp)
+    } ) );
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 0, 1, gp),
+        GridSite( 1, 1, gp)
+    } ) );
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite(-1, 0, gp),
+        GridSite( 0,-1, gp)
+    } ) );
+    ps->addVariant( new Polymer( std::vector< GridSite >{
+        GridSite( 0, 0, gp),
+        GridSite( 1, 0, gp),
+        GridSite( 0, 1, gp)
+    } ) );
+    return ps;
+}
+
 Polymers* StdPolymers::LinearPentamers( GridProps& gp ) {
-    Polymers* ps = new Polymers("Linear trimer");
+    Polymers* ps = new Polymers("Linear pentamers");
     ps->addVariant( new Polymer( std::vector< GridSite >{
         GridSite( 0, 0, gp),
         GridSite( 0, 1, gp),

@@ -4,5 +4,5 @@
 "gamma":	1,
 "replies":100,
 "corr_range":	-1,
-"dep_polymers":	Linear trimer
+"dep_polymers":	"Linear trimers"
 }

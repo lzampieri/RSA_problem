@@ -40,6 +40,7 @@ public:
 
 namespace StdPolymers {
     Polymers* LinearTrimers( GridProps& gp );
+    Polymers* Trimers( GridProps& gp );
     Polymers* LinearPentamers( GridProps& gp );
     Polymers* Dimers( GridProps& gp );
     Polymers* Squared( GridProps& gp );

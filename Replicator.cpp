@@ -87,7 +87,7 @@ string Replicator::run() {
     ofstream out_details( actual_path + "/details.txt");
     out_details<<"{\n\"side\":\t"<<side<<",\n\"defects_frac\":\t"<<defects_frac<<
                ",\n\"gamma\":\t"<<gamma<<",\n\"replies\":"<<n_replies<<
-               ",\n\"corr_range\":\t"<<corr_range<<",\n\"dep_polymers\":\t"<< (to_deposit == nullptr ? "" : to_deposit->keyname) <<"\n}"<<endl;
+               ",\n\"corr_range\":\t"<<corr_range<<",\n\"dep_polymers\":\t\""<< (to_deposit == nullptr ? "" : to_deposit->keyname) <<"\"\n}"<<endl;
     out_details.close();
 
     ss << setw( 4 ) << side << sep 
@@ -148,7 +148,7 @@ string Replicator::run() {
         double std = sqrt( ( sum2 - sum*sum/n_replies ) / ( n_replies - 1 ) );
 
         ofstream out_deposition( actual_path + "/deposition.txt");
-        out_deposition<<"{\n\"dep_polymers\":\t"<<to_deposit->keyname
+        out_deposition<<"{\n\"dep_polymers\":\t\""<<to_deposit->keyname<<"\""
                    <<",\n\"occupation_average\":\t"<<avg
                    <<",\n\"occupation_std\":\t"<<std
                    <<",\n\"occupation_fraction_average\":\t"<< avg / (side*side)

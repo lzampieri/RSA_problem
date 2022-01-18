@@ -10,49 +10,23 @@
 using namespace std;
 
 int main() {
-    int side = 1024;
     int n_replies = 100;
+    int sides[] = { 64, 128, 256, 512, 1024, 2048 };
+    double gammas[] = { 0.2, 0.6, 1.0, 1.4 };
+    double dfs[] = { 0.2, 0.3, 0.4, 0.5 };
     bool draw = false;
-    GridProps gp( side );
-    Polymers* dim = StdPolymers::Dimers( gp );
-    Polymers* tri = StdPolymers::LinearTrimers( gp );
-    ReplicatorParams rp[] = {
-        // Size DefectsFracs Gamma NReplies CorrRange Polymers Draw
-        ReplicatorParams( side, 0.2, 0.2, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.2, 0.6, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.2, 1.0, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.2, 1.4, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.3, 0.2, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.3, 0.6, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.3, 1.0, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.3, 1.4, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.4, 0.2, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.4, 0.6, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.4, 1.0, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.4, 1.4, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.5, 0.2, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.5, 0.6, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.5, 1.0, n_replies, -1, dim, draw ),
-        ReplicatorParams( side, 0.5, 1.4, n_replies, -1, dim, draw ),
 
-        ReplicatorParams( side, 0.2, 0.2, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.2, 0.6, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.2, 1.0, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.2, 1.4, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.3, 0.2, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.3, 0.6, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.3, 1.0, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.3, 1.4, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.4, 0.2, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.4, 0.6, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.4, 1.0, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.4, 1.4, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.5, 0.2, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.5, 0.6, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.5, 1.0, n_replies, -1, tri, draw ),
-        ReplicatorParams( side, 0.5, 1.4, n_replies, -1, tri, draw )
-    };
-
+    vector< ReplicatorParams > rp;
+    for( int s : sides ) {
+        GridProps gp( s );
+        Polymers* pols[] = { StdPolymers::Dimers( gp ), StdPolymers::Trimers( gp ), StdPolymers::LinearTrimers( gp ), StdPolymers::Squared( gp ) };
+        for( double g : gammas )
+            for( double df : dfs )
+                for( Polymers* p : pols )
+                    // Size DefectsFracs Gamma NReplies CorrRange Polymers Draw
+                    rp.push_back( ReplicatorParams ( s, df, g, n_replies, -1, p, draw ) );
+    }
+        
     ofstream log( "log.txt", ios_base::app );
     log << "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
     log << "PATHNAME\t | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS\n";
