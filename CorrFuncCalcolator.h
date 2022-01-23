@@ -9,6 +9,7 @@
 #include <algorithm>
 #include <climits>
 #include <cstring>
+#include <string>
 #include "Grid.h"
 
 #include <thread>
@@ -43,8 +44,14 @@ namespace CorrFunc {
         double std;
     };
 
+    class Model {
+    public:
+        std::vector< int > is;
+        std::string keyname;
+    };
+
     template<class T>
-    class BaseClass {
+    class Calculator {
 
     private:
         std::mutex works_i_mutex;
@@ -62,12 +69,9 @@ namespace CorrFunc {
         std::vector< RawDatapoint >* raw_data;
         std::vector< Datapoint >* final_data;
 
-        BaseClass( const Grid<T>* grid );
-
-        void auto_populate_works(std::map<int,int>& to_add,int max_v=-1);
-
     public:
-        ~BaseClass();
+        Calculator( Model* model, const Grid<T>* grid );
+        ~Calculator();
         
         std::vector< int >* is;
         const std::vector< Datapoint >* compute_corr_function();
@@ -75,24 +79,18 @@ namespace CorrFunc {
 
     };
 
-    template<class T>
-    class Equispaced : public BaseClass<T> {
+    class Equispaced : public Model {
     public:
-        Equispaced(const Grid<T>* grid, int start, int end, int step);
+        Equispaced(int start, int end, int step);
     };
 
-    template<class T>
-    class Expospaced : public BaseClass<T> {
+    class Expospaced : public Model {
     public:
-        Expospaced(const Grid<T>* grid, double base, int maxval, int exp_step);
+        Expospaced(double base, int maxval, int exp_step);
     };
 
-    template class BaseClass<double>;
-    template class BaseClass<int>;    
-    template class Equispaced<double>;
-    template class Equispaced<int>;    
-    template class Expospaced<double>;
-    template class Expospaced<int>;
+    template class Calculator<double>;
+    template class Calculator<int>;  
 
 }
 

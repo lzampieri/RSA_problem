@@ -4,7 +4,7 @@ using namespace std;
 using namespace CorrFunc;
 
 template<class T>
-void BaseClass<T>::_thread_postman( ) {
+void Calculator<T>::_thread_postman( ) {
     works_i_mutex.lock();
     while( works_i < works->size() ) {
         Work* todo = works->at( works_i );
@@ -19,7 +19,7 @@ void BaseClass<T>::_thread_postman( ) {
 }
 
 template<class T>
-void BaseClass<T>::_thread_worker( Work* work ) {
+void Calculator<T>::_thread_worker( Work* work ) {
     double sum = 0, sum2 = 0;
     int count = 0;
     GridSite v = work->v;
@@ -70,23 +70,41 @@ void BaseClass<T>::_thread_worker( Work* work ) {
 }
 
 template<class T>
-void BaseClass<T>::_thread_update_rawdata( RawDatapoint rdp, int raw_data_i ) {
+void Calculator<T>::_thread_update_rawdata( RawDatapoint rdp, int raw_data_i ) {
     raw_data_mutex.lock();
     raw_data->at(raw_data_i) += rdp;
     raw_data_mutex.unlock();
 }
 
 template<class T>
-BaseClass<T>::BaseClass( const Grid<T>* grid ) : grid(grid) {
+Calculator<T>::Calculator( Model* model, const Grid<T>* grid ) : grid(grid) {
     works = new vector< Work* >();
     is = new vector< int >();
-    raw_data = new vector< RawDatapoint >();
-    final_data = new vector< Datapoint >();
+    map<int,int> themap;
+    int max_dist = grid->d1;
+
+    for( int i=0; i < model->is.size(); i++ ) {
+        is->push_back( model->is[i] );
+        themap[i] = model->is[i];
+        max_dist = max( max_dist, model->is[i] );
+    }
+
+    for(int v1 = 0; v1 < max_dist; v1++ ) {
+        for(int v2 = v1; v2 < max_dist; v2++) {
+            auto i = themap.find( grid->d(0,0,v1,v2) );
+            if( i != themap.end() ) {
+                works->push_back( new Work( GridSite( v1, v2, *grid ), i->second ) );
+            }
+        }
+    }
+    cout<<"[log] Operations necessary for computing correlator: "<< this->works->size() <<endl;
+
+    raw_data = new vector< RawDatapoint >( model->is.size(), RawDatapoint( 0, 0, 0 ) );
+    final_data = new vector< Datapoint >( model->is.size(), Datapoint( 0, 0 ) );
 }
 
 template<class T>
-BaseClass<T>::~BaseClass() {
-    if( works ) works->clear();
+Calculator<T>::~Calculator() {
     delete works;
     delete is;
     delete raw_data;
@@ -94,21 +112,7 @@ BaseClass<T>::~BaseClass() {
 }
 
 template<class T>
-void BaseClass<T>::auto_populate_works(map<int,int>& to_add, int max_v) {
-    if( max_v == -1 ) max_v = grid->d1;
-    for(int v1 = 0; v1 < max_v; v1++ ) {
-        for(int v2 = v1; v2 < max_v; v2++) {
-            auto i = to_add.find( grid->d(0,0,v1,v2) );
-            if( i != to_add.end() ) {
-                this->works->push_back( new Work( GridSite( v1, v2, *grid ), i->second ) );
-            }
-        }
-    }
-    cout<<"[log] Operations necessary for computing correlator: "<< this->works->size() <<endl;
-}
-
-template<class T>
-const vector< Datapoint >* BaseClass<T>::compute_corr_function() {
+const vector< Datapoint >* Calculator<T>::compute_corr_function() {
     vector<thread*> threads;
     threads.reserve( CORRFUNC_MAX_THREADS );
 
@@ -148,7 +152,7 @@ const vector< Datapoint >* BaseClass<T>::compute_corr_function() {
 }
 
 template<class T>
-void BaseClass<T>::print_corr( const char* filename ) {
+void Calculator<T>::print_corr( const char* filename ) {
     ostream* out;
     if( strlen( filename ) > 0 )
         out = new ofstream(filename);
@@ -164,24 +168,14 @@ void BaseClass<T>::print_corr( const char* filename ) {
     delete out;
 }
 
-template<class T>
-Equispaced<T>::Equispaced(const Grid<T>* grid, int start, int end, int step) : BaseClass<T>(grid) {
-    map<int,int> themap;
-
+Equispaced::Equispaced(int start, int end, int step) {
     for( int i = start; i < end; i+=step ) {
-        this->is->push_back( i );
-        this->final_data->push_back( Datapoint( 0, 0 ) );
-        this->raw_data->push_back( RawDatapoint( 0, 0, 0 ) );
-        themap[i] = this->final_data->size() - 1 ;
+        is.push_back( i );
     }
-
-    this->auto_populate_works(themap, end);
+    keyname = "Equispaced " + to_string( end );
 }
 
-template<class T>
-Expospaced<T>::Expospaced(const Grid<T>* grid, double base, int maxval, int exp_step) : BaseClass<T>(grid) {
-    map<int,int> themap;
-
+Expospaced::Expospaced(double base, int maxval, int exp_step) {
     int exp = 0;
     int val = 1;
     auto update_val = [&exp, &val, maxval, exp_step, base] () {
@@ -194,11 +188,7 @@ Expospaced<T>::Expospaced(const Grid<T>* grid, double base, int maxval, int exp_
     };
 
     do {
-        this->is->push_back( val );
-        this->final_data->push_back( Datapoint( 0, 0 ) );
-        this->raw_data->push_back( RawDatapoint( 0, 0, 0 ) );
-        themap[val] = this->final_data->size() - 1 ;
+        is.push_back( val );
     } while( update_val() );
-
-    this->auto_populate_works(themap, maxval);
+    keyname = "Expospaced " + to_string( maxval );
 }

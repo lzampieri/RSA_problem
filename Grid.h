@@ -9,6 +9,7 @@
 #include <tuple>
 #include <iostream>
 #include <fstream>
+#include <string>
 #include <algorithm>
 
 #define M_PI 3.14159265
@@ -96,7 +97,7 @@ public:
     void normalize();
     void gaussian_center_and_normalize();
 
-    void print_data(const char* filename) const;
+    void print_data(const std::string filename) const;
 
     // Access
     T& operator[](const int i) const; // i \in [0,d1*d2[

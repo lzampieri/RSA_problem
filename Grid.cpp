@@ -165,7 +165,7 @@ void Grid<T>::gaussian_center_and_normalize() {
 }
 
 template<class T>
-void Grid<T>::print_data(const char* filename) const {
+void Grid<T>::print_data(const string filename) const {
     ofstream out(filename);
     for(int i=0; i<d1; i++)
         for(int j=0; j<d2; j++) {
