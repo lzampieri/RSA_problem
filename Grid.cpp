@@ -120,6 +120,11 @@ double GridSite::d(const GridSite& xy2) {
     return d(*this, xy2);
 }
 
+// Utils
+bool GridSite::last_row() const {
+    return _Y == d2 - 1;
+}
+
 // Grid
 // Constructors
 
@@ -178,20 +183,15 @@ void Grid<T>::print_data(const string filename) const {
 
 template<class T>
 T& Grid<T>::operator[](const int i) const {
-    return operator()(i);
-}
-
-template<class T>
-T& Grid<T>::operator()(const int i) const {
     return u->at( _pbc_i(i) );
 }
 
 template<class T>
-T& Grid<T>::operator()(const GridSite xy) const {
+T& Grid<T>::operator[](const GridSite xy) const {
     return u->at( xy.I() );
 }
 
 template<class T>
 T& Grid<T>::operator()(const int x, const int y) const {
-    return operator()( GridSite( x, y, *this ) );
+    return operator[]( GridSite( x, y, *this ) );
 }

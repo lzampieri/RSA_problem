@@ -248,3 +248,465 @@ PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
 20220123_128	 |  256 |          0.2 |   0.2 |       100 |  | Dimers | 
 20220123_129	 |  256 |          0.2 |   0.2 |       100 |  | Trimers | 
 20220123_130	 |  256 |          0.2 |   0.2 |       100 |  | Linear trimers | 
+=== 20220128 19:02 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_0	 |   64 |          0.2 |   0.2 |       100 |  | Dimers |  | 
+20220128_1	 |   64 |          0.2 |   0.2 |       100 |  | Trimers |  | 
+20220128_2	 |   64 |          0.2 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_3	 |   64 |          0.2 |   0.2 |       100 |  | Squared |  | 
+20220128_4	 |   64 |          0.3 |   0.2 |       100 |  | Dimers |  | 
+20220128_5	 |   64 |          0.3 |   0.2 |       100 |  | Trimers |  | 
+20220128_6	 |   64 |          0.3 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_7	 |   64 |          0.3 |   0.2 |       100 |  | Squared |  | 
+20220128_8	 |   64 |          0.4 |   0.2 |       100 |  | Dimers |  | 
+20220128_9	 |   64 |          0.4 |   0.2 |       100 |  | Trimers |  | 
+20220128_10	 |   64 |          0.4 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_11	 |   64 |          0.4 |   0.2 |       100 |  | Squared |  | 
+20220128_12	 |   64 |          0.5 |   0.2 |       100 |  | Dimers |  | 
+20220128_13	 |   64 |          0.5 |   0.2 |       100 |  | Trimers |  | 
+20220128_14	 |   64 |          0.5 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_15	 |   64 |          0.5 |   0.2 |       100 |  | Squared |  | 
+20220128_16	 |   64 |          0.2 |   0.6 |       100 |  | Dimers |  | 
+=== 20220128 19:04 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_18	 |   64 |          0.2 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_19	 |   64 |          0.2 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_20	 |   64 |          0.2 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_21	 |   64 |          0.2 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_22	 |   64 |          0.3 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_23	 |   64 |          0.3 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_24	 |   64 |          0.3 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_25	 |   64 |          0.3 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_26	 |   64 |          0.4 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_27	 |   64 |          0.4 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_28	 |   64 |          0.4 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_29	 |   64 |          0.4 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_30	 |   64 |          0.5 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_31	 |   64 |          0.5 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_32	 |   64 |          0.5 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_33	 |   64 |          0.5 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_34	 |   64 |          0.2 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_35	 |   64 |          0.2 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_36	 |   64 |          0.2 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_37	 |   64 |          0.2 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_38	 |   64 |          0.3 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_39	 |   64 |          0.3 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_40	 |   64 |          0.3 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_41	 |   64 |          0.3 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_42	 |   64 |          0.4 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_43	 |   64 |          0.4 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_44	 |   64 |          0.4 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_45	 |   64 |          0.4 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_46	 |   64 |          0.5 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_47	 |   64 |          0.5 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_48	 |   64 |          0.5 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_49	 |   64 |          0.5 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_50	 |   64 |          0.2 |     1 |       100 |  | Dimers | Percolation | 
+20220128_51	 |   64 |          0.2 |     1 |       100 |  | Trimers | Percolation | 
+20220128_52	 |   64 |          0.2 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_53	 |   64 |          0.2 |     1 |       100 |  | Squared | Percolation | 
+20220128_54	 |   64 |          0.3 |     1 |       100 |  | Dimers | Percolation | 
+20220128_55	 |   64 |          0.3 |     1 |       100 |  | Trimers | Percolation | 
+20220128_56	 |   64 |          0.3 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_57	 |   64 |          0.3 |     1 |       100 |  | Squared | Percolation | 
+20220128_58	 |   64 |          0.4 |     1 |       100 |  | Dimers | Percolation | 
+20220128_59	 |   64 |          0.4 |     1 |       100 |  | Trimers | Percolation | 
+20220128_60	 |   64 |          0.4 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_61	 |   64 |          0.4 |     1 |       100 |  | Squared | Percolation | 
+20220128_62	 |   64 |          0.5 |     1 |       100 |  | Dimers | Percolation | 
+20220128_63	 |   64 |          0.5 |     1 |       100 |  | Trimers | Percolation | 
+20220128_64	 |   64 |          0.5 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_65	 |   64 |          0.5 |     1 |       100 |  | Squared | Percolation | 
+20220128_66	 |   64 |          0.2 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_67	 |   64 |          0.2 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_68	 |   64 |          0.2 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_69	 |   64 |          0.2 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_70	 |   64 |          0.3 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_71	 |   64 |          0.3 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_72	 |   64 |          0.3 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_73	 |   64 |          0.3 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_74	 |   64 |          0.4 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_75	 |   64 |          0.4 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_76	 |   64 |          0.4 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_77	 |   64 |          0.4 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_78	 |   64 |          0.5 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_79	 |   64 |          0.5 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_80	 |   64 |          0.5 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_81	 |   64 |          0.5 |   1.4 |       100 |  | Squared | Percolation | 
+=== 20220128 19:06 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_82	 |   64 |          0.2 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_83	 |   64 |          0.2 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_84	 |   64 |          0.2 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_85	 |   64 |          0.2 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_86	 |   64 |          0.3 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_87	 |   64 |          0.3 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_88	 |   64 |          0.3 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_89	 |   64 |          0.3 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_90	 |   64 |          0.4 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_91	 |   64 |          0.4 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_92	 |   64 |          0.4 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_93	 |   64 |          0.4 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_94	 |   64 |          0.5 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_95	 |   64 |          0.5 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_96	 |   64 |          0.5 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_97	 |   64 |          0.5 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_98	 |   64 |          0.2 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_99	 |   64 |          0.2 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_100	 |   64 |          0.2 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_101	 |   64 |          0.2 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_102	 |   64 |          0.3 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_103	 |   64 |          0.3 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_104	 |   64 |          0.3 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_105	 |   64 |          0.3 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_106	 |   64 |          0.4 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_107	 |   64 |          0.4 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_108	 |   64 |          0.4 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_109	 |   64 |          0.4 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_110	 |   64 |          0.5 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_111	 |   64 |          0.5 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_112	 |   64 |          0.5 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_113	 |   64 |          0.5 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_114	 |   64 |          0.2 |     1 |       100 |  | Dimers | Percolation | 
+20220128_115	 |   64 |          0.2 |     1 |       100 |  | Trimers | Percolation | 
+20220128_116	 |   64 |          0.2 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_117	 |   64 |          0.2 |     1 |       100 |  | Squared | Percolation | 
+20220128_118	 |   64 |          0.3 |     1 |       100 |  | Dimers | Percolation | 
+20220128_119	 |   64 |          0.3 |     1 |       100 |  | Trimers | Percolation | 
+20220128_120	 |   64 |          0.3 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_121	 |   64 |          0.3 |     1 |       100 |  | Squared | Percolation | 
+20220128_122	 |   64 |          0.4 |     1 |       100 |  | Dimers | Percolation | 
+20220128_123	 |   64 |          0.4 |     1 |       100 |  | Trimers | Percolation | 
+20220128_124	 |   64 |          0.4 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_125	 |   64 |          0.4 |     1 |       100 |  | Squared | Percolation | 
+20220128_126	 |   64 |          0.5 |     1 |       100 |  | Dimers | Percolation | 
+20220128_127	 |   64 |          0.5 |     1 |       100 |  | Trimers | Percolation | 
+20220128_128	 |   64 |          0.5 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_129	 |   64 |          0.5 |     1 |       100 |  | Squared | Percolation | 
+20220128_130	 |   64 |          0.2 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_131	 |   64 |          0.2 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_132	 |   64 |          0.2 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_133	 |   64 |          0.2 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_134	 |   64 |          0.3 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_135	 |   64 |          0.3 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_136	 |   64 |          0.3 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_137	 |   64 |          0.3 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_138	 |   64 |          0.4 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_139	 |   64 |          0.4 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_140	 |   64 |          0.4 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_141	 |   64 |          0.4 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_142	 |   64 |          0.5 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_143	 |   64 |          0.5 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_144	 |   64 |          0.5 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_145	 |   64 |          0.5 |   1.4 |       100 |  | Squared | Percolation | 
+=== 20220128 19:08 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_146	 |   64 |          0.2 |   0.2 |       100 |  | Dimers |  | 
+20220128_147	 |   64 |          0.2 |   0.2 |       100 |  | Trimers |  | 
+20220128_148	 |   64 |          0.2 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_149	 |   64 |          0.2 |   0.2 |       100 |  | Squared |  | 
+20220128_150	 |   64 |          0.3 |   0.2 |       100 |  | Dimers |  | 
+20220128_151	 |   64 |          0.3 |   0.2 |       100 |  | Trimers |  | 
+20220128_152	 |   64 |          0.3 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_153	 |   64 |          0.3 |   0.2 |       100 |  | Squared |  | 
+20220128_154	 |   64 |          0.4 |   0.2 |       100 |  | Dimers |  | 
+20220128_155	 |   64 |          0.4 |   0.2 |       100 |  | Trimers |  | 
+20220128_156	 |   64 |          0.4 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_157	 |   64 |          0.4 |   0.2 |       100 |  | Squared |  | 
+20220128_158	 |   64 |          0.5 |   0.2 |       100 |  | Dimers |  | 
+20220128_159	 |   64 |          0.5 |   0.2 |       100 |  | Trimers |  | 
+20220128_160	 |   64 |          0.5 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_161	 |   64 |          0.5 |   0.2 |       100 |  | Squared |  | 
+20220128_162	 |   64 |          0.2 |   0.6 |       100 |  | Dimers |  | 
+20220128_163	 |   64 |          0.2 |   0.6 |       100 |  | Trimers |  | 
+20220128_164	 |   64 |          0.2 |   0.6 |       100 |  | Linear trimers |  | 
+20220128_165	 |   64 |          0.2 |   0.6 |       100 |  | Squared |  | 
+20220128_166	 |   64 |          0.3 |   0.6 |       100 |  | Dimers |  | 
+20220128_167	 |   64 |          0.3 |   0.6 |       100 |  | Trimers |  | 
+20220128_168	 |   64 |          0.3 |   0.6 |       100 |  | Linear trimers |  | 
+20220128_169	 |   64 |          0.3 |   0.6 |       100 |  | Squared |  | 
+20220128_170	 |   64 |          0.4 |   0.6 |       100 |  | Dimers |  | 
+20220128_171	 |   64 |          0.4 |   0.6 |       100 |  | Trimers |  | 
+20220128_172	 |   64 |          0.4 |   0.6 |       100 |  | Linear trimers |  | 
+20220128_173	 |   64 |          0.4 |   0.6 |       100 |  | Squared |  | 
+20220128_174	 |   64 |          0.5 |   0.6 |       100 |  | Dimers |  | 
+20220128_175	 |   64 |          0.5 |   0.6 |       100 |  | Trimers |  | 
+20220128_176	 |   64 |          0.5 |   0.6 |       100 |  | Linear trimers |  | 
+20220128_177	 |   64 |          0.5 |   0.6 |       100 |  | Squared |  | 
+20220128_178	 |   64 |          0.2 |     1 |       100 |  | Dimers |  | 
+20220128_179	 |   64 |          0.2 |     1 |       100 |  | Trimers |  | 
+20220128_180	 |   64 |          0.2 |     1 |       100 |  | Linear trimers |  | 
+20220128_181	 |   64 |          0.2 |     1 |       100 |  | Squared |  | 
+20220128_182	 |   64 |          0.3 |     1 |       100 |  | Dimers |  | 
+20220128_183	 |   64 |          0.3 |     1 |       100 |  | Trimers |  | 
+20220128_184	 |   64 |          0.3 |     1 |       100 |  | Linear trimers |  | 
+20220128_185	 |   64 |          0.3 |     1 |       100 |  | Squared |  | 
+20220128_186	 |   64 |          0.4 |     1 |       100 |  | Dimers |  | 
+20220128_187	 |   64 |          0.4 |     1 |       100 |  | Trimers |  | 
+20220128_188	 |   64 |          0.4 |     1 |       100 |  | Linear trimers |  | 
+20220128_189	 |   64 |          0.4 |     1 |       100 |  | Squared |  | 
+20220128_190	 |   64 |          0.5 |     1 |       100 |  | Dimers |  | 
+20220128_191	 |   64 |          0.5 |     1 |       100 |  | Trimers |  | 
+20220128_192	 |   64 |          0.5 |     1 |       100 |  | Linear trimers |  | 
+20220128_193	 |   64 |          0.5 |     1 |       100 |  | Squared |  | 
+20220128_194	 |   64 |          0.2 |   1.4 |       100 |  | Dimers |  | 
+20220128_195	 |   64 |          0.2 |   1.4 |       100 |  | Trimers |  | 
+20220128_196	 |   64 |          0.2 |   1.4 |       100 |  | Linear trimers |  | 
+20220128_197	 |   64 |          0.2 |   1.4 |       100 |  | Squared |  | 
+20220128_198	 |   64 |          0.3 |   1.4 |       100 |  | Dimers |  | 
+20220128_199	 |   64 |          0.3 |   1.4 |       100 |  | Trimers |  | 
+20220128_200	 |   64 |          0.3 |   1.4 |       100 |  | Linear trimers |  | 
+20220128_201	 |   64 |          0.3 |   1.4 |       100 |  | Squared |  | 
+20220128_202	 |   64 |          0.4 |   1.4 |       100 |  | Dimers |  | 
+20220128_203	 |   64 |          0.4 |   1.4 |       100 |  | Trimers |  | 
+20220128_204	 |   64 |          0.4 |   1.4 |       100 |  | Linear trimers |  | 
+20220128_205	 |   64 |          0.4 |   1.4 |       100 |  | Squared |  | 
+20220128_206	 |   64 |          0.5 |   1.4 |       100 |  | Dimers |  | 
+20220128_207	 |   64 |          0.5 |   1.4 |       100 |  | Trimers |  | 
+20220128_208	 |   64 |          0.5 |   1.4 |       100 |  | Linear trimers |  | 
+20220128_209	 |   64 |          0.5 |   1.4 |       100 |  | Squared |  | 
+=== 20220128 19:12 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_210	 |   64 |            0 |   0.2 |       100 |  | Dimers |  | 
+20220128_211	 |   64 |            0 |   0.2 |       100 |  | Trimers |  | 
+20220128_212	 |   64 |            0 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_213	 |   64 |            0 |   0.2 |       100 |  | Squared |  | 
+20220128_214	 |   64 |         0.25 |   0.2 |       100 |  | Dimers |  | 
+20220128_215	 |   64 |         0.25 |   0.2 |       100 |  | Trimers |  | 
+20220128_216	 |   64 |         0.25 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_217	 |   64 |         0.25 |   0.2 |       100 |  | Squared |  | 
+20220128_218	 |   64 |          0.5 |   0.2 |       100 |  | Dimers |  | 
+20220128_219	 |   64 |          0.5 |   0.2 |       100 |  | Trimers |  | 
+20220128_220	 |   64 |          0.5 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_221	 |   64 |          0.5 |   0.2 |       100 |  | Squared |  | 
+20220128_222	 |   64 |         0.75 |   0.2 |       100 |  | Dimers |  | 
+20220128_223	 |   64 |         0.75 |   0.2 |       100 |  | Trimers |  | 
+20220128_224	 |   64 |         0.75 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_225	 |   64 |         0.75 |   0.2 |       100 |  | Squared |  | 
+20220128_226	 |   64 |            1 |   0.2 |       100 |  | Dimers |  | 
+20220128_227	 |   64 |            1 |   0.2 |       100 |  | Trimers |  | 
+20220128_228	 |   64 |            1 |   0.2 |       100 |  | Linear trimers |  | 
+20220128_229	 |   64 |            1 |   0.2 |       100 |  | Squared |  | 
+20220128_230	 |   64 |            0 |   0.6 |       100 |  | Dimers |  | 
+20220128_231	 |   64 |            0 |   0.6 |       100 |  | Trimers |  | 
+=== 20220128 19:13 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_233	 |   64 |            0 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_234	 |   64 |            0 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_235	 |   64 |            0 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_236	 |   64 |            0 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_237	 |   64 |         0.25 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_238	 |   64 |         0.25 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_239	 |   64 |         0.25 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_240	 |   64 |         0.25 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_241	 |   64 |          0.5 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_242	 |   64 |          0.5 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_243	 |   64 |          0.5 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_244	 |   64 |          0.5 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_245	 |   64 |         0.75 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_246	 |   64 |         0.75 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_247	 |   64 |         0.75 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_248	 |   64 |         0.75 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_249	 |   64 |            1 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_250	 |   64 |            1 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_251	 |   64 |            1 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_252	 |   64 |            1 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_253	 |   64 |            0 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_254	 |   64 |            0 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_255	 |   64 |            0 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_256	 |   64 |            0 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_257	 |   64 |         0.25 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_258	 |   64 |         0.25 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_259	 |   64 |         0.25 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_260	 |   64 |         0.25 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_261	 |   64 |          0.5 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_262	 |   64 |          0.5 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_263	 |   64 |          0.5 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_264	 |   64 |          0.5 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_265	 |   64 |         0.75 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_266	 |   64 |         0.75 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_267	 |   64 |         0.75 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_268	 |   64 |         0.75 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_269	 |   64 |            1 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_270	 |   64 |            1 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_271	 |   64 |            1 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_272	 |   64 |            1 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_273	 |   64 |            0 |     1 |       100 |  | Dimers | Percolation | 
+20220128_274	 |   64 |            0 |     1 |       100 |  | Trimers | Percolation | 
+20220128_275	 |   64 |            0 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_276	 |   64 |            0 |     1 |       100 |  | Squared | Percolation | 
+20220128_277	 |   64 |         0.25 |     1 |       100 |  | Dimers | Percolation | 
+20220128_278	 |   64 |         0.25 |     1 |       100 |  | Trimers | Percolation | 
+20220128_279	 |   64 |         0.25 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_280	 |   64 |         0.25 |     1 |       100 |  | Squared | Percolation | 
+20220128_281	 |   64 |          0.5 |     1 |       100 |  | Dimers | Percolation | 
+20220128_282	 |   64 |          0.5 |     1 |       100 |  | Trimers | Percolation | 
+20220128_283	 |   64 |          0.5 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_284	 |   64 |          0.5 |     1 |       100 |  | Squared | Percolation | 
+20220128_285	 |   64 |         0.75 |     1 |       100 |  | Dimers | Percolation | 
+20220128_286	 |   64 |         0.75 |     1 |       100 |  | Trimers | Percolation | 
+20220128_287	 |   64 |         0.75 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_288	 |   64 |         0.75 |     1 |       100 |  | Squared | Percolation | 
+20220128_289	 |   64 |            1 |     1 |       100 |  | Dimers | Percolation | 
+20220128_290	 |   64 |            1 |     1 |       100 |  | Trimers | Percolation | 
+20220128_291	 |   64 |            1 |     1 |       100 |  | Linear trimers | Percolation | 
+20220128_292	 |   64 |            1 |     1 |       100 |  | Squared | Percolation | 
+20220128_293	 |   64 |            0 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_294	 |   64 |            0 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_295	 |   64 |            0 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_296	 |   64 |            0 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_297	 |   64 |         0.25 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_298	 |   64 |         0.25 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_299	 |   64 |         0.25 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_300	 |   64 |         0.25 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_301	 |   64 |          0.5 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_302	 |   64 |          0.5 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_303	 |   64 |          0.5 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_304	 |   64 |          0.5 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_305	 |   64 |         0.75 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_306	 |   64 |         0.75 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_307	 |   64 |         0.75 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_308	 |   64 |         0.75 |   1.4 |       100 |  | Squared | Percolation | 
+20220128_309	 |   64 |            1 |   1.4 |       100 |  | Dimers | Percolation | 
+20220128_310	 |   64 |            1 |   1.4 |       100 |  | Trimers | Percolation | 
+20220128_311	 |   64 |            1 |   1.4 |       100 |  | Linear trimers | Percolation | 
+20220128_312	 |   64 |            1 |   1.4 |       100 |  | Squared | Percolation | 
+=== 20220128 19:17 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_313	 |   64 |            0 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_314	 |   64 |            0 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_315	 |   64 |            0 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_316	 |   64 |            0 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_317	 |   64 |         0.25 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_318	 |   64 |         0.25 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_319	 |   64 |         0.25 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_320	 |   64 |         0.25 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_321	 |   64 |          0.5 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_322	 |   64 |          0.5 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_323	 |   64 |          0.5 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_324	 |   64 |          0.5 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_325	 |   64 |         0.75 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_326	 |   64 |         0.75 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_327	 |   64 |         0.75 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_328	 |   64 |         0.75 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_329	 |   64 |            1 |   0.2 |       100 |  | Dimers | Percolation | 
+20220128_330	 |   64 |            1 |   0.2 |       100 |  | Trimers | Percolation | 
+20220128_331	 |   64 |            1 |   0.2 |       100 |  | Linear trimers | Percolation | 
+20220128_332	 |   64 |            1 |   0.2 |       100 |  | Squared | Percolation | 
+20220128_333	 |   64 |            0 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_334	 |   64 |            0 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_335	 |   64 |            0 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_336	 |   64 |            0 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_337	 |   64 |         0.25 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_338	 |   64 |         0.25 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_339	 |   64 |         0.25 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_340	 |   64 |         0.25 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_341	 |   64 |          0.5 |   0.6 |       100 |  | Dimers | Percolation | 
+20220128_342	 |   64 |          0.5 |   0.6 |       100 |  | Trimers | Percolation | 
+20220128_343	 |   64 |          0.5 |   0.6 |       100 |  | Linear trimers | Percolation | 
+20220128_344	 |   64 |          0.5 |   0.6 |       100 |  | Squared | Percolation | 
+20220128_345	 |   64 |         0.75 |   0.6 |       100 |  | Dimers | Percolation | 
+=== 20220128 19:23 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_348	 |   64 |            1 |   0.2 |         5 |  | Dimers | Percolation | 
+20220128_349	 |   64 |            1 |   0.2 |         5 |  | Trimers | Percolation | 
+20220128_350	 |   64 |            1 |   0.2 |         5 |  | Linear trimers | Percolation | 
+20220128_351	 |   64 |            1 |   0.2 |         5 |  | Squared | Percolation | 
+20220128_352	 |   64 |            1 |   0.6 |         5 |  | Dimers | Percolation | 
+20220128_353	 |   64 |            1 |   0.6 |         5 |  | Trimers | Percolation | 
+20220128_354	 |   64 |            1 |   0.6 |         5 |  | Linear trimers | Percolation | 
+20220128_355	 |   64 |            1 |   0.6 |         5 |  | Squared | Percolation | 
+20220128_356	 |   64 |            1 |     1 |         5 |  | Dimers | Percolation | 
+20220128_357	 |   64 |            1 |     1 |         5 |  | Trimers | Percolation | 
+20220128_358	 |   64 |            1 |     1 |         5 |  | Linear trimers | Percolation | 
+20220128_359	 |   64 |            1 |     1 |         5 |  | Squared | Percolation | 
+20220128_360	 |   64 |            1 |   1.4 |         5 |  | Dimers | Percolation | 
+20220128_361	 |   64 |            1 |   1.4 |         5 |  | Trimers | Percolation | 
+20220128_362	 |   64 |            1 |   1.4 |         5 |  | Linear trimers | Percolation | 
+20220128_363	 |   64 |            1 |   1.4 |         5 |  | Squared | Percolation | 
+=== 20220128 19:33 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_364	 |   64 |            1 |   0.2 |         5 |  | Dimers | Percolation | 
+20220128_365	 |   64 |            1 |   0.2 |         5 |  | Trimers | Percolation | 
+20220128_366	 |   64 |            1 |   0.2 |         5 |  | Linear trimers | Percolation | 
+20220128_367	 |   64 |            1 |   0.2 |         5 |  | Squared | Percolation | 
+20220128_368	 |   64 |            1 |   0.6 |         5 |  | Dimers | Percolation | 
+20220128_369	 |   64 |            1 |   0.6 |         5 |  | Trimers | Percolation | 
+20220128_370	 |   64 |            1 |   0.6 |         5 |  | Linear trimers | Percolation | 
+20220128_371	 |   64 |            1 |   0.6 |         5 |  | Squared | Percolation | 
+20220128_372	 |   64 |            1 |     1 |         5 |  | Dimers | Percolation | 
+20220128_373	 |   64 |            1 |     1 |         5 |  | Trimers | Percolation | 
+20220128_374	 |   64 |            1 |     1 |         5 |  | Linear trimers | Percolation | 
+20220128_375	 |   64 |            1 |     1 |         5 |  | Squared | Percolation | 
+20220128_376	 |   64 |            1 |   1.4 |         5 |  | Dimers | Percolation | 
+20220128_377	 |   64 |            1 |   1.4 |         5 |  | Trimers | Percolation | 
+20220128_378	 |   64 |            1 |   1.4 |         5 |  | Linear trimers | Percolation | 
+20220128_379	 |   64 |            1 |   1.4 |         5 |  | Squared | Percolation | 
+=== 20220128 19:37 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_381	 |   64 |            1 |   0.2 |         5 |  | Dimers | Percolation | 
+20220128_382	 |   64 |            1 |   0.2 |         5 |  | Trimers | Percolation | 
+20220128_383	 |   64 |            1 |   0.2 |         5 |  | Linear trimers | Percolation | 
+20220128_384	 |   64 |            1 |   0.2 |         5 |  | Squared | Percolation | 
+20220128_385	 |   64 |            1 |   0.6 |         5 |  | Dimers | Percolation | 
+20220128_386	 |   64 |            1 |   0.6 |         5 |  | Trimers | Percolation | 
+20220128_387	 |   64 |            1 |   0.6 |         5 |  | Linear trimers | Percolation | 
+20220128_388	 |   64 |            1 |   0.6 |         5 |  | Squared | Percolation | 
+20220128_389	 |   64 |            1 |     1 |         5 |  | Dimers | Percolation | 
+20220128_390	 |   64 |            1 |     1 |         5 |  | Trimers | Percolation | 
+20220128_391	 |   64 |            1 |     1 |         5 |  | Linear trimers | Percolation | 
+20220128_392	 |   64 |            1 |     1 |         5 |  | Squared | Percolation | 
+20220128_393	 |   64 |            1 |   1.4 |         5 |  | Dimers | Percolation | 
+20220128_394	 |   64 |            1 |   1.4 |         5 |  | Trimers | Percolation | 
+20220128_395	 |   64 |            1 |   1.4 |         5 |  | Linear trimers | Percolation | 
+20220128_396	 |   64 |            1 |   1.4 |         5 |  | Squared | Percolation | 
+=== 20220128 19:39 ===
+PATHNAME	 | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS
+20220128_397	 |   64 |            0 |   0.2 |         5 |  | Dimers | Percolation | 
+20220128_398	 |   64 |            0 |   0.2 |         5 |  | Trimers | Percolation | 
+20220128_399	 |   64 |            0 |   0.2 |         5 |  | Linear trimers | Percolation | 
+20220128_400	 |   64 |            0 |   0.2 |         5 |  | Squared | Percolation | 
+20220128_401	 |   64 |          0.5 |   0.2 |         5 |  | Dimers | Percolation | 
+20220128_402	 |   64 |          0.5 |   0.2 |         5 |  | Trimers | Percolation | 
+20220128_403	 |   64 |          0.5 |   0.2 |         5 |  | Linear trimers | Percolation | 
+20220128_404	 |   64 |          0.5 |   0.2 |         5 |  | Squared | Percolation | 
+20220128_405	 |   64 |            1 |   0.2 |         5 |  | Dimers | Percolation | 
+20220128_406	 |   64 |            1 |   0.2 |         5 |  | Trimers | Percolation | 
+20220128_407	 |   64 |            1 |   0.2 |         5 |  | Linear trimers | Percolation | 
+20220128_408	 |   64 |            1 |   0.2 |         5 |  | Squared | Percolation | 
+20220128_409	 |   64 |            0 |   0.6 |         5 |  | Dimers | Percolation | 
+20220128_410	 |   64 |            0 |   0.6 |         5 |  | Trimers | Percolation | 
+20220128_411	 |   64 |            0 |   0.6 |         5 |  | Linear trimers | Percolation | 
+20220128_412	 |   64 |            0 |   0.6 |         5 |  | Squared | Percolation | 
+20220128_413	 |   64 |          0.5 |   0.6 |         5 |  | Dimers | Percolation | 
+20220128_414	 |   64 |          0.5 |   0.6 |         5 |  | Trimers | Percolation | 
+20220128_415	 |   64 |          0.5 |   0.6 |         5 |  | Linear trimers | Percolation | 
+20220128_416	 |   64 |          0.5 |   0.6 |         5 |  | Squared | Percolation | 
+20220128_417	 |   64 |            1 |   0.6 |         5 |  | Dimers | Percolation | 
+20220128_418	 |   64 |            1 |   0.6 |         5 |  | Trimers | Percolation | 
+20220128_419	 |   64 |            1 |   0.6 |         5 |  | Linear trimers | Percolation | 
+20220128_420	 |   64 |            1 |   0.6 |         5 |  | Squared | Percolation | 
+20220128_421	 |   64 |            0 |     1 |         5 |  | Dimers | Percolation | 
+20220128_422	 |   64 |            0 |     1 |         5 |  | Trimers | Percolation | 
+20220128_423	 |   64 |            0 |     1 |         5 |  | Linear trimers | Percolation | 
+20220128_424	 |   64 |            0 |     1 |         5 |  | Squared | Percolation | 
+20220128_425	 |   64 |          0.5 |     1 |         5 |  | Dimers | Percolation | 
+20220128_426	 |   64 |          0.5 |     1 |         5 |  | Trimers | Percolation | 
+20220128_427	 |   64 |          0.5 |     1 |         5 |  | Linear trimers | Percolation | 
+20220128_428	 |   64 |          0.5 |     1 |         5 |  | Squared | Percolation | 
+20220128_429	 |   64 |            1 |     1 |         5 |  | Dimers | Percolation | 
+20220128_430	 |   64 |            1 |     1 |         5 |  | Trimers | Percolation | 
+20220128_431	 |   64 |            1 |     1 |         5 |  | Linear trimers | Percolation | 
+20220128_432	 |   64 |            1 |     1 |         5 |  | Squared | Percolation | 
+20220128_433	 |   64 |            0 |   1.4 |         5 |  | Dimers | Percolation | 
+20220128_434	 |   64 |            0 |   1.4 |         5 |  | Trimers | Percolation | 
+20220128_435	 |   64 |            0 |   1.4 |         5 |  | Linear trimers | Percolation | 
+20220128_436	 |   64 |            0 |   1.4 |         5 |  | Squared | Percolation | 
+20220128_437	 |   64 |          0.5 |   1.4 |         5 |  | Dimers | Percolation | 
+20220128_438	 |   64 |          0.5 |   1.4 |         5 |  | Trimers | Percolation | 
+20220128_439	 |   64 |          0.5 |   1.4 |         5 |  | Linear trimers | Percolation | 
+20220128_440	 |   64 |          0.5 |   1.4 |         5 |  | Squared | Percolation | 
+20220128_441	 |   64 |            1 |   1.4 |         5 |  | Dimers | Percolation | 
+20220128_442	 |   64 |            1 |   1.4 |         5 |  | Trimers | Percolation | 
+20220128_443	 |   64 |            1 |   1.4 |         5 |  | Linear trimers | Percolation | 
+20220128_444	 |   64 |            1 |   1.4 |         5 |  | Squared | Percolation | 

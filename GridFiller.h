@@ -7,6 +7,7 @@
 #include <ctime>
 #include <cstdlib>
 #include <random>
+#include <assert.h>
 
 class GridFiller {
 public:

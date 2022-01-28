@@ -14,6 +14,7 @@ int main() {
     int sides[] = { 64, 128, 256, 512, 1024, 2048 };
     double gammas[] = { 0.2, 0.6, 1.0, 1.4 };
     double dfs[] = { 0.2, 0.3, 0.4, 0.5 };
+    bool percolation = true;
     bool draw = false;
     int n_threads = 64;
 
@@ -25,7 +26,7 @@ int main() {
             for( double df : dfs )
                 for( Polymers* p : pols )
                     // Size DefectsFracs Gamma NReplies CorrRange Polymers Draw
-                    rps.push_back( ReplicatorParams( s, df, g, n_replies, nullptr, p, n_threads, draw ) );
+                    rps.push_back( ReplicatorParams( s, df, g, n_replies, nullptr, p, percolation, n_threads, draw ) );
     }
 
     ofstream log( "log.txt", ios_base::app );

@@ -27,16 +27,27 @@ void GridFiller::square(Grid<double>& g, int side) {
 
 void GridFiller::clean(Grid<int>& toclean, int cleanto) {
     for( int i=0; i < toclean.d1 * toclean.d2; i++ )
-        toclean(i) = cleanto;
+        toclean[i] = cleanto;
 }
 
 void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,const int count) {
+    double threshold;
     vector<double> p = *(ranks.u);
     nth_element(p.begin(),p.begin()+count,p.end());
+    threshold = p[count];
 
-    for(int i=0; i < ranks.imax(); i++){
-        tofill(i) = ranks(i) < p[count] ? GridSite::Defect : GridSite::Free;
+    // Correct the fact that, if p.begin()+count == p.end(), the function
+    // nth_element have no effect
+    if( count == p.size() ) {
+        threshold = *max_element( p.begin(), p.end() ) + 1;
     }
+
+    int c = 0;    
+    for(int i=0; i < ranks.imax(); i++){
+        tofill[i] = ranks[i] < threshold ? GridSite::Defect : GridSite::Free;
+        c += ( tofill[i] == GridSite::Defect );
+    }
+    assert( c == count );
 }
 
 int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
@@ -49,7 +60,7 @@ int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
     // Remove not-free sites
     for( int v=0; v < polys.N; v++ ) {
         for( int i=0; i < tofill.imax(); i++ )
-            if( !tofill(i) == GridSite::Free )
+            if( !tofill[i] == GridSite::Free )
                 sites[v]->remove(i);
 
         if( sites[v]->empty() ) variants.remove( v );

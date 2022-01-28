@@ -47,7 +47,7 @@ bool Polymer::compatiblePosition_lazy( GridSite delta ) {
 
 bool Polymer::canStay( Grid<int>& grid, int position ) {
     for( int i=0; i < atoms->size(); i++ ) {
-        if( grid( atoms->at(i) + GridSite( position, grid ) ) != GridSite::Free )
+        if( grid[ atoms->at(i) + GridSite( position, grid ) ] != GridSite::Free )
             return false;
     }
     return true;
@@ -57,7 +57,7 @@ void Polymer::depositAndClean( Grid<int>& thegrid, AdvVector& sites, int positio
     GridSite pos( position, thegrid );
     for( int i=0; i < atoms->size(); i++ ) {
         sites.remove( ( atoms->at(i) + pos ).I() );
-        thegrid( atoms->at(i) + pos ) = GridSite::Atom;
+        thegrid[ atoms->at(i) + pos ] = GridSite::Atom;
     }
     for( int i=0; i < neighbors->size(); i++ ) {
         sites.remove( ( neighbors->at(i) + pos ).I() );

@@ -15,6 +15,7 @@
 #include "CorrFuncCalcolator.h"
 #include "GridFiller.h"
 #include "Polymer.h"
+#include "Percolator.h"
 
 struct ReplicatorParams {
     int side;
@@ -23,18 +24,21 @@ struct ReplicatorParams {
     int n_replies;
     CorrFunc::Model* CF_model;
     Polymers* to_deposit;
+    bool percolation;
     int n_threads;
     bool draw;
     std::string save_path;
 
     ReplicatorParams( int side, double defects_frac, double gamma,
                       int n_replies, CorrFunc::Model* CF_model = nullptr,
-                      Polymers* to_deposit = nullptr, int n_threads = 1,
-                      bool draw = false, std::string save_path = "" ) :
+                      Polymers* to_deposit = nullptr, bool percolation = false,
+                      int n_threads = 1, bool draw = false,
+                      std::string save_path = "" ) :
                       side(side), defects_frac(defects_frac), gamma(gamma),
                       n_replies(n_replies), CF_model(CF_model),
-                      to_deposit(to_deposit), n_threads(n_threads),
-                      draw(draw), save_path(save_path) {};
+                      to_deposit(to_deposit), percolation(percolation),
+                      n_threads(n_threads), draw(draw),
+                      save_path(save_path) {};
     std::string to_string();
 };
 
@@ -52,6 +56,8 @@ private:
 // Correlator
     CorrFunc::Calculator<double>* CF_H;
     CorrFunc::Calculator<int>*    CF_D;
+// Percolation
+    Percolator* perc;
 
 // Worker
     static void thread_worker (ReplicatorThread* data);
@@ -78,6 +84,10 @@ private:
     double fillfrac_sum;
     double fillfrac_sum2;
     void update_dep_averages( int occupied_sites );
+// Percolation
+    double defperc_count;
+    double atmperc_count;
+    void update_perc_averages( bool def_perc, bool atm_perc );
 // Works
     std::mutex* mux;
     std::vector< ReplicatorThread* > ongoing;

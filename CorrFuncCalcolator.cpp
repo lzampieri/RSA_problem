@@ -36,11 +36,11 @@ void Calculator<T>::_thread_worker( Work* work ) {
         GridSite xy4 = xy1 + vR;
         GridSite xy5 = xy1 - uR;
 
-        val1 = grid->operator()( xy1 );
-        val2 = grid->operator()( xy2 );
-        val3 = grid->operator()( xy3 );
-        val4 = grid->operator()( xy4 );
-        val5 = grid->operator()( xy5 );
+        val1 = grid->operator[]( xy1 );
+        val2 = grid->operator[]( xy2 );
+        val3 = grid->operator[]( xy3 );
+        val4 = grid->operator[]( xy4 );
+        val5 = grid->operator[]( xy5 );
         
         sum += val1*val2;
         sum2+= val1*val2*val1*val2;

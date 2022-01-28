@@ -11,7 +11,8 @@ std::string ReplicatorParams::to_string() {
        << setw( 5 ) << gamma << sep 
        << setw( 9 ) << n_replies << sep 
        << (CF_model ? CF_model->keyname : "") << sep
-       << (to_deposit ? to_deposit->keyname : "") << sep;
+       << (to_deposit ? to_deposit->keyname : "") << sep
+       << (percolation ? "Percolation" : "") << sep;;
 
     return ss.str();
 }
@@ -26,11 +27,16 @@ ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
         CF_H = new CorrFunc::Calculator<double>( thrower->params.CF_model, &fcg.h );
         CF_D = new CorrFunc::Calculator<int>   ( thrower->params.CF_model, &g     );
     }
+
+    perc = nullptr;
+    if( thrower->params.percolation )
+        perc = new Percolator( g );
 }
 
 ReplicatorThread::~ReplicatorThread() {
     delete CF_H;
     delete CF_D;
+    delete perc;
 }
 
 /*static*/ void ReplicatorThread::thread_worker (ReplicatorThread* data) {
@@ -38,7 +44,8 @@ ReplicatorThread::~ReplicatorThread() {
     while( data->thrower->replicas_to_run > 0 ) {
         int current_replica = data->thrower->replicas_to_run;
         data->thrower->replicas_to_run --;
-        cout<< "[prg] " << current_replica << "\t/" << data->thrower->params.n_replies << " [" << data->id << "]                          \r" <<flush;
+        if( current_replica % max( data->thrower->params.n_replies / 10, 1 ) == 0 )
+            cout<< "[prg] " << ( data->thrower->params.n_replies - current_replica ) * 100 / data->thrower->params.n_replies << "%\t" << " [" << data->id << "]                          \r" <<flush;
         data->thrower->mux->unlock();
 
         // Clean the grid
@@ -67,6 +74,14 @@ ReplicatorThread::~ReplicatorThread() {
         if( data->thrower->params.to_deposit != nullptr ) {
             int occupied_sites = GridFiller::fillWithPolymers( data->g, *data->thrower->params.to_deposit );
             data->thrower->update_dep_averages( occupied_sites );
+        }
+
+        // Compute percolation infos
+        if( data->thrower->params.percolation ) {
+            data->thrower->update_perc_averages(
+                data->perc->is_percolating( GridSite::Defect ),
+                data->perc->is_percolating( GridSite::Atom )
+            );
         }
 
         // Print the grid
@@ -116,6 +131,10 @@ Replicator::Replicator( ReplicatorParams suggested_params ) :
     fillfrac_sum = 0;
     fillfrac_sum2= 0;
 
+    // Initialize percolation stats
+    defperc_count = 0;
+    atmperc_count = 0;
+
     // Initialize the thread managers
     for( int i=0; i < params.n_threads; i++ ) {
         ongoing.push_back( new ReplicatorThread( this, i ) );
@@ -147,6 +166,13 @@ void Replicator::update_dep_averages( int occupied_sites ) {
     mux->lock();
     fillfrac_sum  += occupied_sites;
     fillfrac_sum2 += occupied_sites*occupied_sites;
+    mux->unlock();
+}
+
+void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
+    mux->lock();
+    defperc_count += ( def_perc ? 1 : 0 );
+    atmperc_count += ( atm_perc ? 1 : 0 );
     mux->unlock();
 }
 
@@ -198,6 +224,22 @@ string Replicator::save_data() {
                    <<",\n\"occupation_fraction_std\":\t"<<std / (params.side*params.side)
                    <<"\n}"<<endl;
         out_deposition.close();
+    }
+
+    // Print percolation results
+    if( params.percolation ) {
+        double defperc_avg = defperc_count / params.n_replies;
+        double atmperc_avg = atmperc_count / params.n_replies;
+
+        ofstream out_deposition( params.save_path + "/percolation.txt");
+        out_deposition<<"{"
+                   <<" \n\"defperc_count\":\t"<<defperc_count
+                   <<",\n\"defperc_avg\":\t"<<defperc_avg
+                   <<",\n\"atmperc_count\":\t"<<atmperc_count
+                   <<",\n\"atmperc_avg\":\t"<<atmperc_avg
+                   <<"\n}"<<endl;
+        out_deposition.close();
+        cout<<"Percolation averages:\nDefects: "<<defperc_avg<<"\nAtoms: "<<atmperc_avg<<endl; //todo remove
     }
 
     return params.to_string();

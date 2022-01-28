@@ -43,7 +43,6 @@ public:
     double d(int i1, int i2) const; // i1,i2 \in [0,d1*d2[
     double d(int x1, int y1, int x2, int y2) const; // x1,x2 \in [0,d1[; y1,y2 \in [0,d2[
     double d(const GridSite& xy1, const GridSite& xy2 ) const; // x1,x2 \in [0,d1[; y1,y2 \in [0,d2[
-
 };
 
 class GridSite : public GridProps {
@@ -78,9 +77,12 @@ public:
     using GridProps::d;
     double d(const GridSite& xy2);
 
-    static const int Defect = -1;
-    static const int Free = 0;
-    static const int Atom = 1;
+    // Utils
+    bool last_row() const;
+    
+    static const short Defect = -1;
+    static const short Free = 0;
+    static const short Atom = 1;
 };
 
 template<class T>
@@ -101,8 +103,7 @@ public:
 
     // Access
     T& operator[](const int i) const; // i \in [0,d1*d2[
-    T& operator()(const int i) const; // i \in [0,d1*d2[
-    T& operator()(const GridSite xy) const; // x \in [0,d1[, y \in [0,d2[
+    T& operator[](const GridSite xy) const; // x \in [0,d1[, y \in [0,d2[
     T& operator()(const int x, const int y) const; // x \in [0,d1[, y \in [0,d2[
 
 public:
