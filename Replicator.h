@@ -41,6 +41,7 @@ struct ReplicatorParams {
                       save_path(save_path) {};
     std::string to_string();
     static std::string header();
+    double size() const;
 };
 
 class Replicator;
@@ -82,7 +83,7 @@ private:
 // Filling fraction
     double fillfrac_sum;
     double fillfrac_sum2;
-    void update_dep_averages( int occupied_sites );
+    void update_dep_averages( double occupied_sites );
 // Percolation
     double defperc_count;
     double atmperc_count;

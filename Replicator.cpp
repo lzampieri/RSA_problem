@@ -22,6 +22,10 @@ string ReplicatorParams::header() {
     return "TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION";
 }
 
+double ReplicatorParams::size() const {
+    return side*side;
+}
+
 ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
     : thrower( thrower ), id( id ),
     g( thrower->params.side ), fcg( thrower->params.side )  {
@@ -77,8 +81,8 @@ ReplicatorThread::~ReplicatorThread() {
 
         // Deposit polymers
         if( data->thrower->params.to_deposit != nullptr ) {
-            int occupied_sites = GridFiller::fillWithPolymers( data->g, *data->thrower->params.to_deposit );
-            data->thrower->update_dep_averages( occupied_sites );
+            double occupied_sites = GridFiller::fillWithPolymers( data->g, *data->thrower->params.to_deposit );
+            data->thrower->update_dep_averages( occupied_sites / data->thrower->params.size() );
         }
 
         // Compute percolation infos
@@ -167,10 +171,10 @@ void Replicator::update_CF_averages( const std::vector< CorrFunc::Datapoint >* c
     mux->unlock();
 }
 
-void Replicator::update_dep_averages( int occupied_sites ) {
+void Replicator::update_dep_averages( double fill_frac ) {
     mux->lock();
-    fillfrac_sum  += occupied_sites;
-    fillfrac_sum2 += occupied_sites*occupied_sites;
+    fillfrac_sum  += fill_frac;
+    fillfrac_sum2 += fill_frac*fill_frac;
     mux->unlock();
 }
 
@@ -222,12 +226,10 @@ void Replicator::save_data() {
 
         ofstream out_deposition( params.save_path + "/deposition.txt");
         out_deposition<<"{\n\"dep_polymers\":\t\""<<params.to_deposit->keyname<<"\""
-                   <<",\n\"occupation_average\":\t"<<avg
-                   <<",\n\"occupation_std\":\t"<<std
-                   <<",\n\"occupation_fraction_average\":\t"<< avg / (params.side*params.side)
-                   <<",\n\"occupation_fraction_std\":\t"<<std / (params.side*params.side)
-                   <<",\n\"pj_over_1_minus_q_avg\":\t"<< avg / (params.side*params.side) / ( 1 - params.defects_frac )
-                   <<",\n\"pj_over_1_minus_q_std\":\t"<< std / (params.side*params.side) / ( 1 - params.defects_frac )
+                   <<",\n\"occupation_fraction_average\":\t"<< avg
+                   <<",\n\"occupation_fraction_std\":\t"<<std
+                   <<",\n\"pj_over_1_minus_q_avg\":\t"<< avg / ( 1 - params.defects_frac )
+                   <<",\n\"pj_over_1_minus_q_std\":\t"<< std / ( 1 - params.defects_frac )
                    <<"\n}"<<endl;
         out_deposition.close();
     }

@@ -11,17 +11,18 @@ using namespace std;
 
 int main() {
     int n_replies = 1024;
-    int sides[] = { 64, 128, 256, 512, 1024, 2048, 4096 };
-    double gammas[] = { 0.2, 0.6, 1.0, 1.4, 1.8 };
-    double dfs[] = { 0.05, 0.1, 0.2, 0.4 };
+    int sides[] = { 2048 };
+    double gammas[] = { 0.4, 0.8, 1.2, 1.6 };
+    double dfs[] = { 0. , 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1. };
     bool percolation = true;
     bool draw = false;
-    int n_threads = 64;
+    int n_threads = 32;
 
     vector< ReplicatorParams > rps;
     for( int s : sides ) {
         GridProps gp( s );
-        Polymers* pols[] = { StdPolymers::Dimers( gp ), StdPolymers::Trimers( gp ), StdPolymers::LinearTrimers( gp ), StdPolymers::Squared( gp ) };
+        // Polymers* pols[] = { StdPolymers::Dimers( gp ), StdPolymers::Trimers( gp ), StdPolymers::LinearTrimers( gp ), StdPolymers::Squared( gp ) };
+        Polymers* pols[] = { StdPolymers::Dimers( gp ) };
         for( double g : gammas )
             for( double df : dfs )
                 for( Polymers* p : pols )
@@ -39,8 +40,9 @@ int main() {
     for( ReplicatorParams rp : rps ) {
         Replicator r( rp );
         log << r.params.to_string() << '\n';
-        cout<< r.params.to_string() << "(" << ++cont <<" / d"<< rps.size() << ")" << endl;
+        cout<< r.params.to_string() << "(" << ++cont <<" / "<< rps.size() << ")" << endl;
         r.run();
+        r.save_data();
     }
 
     system("PAUSE");

@@ -50,7 +50,7 @@ void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,co
     assert( c == count );
 }
 
-int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
+double GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
 
     AdvVector variants( polys.N );
     vector< AdvVector* > sites;
@@ -66,7 +66,7 @@ int GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
         if( sites[v]->empty() ) variants.remove( v );
     }
 
-    int dep_atoms = 0;
+    double dep_atoms = 0;
     int var, site;
 
     // Deposition:

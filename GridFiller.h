@@ -18,7 +18,7 @@ public:
     static void clean(Grid<int>& toclean, int cleanto = GridSite::Free );
     static void ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,const int count);
 
-    static int fillWithPolymers(Grid<int>& tofill, Polymers& polys);
+    static double fillWithPolymers(Grid<int>& tofill, Polymers& polys);
 };
 
 
