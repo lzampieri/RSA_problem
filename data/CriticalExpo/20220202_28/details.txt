@@ -1,0 +1,11 @@
+{
+"side":	512,
+"defects_frac":	0.4,
+"gamma":	0.6,
+"replies":	1024,
+"CF_Model":	"",
+"dep_polymers":	"Trimers",
+"save_path":	"20220202_28",
+"n_threads":	"32",
+"draw":	False
+}

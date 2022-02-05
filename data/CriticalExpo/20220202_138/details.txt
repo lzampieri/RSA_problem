@@ -1,0 +1,11 @@
+{
+"side":	1024,
+"defects_frac":	0.2,
+"gamma":	1.4,
+"replies":	1024,
+"CF_Model":	"",
+"dep_polymers":	"Squared",
+"save_path":	"20220202_138",
+"n_threads":	"32",
+"draw":	False
+}

@@ -40,6 +40,7 @@ struct ReplicatorParams {
                       n_threads(n_threads), draw(draw),
                       save_path(save_path) {};
     std::string to_string();
+    static std::string header();
 };
 
 class Replicator;
@@ -74,8 +75,6 @@ private:
 // Results
 // Conter
     int replicas_to_run;
-// Params
-    ReplicatorParams params;
 // Correlation function
     std::vector< double >* CF_H_avg;
     std::vector< double >* CF_D_avg;
@@ -96,8 +95,11 @@ public:
     Replicator( ReplicatorParams suggested_params );
     ~Replicator();
 
+// Params
+    ReplicatorParams params;
+    
     void run();
-    std::string save_data();
+    void save_data();
 
     friend class ReplicatorThread;
 };

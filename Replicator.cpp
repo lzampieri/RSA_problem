@@ -2,19 +2,24 @@
 
 using namespace std;
 
-std::string ReplicatorParams::to_string() {
+string ReplicatorParams::to_string() {
     stringstream ss;
     string sep = " | ";
-    ss << save_path << '\t' << sep;
-    ss << setw( 4 ) << side << sep 
+    ss << date::format("%H:%M", chrono::system_clock::now()) << sep
+       << string( 13 - save_path.length(), ' ' ) << save_path << sep
+       << setw( 4 ) << side << sep 
        << setw( 12 )<< defects_frac << sep
        << setw( 5 ) << gamma << sep 
-       << setw( 9 ) << n_replies << sep 
-       << (CF_model ? CF_model->keyname : "") << sep
-       << (to_deposit ? to_deposit->keyname : "") << sep
-       << (percolation ? "Percolation" : "") << sep;;
+       << setw( 9 ) << n_replies << sep
+       << (CF_model ? CF_model->keyname : "Disabled  ") << sep
+       << (to_deposit ? to_deposit->keyname : "Disabled") << sep
+       << (percolation ? "Both" : "Disabled") << sep;;
 
     return ss.str();
+}
+
+string ReplicatorParams::header() {
+    return "TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION";
 }
 
 ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
@@ -44,7 +49,7 @@ ReplicatorThread::~ReplicatorThread() {
     while( data->thrower->replicas_to_run > 0 ) {
         int current_replica = data->thrower->replicas_to_run;
         data->thrower->replicas_to_run --;
-        if( current_replica % max( data->thrower->params.n_replies / 10, 1 ) == 0 )
+        if( current_replica % max( data->thrower->params.n_replies / 100, 1 ) == 0 )
             cout<< "[prg] " << ( data->thrower->params.n_replies - current_replica ) * 100 / data->thrower->params.n_replies << "%\t" << " [" << data->id << "]                          \r" <<flush;
         data->thrower->mux->unlock();
 
@@ -177,14 +182,13 @@ void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
 }
 
 void Replicator::run() {
-    cout<<"[log] Start: " << params.to_string() <<endl;
     for( ReplicatorThread* rt : ongoing )
         rt->start();
     for( ReplicatorThread* rt : ongoing )
         rt->join();
 }
 
-string Replicator::save_data() {
+void Replicator::save_data() {
     // Print details
     ofstream out_details( params.save_path + "/details.txt");
     out_details<<"{\n\"side\":\t"<<params.side
@@ -222,6 +226,8 @@ string Replicator::save_data() {
                    <<",\n\"occupation_std\":\t"<<std
                    <<",\n\"occupation_fraction_average\":\t"<< avg / (params.side*params.side)
                    <<",\n\"occupation_fraction_std\":\t"<<std / (params.side*params.side)
+                   <<",\n\"pj_over_1_minus_q_avg\":\t"<< avg / (params.side*params.side) / ( 1 - params.defects_frac )
+                   <<",\n\"pj_over_1_minus_q_std\":\t"<< std / (params.side*params.side) / ( 1 - params.defects_frac )
                    <<"\n}"<<endl;
         out_deposition.close();
     }
@@ -239,8 +245,5 @@ string Replicator::save_data() {
                    <<",\n\"atmperc_avg\":\t"<<atmperc_avg
                    <<"\n}"<<endl;
         out_deposition.close();
-        cout<<"Percolation averages:\nDefects: "<<defperc_avg<<"\nAtoms: "<<atmperc_avg<<endl; //todo remove
     }
-
-    return params.to_string();
 }

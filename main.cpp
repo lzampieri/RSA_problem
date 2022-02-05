@@ -10,10 +10,10 @@
 using namespace std;
 
 int main() {
-    int n_replies = 100;
-    int sides[] = { 64, 128, 256, 512, 1024, 2048 };
-    double gammas[] = { 0.2, 0.6, 1.0, 1.4 };
-    double dfs[] = { 0.2, 0.3, 0.4, 0.5 };
+    int n_replies = 1024;
+    int sides[] = { 64, 128, 256, 512, 1024, 2048, 4096 };
+    double gammas[] = { 0.2, 0.6, 1.0, 1.4, 1.8 };
+    double dfs[] = { 0.05, 0.1, 0.2, 0.4 };
     bool percolation = true;
     bool draw = false;
     int n_threads = 64;
@@ -32,12 +32,15 @@ int main() {
     ofstream log( "log.txt", ios_base::app );
     log << "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
     cout<< "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
-    log << "PATHNAME\t | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS\n";
-    cout<< "[log]        PATHNAME\t | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS\n";
+    log << ReplicatorParams::header() <<"\n";
+    cout << ReplicatorParams::header() <<"\n";
+    
+    int cont = 0;
     for( ReplicatorParams rp : rps ) {
         Replicator r( rp );
+        log << r.params.to_string() << '\n';
+        cout<< r.params.to_string() << "(" << ++cont <<" / d"<< rps.size() << ")" << endl;
         r.run();
-        log << r.save_data() << endl;
     }
 
     system("PAUSE");

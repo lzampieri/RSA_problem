@@ -1,0 +1,11 @@
+{
+"side":	64,
+"defects_frac":	0.4,
+"gamma":	1,
+"replies":	1024,
+"CF_Model":	"",
+"dep_polymers":	"Dimers",
+"save_path":	"20220201_44",
+"n_threads":	"32",
+"draw":	False
+}
