@@ -7,6 +7,10 @@
 #include "Grid.h"
 #include "AdvVector.h"
 
+#ifndef INT_MAX
+#include <climits>
+#endif
+
 class Polymer : public GridProps {
 public:
     std::vector< GridSite >* atoms;
