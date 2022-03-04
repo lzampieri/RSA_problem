@@ -1,0 +1,1 @@
+del CloudVenetoAnalysis\final.exe && g++.exe *.cpp -o CloudVenetoAnalysis\main.exe -std=c++2
