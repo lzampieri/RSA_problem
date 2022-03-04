@@ -10,16 +10,17 @@ string ReplicatorParams::to_string() {
        << setw( 4 ) << side << sep 
        << setw( 12 )<< defects_frac << sep
        << setw( 5 ) << gamma << sep 
-       << setw( 9 ) << n_replies << sep
+       << setw( 7 ) << chunk_size << sep
+       << setw( 9 ) << tolerance << sep
        << (CF_model ? CF_model->keyname : "Disabled  ") << sep
        << (to_deposit ? to_deposit->keyname : "Disabled") << sep
-       << (percolation ? "Both" : "Disabled") << sep;;
+       << (percolation ? "Both" : "Disabled") << sep;
 
     return ss.str();
 }
 
 string ReplicatorParams::header() {
-    return "TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION";
+    return "TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION";
 }
 
 double ReplicatorParams::size() const {
@@ -50,11 +51,11 @@ ReplicatorThread::~ReplicatorThread() {
 
 /*static*/ void ReplicatorThread::thread_worker (ReplicatorThread* data) {
     data->thrower->mux->lock();
-    while( data->thrower->replicas_to_run > 0 ) {
-        int current_replica = data->thrower->replicas_to_run;
-        data->thrower->replicas_to_run --;
-        if( current_replica % max( data->thrower->params.n_replies / 100, 1 ) == 0 )
-            cout<< "[prg] " << ( data->thrower->params.n_replies - current_replica ) * 100 / data->thrower->params.n_replies << "%\t" << " [" << data->id << "]                          \r" <<flush;
+    while( data->thrower->runned_replicas < data->thrower->total_replicas_to_run ) {
+        int current_replica = ++ data->thrower->runned_replicas;
+        if( data->thrower->params.verbose )
+            if( current_replica % max( data->thrower->params.chunk_size / 100, 1 ) == 0 )
+                cout<< "[prg] " << current_replica << '/' << data->thrower->params.chunk_size << "\t" << " [" << data->id << "]                          \r" <<flush;
         data->thrower->mux->unlock();
 
         // Clean the grid
@@ -113,6 +114,17 @@ void ReplicatorThread::join() {
     delete thrd;
 }
 
+void Replicator::addChunk() {
+    total_replicas_to_run += params.chunk_size;
+    
+    for( ReplicatorThread* rt : ongoing )
+        rt->start();
+    for( ReplicatorThread* rt : ongoing )
+        rt->join();
+
+    fillfrac_stds.push_back( fillfrac_std() );
+}
+
 Replicator::Replicator( ReplicatorParams suggested_params ) :
     params( suggested_params ), mux( new mutex() ) {
 
@@ -148,8 +160,10 @@ Replicator::Replicator( ReplicatorParams suggested_params ) :
     for( int i=0; i < params.n_threads; i++ ) {
         ongoing.push_back( new ReplicatorThread( this, i ) );
     }
-    replicas_to_run = params.n_replies;
-    
+
+    // Initialize the replicas counter
+    runned_replicas = 0;
+    total_replicas_to_run = 0;    
 }
 
 Replicator::~Replicator() {
@@ -178,6 +192,10 @@ void Replicator::update_dep_averages( double fill_frac ) {
     mux->unlock();
 }
 
+double Replicator::fillfrac_std() const {
+    return sqrt( fillfrac_sum2 / runned_replicas - pow(fillfrac_sum / runned_replicas, 2) );
+}
+
 void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
     mux->lock();
     defperc_count += ( def_perc ? 1 : 0 );
@@ -186,10 +204,17 @@ void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
 }
 
 void Replicator::run() {
-    for( ReplicatorThread* rt : ongoing )
-        rt->start();
-    for( ReplicatorThread* rt : ongoing )
-        rt->join();
+    while(1) {
+        addChunk();
+        if( params.to_deposit && fillfrac_stds.size() > 1 ) {
+            double last = fillfrac_stds[ fillfrac_stds.size() - 1 ];
+            double prelast = fillfrac_stds[ fillfrac_stds.size() - 2 ];
+            if( params.verbose )
+                cout << "Variation: " << abs( last - prelast ) / min( last, prelast ) << endl;
+            if( abs( last - prelast ) / min( last, prelast ) < params.tolerance )
+                break;
+        }
+    }
 }
 
 void Replicator::save_data() {
@@ -198,7 +223,10 @@ void Replicator::save_data() {
     out_details<<"{\n\"side\":\t"<<params.side
                <<",\n\"defects_frac\":\t"<<params.defects_frac
                <<",\n\"gamma\":\t"<<params.gamma
-               <<",\n\"replies\":\t"<<params.n_replies
+               <<",\n\"chunk_size\":\t"<<params.chunk_size
+               <<",\n\"tolerance\":\t"<<params.tolerance
+               <<",\n\"runned_replicas\":\t"<<runned_replicas
+               <<",\n\"runned_chunks\":\t"<< (runned_replicas+1) / params.chunk_size
                <<",\n\"CF_Model\":\t\""<<(params.CF_model ? params.CF_model->keyname : "") << "\""
                <<",\n\"dep_polymers\":\t\""<<(params.to_deposit ? params.to_deposit->keyname : "") << "\""
                <<",\n\"save_path\":\t\"" << params.save_path << "\""
@@ -212,8 +240,8 @@ void Replicator::save_data() {
         ofstream out_corrH( params.save_path + "/CF_H_avg.txt");
         ofstream out_corrD( params.save_path + "/CF_D_avg.txt");
         for( int i=0; i < params.CF_model->is.size(); i++ ) {
-            out_corrH<< params.CF_model->is[i] << '\t' << CF_H_avg->at(i) / params.n_replies << '\n';
-            out_corrD<< params.CF_model->is[i] << '\t' << CF_D_avg->at(i) / params.n_replies << '\n';
+            out_corrH<< params.CF_model->is[i] << '\t' << CF_H_avg->at(i) / runned_replicas << '\n';
+            out_corrD<< params.CF_model->is[i] << '\t' << CF_D_avg->at(i) / runned_replicas << '\n';
         }
         out_corrH.close();
         out_corrD.close();
@@ -221,8 +249,8 @@ void Replicator::save_data() {
 
     // Print polymers deposition results
     if( params.to_deposit ) {
-        double avg = fillfrac_sum / params.n_replies;
-        double std = sqrt( ( fillfrac_sum2 - fillfrac_sum*fillfrac_sum/params.n_replies ) / ( params.n_replies - 1 ) );
+        double avg = fillfrac_sum / runned_replicas;
+        double std = fillfrac_std();
 
         ofstream out_deposition( params.save_path + "/deposition.txt");
         out_deposition<<"{\n\"dep_polymers\":\t\""<<params.to_deposit->keyname<<"\""
@@ -230,14 +258,17 @@ void Replicator::save_data() {
                    <<",\n\"occupation_fraction_std\":\t"<<std
                    <<",\n\"pj_over_1_minus_q_avg\":\t"<< avg / ( 1 - params.defects_frac )
                    <<",\n\"pj_over_1_minus_q_std\":\t"<< std / ( 1 - params.defects_frac )
-                   <<"\n}"<<endl;
+                   <<",\n\"occupation_fraction_std_history\":\t[";
+        for( double d : fillfrac_stds )
+            out_deposition<<d<<',';
+        out_deposition<<"]\n}"<<endl;
         out_deposition.close();
     }
 
     // Print percolation results
     if( params.percolation ) {
-        double defperc_avg = defperc_count / params.n_replies;
-        double atmperc_avg = atmperc_count / params.n_replies;
+        double defperc_avg = defperc_count / runned_replicas;
+        double atmperc_avg = atmperc_count / runned_replicas;
 
         ofstream out_deposition( params.save_path + "/percolation.txt");
         out_deposition<<"{"
@@ -248,4 +279,8 @@ void Replicator::save_data() {
                    <<"\n}"<<endl;
         out_deposition.close();
     }
+}
+
+int Replicator::runned_chunks() {
+    return ( runned_replicas + 1 ) / params.chunk_size;
 }

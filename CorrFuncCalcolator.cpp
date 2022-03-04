@@ -97,7 +97,6 @@ Calculator<T>::Calculator( Model* model, const Grid<T>* grid ) : grid(grid) {
             }
         }
     }
-    cout<<"[log] Operations necessary for computing correlator: "<< this->works->size() <<endl;
 
     raw_data = new vector< RawDatapoint >( model->is.size(), RawDatapoint( 0, 0, 0 ) );
     final_data = new vector< Datapoint >( model->is.size(), Datapoint( 0, 0 ) );

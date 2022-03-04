@@ -21,24 +21,26 @@ struct ReplicatorParams {
     int side;
     double defects_frac;
     double gamma;
-    int n_replies;
+    int chunk_size;
+    double tolerance;
     CorrFunc::Model* CF_model;
     Polymers* to_deposit;
     bool percolation;
     int n_threads;
     bool draw;
+    bool verbose;
     std::string save_path;
 
     ReplicatorParams( int side, double defects_frac, double gamma,
-                      int n_replies, CorrFunc::Model* CF_model = nullptr,
+                      int chunk_size = 100, double tolerance = 1e-3, CorrFunc::Model* CF_model = nullptr,
                       Polymers* to_deposit = nullptr, bool percolation = false,
                       int n_threads = 1, bool draw = false,
-                      std::string save_path = "" ) :
+                      bool verbose = false, std::string save_path = "" ) :
                       side(side), defects_frac(defects_frac), gamma(gamma),
-                      n_replies(n_replies), CF_model(CF_model),
+                      chunk_size(chunk_size), tolerance(tolerance), CF_model(CF_model),
                       to_deposit(to_deposit), percolation(percolation),
                       n_threads(n_threads), draw(draw),
-                      save_path(save_path) {};
+                      verbose(verbose), save_path(save_path) {};
     std::string to_string();
     static std::string header();
     double size() const;
@@ -74,8 +76,6 @@ public:
 class Replicator {
 private:
 // Results
-// Conter
-    int replicas_to_run;
 // Correlation function
     std::vector< double >* CF_H_avg;
     std::vector< double >* CF_D_avg;
@@ -84,6 +84,7 @@ private:
     double fillfrac_sum;
     double fillfrac_sum2;
     void update_dep_averages( double occupied_sites );
+    double fillfrac_std() const;
 // Percolation
     double defperc_count;
     double atmperc_count;
@@ -91,6 +92,11 @@ private:
 // Works
     std::mutex* mux;
     std::vector< ReplicatorThread* > ongoing;
+// Chunks manager
+    int runned_replicas;
+    int total_replicas_to_run;
+    std::vector<double> fillfrac_stds;
+    void addChunk();
 
 public:
     Replicator( ReplicatorParams suggested_params );
@@ -101,6 +107,7 @@ public:
     
     void run();
     void save_data();
+    int runned_chunks();
 
     friend class ReplicatorThread;
 };
