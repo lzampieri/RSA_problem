@@ -1,1 +1,1 @@
-del CloudVenetoAnalysis\final.exe && g++.exe *.cpp -o CloudVenetoAnalysis\main.exe -std=c++2
+rm -f CloudVenetoAnalysis/main && g++-11 *.cpp -o CloudVenetoAnalysis/main -std=c++2a -lfftw3 -pthread
