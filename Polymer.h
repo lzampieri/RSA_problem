@@ -38,12 +38,38 @@ public:
     Polymers(const Polymers&) = delete; // Copy costruction forbidden
 };
 
+class PolymersFactory {
+public:
+    virtual std::string factname() const { return "Error"; }
+    virtual Polymers* create( GridProps& gp ) = 0;
+    Polymers* operator()( GridProps& gp ) { return create( gp ); }
+    Polymers* create( int s ) { GridProps gp( s ); return create( gp ); }
+    Polymers* operator()( int s ) { return create( s ); }
+
+    static std::vector<PolymersFactory*> StdPolymers;
+};
+
 namespace StdPolymers {
-    Polymers* LinearTrimers( GridProps& gp );
-    Polymers* Trimers( GridProps& gp );
-    Polymers* LinearPentamers( GridProps& gp );
-    Polymers* Dimers( GridProps& gp );
-    Polymers* Squared( GridProps& gp );
+    class Dimers          : public PolymersFactory {
+        std::string factname() const { return "Dimers"; };
+        Polymers* create( GridProps& gp );
+    };
+    class LinearTrimers   : public PolymersFactory {
+        std::string factname() const { return "LinearTrimers"; }
+        Polymers* create( GridProps& gp );
+    };
+    class Trimers         : public PolymersFactory {
+        std::string factname() const { return "Trimers"; }
+        Polymers* create( GridProps& gp );
+    };
+    class Squared         : public PolymersFactory {
+        std::string factname() const { return "Squared"; }
+        Polymers* create( GridProps& gp );
+    };
+    class LinearPentamers : public PolymersFactory {
+        std::string factname() const { return "LinearPentamers"; }
+        Polymers* create( GridProps& gp );
+    };
 }
 
 #endif
