@@ -52,9 +52,9 @@ int main(int argc, char *argv[]) {
     int cont = 0;
     for( ReplicatorParams rp : as.rps ) {
         Replicator r( rp );
-        log << r.params.to_string() << '\n';
+        log << r.params.to_string() << "(" << ++cont <<" / "<< as.rps.size() << ")" << '\n';
         if( as.verbose )
-            cout<< r.params.to_string() << "(" << ++cont <<" / "<< as.rps.size() << ")" << endl;
+            cout<< r.params.to_string() << "(" << cont <<" / "<< as.rps.size() << ")" << endl;
         r.run();
         log << "// Chunks: " << r.runned_chunks() << '\n';
         if( as.verbose )
