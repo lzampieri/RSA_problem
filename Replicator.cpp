@@ -5,8 +5,13 @@ using namespace std;
 string ReplicatorParams::to_string() {
     stringstream ss;
     string sep = " | ";
+    string trimmed_savepath = (
+        save_path.length() < 13 ?
+        string( 13 - save_path.length(), ' ' ) + save_path :
+        save_path.substr( save_path.length() - 13 ) );
+
     ss << date::format("%H:%M", chrono::system_clock::now()) << sep
-       << string( 13 - save_path.length(), ' ' ) << save_path << sep
+       << trimmed_savepath << sep
        << setw( 4 ) << side << sep 
        << setw( 12 )<< defects_frac << sep
        << setw( 5 ) << gamma << sep 
@@ -129,16 +134,12 @@ Replicator::Replicator( ReplicatorParams suggested_params ) :
     params( suggested_params ), mux( new mutex() ) {
 
     // Compute save path
-    // - If no other requirements, define from date
-    if( params.save_path == "" )
-        params.save_path = date::format("%Y%m%d", chrono::system_clock::now());
     // - Ensure uniqueness adding a progressive
     int progressive = 0;
-    while( filesystem::exists( params.save_path + "_" + to_string( progressive ) ) )
+    while( filesystem::exists( params.save_path + "/f_" + to_string( progressive ) ) )
         progressive++;
-    params.save_path = params.save_path + "_" + to_string( progressive );
-    if( !filesystem::exists( params.save_path ) )
-        filesystem::create_directory( params.save_path );
+    params.save_path = params.save_path + "/f_" + to_string( progressive );
+    filesystem::create_directory( params.save_path );
 
     // Create correlation function structures
     CF_H_avg = nullptr;

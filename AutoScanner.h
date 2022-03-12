@@ -5,10 +5,12 @@
 #include <string>
 #include <sstream>
 #include <fstream>
+#include <filesystem>
 
 #include "Replicator.h"
 #include "Polymer.h"
 #include "CorrFuncCalcolator.h"
+#include "date.h"
 
 class AutoScanner {
 public:
@@ -26,16 +28,20 @@ public:
 
     int n_threads;
 
+    std::string filename = "default";
+
     CorrFunc::Model* CFmodel = nullptr;
 
     std::vector< ReplicatorParams > rps;
 
-    void populate();
+    std::string populate();
 
     void loadFromTxt( std::string file );
     void saveToTxt( std::string file );
 
 private:
+    std::string computeFolder( );
+
     void string_to_array( const std::string text, std::vector<double>& vec );
     void string_to_array( const std::string text, std::vector<int>& vec );
     void string_to_array( const std::string text, std::vector<PolymersFactory*>& vec );
