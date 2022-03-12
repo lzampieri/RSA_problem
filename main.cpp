@@ -21,7 +21,7 @@ int main(int argc, char *argv[]) {
         as.tolerance = 1e-3;
         as.sides = { 64, 128, 256, 1024, 2048 };
         as.gammas = { 0.2, 0.6, 1.0, 1.2 };
-        as.qs = { 1, 0.1, 0.3, 0.5 };
+        as.qs = { 0.1, 0.3, 0.5 };
         as.ps = {
             new StdPolymers::Dimers(),
             new StdPolymers::LinearTrimers(),
