@@ -211,7 +211,7 @@ void Replicator::run() {
             double last = fillfrac_stds[ fillfrac_stds.size() - 1 ];
             double prelast = fillfrac_stds[ fillfrac_stds.size() - 2 ];
             double variation = abs( last - prelast ) / min( last, prelast );
-            if( variation )
+            if( isnan( variation ) )
                 break;
             if( params.verbose )
                 cout << "Variation: " << variation << endl;
