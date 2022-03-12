@@ -45,7 +45,7 @@ int main(int argc, char *argv[]) {
     log << "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
     if( as.verbose )
         cout<< "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
-    log << ReplicatorParams::header() <<"\n";
+    log << ReplicatorParams::header() << endl;
     if( as.verbose )
         cout << ReplicatorParams::header() <<"\n";
     
