@@ -210,9 +210,12 @@ void Replicator::run() {
         if( params.to_deposit && fillfrac_stds.size() > 1 ) {
             double last = fillfrac_stds[ fillfrac_stds.size() - 1 ];
             double prelast = fillfrac_stds[ fillfrac_stds.size() - 2 ];
+            double variation = abs( last - prelast ) / min( last, prelast );
+            if( variation )
+                break;
             if( params.verbose )
-                cout << "Variation: " << abs( last - prelast ) / min( last, prelast ) << endl;
-            if( abs( last - prelast ) / min( last, prelast ) < params.tolerance )
+                cout << "Variation: " << variation << endl;
+            if( variation < params.tolerance )
                 break;
         }
     }
