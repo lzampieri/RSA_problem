@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
         as.chunk_size = 1024;
-        as.tolerance = 1e-4;
+        as.tolerance = 1e-3;
         as.sides = { 64, 128, 256, 1024, 2048 };
         as.gammas = { 0.2, 0.6, 1.0, 1.2 };
         as.qs = { 0.1, 0.3, 0.5 };
@@ -32,33 +32,32 @@ int main(int argc, char *argv[]) {
         as.verbose = true;
         as.n_threads = 32;
         
-        as.saveToTxt( "default_config.scan" );
     } else {
         string filename = argv[1];
         cout<<"Extracting data from "<<filename<<endl;
         as.loadFromTxt( filename );
     }
 
-    as.populate();
+    string folder = as.populate();
 
-    ofstream log( "log.txt", ios_base::app );
+    ofstream log( folder + "/log.txt", ios_base::app );
     log << "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
     if( as.verbose )
         cout<< "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
-    log << ReplicatorParams::header() <<"\n";
+    log << ReplicatorParams::header() << endl;
     if( as.verbose )
         cout << ReplicatorParams::header() <<"\n";
     
     int cont = 0;
     for( ReplicatorParams rp : as.rps ) {
         Replicator r( rp );
-        log << r.params.to_string() << '\n';
+        log << r.params.to_string() << "(" << ++cont <<" / "<< as.rps.size() << ")\t";
         if( as.verbose )
-            cout<< r.params.to_string() << "(" << ++cont <<" / "<< as.rps.size() << ")" << endl;
+            cout<< r.params.to_string() << "(" << cont <<" / "<< as.rps.size() << ")\t" << flush;
         r.run();
-        log << "// Chunks: " << r.runned_chunks() << '\n';
+        log << " Chunks: " << r.runned_chunks() << endl;
         if( as.verbose )
-            cout<< "// Chunks: " << r.runned_chunks() << endl;
+            cout<< " Chunks: " << r.runned_chunks() << endl;
         r.save_data();
     }
 

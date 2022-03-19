@@ -2,15 +2,19 @@
 
 using namespace std;
 
-void AutoScanner::populate() {
+string AutoScanner::populate() {
+    string folder = computeFolder();
+
     for( int s : sides )
         for( double g : gammas )
             for( double q : qs )
                 for( PolymersFactory* p : ps )
                     rps.push_back( ReplicatorParams(
-                     // Size DefectsFracs Gamma ChunkSize   Tolerance  CFModel  Polymers      Percolation  NThreads,  Draw  Verbose SavePath
-                        s,   q,           g,    chunk_size, tolerance, CFmodel, p->create(s), percolation, n_threads, draw, verbose
+                     // Size DefectsFracs Gamma ChunkSize   Tolerance  CFModel  Polymers      Percolation  NThreads,  Draw  Verbose  SavePath
+                        s,   q,           g,    chunk_size, tolerance, CFmodel, p->create(s), percolation, n_threads, draw, verbose, folder
                     ));
+
+    return folder;
 }
 
 void AutoScanner::loadFromTxt( string file ) {
@@ -36,6 +40,39 @@ void AutoScanner::loadFromTxt( string file ) {
         >> draw
         >> verbose
         >> n_threads;
+
+    filename = file;
+}
+
+string AutoScanner::computeFolder( ) {
+
+    string folder = filename;
+
+    // Ensure only numbers and letters
+    folder.erase( remove_if( folder.begin(), folder.end(),
+        [](char c) { return !isalpha(c) && !isdigit(c); } ),
+        folder.end()
+        );
+
+    // Append current date
+    folder += "_" + date::format("%Y%m%d", chrono::system_clock::now());
+
+    // Check for existence
+    if( filesystem::exists( folder ) ) {
+        int progressive = 0;
+        // If already exists, append progressive
+        while( filesystem::exists( folder + "_" + to_string( progressive ) ) )
+            progressive ++;
+        folder += "_" + to_string( progressive );
+    }
+
+    // Create
+    filesystem::create_directory( folder );
+
+    // Save there a copy of the configuration file
+    saveToTxt( folder + "/params.scan" );
+
+    return folder;
 }
 
 void AutoScanner::saveToTxt( string file ) {
