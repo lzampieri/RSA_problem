@@ -1,0 +1,14 @@
+{
+"side":	1024,
+"defects_frac":	0.1,
+"gamma":	0.4,
+"chunk_size":	1024,
+"tolerance":	1e-05,
+"runned_replicas":	22528,
+"runned_chunks":	22,
+"CF_Model":	"",
+"dep_polymers":	"Trimers",
+"save_path":	"20220309_0",
+"n_threads":	"4",
+"draw":	False
+}

@@ -1,0 +1,14 @@
+{
+"side":	1024,
+"defects_frac":	0.05,
+"gamma":	0.4,
+"chunk_size":	1024,
+"tolerance":	1e-05,
+"runned_replicas":	87040,
+"runned_chunks":	85,
+"CF_Model":	"",
+"dep_polymers":	"Squared",
+"save_path":	"20220308_0",
+"n_threads":	"4",
+"draw":	False
+}
