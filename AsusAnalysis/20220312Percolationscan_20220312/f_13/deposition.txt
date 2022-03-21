@@ -1,8 +1,8 @@
 {
 "dep_polymers":	"Linear trimers",
-"occupation_fraction_average":	0.519812,
-"occupation_fraction_std":	0.00605331,
-"pj_over_1_minus_q_avg":	0.742589,
-"pj_over_1_minus_q_std":	0.00864759,
-"occupation_fraction_std_history":	[0.00684875,0.00653499,0.00629409,0.00642169,0.00632608,0.00631654,0.00630754,0.00624291,0.00619561,0.00616034,0.00610848,0.00608557,0.0060432,0.00605813,0.00605331,]
+"occupation_fraction_average":	0.520222,
+"occupation_fraction_std":	0.00636385,
+"pj_over_1_minus_q_avg":	0.743174,
+"pj_over_1_minus_q_std":	0.00909122,
+"occupation_fraction_std_history":	[0.00744845,0.00715916,0.00664598,0.0066994,0.00673134,0.00665396,0.00654386,0.00644588,0.00633938,0.00636492,0.00636385,]
 }

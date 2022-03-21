@@ -1,8 +1,8 @@
 {
 "dep_polymers":	"Squared",
-"occupation_fraction_average":	0.394938,
-"occupation_fraction_std":	0.00778349,
-"pj_over_1_minus_q_avg":	0.65823,
-"pj_over_1_minus_q_std":	0.0129725,
-"occupation_fraction_std_history":	[0.00939036,0.00848186,0.00842773,0.00815189,0.00806682,0.00782462,0.00768483,0.00778834,0.00778349,]
+"occupation_fraction_average":	0.396006,
+"occupation_fraction_std":	0.00721437,
+"pj_over_1_minus_q_avg":	0.660011,
+"pj_over_1_minus_q_std":	0.0120239,
+"occupation_fraction_std_history":	[0.00615843,0.00745785,0.00717378,0.00701845,0.00715314,0.00733428,0.0072176,0.00709174,0.00734182,0.00729408,0.00727761,0.00721384,0.00721437,]
 }

@@ -4,11 +4,11 @@
 "gamma":	0.4,
 "chunk_size":	512,
 "tolerance":	0.001,
-"runned_replicas":	9216,
-"runned_chunks":	18,
+"runned_replicas":	7680,
+"runned_chunks":	15,
 "CF_Model":	"",
 "dep_polymers":	"Linear trimers",
 "save_path":	"20220312Percolationscan_20220312/f_9",
-"n_threads":	"4",
+"n_threads":	"16",
 "draw":	False
 }
