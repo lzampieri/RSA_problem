@@ -1,0 +1,14 @@
+{
+"side":	128,
+"defects_frac":	0.6,
+"gamma":	1.6,
+"chunk_size":	512,
+"tolerance":	0.001,
+"runned_replicas":	3072,
+"runned_chunks":	6,
+"CF_Model":	"",
+"dep_polymers":	"Squared",
+"save_path":	"20220312Percolationscan_20220312/f_335",
+"n_threads":	"16",
+"draw":	False
+}

@@ -1,0 +1,14 @@
+{
+"side":	1024,
+"defects_frac":	0.1,
+"gamma":	1.2,
+"chunk_size":	512,
+"tolerance":	0.001,
+"runned_replicas":	2560,
+"runned_chunks":	5,
+"CF_Model":	"",
+"dep_polymers":	"Linear trimers",
+"save_path":	"20220312Percolationscan_20220312/f_621",
+"n_threads":	"16",
+"draw":	False
+}
