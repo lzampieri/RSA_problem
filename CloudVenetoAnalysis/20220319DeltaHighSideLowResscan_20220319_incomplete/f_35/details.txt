@@ -1,0 +1,14 @@
+{
+"side":	1024,
+"defects_frac":	0.2,
+"gamma":	1.2,
+"chunk_size":	256,
+"tolerance":	0.001,
+"runned_replicas":	8192,
+"runned_chunks":	32,
+"CF_Model":	"",
+"dep_polymers":	"Squared",
+"save_path":	"20220319DeltaHighSideLowResscan_20220319/f_35",
+"n_threads":	"8",
+"draw":	False
+}
