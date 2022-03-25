@@ -1,0 +1,14 @@
+{
+"side":	512,
+"defects_frac":	1,
+"gamma":	1.6,
+"chunk_size":	512,
+"tolerance":	0.001,
+"runned_replicas":	1024,
+"runned_chunks":	2,
+"CF_Model":	"",
+"dep_polymers":	"Dimers",
+"save_path":	"20220313Percolationscan_20220321/f_172",
+"n_threads":	"16",
+"draw":	False
+}
