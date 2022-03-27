@@ -96,4 +96,3 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 04:13 | 20220319/f_93 | 2048 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Linear trimers | Both | (94 / 144)	 Chunks: 10
 05:39 | 20220319/f_94 | 2048 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Trimers | Both | (95 / 144)	 Chunks: 4
 06:41 | 20220319/f_95 | 2048 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Squared | Both | (96 / 144)	 Chunks: 9
-07:41 | 20220319/f_96 | 4096 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Dimers | Both | (97 / 144)	 Chunks: 8
