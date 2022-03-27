@@ -59,8 +59,8 @@ ReplicatorThread::~ReplicatorThread() {
     while( data->thrower->runned_replicas < data->thrower->total_replicas_to_run ) {
         int current_replica = ++ data->thrower->runned_replicas;
         if( data->thrower->params.verbose )
-            if( current_replica % max( data->thrower->params.chunk_size / 100, 1 ) == 0 )
-                cout<< "[prg] " << current_replica << '/' << data->thrower->params.chunk_size << "\t" << " [" << data->id << "]                          \r" <<flush;
+            if( current_replica % max( data->thrower->total_replicas_to_run / 100, 1 ) == 0 )
+                cout<< "[prg] " << current_replica << '/' << data->thrower->total_replicas_to_run << "\t" << " [" << data->id << "]                          \r" <<flush;
         data->thrower->mux->unlock();
 
         // Clean the grid
@@ -88,7 +88,7 @@ ReplicatorThread::~ReplicatorThread() {
         // Deposit polymers
         if( data->thrower->params.to_deposit != nullptr ) {
             double occupied_sites = GridFiller::fillWithPolymers( data->g, *data->thrower->params.to_deposit );
-            data->thrower->update_dep_averages( occupied_sites / data->thrower->params.size() );
+            data->thrower->update_dep_averages( occupied_sites );
         }
 
         // Compute percolation infos
@@ -120,14 +120,16 @@ void ReplicatorThread::join() {
 }
 
 void Replicator::addChunk() {
-    total_replicas_to_run += params.chunk_size;
+    total_replicas_to_run *= 2;
+    if( total_replicas_to_run == 0 )
+        total_replicas_to_run = params.chunk_size;
+    
+    fills->reserve( total_replicas_to_run );
     
     for( ReplicatorThread* rt : ongoing )
         rt->start();
     for( ReplicatorThread* rt : ongoing )
         rt->join();
-
-    fillfrac_stds.push_back( fillfrac_std() );
 }
 
 Replicator::Replicator( ReplicatorParams suggested_params ) :
@@ -150,8 +152,7 @@ Replicator::Replicator( ReplicatorParams suggested_params ) :
     }
 
     // Initialize occupation stats
-    fillfrac_sum = 0;
-    fillfrac_sum2= 0;
+    fills = new vector< unsigned int >();
 
     // Initialize percolation stats
     defperc_count = 0;
@@ -188,13 +189,30 @@ void Replicator::update_CF_averages( const std::vector< CorrFunc::Datapoint >* c
 
 void Replicator::update_dep_averages( double fill_frac ) {
     mux->lock();
-    fillfrac_sum  += fill_frac;
-    fillfrac_sum2 += fill_frac*fill_frac;
+    if( fill_frac > UINT_MAX ) {
+        cout<<"Warning! Overflow exeption!";
+    }
+    fills->push_back( fill_frac );
     mux->unlock();
 }
 
-double Replicator::fillfrac_std() const {
-    return sqrt( fillfrac_sum2 / runned_replicas - pow(fillfrac_sum / runned_replicas, 2) );
+double Replicator::fill_avg( unsigned int threshold ) const {
+    if( runned_replicas < threshold )
+        threshold = runned_replicas;
+    double result = 0;
+    for( int i = 0; i < threshold; i++ )
+        result += fills->at(i);
+    return result / threshold;
+}
+
+double Replicator::fill_std( unsigned int threshold ) const {
+    if( runned_replicas < threshold )
+        threshold = runned_replicas;
+    double avg = fill_avg( threshold );
+    double result = 0;
+    for( int i = 0; i < threshold; i++ )
+        result += ( ( fills->at(i) - avg ) * ( fills->at(i) - avg ) );
+    return sqrt( result / ( threshold - 1 ) );
 }
 
 void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
@@ -205,16 +223,18 @@ void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
 }
 
 void Replicator::run() {
+    if( params.verbose )
+        cout<< "Runned | FillAvg | FillStd | Variation" <<endl;
     while(1) {
         addChunk();
-        if( params.to_deposit && fillfrac_stds.size() > 1 ) {
-            double last = fillfrac_stds[ fillfrac_stds.size() - 1 ];
-            double prelast = fillfrac_stds[ fillfrac_stds.size() - 2 ];
+        if( params.to_deposit && runned_replicas > params.chunk_size ) {
+            double last = fill_std();
+            double prelast = fill_std( runned_replicas / 2 );
             double variation = abs( last - prelast ) / min( last, prelast );
             if( isnan( variation ) )
                 break;
             if( params.verbose )
-                cout << "Variation: " << variation << endl;
+                cout << runned_replicas << "\t" << fill_avg() << "\t" << fill_std() << "\t" << variation << endl;
             if( variation < params.tolerance )
                 break;
         }
@@ -230,7 +250,6 @@ void Replicator::save_data() {
                <<",\n\"chunk_size\":\t"<<params.chunk_size
                <<",\n\"tolerance\":\t"<<params.tolerance
                <<",\n\"runned_replicas\":\t"<<runned_replicas
-               <<",\n\"runned_chunks\":\t"<< (runned_replicas+1) / params.chunk_size
                <<",\n\"CF_Model\":\t\""<<(params.CF_model ? params.CF_model->keyname : "") << "\""
                <<",\n\"dep_polymers\":\t\""<<(params.to_deposit ? params.to_deposit->keyname : "") << "\""
                <<",\n\"save_path\":\t\"" << params.save_path << "\""
@@ -253,17 +272,19 @@ void Replicator::save_data() {
 
     // Print polymers deposition results
     if( params.to_deposit ) {
-        double avg = fillfrac_sum / runned_replicas;
-        double std = fillfrac_std();
+        double avg = fill_avg();
+        double std = fill_std();
 
         ofstream out_deposition( params.save_path + "/deposition.txt");
         out_deposition<<"{\n\"dep_polymers\":\t\""<<params.to_deposit->keyname<<"\""
-                   <<",\n\"occupation_fraction_average\":\t"<< avg
-                   <<",\n\"occupation_fraction_std\":\t"<<std
-                   <<",\n\"pj_over_1_minus_q_avg\":\t"<< avg / ( 1 - params.defects_frac )
-                   <<",\n\"pj_over_1_minus_q_std\":\t"<< std / ( 1 - params.defects_frac )
-                   <<",\n\"occupation_fraction_std_history\":\t[";
-        for( double d : fillfrac_stds )
+                   <<",\n\"occupation_average\":\t"<< avg
+                   <<",\n\"occupation_std\":\t"<<std
+                   <<",\n\"occupation_fraction_average\":\t"<< avg / params.size()
+                   <<",\n\"occupation_fraction_std\":\t"<<std / params.size()
+                   <<",\n\"pj_over_1_minus_q_avg\":\t"<< avg / params.size() / ( 1 - params.defects_frac )
+                   <<",\n\"pj_over_1_minus_q_std\":\t"<< std / params.size() / ( 1 - params.defects_frac )
+                   <<",\n\"occupation_history\":\t[";
+        for( unsigned int d : *fills )
             out_deposition<<d<<',';
         out_deposition<<"]\n}"<<endl;
         out_deposition.close();
@@ -285,6 +306,6 @@ void Replicator::save_data() {
     }
 }
 
-int Replicator::runned_chunks() {
-    return ( runned_replicas + 1 ) / params.chunk_size;
+int32_t Replicator::total_runned() {
+    return runned_replicas;
 }

@@ -1,0 +1,14 @@
+{
+"side":	64,
+"defects_frac":	0.2,
+"gamma":	1.6,
+"chunk_size":	128,
+"tolerance":	1e-07,
+"runned_replicas":	156800,
+"runned_chunks":	1225,
+"CF_Model":	"",
+"dep_polymers":	"Squared",
+"save_path":	"20220326GreatResscan_20220326/f_3",
+"n_threads":	"32",
+"draw":	False
+}

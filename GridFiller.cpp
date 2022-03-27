@@ -57,10 +57,10 @@ double GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
     for( int i=0; i < polys.N; i++ )
         sites.push_back( new AdvVector( tofill.imax() ) );
 
-    // Remove not-free sites
+    // Remove not available sites
     for( int v=0; v < polys.N; v++ ) {
         for( int i=0; i < tofill.imax(); i++ )
-            if( !tofill[i] == GridSite::Free )
+            if( ! ( polys[v]->canStay( tofill, i ) ) )
                 sites[v]->remove(i);
 
         if( sites[v]->empty() ) variants.remove( v );

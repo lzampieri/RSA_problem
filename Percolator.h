@@ -13,7 +13,7 @@ private:
     Grid<int>& grid;
     std::vector<bool> inserted;
     std::vector<GridSite> to_check;
-    int to_check_it; // The place just after the last occupied one
+    int to_check_end; // The place just after the last occupied one
 
     bool next(GridSite& i);
     bool add(GridSite i);

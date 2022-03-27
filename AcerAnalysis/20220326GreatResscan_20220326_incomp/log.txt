@@ -1,0 +1,15 @@
+=== 20220326 19:32 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+19:32 | _20220326/f_0 |   64 |          0.2 |   0.4 |     128 |     1e-07 | Disabled   | Squared | Disabled | (1 / 28)	 Chunks: 3567
+19:41 | _20220326/f_1 |   64 |          0.2 |   0.8 |     128 |     1e-07 | Disabled   | Squared | Disabled | (2 / 28)	 Chunks: 1223
+19:44 | _20220326/f_2 |   64 |          0.2 |   1.2 |     128 |     1e-07 | Disabled   | Squared | Disabled | (3 / 28)	 Chunks: 2884
+19:51 | _20220326/f_3 |   64 |          0.2 |   1.6 |     128 |     1e-07 | Disabled   | Squared | Disabled | (4 / 28)	 Chunks: 1225
+19:54 | _20220326/f_4 |  128 |          0.2 |   0.4 |     128 |     1e-07 | Disabled   | Squared | Disabled | (5 / 28)	 Chunks: 918
+20:04 | _20220326/f_5 |  128 |          0.2 |   0.8 |     128 |     1e-07 | Disabled   | Squared | Disabled | (6 / 28)	 Chunks: 1045
+20:16 | _20220326/f_6 |  128 |          0.2 |   1.2 |     128 |     1e-07 | Disabled   | Squared | Disabled | (7 / 28)	 Chunks: 707
+20:24 | _20220326/f_7 |  128 |          0.2 |   1.6 |     128 |     1e-07 | Disabled   | Squared | Disabled | (8 / 28)	 Chunks: 1230
+20:38 | _20220326/f_8 |  256 |          0.2 |   0.4 |     128 |     1e-07 | Disabled   | Squared | Disabled | (9 / 28)	 Chunks: 1860
+22:10 | _20220326/f_9 |  256 |          0.2 |   0.8 |     128 |     1e-07 | Disabled   | Squared | Disabled | (10 / 28)	 Chunks: 1071
+23:01 | 20220326/f_10 |  256 |          0.2 |   1.2 |     128 |     1e-07 | Disabled   | Squared | Disabled | (11 / 28)	 Chunks: 895
+23:53 | 20220326/f_11 |  256 |          0.2 |   1.6 |     128 |     1e-07 | Disabled   | Squared | Disabled | (12 / 28)	 Chunks: 869
+00:31 | 20220326/f_12 |  512 |          0.2 |   0.4 |     128 |     1e-07 | Disabled   | Squared | Disabled | (13 / 28)	 Chunks: 2361

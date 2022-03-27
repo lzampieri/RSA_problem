@@ -81,10 +81,10 @@ private:
     std::vector< double >* CF_D_avg;
     void update_CF_averages( const std::vector< CorrFunc::Datapoint >* cfh, const std::vector< CorrFunc::Datapoint >* cfd );
 // Filling fraction
-    double fillfrac_sum;
-    double fillfrac_sum2;
+    std::vector< unsigned int >* fills;
     void update_dep_averages( double occupied_sites );
-    double fillfrac_std() const;
+    double fill_avg( unsigned int threshold = UINT_MAX ) const;
+    double fill_std( unsigned int threshold = UINT_MAX ) const;
 // Percolation
     double defperc_count;
     double atmperc_count;
@@ -95,7 +95,6 @@ private:
 // Chunks manager
     int runned_replicas;
     int total_replicas_to_run;
-    std::vector<double> fillfrac_stds;
     void addChunk();
 
 public:
@@ -107,7 +106,7 @@ public:
     
     void run();
     void save_data();
-    int runned_chunks();
+    int total_runned();
 
     friend class ReplicatorThread;
 };

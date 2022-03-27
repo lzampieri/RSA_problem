@@ -7,17 +7,15 @@ Percolator::Percolator(Grid<int>& grid) : grid(grid) {
 }
 
 bool Percolator::next(GridSite& i) {
-    // Remember than in c++:
-    // operator++( i ) -> i += 1; return i-1;
-    if( to_check_it == 0 ) return false;
-    i = to_check[ --to_check_it ];
+    if( to_check_end == 0 ) return false;
+    i = to_check[ --to_check_end ];
     return true;
 }
 
 bool Percolator::add(GridSite i) {
     if( inserted[ i.I() ] ) return false;
     inserted[ i.I() ] = true;
-    to_check[ to_check_it++ ] = i;
+    to_check[ to_check_end++ ] = i;
     return true;
 }
 
@@ -31,7 +29,7 @@ void Percolator::reset() {
         to_check[i] = GridSite( i, grid );
         inserted[i] = true;
     }
-    to_check_it = grid.d1;
+    to_check_end = grid.d1;
 }
 
 bool Percolator::is_percolating(short what) {
@@ -44,6 +42,7 @@ bool Percolator::is_percolating(short what) {
             add( i + l );
             add( i + r );
             add( i + d );
+            // Remember: they're inserted in a stack-like structure
         }
     }
     return false;

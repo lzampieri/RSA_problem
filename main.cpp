@@ -17,15 +17,13 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 1024;
+        as.chunk_size = 256;
         as.tolerance = 1e-3;
-        as.sides = { 64, 128, 256, 1024, 2048 };
-        as.gammas = { 0.2, 0.6, 1.0, 1.2 };
-        as.qs = { 0.1, 0.3, 0.5 };
+        as.sides = { 256, 512 };
+        as.gammas = { 0.5 };
+        as.qs = { 0.5 };
         as.ps = {
-            new StdPolymers::Dimers(),
-            new StdPolymers::LinearTrimers(),
-            new StdPolymers::Squared()
+            new StdPolymers::Trimers()
             };
         as.percolation = true;
         as.draw = false;
@@ -55,9 +53,9 @@ int main(int argc, char *argv[]) {
         if( as.verbose )
             cout<< r.params.to_string() << "(" << cont <<" / "<< as.rps.size() << ")\t" << flush;
         r.run();
-        log << " Chunks: " << r.runned_chunks() << endl;
+        log << " Replicas: " << r.total_runned() << endl;
         if( as.verbose )
-            cout<< " Chunks: " << r.runned_chunks() << endl;
+            cout<< " Replicas: " << r.total_runned() << endl;
         r.save_data();
     }
 
