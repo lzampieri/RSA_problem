@@ -17,9 +17,9 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 256;
-        as.tolerance = 1e-3;
-        as.sides = { 256, 512 };
+        as.chunk_size = 1024;
+        as.tolerance = 1;
+        as.sides = { 256 };
         as.gammas = { 0.5 };
         as.qs = { 0.5 };
         as.ps = {
@@ -27,8 +27,8 @@ int main(int argc, char *argv[]) {
             };
         as.percolation = true;
         as.draw = false;
-        as.verbose = true;
-        as.n_threads = 32;
+        as.verbose = false;
+        as.n_threads = 8;
         
     } else {
         string filename = argv[1];
@@ -37,6 +37,7 @@ int main(int argc, char *argv[]) {
     }
 
     string folder = as.populate();
+    auto start_time = chrono::system_clock::now();
 
     ofstream log( folder + "/log.txt", ios_base::app );
     log << "=== " << date::format("%Y%m%d %H:%M", chrono::system_clock::now()) << " ===\n";
@@ -58,6 +59,10 @@ int main(int argc, char *argv[]) {
             cout<< " Replicas: " << r.total_runned() << endl;
         r.save_data();
     }
+
+    auto time_diff = chrono::system_clock::now() - start_time;
+    log << "=== Total time: " << date::make_time( time_diff ) << " ===\n";
+    cout<< "=== Total time: " << date::make_time( time_diff ) << " ===\n";
 
     system("PAUSE");
 }
