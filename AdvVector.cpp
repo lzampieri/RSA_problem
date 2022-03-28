@@ -16,29 +16,32 @@ AdvVector::~AdvVector() {
 }
 
 void AdvVector::reset() {
-    for( int i=0; i < size; i++ ) {
-        data[i] = i;
-        whereis[i] = i;
-    }
     last_id = size;
 }
 
-bool AdvVector::isfree( int i ) {
-    return whereis[i] >= 0;
+bool AdvVector::thereis( int i ) {
+    return whereis[i] < last_id ;
 }
 
 bool AdvVector::remove( int i ) {
     i %= size;
-    if( whereis[i] >= 0 && last_id > 0 ) {
-        data[ whereis[i] ] = data[ --last_id ];
-        whereis[ data[ whereis[i] ] ] = whereis[i];
-        whereis[i] = -1;
+    if( whereis[i] < last_id ) {
+        swap_position( whereis[i], last_id );
+        last_id--;
         return true;
     }
     return false;
 }
 
+void AdvVector::swap_position( int i, int j ) {
+    swap( data[i], data[j] );
+    whereis[ data[i] ] = i;
+    whereis[ data[j] ] = j;
+}
+
 int AdvVector::rnd() {
+    if( last_id == 1 )
+        return data[ 0 ];
     uniform_int_distribution<int> dist( 0, last_id - 1 );
     return data[ dist( engine ) ];
 }

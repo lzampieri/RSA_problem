@@ -18,8 +18,10 @@ public:
     void reset();
     int size;
 
-    bool isfree( int i );
+    bool thereis( int i );
     bool remove( int i ); // Return false if it was already removed
+
+    void swap_position( int i, int j );
     
     int rnd();
     int available_sites();
