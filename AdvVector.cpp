@@ -30,15 +30,16 @@ bool AdvVector::thereis( int i ) {
 bool AdvVector::remove( int i ) {
     i %= size;
     if( whereis[ i ] < last_id ) {
-        swap_position( whereis[i], last_id );
-        last_id--;
+        swap_position( whereis[i], --last_id );
         return true;
     }
     return false;
 }
 
 void AdvVector::swap_position( int i, int j ) {
-    swap( data[i], data[j] );
+    int temp = data[i];
+    data[i] = data[j];
+    data[j] = temp;
     whereis[ data[i] ] = i;
     whereis[ data[j] ] = j;
 }
