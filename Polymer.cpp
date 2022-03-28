@@ -49,7 +49,10 @@ bool Polymer::compatiblePosition_lazy( GridSite delta ) {
 
 bool Polymer::canStay( Grid<int>& grid, int position ) {
     for( int i=0; i < atoms->size(); i++ ) {
-        if( grid[ atoms->at(i) + GridSite( position, grid ) ] != GridSite::Free )
+        if( grid[
+                ( /*x*/ atoms->at(i).X + position / atoms->at(i).d2 ) % atoms->at(i).d1 * atoms->at(i).d2 + 
+                ( /*y*/ atoms->at(i).Y + position ) % atoms->at(i).d2
+            ] != GridSite::Free )
             return false;
     }
     return true;
