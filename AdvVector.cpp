@@ -7,6 +7,10 @@ minstd_rand AdvVector::engine = minstd_rand{ std::random_device{}() };
 AdvVector::AdvVector( int size ) : size( size ) {
     data = new int[size];
     whereis = new int[size];
+    for( int i=0; i < size; i++ ) {
+        data[i] = i;
+        whereis[i] = i;
+    }
     reset();
 }
 

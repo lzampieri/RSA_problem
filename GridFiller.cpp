@@ -83,7 +83,7 @@ double GridFiller_Polymers::fill(Grid<int>& tofill, Polymers& polys) {
 
     // Deposition:
     while( !variants->empty() ) {
-        // Select a random variant and ensure sites are available
+        // Select a random variant
         var = variants->rnd();
 
         // Select a random site
