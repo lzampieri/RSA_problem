@@ -71,11 +71,11 @@ double GridFiller_Polymers::fill(Grid<int>& tofill, Polymers& polys) {
     // Remove not available sites
     for( int v=0; v < variants->size; v++ ) {
         sites->at(v)->reset();
-        // for( int i=0; i < sites->at(v)->size; i++ )
-        //     if( ! ( polys[v]->canStay( tofill, i ) ) )
-        //         sites->at(v)->remove(i);
+        for( int i=0; i < sites->at(v)->size; i++ )
+            if( ! ( polys[v]->canStay( tofill, i ) ) )
+                sites->at(v)->remove(i);
 
-        // if( sites->at(v)->empty() ) variants->remove( v );
+        if( sites->at(v)->empty() ) variants->remove( v );
     }
 
     double dep_atoms = 0;
@@ -91,7 +91,6 @@ double GridFiller_Polymers::fill(Grid<int>& tofill, Polymers& polys) {
 
         // If the site can host the polymer
         if( polys[var]->canStay( tofill, site ) ) {
-
             // Deposit and remove occupied sites
             for( int i=0; i < polys.N; i++ ) {
                 if( i == var )
@@ -107,9 +106,9 @@ double GridFiller_Polymers::fill(Grid<int>& tofill, Polymers& polys) {
             dep_atoms += polys[var]->atoms->size();
             
         } else {
-            
             // Else remove the site
-            sites->at(var)->remove( site );
+            if( ! sites->at(var)->remove( site ) )
+                cout<<"Tentando di rimuovere una cosa già rimossa"<<endl;
             if( sites->at(var)->empty() )
                 variants->remove( var );
         }
