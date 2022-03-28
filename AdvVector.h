@@ -8,7 +8,6 @@ class AdvVector {
 private:
     int* data;
     int* whereis;
-    int size;
     int last_id;
     static std::minstd_rand engine;
 
@@ -17,6 +16,7 @@ public:
     AdvVector(const AdvVector&) = delete; // Copy costruction forbidden
     ~AdvVector();
     void reset();
+    int size;
 
     bool isfree( int i );
     bool remove( int i ); // Return false if it was already removed

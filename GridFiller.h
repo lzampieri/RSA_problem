@@ -18,7 +18,17 @@ public:
     static void clean(Grid<int>& toclean, int cleanto = GridSite::Free );
     static void ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,const int count);
 
-    static double fillWithPolymers(Grid<int>& tofill, Polymers& polys);
+};
+
+class GridFiller_Polymers {
+private:
+    AdvVector* variants;
+    std::vector< AdvVector* >* sites;
+
+public:
+    GridFiller_Polymers( int npolys, int nsites );
+    ~GridFiller_Polymers();
+    double fill(Grid<int>& tofill, Polymers& polys);
 };
 
 

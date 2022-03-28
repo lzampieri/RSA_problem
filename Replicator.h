@@ -57,6 +57,7 @@ private:
 // Grid
     Grid<int> g;
     FourierCoupledGrids fcg;
+    GridFiller_Polymers gfp;
 // Correlator
     CorrFunc::Calculator<double>* CF_H;
     CorrFunc::Calculator<int>*    CF_D;

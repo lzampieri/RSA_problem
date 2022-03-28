@@ -50,32 +50,44 @@ void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,co
     assert( c == count );
 }
 
-double GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
+GridFiller_Polymers::GridFiller_Polymers( int npolys, int nsites ) {
+    variants = new AdvVector( npolys );
+    sites = new vector< AdvVector* >();
+    for( int i=0; i < npolys; i++ )
+        sites->push_back( new AdvVector( nsites ) );
+}
 
-    AdvVector variants( polys.N );
-    vector< AdvVector* > sites;
-    for( int i=0; i < polys.N; i++ )
-        sites.push_back( new AdvVector( tofill.imax() ) );
+GridFiller_Polymers::~GridFiller_Polymers() {
+    delete variants;
+    for( int i=0; i < sites->size(); i++ )
+        delete sites->at(i);
+    delete sites;
+}
+
+double GridFiller_Polymers::fill(Grid<int>& tofill, Polymers& polys) {
+    // Reset
+    variants->reset();
 
     // Remove not available sites
-    for( int v=0; v < polys.N; v++ ) {
-        for( int i=0; i < tofill.imax(); i++ )
+    for( int v=0; v < variants->size; v++ ) {
+        sites->at(v)->reset();
+        for( int i=0; i < sites->at(v)->size; i++ )
             if( ! ( polys[v]->canStay( tofill, i ) ) )
-                sites[v]->remove(i);
+                sites->at(v)->remove(i);
 
-        if( sites[v]->empty() ) variants.remove( v );
+        if( sites->at(v)->empty() ) variants->remove( v );
     }
 
     double dep_atoms = 0;
     int var, site;
 
     // Deposition:
-    while( !variants.empty() ) {
+    while( !variants->empty() ) {
         // Select a random variant and ensure sites are available
-        var = variants.rnd();
+        var = variants->rnd();
 
         // Select a random site
-        site = sites[var]->rnd();
+        site = sites->at(var)->rnd();
 
         // If the site can host the polymer
         if( polys[var]->canStay( tofill, site ) ) {
@@ -83,13 +95,13 @@ double GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
             // Deposit and remove occupied sites
             for( int i=0; i < polys.N; i++ ) {
                 if( i == var )
-                    polys[i]->depositAndClean( tofill, *sites[i], site );
+                    polys[i]->depositAndClean( tofill, *sites->at(i), site );
                 else
-                    polys[i]->clean( tofill, *sites[i], site );
+                    polys[i]->clean( tofill, *sites->at(i), site );
 
                 // If this variant cannot be more deposited, remove
-                if( sites[i]->empty() )
-                    variants.remove( i );
+                if( sites->at(i)->empty() )
+                    variants->remove( i );
             }
 
             dep_atoms += polys[var]->atoms->size();
@@ -97,15 +109,10 @@ double GridFiller::fillWithPolymers(Grid<int>& tofill, Polymers& polys) {
         } else {
             
             // Else remove the site
-            sites[var]->remove( site );
-            if( sites[var]->empty() )
-                variants.remove( var );
+            sites->at(var)->remove( site );
+            if( sites->at(var)->empty() )
+                variants->remove( var );
         }
     }
-
-    // Clean
-    for( int i=0; i < polys.N; i++ )
-        delete sites[i];
-
     return dep_atoms;
 }

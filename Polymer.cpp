@@ -53,7 +53,7 @@ bool Polymer::canStay( Grid<int>& grid, int position ) {
     return true;
 }
 
-void Polymer::depositAndClean( Grid<int>& thegrid, AdvVector& sites, int position ) {
+void Polymer::depositAndClean( Grid<int>& thegrid, AdvVector& sites, const int position ) const {
     GridSite pos( position, thegrid );
     for( int i=0; i < atoms->size(); i++ ) {
         sites.remove( ( atoms->at(i) + pos ).I() );
@@ -64,7 +64,7 @@ void Polymer::depositAndClean( Grid<int>& thegrid, AdvVector& sites, int positio
     }
 }
 
-void Polymer::clean( const GridProps& gp, AdvVector& sites, int position ) {
+void Polymer::clean( const GridProps& gp, AdvVector& sites, const int position ) const {
     GridSite pos( position, gp );
     for( int i=0; i < atoms->size(); i++ ) {
         sites.remove( ( atoms->at(i) + pos ).I() );

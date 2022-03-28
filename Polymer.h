@@ -23,8 +23,8 @@ public:
     ~Polymer();
 
     bool canStay( Grid<int>& grid, int position );
-    void depositAndClean( Grid<int>& thegrid, AdvVector& sites, int position );
-    void clean( const GridProps& gp, AdvVector& sites, int position );
+    void depositAndClean( Grid<int>& thegrid, AdvVector& sites, const int position ) const;
+    void clean( const GridProps& gp, AdvVector& sites, const int position ) const;
 };
 
 class Polymers {

@@ -34,7 +34,8 @@ double ReplicatorParams::size() const {
 
 ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
     : thrower( thrower ), id( id ),
-    g( thrower->params.side ), fcg( thrower->params.side )  {
+    g( thrower->params.side ), fcg( thrower->params.side ),
+    gfp( thrower->params.to_deposit->N, thrower->params.size() )  {
 
     CF_H = nullptr;
     CF_D = nullptr;
@@ -87,7 +88,7 @@ ReplicatorThread::~ReplicatorThread() {
 
         // Deposit polymers
         if( data->thrower->params.to_deposit != nullptr ) {
-            double occupied_sites = GridFiller::fillWithPolymers( data->g, *data->thrower->params.to_deposit );
+            double occupied_sites = data->gfp.fill( data->g, *data->thrower->params.to_deposit );
             data->thrower->update_dep_averages( occupied_sites );
         }
 
