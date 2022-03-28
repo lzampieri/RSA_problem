@@ -16,9 +16,11 @@ Polymer::Polymer( std::vector< GridSite > gss ) : GridProps( gss[0] ) {
         minx = max( minx, gss[i].X );
         miny = min( miny, gss[i].Y );
     }
+    maxx = max( abs( maxx ), abs( minx ) );
+    maxy = max( abs( maxy ), abs( miny ) );
 
-    for( int x=minx; x <= maxx; x++ ) {
-        for( int y=miny; y <= maxy; y++ ) {
+    for( int x= -maxx; x <= maxx; x++ ) {
+        for( int y= -maxy; y <= maxy; y++ ) {
             GridSite delta( x, y, *this );
             if( !compatiblePosition_lazy( delta ) ) {
                 neighbors->push_back( delta );

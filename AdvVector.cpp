@@ -29,7 +29,7 @@ bool AdvVector::thereis( int i ) {
 
 bool AdvVector::remove( int i ) {
     i %= size;
-    if( whereis[i] < last_id ) {
+    if( whereis[ i ] < last_id ) {
         swap_position( whereis[i], last_id );
         last_id--;
         return true;
