@@ -224,27 +224,34 @@ void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
 }
 
 void Replicator::run() {
-    if( params.verbose )
-        cout<< "Runned | FillAvg | FillStd | Variation" <<endl;
+
     ofstream out_chunks( params.save_path + "/chunks.txt");
-    out_chunks << " RunnedReplicas | Std | Variation "<<endl;
+    out_chunks << " RunnedReplicas | Std | Variation | Items"<<endl;
+    if( params.verbose )
+        cout<< "RunnedReplicas | Std | Variation " <<endl;
+
+    vector< double > stds;
+    double variation = INT_MAX;
     while(1) {
         addChunk();
-        if( params.to_deposit && runned_replicas > params.chunk_size ) {
-            double last = fill_std();
-            double prelast = fill_std( runned_replicas / 2 );
-            double variation = abs( last - prelast ) / min( last, prelast );
-            out_chunks << runned_replicas << ", " << last << ", " << variation << ", [";
-            for( unsigned int d : *fills )
-                out_chunks<<d<<',';
-            out_chunks<<"]"<<endl;
-            if( isnan( variation ) )
-                break;
-            if( params.verbose )
-                cout << runned_replicas << "\t" << fill_avg() << "\t" << fill_std() << "\t" << variation << endl;
-            if( variation < params.tolerance )
-                break;
+
+        stds.push_back( fill_std() );
+
+        if( stds.size() > 4 ) {
+            variation = *max_element( stds.end() - 4, stds.end() ) / *min_element( stds.end() - 4, stds.end() );
         }
+
+        out_chunks << runned_replicas << ", " << stds.back() << ", " << variation << ", [";
+        for( unsigned int d : *fills )
+            out_chunks<<d<<',';
+        out_chunks<<"]"<<endl;
+        if( params.verbose )
+            cout << runned_replicas << ", " << stds.back() << ", " << variation << endl;
+
+        if( isnan( variation ) )
+            break;
+        if( variation < params.tolerance + 1 )
+            break;
     }
 }
 
