@@ -17,9 +17,9 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 1024;
-        as.tolerance = 1;
-        as.sides = { 256 };
+        as.chunk_size = 64;
+        as.tolerance = 1e-3;
+        as.sides = { 128 };
         as.gammas = { 0.5 };
         as.qs = { 0.5 };
         as.ps = {
@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
             };
         as.percolation = true;
         as.draw = false;
-        as.verbose = false;
+        as.verbose = true;
         as.n_threads = 8;
         
     } else {

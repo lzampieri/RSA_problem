@@ -226,12 +226,15 @@ void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
 void Replicator::run() {
     if( params.verbose )
         cout<< "Runned | FillAvg | FillStd | Variation" <<endl;
+    ofstream out_chunks( params.save_path + "/chunks.txt");
+    out_chunks << "RunnedReplicas | Std | Variation "<<endl;
     while(1) {
         addChunk();
         if( params.to_deposit && runned_replicas > params.chunk_size ) {
             double last = fill_std();
             double prelast = fill_std( runned_replicas / 2 );
             double variation = abs( last - prelast ) / min( last, prelast );
+            out_chunks << runned_replicas << " " << last << " " << variation << endl;
             if( isnan( variation ) )
                 break;
             if( params.verbose )
