@@ -2,3 +2,7 @@
 TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
 21:20 | _20220331/f_0 |   64 |          0.2 |   0.4 |      64 |      0.01 | Disabled   | Squared | Both | (1 / 28)	 Replicas: 1048576
 21:37 | _20220331/f_1 |   64 |          0.2 |   0.8 |      64 |      0.01 | Disabled   | Squared | Both | (2 / 28)	 Replicas: 131072
+21:39 | _20220331/f_2 |   64 |          0.2 |   1.2 |      64 |      0.01 | Disabled   | Squared | Both | (3 / 28)	 Replicas: 1048576
+21:56 | _20220331/f_3 |   64 |          0.2 |   1.6 |      64 |      0.01 | Disabled   | Squared | Both | (4 / 28)	 Replicas: 262144
+22:00 | _20220331/f_4 |  512 |          0.2 |   0.4 |      64 |      0.01 | Disabled   | Squared | Both | (5 / 28)	 Replicas: 65536
+23:14 | _20220331/f_5 |  512 |          0.2 |   0.8 |      64 |      0.01 | Disabled   | Squared | Both | (6 / 28)	 Replicas: 2048
