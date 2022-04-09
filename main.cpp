@@ -64,5 +64,4 @@ int main(int argc, char *argv[]) {
     log << "=== Total time: " << date::make_time( time_diff ) << " ===\n";
     cout<< "=== Total time: " << date::make_time( time_diff ) << " ===\n";
 
-    system("PAUSE");
 }

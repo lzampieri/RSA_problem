@@ -11,6 +11,7 @@
                 "-o",
                 "${workspaceFolder}\\debug\\main.exe",
                 "-llibfftw3",
+                "-llibgsl",
                 "-std=c++2a",
             ],
             "options": {

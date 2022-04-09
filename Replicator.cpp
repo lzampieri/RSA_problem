@@ -220,11 +220,27 @@ double Replicator::fill_std_fromfit( unsigned int threshold ) const {
     if( runned_replicas < threshold )
         threshold = runned_replicas;
     
+    static vector< short > counts( params.size(), 0 );
+    for( int i = 0; i < counts.size(); i++ ) {
+        counts[i] = 0;
+    }
+    for( int i = 0; i < threshold; i++ ) {
+        counts[ fills->at(i) ]++;
+    }
+
+    vector< double > x;
+    vector< double > y;
+    for( int i = 0; i < counts.size(); i++ ) {
+        if( counts[i] > 0 ) {
+            x.push_back( i );
+            y.push_back( counts[i] );
+        }
+    }
+
     double avg = fill_avg( threshold );
-    double result = 0;
-    for( int i = 0; i < threshold; i++ )
-        result += ( ( fills->at(i) - avg ) * ( fills->at(i) - avg ) );
-    return sqrt( result / ( threshold - 1 ) );
+    auto params = curve_fit( gaussian, { (double)threshold, avg, avg * 0.1 }, x, y );
+
+    return abs( params[2] );
 }
 
 void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
@@ -257,7 +273,7 @@ void Replicator::run() {
             out_chunks<<d<<',';
         out_chunks<<"]"<<endl;
         if( params.verbose )
-            cout << runned_replicas << ", " << stds.back() << ", " << variation << endl;
+            cout << runned_replicas << ", " << stds.back() << " (" << fill_std() << "), " << variation << endl;
 
         if( isnan( variation ) )
             break;
@@ -298,7 +314,7 @@ void Replicator::save_data() {
     // Print polymers deposition results
     if( params.to_deposit ) {
         double avg = fill_avg();
-        double std = fill_std();
+        double std = fill_std_fromfit();
 
         ofstream out_deposition( params.save_path + "/deposition.txt");
         out_deposition<<"{\n\"dep_polymers\":\t\""<<params.to_deposit->keyname<<"\""
