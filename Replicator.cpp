@@ -216,6 +216,17 @@ double Replicator::fill_std( unsigned int threshold ) const {
     return sqrt( result / ( threshold - 1 ) );
 }
 
+double Replicator::fill_std_fromfit( unsigned int threshold ) const {
+    if( runned_replicas < threshold )
+        threshold = runned_replicas;
+    
+    double avg = fill_avg( threshold );
+    double result = 0;
+    for( int i = 0; i < threshold; i++ )
+        result += ( ( fills->at(i) - avg ) * ( fills->at(i) - avg ) );
+    return sqrt( result / ( threshold - 1 ) );
+}
+
 void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
     mux->lock();
     defperc_count += ( def_perc ? 1 : 0 );
@@ -235,7 +246,7 @@ void Replicator::run() {
     while(1) {
         addChunk();
 
-        stds.push_back( fill_std() );
+        stds.push_back( fill_std_fromfit() );
 
         if( stds.size() > 4 ) {
             variation = *max_element( stds.end() - 4, stds.end() ) / *min_element( stds.end() - 4, stds.end() );

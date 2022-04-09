@@ -3,19 +3,15 @@
         {
             "type": "shell",
             "label": "Compile_all",
-            "command": "C:\\mingw64\\bin\\g++.exe",
+            "command": "g++",
             "args": [
                 "-fdiagnostics-color=always",
                 "-g",
                 "${workspaceFolder}\\*.cpp",
                 "-o",
-                "${workspaceFolder}\\exe_and_dll\\main.exe",
-                "-I${workspaceFolder}\\exe_and_dll",
-                "-L${workspaceFolder}\\exe_and_dll",
-                "-llibfftw3-3",
+                "${workspaceFolder}\\debug\\main.exe",
+                "-llibfftw3",
                 "-std=c++2a",
-                "-static-libstdc++",
-                "-static-libgcc"
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
@@ -28,7 +24,7 @@
             "label": "Cpp_clean",
             "command": "del",
             "args": [
-                "${workspaceFolder}\\exe_and_dll\\*.exe",
+                "${workspaceFolder}\\debug\\*.exe",
             ],
         }
     ],

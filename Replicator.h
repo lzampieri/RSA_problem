@@ -86,6 +86,7 @@ private:
     void update_dep_averages( double occupied_sites );
     double fill_avg( unsigned int threshold = UINT_MAX ) const;
     double fill_std( unsigned int threshold = UINT_MAX ) const;
+    double fill_std_fromfit( unsigned int threshold = UINT_MAX ) const;
 // Percolation
     double defperc_count;
     double atmperc_count;
