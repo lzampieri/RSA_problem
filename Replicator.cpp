@@ -237,6 +237,8 @@ double Replicator::fill_std_fromfit( unsigned int threshold ) const {
         }
     }
 
+    if( x.size() < 3 ) return 0;
+
     double avg = fill_avg( threshold );
     auto params = curve_fit( gaussian, { (double)threshold, avg, avg * 0.1 }, x, y );
 
