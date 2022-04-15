@@ -1,0 +1,31 @@
+=== 20220411 21:01 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+21:01 | _20220411/f_0 |   64 |          0.2 |   0.4 |     512 |      0.01 | Disabled   | Squared | Both | (1 / 28)	 Replicas: 1048576
+21:19 | _20220411/f_1 |   64 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Squared | Both | (2 / 28)	 Replicas: 65536
+21:20 | _20220411/f_2 |   64 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (3 / 28)	 Replicas: 262144
+21:25 | _20220411/f_3 |   64 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (4 / 28)	 Replicas: 65536
+21:26 | _20220411/f_4 |  512 |          0.2 |   0.4 |     512 |      0.01 | Disabled   | Squared | Both | (5 / 28)	 Replicas: 8192
+21:36 | _20220411/f_5 |  512 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Squared | Both | (6 / 28)	 Replicas: 8192
+21:46 | _20220411/f_6 |  512 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (7 / 28)	 Replicas: 8192
+21:55 | _20220411/f_7 |  512 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (8 / 28)	 Replicas: 8192
+22:05 | _20220411/f_8 | 1024 |          0.2 |   0.4 |     512 |      0.01 | Disabled   | Squared | Both | (9 / 28)	 Replicas: 8192
+22:46 | _20220411/f_9 | 1024 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Squared | Both | (10 / 28)	 Replicas: 8192
+23:26 | 20220411/f_10 | 1024 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (11 / 28)	 Replicas: 8192
+00:05 | 20220411/f_11 | 1024 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (12 / 28)	 Replicas: 8192
+00:44 | 20220411/f_12 | 2048 |          0.2 |   0.4 |     512 |      0.01 | Disabled   | Squared | Both | (13 / 28)	 Replicas: 8192
+03:45 | 20220411/f_13 | 2048 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Squared | Both | (14 / 28)	 Replicas: 8192
+06:42 | 20220411/f_14 | 2048 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (15 / 28)	 Replicas: 8192
+09:47 | 20220411/f_15 | 2048 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (16 / 28)	 Replicas: 8192
+12:44 | 20220411/f_16 |  128 |          0.2 |   0.4 |     512 |      0.01 | Disabled   | Squared | Both | (17 / 28)	 Replicas: 8192
+12:45 | 20220411/f_17 |  128 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Squared | Both | (18 / 28)	 Replicas: 8192
+12:46 | 20220411/f_18 |  128 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (19 / 28)	 Replicas: 8192
+12:46 | 20220411/f_19 |  128 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (20 / 28)	 Replicas: 8192
+12:47 | 20220411/f_20 |  256 |          0.2 |   0.4 |     512 |      0.01 | Disabled   | Squared | Both | (21 / 28)	 Replicas: 8192
+12:49 | 20220411/f_21 |  256 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Squared | Both | (22 / 28)	 Replicas: 8192
+12:51 | 20220411/f_22 |  256 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (23 / 28)	 Replicas: 8192
+12:54 | 20220411/f_23 |  256 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (24 / 28)	 Replicas: 8192
+12:56 | 20220411/f_24 | 4096 |          0.2 |   0.4 |     512 |      0.01 | Disabled   | Squared | Both | (25 / 28)	 Replicas: 8192
+00:13 | 20220411/f_25 | 4096 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Squared | Both | (26 / 28)	 Replicas: 8192
+11:37 | 20220411/f_26 | 4096 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (27 / 28)	 Replicas: 8192
+03:14 | 20220411/f_27 | 4096 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (28 / 28)	 Replicas: 8192
+=== Total time: 70:18:00.303608843 ===
