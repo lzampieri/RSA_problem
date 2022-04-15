@@ -275,7 +275,7 @@ void Replicator::run() {
             out_chunks<<d<<',';
         out_chunks<<"]"<<endl;
         if( params.verbose )
-            cout << runned_replicas << ", " << stds.back() << " (" << fill_std() << "), " << variation << endl;
+            cout << runned_replicas << ", " << stds.back() << " (" << fill_std_fromfit() << "), " << variation << endl;
 
         if( isnan( variation ) )
             break;
