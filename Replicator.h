@@ -86,7 +86,7 @@ private:
     std::vector< unsigned int >* fills;
     void update_dep_averages( double occupied_sites );
     double fill_avg( unsigned int threshold = UINT_MAX ) const;
-    double fill_std( unsigned int threshold = UINT_MAX ) const;
+    // double fill_std( unsigned int threshold = UINT_MAX ) const;
     inline static double gaussian( double x, double a, double mu, double s )  { return a * exp(-0.5 * (x - mu) / s * (x - mu) / s ); };
     double fill_std_fromfit( unsigned int threshold = UINT_MAX ) const;
 // Percolation
