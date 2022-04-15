@@ -206,21 +206,21 @@ double Replicator::fill_avg( unsigned int threshold ) const {
     return result / threshold;
 }
 
-double Replicator::fill_std( unsigned int threshold ) const {
-    if( runned_replicas < threshold )
-        threshold = runned_replicas;
-    double avg = fill_avg( threshold );
-    double result = 0;
-    for( int i = 0; i < threshold; i++ )
-        result += ( ( fills->at(i) - avg ) * ( fills->at(i) - avg ) );
-    return sqrt( result / ( threshold - 1 ) );
-}
+// double Replicator::fill_std( unsigned int threshold ) const {
+//     if( runned_replicas < threshold )
+//         threshold = runned_replicas;
+//     double avg = fill_avg( threshold );
+//     double result = 0;
+//     for( int i = 0; i < threshold; i++ )
+//         result += ( ( fills->at(i) - avg ) * ( fills->at(i) - avg ) );
+//     return sqrt( result / ( threshold - 1 ) );
+// }
 
 double Replicator::fill_std_fromfit( unsigned int threshold ) const {
     if( runned_replicas < threshold )
         threshold = runned_replicas;
     
-    vector< short > counts( params.size(), 0 );
+    vector< int > counts( params.size(), 0 );
     for( int i = 0; i < counts.size(); i++ ) {
         counts[i] = 0;
     }
