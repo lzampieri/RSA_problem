@@ -220,7 +220,7 @@ double Replicator::fill_std_fromfit( unsigned int threshold ) const {
     if( runned_replicas < threshold )
         threshold = runned_replicas;
     
-    static vector< short > counts( params.size(), 0 );
+    vector< short > counts( params.size(), 0 );
     for( int i = 0; i < counts.size(); i++ ) {
         counts[i] = 0;
     }
