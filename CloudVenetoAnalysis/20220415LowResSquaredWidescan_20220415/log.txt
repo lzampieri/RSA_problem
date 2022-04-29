@@ -14,3 +14,6 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 21:20 | 20220415/f_11 | 1024 |          0.1 |   0.8 |     512 |      0.01 | Disabled   | Squared | Both | (12 / 48)	 Replicas: 131072
 12:40 | 20220415/f_12 | 1024 |         0.05 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (13 / 48)	 Replicas: 65536
 20:31 | 20220415/f_13 | 1024 |          0.1 |   1.2 |     512 |      0.01 | Disabled   | Squared | Both | (14 / 48)	 Replicas: 131072
+11:45 | 20220415/f_14 | 1024 |         0.05 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (15 / 48)	 Replicas: 262144
+12:50 | 20220415/f_15 | 1024 |          0.1 |   1.6 |     512 |      0.01 | Disabled   | Squared | Both | (16 / 48)	 Replicas: 262144
+13:04 | 20220415/f_16 | 2048 |         0.05 |   0.4 |     512 |      0.01 | Disabled   | Squared | Both | (17 / 48)	 Replicas: 262144
