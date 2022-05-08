@@ -71,13 +71,11 @@ void Calculator<T>::update_data( RawDatapoint rdp, int raw_data_i ) {
 template<class T>
 Calculator<T>::Calculator( Model* model, const Grid<T>* grid ) : grid(grid) {
     works = new vector< Work* >();
-    is = new vector< int >();
     map<int,int> themap;
     int max_dist = grid->d1;
 
     for( int i=0; i < model->is.size(); i++ ) {
-        is->push_back( model->is[i] );
-        themap[i] = model->is[i];
+        themap[ model->is[i] ] = i;
         max_dist = max( max_dist, model->is[i] );
     }
 
