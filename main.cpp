@@ -18,17 +18,16 @@ int main(int argc, char *argv[]) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
         as.chunk_size = 64;
-        as.tolerance = 1e-3;
+        as.tolerance = 1;
         as.sides = { 128 };
-        as.gammas = { 0.5 };
+        as.gammas = { 0.4, 0.8, 1.2, 1.6 };
         as.qs = { 0.5 };
-        as.ps = {
-            new StdPolymers::Trimers()
-            };
+        as.ps = { new StdPolymers::Dimers() };
         as.percolation = true;
         as.draw = false;
         as.verbose = true;
         as.n_threads = 8;
+        as.CFmodel = CorrFunc::Expospaced( 1.2, 128, 1 );
         
     } else {
         string filename = argv[1];
