@@ -17,11 +17,11 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 16;
-        as.tolerance = 1;
-        as.sides = { 128 };
-        as.gammas = { 0.4, 0.8, 1.2, 1.6 };
-        as.qs = { 0.5 };
+        as.chunk_size = 8;
+        as.tolerance = 100;
+        as.sides = { 512 };
+        as.gammas = { 0.2, 0.4, 0.6, 0.8, 1.2, 1.6 };
+        as.qs = { 0.2 };
         as.ps = { new StdPolymers::Dimers() };
         as.percolation = true;
         as.draw = false;
