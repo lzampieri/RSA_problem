@@ -17,7 +17,7 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 64;
+        as.chunk_size = 16;
         as.tolerance = 1;
         as.sides = { 128 };
         as.gammas = { 0.4, 0.8, 1.2, 1.6 };
