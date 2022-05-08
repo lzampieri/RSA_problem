@@ -17,7 +17,7 @@ def goto( i_row, i_col ):
     _plot_params[2] = i_row * _plot_params[1] + i_col + 1
     plt.subplot( *_plot_params )
 
-def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, title, log_x = True, log_y = False ):
+def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, each_plot ):
 
     rows = set()
     cols = set()
@@ -52,12 +52,7 @@ def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, title,
                 if( len( y ) > 0 ):
                     for i in range( len( y[0] ) ):
                         plt.plot( x, [ yi[i] for yi in y ], color = color_list[ i_l ], **params( r, c, l )[i] )
-                
-                    if( log_x ):
-                        plt.xscale( 'log', basex = 2 )
-                    if( log_y ):
-                        plt.yscale( 'log', basey = 10 )
 
                     plt.legend()
-
-                plt.title( title( r, c ) )
+                
+                each_plot( r, c )
