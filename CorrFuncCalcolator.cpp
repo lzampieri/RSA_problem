@@ -4,22 +4,16 @@ using namespace std;
 using namespace CorrFunc;
 
 template<class T>
-void Calculator<T>::_thread_postman( ) {
-    works_i_mutex.lock();
+void Calculator<T>::run_works( ) {
+    // Questa struttura un po' strana è eredità del fatto che una volta questa cosa era a thread
     while( works_i < works->size() ) {
-        Work* todo = works->at( works_i );
+        run_work( works->at( works_i ) );
         works_i += 1;
-        works_i_mutex.unlock();
-
-        _thread_worker( todo );
-
-        works_i_mutex.lock();
     }
-    works_i_mutex.unlock();
 }
 
 template<class T>
-void Calculator<T>::_thread_worker( Work* work ) {
+void Calculator<T>::run_work( Work* work ) {
     double sum = 0, sum2 = 0;
     int count = 0;
     GridSite v = work->v;
@@ -63,17 +57,15 @@ void Calculator<T>::_thread_worker( Work* work ) {
         }
     }
 
-    _thread_update_rawdata(
+    update_data(
         RawDatapoint(sum, sum2, count),
         work->raw_data_i
     );
 }
 
 template<class T>
-void Calculator<T>::_thread_update_rawdata( RawDatapoint rdp, int raw_data_i ) {
-    raw_data_mutex.lock();
+void Calculator<T>::update_data( RawDatapoint rdp, int raw_data_i ) {
     raw_data->at(raw_data_i) += rdp;
-    raw_data_mutex.unlock();
 }
 
 template<class T>
@@ -112,8 +104,6 @@ Calculator<T>::~Calculator() {
 
 template<class T>
 const vector< Datapoint >* Calculator<T>::compute_corr_function() {
-    vector<thread*> threads;
-    threads.reserve( CORRFUNC_MAX_THREADS );
 
     // Clean raw_data
     for( int i = 0; i < raw_data->size(); i++ ) {
@@ -124,18 +114,8 @@ const vector< Datapoint >* Calculator<T>::compute_corr_function() {
 
     works_i = 0;
 
-    // Launch threads
-    for( int i = 0; i < CORRFUNC_MAX_THREADS; i++ ) {
-        threads.push_back( 
-                new thread( _thread_postman, this )
-            );
-    }
-
-    // Joint threads
-    for( int i = 0; i < threads.size(); i++ ) {
-        threads[i]->join();
-    }
-    threads.clear();
+    // Launch analysis
+    run_works();
 
     // Compute real data
     for( int i = 0; i < raw_data->size(); i++ ) {

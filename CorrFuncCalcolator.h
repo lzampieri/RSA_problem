@@ -12,11 +12,6 @@
 #include <string>
 #include "Grid.h"
 
-#include <thread>
-#include <mutex>
-
-#define CORRFUNC_MAX_THREADS 8
-
 #include <iostream>
 
 namespace CorrFunc {
@@ -54,13 +49,11 @@ namespace CorrFunc {
     class Calculator {
 
     private:
-        std::mutex works_i_mutex;
         int works_i;
-        std::mutex raw_data_mutex;
 
-        void _thread_postman( );
-        void _thread_worker( Work* work );
-        void _thread_update_rawdata( RawDatapoint rdp, int raw_data_i );
+        void run_works( );
+        void run_work( Work* work );
+        void update_data( RawDatapoint rdp, int raw_data_i );
 
         const Grid<T>* grid;
 
