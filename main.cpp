@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         as.draw = false;
         as.verbose = true;
         as.n_threads = 8;
-        as.CFmodel = CorrFunc::Expospaced( 1.2, 128, 1 );
+        as.CFmodel = new CorrFunc::Expospaced( 1.2, 128, 1 );
         
     } else {
         string filename = argv[1];
