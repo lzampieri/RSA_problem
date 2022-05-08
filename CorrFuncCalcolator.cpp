@@ -125,12 +125,11 @@ const vector< Datapoint >* Calculator<T>::compute_corr_function() {
     works_i = 0;
 
     // Launch threads
-    // for( int i = 0; i < CORRFUNC_MAX_THREADS; i++ ) {
-    //     threads.push_back( 
-    //             new thread( _thread_postman, this )
-    //         );
-    // }
-    // TODO make this stuff compatible with ubuntu
+    for( int i = 0; i < CORRFUNC_MAX_THREADS; i++ ) {
+        threads.push_back( 
+                new thread( _thread_postman, this )
+            );
+    }
 
     // Joint threads
     for( int i = 0; i < threads.size(); i++ ) {
