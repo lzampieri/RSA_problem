@@ -3,3 +3,5 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 20:20 | _20220509/f_0 |  256 |          0.2 |   0.2 |     128 |       100 | Expospaced | Disabled | Disabled | (1 / 6)	 Replicas: 128
 20:42 | _20220509/f_1 |  256 |          0.2 |   0.4 |     128 |       100 | Expospaced | Disabled | Disabled | (2 / 6)	 Replicas: 128
 21:03 | _20220509/f_2 |  256 |          0.2 |   0.6 |     128 |       100 | Expospaced | Disabled | Disabled | (3 / 6)	 Replicas: 128
+21:22 | _20220509/f_3 |  256 |          0.2 |   0.8 |     128 |       100 | Expospaced | Disabled | Disabled | (4 / 6)	 Replicas: 128
+21:42 | _20220509/f_4 |  256 |          0.2 |   1.2 |     128 |       100 | Expospaced | Disabled | Disabled | (5 / 6)	 Replicas: 128
