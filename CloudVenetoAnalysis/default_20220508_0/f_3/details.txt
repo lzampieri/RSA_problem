@@ -1,0 +1,13 @@
+{
+"side":	512,
+"defects_frac":	0.2,
+"gamma":	0.8,
+"chunk_size":	8,
+"tolerance":	100,
+"runned_replicas":	256,
+"CF_Model":	"Expospaced 128",
+"dep_polymers":	"Dimers",
+"save_path":	"default_20220508_0/f_3",
+"n_threads":	"8",
+"draw":	False
+}

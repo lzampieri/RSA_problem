@@ -1,0 +1,3 @@
+=== 20220509 20:20 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+20:20 | _20220509/f_0 |  256 |          0.2 |   0.2 |     128 |       100 | Expospaced | Disabled | Disabled | (1 / 6)	 Replicas: 128

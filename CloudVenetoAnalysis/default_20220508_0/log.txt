@@ -3,3 +3,4 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 20:39 | 0220508_0/f_0 |  512 |          0.2 |   0.2 |       8 |       100 | Expospaced 128 | Dimers | Both | (1 / 6)	 Replicas: 1024
 10:30 | 0220508_0/f_1 |  512 |          0.2 |   0.4 |       8 |       100 | Expospaced 128 | Dimers | Both | (2 / 6)	 Replicas: 256
 14:16 | 0220508_0/f_2 |  512 |          0.2 |   0.6 |       8 |       100 | Expospaced 128 | Dimers | Both | (3 / 6)	 Replicas: 128
+16:03 | 0220508_0/f_3 |  512 |          0.2 |   0.8 |       8 |       100 | Expospaced 128 | Dimers | Both | (4 / 6)	 Replicas: 256
