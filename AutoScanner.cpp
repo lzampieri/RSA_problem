@@ -10,8 +10,8 @@ string AutoScanner::populate() {
             for( double q : qs )
                 for( PolymersFactory* p : ps )
                     rps.push_back( ReplicatorParams(
-                     // Size DefectsFracs Gamma ChunkSize   Tolerance  CFModel  Polymers      Percolation  NThreads,  Draw  Verbose  SavePath
-                        s,   q,           g,    chunk_size, tolerance, CFmodel, p->create(s), percolation, n_threads, draw, verbose, folder
+                     // Size DefectsFracs Gamma ChunkSize   Tolerance  CFModel  Polymers                                   Percolation  NThreads,  Draw  Verbose  SavePath
+                        s,   q,           g,    chunk_size, tolerance, CFmodel, ( p == nullptr ? nullptr : p->create(s) ), percolation, n_threads, draw, verbose, folder
                     ));
 
     return folder;
@@ -138,7 +138,7 @@ string AutoScanner::array_to_string( const std::vector<int>& vec ) {
 string AutoScanner::array_to_string( const std::vector<PolymersFactory*>& vec ) {
     stringstream ss( "" );
     for( const PolymersFactory* t : vec )
-        ss << t->factname() << ' ';
+        ss << ( t == nullptr ? "Null ptr" : t->factname() ) << ' ';
     return ss.str();
 }
 

@@ -35,13 +35,17 @@ double ReplicatorParams::size() const {
 ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
     : thrower( thrower ), id( id ),
     g( thrower->params.side ), fcg( thrower->params.side ),
-    gfp( thrower->params.to_deposit->N, thrower->params.size() )  {
+    gfp( thrower->params.to_deposit == nullptr ? 0 : thrower->params.to_deposit->N, thrower->params.size() )  {
 
-    CF_H = nullptr;
-    CF_D = nullptr;
+    // CF_H = nullptr;
+    // CF_D = nullptr;
+    // if( thrower->params.CF_model ) {
+    //     CF_H = new CorrFunc::Calculator<double>( thrower->params.CF_model, &fcg.h );
+    //     CF_D = new CorrFunc::Calculator<int>   ( thrower->params.CF_model, &g     );
+    // }
+    CFcalc = nullptr;
     if( thrower->params.CF_model ) {
-        CF_H = new CorrFunc::Calculator<double>( thrower->params.CF_model, &fcg.h );
-        CF_D = new CorrFunc::Calculator<int>   ( thrower->params.CF_model, &g     );
+        CFcalc = new NewCF::Calculator( thrower->params.CF_model, &g );
     }
 
     perc = nullptr;
@@ -50,8 +54,9 @@ ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
 }
 
 ReplicatorThread::~ReplicatorThread() {
-    delete CF_H;
-    delete CF_D;
+    // delete CF_H;
+    // delete CF_D;
+    delete CFcalc;
     delete perc;
 }
 
@@ -80,10 +85,12 @@ ReplicatorThread::~ReplicatorThread() {
 
         // Compute correlation functions
         if( data->thrower->params.CF_model ) {
-            const vector< CorrFunc::Datapoint >* cfh = data->CF_H->compute_corr_function ( );
-            const vector< CorrFunc::Datapoint >* cfd = data->CF_D->compute_corr_function ( );
-            data->thrower->update_CF_averages( cfh, cfd );
-            
+            // const vector< CorrFunc::Datapoint >* cfh = data->CF_H->compute_corr_function ( );
+            // const vector< CorrFunc::Datapoint >* cfd = data->CF_D->compute_corr_function ( );
+            // data->thrower->update_CF_averages( cfh, cfd );
+            data->thrower->update_NewCF_averages(
+                data->CFcalc->calculate()
+            );
         }
 
         // Deposit polymers
@@ -145,11 +152,17 @@ Replicator::Replicator( ReplicatorParams suggested_params ) :
     filesystem::create_directory( params.save_path );
 
     // Create correlation function structures
-    CF_H_avg = nullptr;
-    CF_D_avg = nullptr;
+    // CF_H_avg = nullptr;
+    // CF_D_avg = nullptr;
+    // if( params.CF_model ) {
+    //     CF_D_avg = new vector< double > ( params.CF_model->is.size(), 0 );
+    //     CF_H_avg = new vector< double > ( params.CF_model->is.size(), 0 );
+    // }
+    CF_avg = nullptr;
     if( params.CF_model ) {
-        CF_D_avg = new vector< double > ( params.CF_model->is.size(), 0 );
-        CF_H_avg = new vector< double > ( params.CF_model->is.size(), 0 );
+        CF_avg = new vector< double > ( params.CF_model->items.size(), 0 );
+        // CF_D_avg = new vector< double > ( params.CF_model->is.size(), 0 );
+        // CF_H_avg = new vector< double > ( params.CF_model->is.size(), 0 );
     }
 
     // Initialize occupation stats
@@ -173,17 +186,26 @@ Replicator::~Replicator() {
     delete mux;
     for( ReplicatorThread* r : ongoing )
         delete r;
-    delete CF_D_avg;
-    delete CF_H_avg;
+    // delete CF_D_avg;
+    // delete CF_H_avg;
+    delete CF_avg;
 }
 
-void Replicator::update_CF_averages( const std::vector< CorrFunc::Datapoint >* cfh, const std::vector< CorrFunc::Datapoint >* cfd ) {
+// void Replicator::update_CF_averages( const std::vector< CorrFunc::Datapoint >* cfh, const std::vector< CorrFunc::Datapoint >* cfd ) {
+//     mux->lock();
+//     for( int i=0; i < CF_H_avg->size(); i++ ) {
+//         CF_H_avg->at(i) += cfh->at(i).value;
+//     }
+//     for( int i=0; i < CF_D_avg->size(); i++ ) {
+//         CF_D_avg->at(i) += cfd->at(i).value;
+//     }
+//     mux->unlock();
+// }
+
+void Replicator::update_NewCF_averages( const vector< double >* cf ) {
     mux->lock();
-    for( int i=0; i < CF_H_avg->size(); i++ ) {
-        CF_H_avg->at(i) += cfh->at(i).value;
-    }
-    for( int i=0; i < CF_D_avg->size(); i++ ) {
-        CF_D_avg->at(i) += cfd->at(i).value;
+    for( int i = 0; i < cf->size(); i++ ) {
+        CF_avg->at( i ) += cf->at( i );
     }
     mux->unlock();
 }
@@ -264,6 +286,10 @@ void Replicator::run() {
     while(1) {
         addChunk();
 
+        if( params.to_deposit == nullptr ) {
+            break;
+        }
+
         stds.push_back( fill_std_fromfit() );
 
         if( stds.size() > 4 ) {
@@ -303,14 +329,20 @@ void Replicator::save_data() {
 
     // Print correlation function stuff
     if( params.CF_model ) {
-        ofstream out_corrH( params.save_path + "/CF_H_avg.txt");
-        ofstream out_corrD( params.save_path + "/CF_D_avg.txt");
-        for( int i=0; i < params.CF_model->is.size(); i++ ) {
-            out_corrH<< params.CF_model->is[i] << '\t' << CF_H_avg->at(i) / runned_replicas << '\n';
-            out_corrD<< params.CF_model->is[i] << '\t' << CF_D_avg->at(i) / runned_replicas << '\n';
+        ofstream out_corr( params.save_path + "/CF_avg.txt");
+        for( int i=0; i < CF_avg->size(); i++ ) {
+            out_corr << params.CF_model->items[i].first << '\t' << CF_avg->at( i ) / runned_replicas << '\t' << params.CF_model->items[i].second.size() << '\n';
         }
-        out_corrH.close();
-        out_corrD.close();
+        out_corr.close();
+
+        // ofstream out_corrH( params.save_path + "/CF_H_avg.txt");
+        // ofstream out_corrD( params.save_path + "/CF_D_avg.txt");
+        // for( int i=0; i < params.CF_model->is.size(); i++ ) {
+        //     out_corrH<< params.CF_model->is[i] << '\t' << CF_H_avg->at(i) / runned_replicas << '\n';
+        //     out_corrD<< params.CF_model->is[i] << '\t' << CF_D_avg->at(i) / runned_replicas << '\n';
+        // }
+        // out_corrH.close();
+        // out_corrD.close();
     }
 
     // Print polymers deposition results

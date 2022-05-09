@@ -17,17 +17,17 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 8;
+        as.chunk_size = 128;
         as.tolerance = 100;
-        as.sides = { 512 };
+        as.sides = { 256 };
         as.gammas = { 0.2, 0.4, 0.6, 0.8, 1.2, 1.6 };
         as.qs = { 0.2 };
-        as.ps = { new StdPolymers::Dimers() };
-        as.percolation = true;
+        // as.ps = { nullptr };
+        as.percolation = false;
         as.draw = false;
         as.verbose = true;
         as.n_threads = 8;
-        as.CFmodel = new CorrFunc::Expospaced( 1.2, 128, 1 );
+        as.CFmodel = new NewCF::Expospaced( 1.2, 128 );
         
     } else {
         string filename = argv[1];

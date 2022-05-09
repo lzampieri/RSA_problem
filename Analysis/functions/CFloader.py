@@ -27,12 +27,12 @@ def load_data( path ):
         # Verify that everything exists
         if( not (
             ( d / 'details.txt').exists() and
-            ( d / 'CF_D_avg.txt').exists() ) ):
+            ( d / 'CF_avg.txt').exists() ) ):
             continue
 
         # Load data
         item.update( load_file( d / 'details.txt'     ) )
-        item.update( { 'CF_D': pd.read_csv( d / 'CF_H_avg.txt', sep='\t', names=['x', 'y'], index_col=False ) } );
+        item.update( { 'CF_D': pd.read_csv( d / 'CF_avg.txt', sep='\t', names=['x', 'y'], index_col=False ) } );
 
         data.append( item )
 

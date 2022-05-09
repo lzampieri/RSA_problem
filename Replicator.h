@@ -12,7 +12,7 @@
 #include "date.h"
 #include "Grid.h"
 #include "FourierCoupledGrids.h"
-#include "CorrFuncCalcolator.h"
+#include "NewCF.h"
 #include "GridFiller.h"
 #include "Polymer.h"
 #include "Percolator.h"
@@ -24,7 +24,7 @@ struct ReplicatorParams {
     double gamma;
     int chunk_size;
     double tolerance;
-    CorrFunc::Model* CF_model;
+    NewCF::Model* CF_model;
     Polymers* to_deposit;
     bool percolation;
     int n_threads;
@@ -33,7 +33,7 @@ struct ReplicatorParams {
     std::string save_path;
 
     ReplicatorParams( int side, double defects_frac, double gamma,
-                      int chunk_size = 100, double tolerance = 1e-3, CorrFunc::Model* CF_model = nullptr,
+                      int chunk_size = 100, double tolerance = 1e-3, NewCF::Model* CF_model = nullptr,
                       Polymers* to_deposit = nullptr, bool percolation = false,
                       int n_threads = 1, bool draw = false,
                       bool verbose = false, std::string save_path = "" ) :
@@ -60,8 +60,9 @@ private:
     FourierCoupledGrids fcg;
     GridFiller_Polymers gfp;
 // Correlator
-    CorrFunc::Calculator<double>* CF_H;
-    CorrFunc::Calculator<int>*    CF_D;
+    NewCF::Calculator* CFcalc;
+    // CorrFunc::Calculator<double>* CF_H;
+    // CorrFunc::Calculator<int>*    CF_D;
 // Percolation
     Percolator* perc;
 
@@ -79,9 +80,11 @@ class Replicator {
 private:
 // Results
 // Correlation function
-    std::vector< double >* CF_H_avg;
-    std::vector< double >* CF_D_avg;
-    void update_CF_averages( const std::vector< CorrFunc::Datapoint >* cfh, const std::vector< CorrFunc::Datapoint >* cfd );
+    std::vector< double >* CF_avg;
+    void update_NewCF_averages( const std::vector< double >* cf );
+    // std::vector< double >* CF_H_avg;
+    // std::vector< double >* CF_D_avg;
+    // void update_CF_averages( const std::vector< CorrFunc::Datapoint >* cfh, const std::vector< CorrFunc::Datapoint >* cfd );
 // Filling fraction
     std::vector< unsigned int >* fills;
     void update_dep_averages( double occupied_sites );

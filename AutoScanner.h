@@ -9,7 +9,7 @@
 
 #include "Replicator.h"
 #include "Polymer.h"
-#include "CorrFuncCalcolator.h"
+#include "NewCF.h"
 #include "date.h"
 
 class AutoScanner {
@@ -20,7 +20,7 @@ public:
     std::vector<int> sides;
     std::vector<double> gammas;
     std::vector<double> qs;
-    std::vector<PolymersFactory*> ps;
+    std::vector<PolymersFactory*> ps = { nullptr };
 
     bool percolation;
     bool draw;
@@ -30,7 +30,7 @@ public:
 
     std::string filename = "default";
 
-    CorrFunc::Model* CFmodel = nullptr;
+    NewCF::Model* CFmodel = nullptr;
 
     std::vector< ReplicatorParams > rps;
 
