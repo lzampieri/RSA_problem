@@ -19,16 +19,15 @@ int main(int argc, char *argv[]) {
         
         as.chunk_size = 128;
         as.tolerance = 100;
-        as.sides = { 256 };
+        as.sides = { 128 };
         as.gammas = { 0.2, 0.4, 0.6, 0.8, 1.2, 1.6 };
-        as.qs = { 0.2 };
+        as.qs = { 0.5 };
         // as.ps = { nullptr };
         as.percolation = false;
         as.draw = false;
         as.verbose = true;
-        as.n_threads = 8;
-        as.CFmodel = new NewCF::Expospaced( 1.2, 128 );
-        
+        as.n_threads = 32;
+        as.CFmodel = new NewCF::Expospaced( 1.2, 100 );
     } else {
         string filename = argv[1];
         cout<<"Extracting data from "<<filename<<endl;

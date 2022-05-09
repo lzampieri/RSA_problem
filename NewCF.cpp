@@ -25,7 +25,9 @@ vector< double >* Calculator::calculate() {
                         model->items.at(i_i).second[i_v].second,
                         *grid
                         );
-                values->at( i_i ) += ( grid->operator[]( here ) * grid->operator[]( there ) );
+                short gshere  = ( grid->operator[](  here ) == GridSite::Defect ? 1 : -1 );
+                short gsthere = ( grid->operator[]( there ) == GridSite::Defect ? 1 : -1 );
+                values->at( i_i ) += gshere * gsthere;
             }
             // cout<<model->items[i_i].first<<'\t'<<model->items.at(i_i).second[i_v].first<<'\t'<<model->items.at(i_i).second[i_v].second<<endl;
         }
