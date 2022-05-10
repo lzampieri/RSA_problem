@@ -34,6 +34,10 @@ def load_data( path ):
         item.update( load_file( d / 'details.txt'     ) )
         item.update( { 'CF_D': pd.read_csv( d / 'CF_avg.txt', sep='\t', names=['x', 'y'], index_col=False ) } );
 
+        if( ( d / 'CFH_avg.txt').exists() ):
+            item.update( { 'CF_H': pd.read_csv( d / 'CFH_avg.txt', sep='\t', names=['x', 'y'], index_col=False ) } );
+
+
         data.append( item )
 
     return np.array( data )
