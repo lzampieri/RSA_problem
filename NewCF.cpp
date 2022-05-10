@@ -34,7 +34,7 @@ vector< double >* Calculator::calculate() {
     }
 
     for( int i = 0; i < values->size(); i++ ) {
-        values->at( i ) /= model->items[i].second.size();
+        values->at( i ) /= model->items[i].second.size() / grid->imax();
     }
 
     return values;
