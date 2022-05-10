@@ -43,9 +43,11 @@ ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
     //     CF_H = new CorrFunc::Calculator<double>( thrower->params.CF_model, &fcg.h );
     //     CF_D = new CorrFunc::Calculator<int>   ( thrower->params.CF_model, &g     );
     // }
-    CFcalc = nullptr;
+    CFcalc  = nullptr;
+    CFcalcH = nullptr;
     if( thrower->params.CF_model ) {
-        CFcalc = new NewCF::Calculator( thrower->params.CF_model, &g );
+        CFcalc  = new  NewCF::Calculator( thrower->params.CF_model, &g     );
+        CFcalcH = new NewCFH::Calculator( thrower->params.CF_model, &fcg.h );
     }
 
     perc = nullptr;
@@ -57,6 +59,7 @@ ReplicatorThread::~ReplicatorThread() {
     // delete CF_H;
     // delete CF_D;
     delete CFcalc;
+    delete CFcalcH;
     delete perc;
 }
 
@@ -90,6 +93,9 @@ ReplicatorThread::~ReplicatorThread() {
             // data->thrower->update_CF_averages( cfh, cfd );
             data->thrower->update_NewCF_averages(
                 data->CFcalc->calculate()
+            );
+            data->thrower->update_NewCFH_averages(
+                data->CFcalcH->calculate()
             );
         }
 
@@ -159,8 +165,10 @@ Replicator::Replicator( ReplicatorParams suggested_params ) :
     //     CF_H_avg = new vector< double > ( params.CF_model->is.size(), 0 );
     // }
     CF_avg = nullptr;
+    CFH_avg = nullptr;
     if( params.CF_model ) {
         CF_avg = new vector< double > ( params.CF_model->items.size(), 0 );
+        CFH_avg = new vector< double > ( params.CF_model->items.size(), 0 );
         // CF_D_avg = new vector< double > ( params.CF_model->is.size(), 0 );
         // CF_H_avg = new vector< double > ( params.CF_model->is.size(), 0 );
     }
@@ -206,6 +214,14 @@ void Replicator::update_NewCF_averages( const vector< double >* cf ) {
     mux->lock();
     for( int i = 0; i < cf->size(); i++ ) {
         CF_avg->at( i ) += cf->at( i );
+    }
+    mux->unlock();
+}
+
+void Replicator::update_NewCFH_averages( const vector< double >* cf ) {
+    mux->lock();
+    for( int i = 0; i < cf->size(); i++ ) {
+        CFH_avg->at( i ) += cf->at( i );
     }
     mux->unlock();
 }
@@ -334,6 +350,12 @@ void Replicator::save_data() {
             out_corr << params.CF_model->items[i].first << '\t' << CF_avg->at( i ) / runned_replicas << '\t' << params.CF_model->items[i].second.size() << '\n';
         }
         out_corr.close();
+
+        ofstream out_corr_H( params.save_path + "/CFH_avg.txt");
+        for( int i=0; i < CFH_avg->size(); i++ ) {
+            out_corr_H << params.CF_model->items[i].first << '\t' << CFH_avg->at( i ) / runned_replicas << '\t' << params.CF_model->items[i].second.size() << '\n';
+        }
+        out_corr_H.close();
 
         // ofstream out_corrH( params.save_path + "/CF_H_avg.txt");
         // ofstream out_corrD( params.save_path + "/CF_D_avg.txt");

@@ -13,6 +13,7 @@
 #include "Grid.h"
 #include "FourierCoupledGrids.h"
 #include "NewCF.h"
+#include "NewCFH.h"
 #include "GridFiller.h"
 #include "Polymer.h"
 #include "Percolator.h"
@@ -61,6 +62,7 @@ private:
     GridFiller_Polymers gfp;
 // Correlator
     NewCF::Calculator* CFcalc;
+    NewCF::Calculator* CFcalcH;
     // CorrFunc::Calculator<double>* CF_H;
     // CorrFunc::Calculator<int>*    CF_D;
 // Percolation
@@ -81,7 +83,9 @@ private:
 // Results
 // Correlation function
     std::vector< double >* CF_avg;
+    std::vector< double >* CFH_avg;
     void update_NewCF_averages( const std::vector< double >* cf );
+    void update_NewCFH_averages( const std::vector< double >* cf );
     // std::vector< double >* CF_H_avg;
     // std::vector< double >* CF_D_avg;
     // void update_CF_averages( const std::vector< CorrFunc::Datapoint >* cfh, const std::vector< CorrFunc::Datapoint >* cfd );
