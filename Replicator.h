@@ -62,7 +62,7 @@ private:
     GridFiller_Polymers gfp;
 // Correlator
     NewCF::Calculator* CFcalc;
-    NewCF::Calculator* CFcalcH;
+    NewCFH::Calculator* CFcalcH;
     // CorrFunc::Calculator<double>* CF_H;
     // CorrFunc::Calculator<int>*    CF_D;
 // Percolation
