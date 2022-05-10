@@ -26,7 +26,7 @@ int main(int argc, char *argv[]) {
         as.percolation = false;
         as.draw = false;
         as.verbose = true;
-        as.n_threads = 32;
+        as.n_threads = 8;
         as.CFmodel = new NewCF::Expospaced( 1.2, 100 );
     } else {
         string filename = argv[1];
