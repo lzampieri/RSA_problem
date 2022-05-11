@@ -25,14 +25,14 @@ vector< double >* Calculator::calculate() {
                         model->items.at(i_i).second[i_v].second,
                         *grid
                         );
-                values->at( i_i ) += grid->operator[](  here ) * grid->operator[](  there );
+                values->at( i_i ) += grid->operator[]( here ) * grid->operator[](  there ) / grid->imax();
             }
             // cout<<model->items[i_i].first<<'\t'<<model->items.at(i_i).second[i_v].first<<'\t'<<model->items.at(i_i).second[i_v].second<<endl;
         }
     }
 
     for( int i = 0; i < values->size(); i++ ) {
-        values->at( i ) /= model->items[i].second.size() / grid->imax();
+        values->at( i ) /= model->items[i].second.size();
     }
 
     return values;
