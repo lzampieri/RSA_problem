@@ -14,7 +14,7 @@ vector< double >* Calculator::calculate() {
     for( int i = 0; i < values->size(); i++ ) {
         values->at( i ) = 0;
     }
-
+    double gshere, gsthere;
     for( int i_i = 0; i_i < values->size(); i_i++ ) {
         for( int i_v = 0; i_v < model->items[i_i].second.size(); i_v++ ) {
             for( int i_g = 0; i_g < grid->imax(); i_g ++ ) {
@@ -25,8 +25,8 @@ vector< double >* Calculator::calculate() {
                         model->items.at(i_i).second[i_v].second,
                         *grid
                         );
-                short gshere  = ( grid->operator[](  here ) == GridSite::Defect ? 1 : -1 );
-                short gsthere = ( grid->operator[]( there ) == GridSite::Defect ? 1 : -1 );
+                gshere  = ( grid->operator[](  here ) == GridSite::Defect ? 1 : -1 );
+                gsthere = ( grid->operator[]( there ) == GridSite::Defect ? 1 : -1 );
                 values->at( i_i ) += gshere * gsthere / grid->imax();
             }
             // cout<<model->items[i_i].first<<'\t'<<model->items.at(i_i).second[i_v].first<<'\t'<<model->items.at(i_i).second[i_v].second<<endl;
