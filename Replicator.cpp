@@ -78,7 +78,7 @@ ReplicatorThread::~ReplicatorThread() {
         // Populate defects
         GridFiller::iid( data->fcg.h );
         data->fcg.fourier_transform();
-        data->fcg.multiply_fft_new( data->thrower->params.gamma );
+        data->fcg.multiply_fft_old( data->thrower->params.gamma );
         data->fcg.fourier_transform(true);
         GridFiller::ranked_insertion(
             data->g,
