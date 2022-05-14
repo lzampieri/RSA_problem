@@ -25,8 +25,7 @@ void FourierCoupledGrids::multiply_fft_old(double gamma) {
     GridSite xy( 0,0,f );
     double q;
     for(int i=1; i< f.d1 * f.d2; i++) {
-        xy = f._xy(i);
-        q = sqrt( xy.X * xy.X + xy.Y * xy.Y );
+        q = abs( _q(i) );
         f.u->at(i) = f.u->at(i) * pow( q, (gamma-1)/2 );
     }
     f.normalize();
