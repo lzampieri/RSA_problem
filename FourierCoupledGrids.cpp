@@ -12,7 +12,8 @@ FourierCoupledGrids::FourierCoupledGrids(int d1, int d2) : h(d1,d2), f(d1,d2) {
 void FourierCoupledGrids::fourier_transform(double reverse) {
     if(reverse) {
         fftw_execute( reverse_plan );
-        h.gaussian_center_and_normalize();
+        // h.gaussian_center_and_normalize();
+        h.normalize();
     } else {
         fftw_execute( direct_plan );
         f.normalize();
