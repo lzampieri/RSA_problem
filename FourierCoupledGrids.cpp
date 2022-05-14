@@ -36,8 +36,9 @@ void FourierCoupledGrids::multiply_fft_new(double gamma) {
     pair< int, int > xy;
     double q,S;
     double beta = ( gamma - 2 ) / 2;
-    double pref = tgamma( beta + 1 );
+    double pref = 1; //tgamma( beta + 1 );
 
+    f.u->at(0) = 0;
     for(int i=1; i< f.d1 * f.d2; i++) {
         q = abs( _q(i) );
         S = pref * pow( q / 2 , beta ) * cyl_bessel_k( abs(beta), q );

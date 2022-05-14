@@ -61,3 +61,22 @@ Expospaced::Expospaced( double base, int maxval ) {
 
     keyname = "Expospaced";
 }
+
+OrtExpospaced::OrtExpospaced( double base, int maxval ) {
+    int current_exp = 0;
+    int current_d = 1;
+    do {
+
+        items.push_back( make_pair( current_d, vector< pair<int, int> >()  ) );
+        items.back().second.push_back( make_pair( current_d, 0 ) );
+        items.back().second.push_back( make_pair(-current_d, 0 ) );
+        items.back().second.push_back( make_pair( 0, current_d ) );
+        items.back().second.push_back( make_pair( 0,-current_d ) );
+
+        while( int( round( pow( base, current_exp ) ) ) <= current_d )
+            current_exp++;
+        current_d = int( round( pow( base, current_exp ) ) );
+    } while( current_d < maxval );
+
+    keyname = "OrtExpospaced";
+}

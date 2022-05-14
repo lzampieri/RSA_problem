@@ -42,6 +42,11 @@ namespace NewCF {
     public:
         Expospaced(double base, int maxval);
     };
+
+    class OrtExpospaced : public Model {
+    public:
+        OrtExpospaced(double base, int maxval);
+    };
 }
 
 #endif
