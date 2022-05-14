@@ -7,7 +7,7 @@ void GridFiller::iid(Grid<double>& g) {
     static minstd_rand engine(random_device{}());
     engine.seed( time(NULL) );
     normal_distribution<double> distribution(0.0,1.0);
-    for(int i=0; i < g.d1 * g.d2; i++ )
+    for(int i=0; i < g.imax(); i++ )
         g.u->at(i) = distribution(engine);
 }
 

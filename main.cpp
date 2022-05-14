@@ -17,10 +17,10 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 1000;
+        as.chunk_size = 500;
         as.tolerance = 100;
-        as.sides = { 256 };
-        as.gammas = { 1.6, 1.2, 0.2, 0.4, 0.6, 0.8 };
+        as.sides = { 129 };
+        as.gammas = { 1.6, 1.4, 1.0, 1.2, 0.2, 0.4, 0.6, 0.8 };
         as.qs = { 0.5 };
         // as.ps = { nullptr };
         as.percolation = false;

@@ -144,9 +144,10 @@ Grid<T>::~Grid() {
 
 template<class T>
 void Grid<T>::normalize() {
-    T maximum = u->at(0);
+    T maximum = abs( u->at(0) );
     for(int i=1; i<d1*d2; i++) {
-        maximum = max( maximum, u->at(i) );
+        if( abs( u->at(i) ) > maximum )
+            maximum = abs( u->at(i) );
     }
     for(int i=0; i<d1*d2; i++) {
         u->at(i) /= maximum;
