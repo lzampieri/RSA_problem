@@ -5,8 +5,6 @@ from pathlib import Path
 import os
 from glob import glob
 
-from sqlalchemy import false
-
 # Load single file
 def load_file( filename ):
     text = filename.read_text()

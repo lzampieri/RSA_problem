@@ -12,6 +12,7 @@
 #include "date.h"
 #include "Grid.h"
 #include "FourierCoupledGrids.h"
+#include "FourierComplexGrids.h"
 #include "NewCF.h"
 #include "NewCFH.h"
 #include "GridFiller.h"

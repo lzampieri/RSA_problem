@@ -17,6 +17,7 @@
 #endif
 
 class FourierCoupledGrids;
+class FourierComplexGrids;
 class GridFiller;
 class GridSite;
 
@@ -112,6 +113,7 @@ public:
     // Friend classes
     friend class GridFiller;
     friend class FourierCoupledGrids;
+    friend class FourierComplexGrids;
 };
 
 // Ensure types compilation
