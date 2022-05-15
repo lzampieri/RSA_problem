@@ -17,10 +17,14 @@ def load_file( filename ):
 def load_data( path ):
     data = []
 
-    for file in glob("../" + path + "/**/draw_*.txt", recursive=True):
+    for file in glob("../" + path + "/**/draw_1.txt", recursive=True):
 
         item = {}
         d = Path( os.path.dirname( file ) )
+
+        if( not (
+            ( d / 'details.txt').exists() ) ):
+            continue
 
         # Load data
         item.update( load_file( d / 'details.txt'     ) )
