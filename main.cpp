@@ -17,17 +17,17 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 10000;
+        as.chunk_size = 1;
         as.tolerance = 100;
-        as.sides = { 513 };
+        as.sides = { 129 };
         as.gammas = { 1.6, 1.4, 1.0, 1.2, 0.2, 0.4, 0.6, 0.8 };
-        as.qs = { 0.5 };
+        as.qs = { 0.3 };
         // as.ps = { nullptr };
         as.percolation = false;
-        as.draw = false;
+        as.draw = true;
         as.verbose = true;
         as.n_threads = 8;
-        as.CFmodel = new NewCF::OrtExpospaced( 1.2, 256 );
+        as.CFmodel = nullptr;
     } else {
         string filename = argv[1];
         cout<<"Extracting data from "<<filename<<endl;
