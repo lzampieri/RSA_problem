@@ -35,10 +35,9 @@ void FourierCoupledGrids::multiply_fft_new(double gamma) {
     pair< int, int > xy;
     double q,S;
     double beta = ( gamma - 2 ) / 2;
-    double pref = 1; //tgamma( beta + 1 );
+    double pref = tgamma( beta + 1 );
 
-    f.u->at(0) = 0;
-    for(int i=1; i< f.d1 * f.d2; i++) {
+    for(int i=0; i< f.d1 * f.d2; i++) {
         q = abs( _q(i) );
         S = pref * pow( q / 2 , beta ) * cyl_bessel_k( abs(beta), q );
         f.u->at(i) = f.u->at(i) * sqrt( S );
@@ -47,9 +46,17 @@ void FourierCoupledGrids::multiply_fft_new(double gamma) {
 }
 
 const std::pair< double, double > FourierCoupledGrids::_q( const GridSite& xy ) const {
+    double x = xy.X;
+    double y = xy.Y;
+    if( abs( x ) < 0.05 ) {
+        x = 0.05;
+    }
+    if( abs( y ) < 0.05 ) {
+        y = 0.05;
+    }
     return make_pair(
-        M_PI / ( h.d1 - 1 ) * xy.X,
-        M_PI / ( h.d2 - 1 ) * xy.Y
+        M_PI / ( h.d1 * 2 - 1 ) * x, //( xy.d1 / 2 - abs( xy.X - xy.d1 / 2 ) ),
+        M_PI / ( h.d2 * 2 - 1 ) * y  //( xy.d2 / 2 - abs( xy.Y - xy.d2 / 2 ) )
     );
 }
 

@@ -17,9 +17,9 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 500;
+        as.chunk_size = 10000;
         as.tolerance = 100;
-        as.sides = { 129 };
+        as.sides = { 513 };
         as.gammas = { 1.6, 1.4, 1.0, 1.2, 0.2, 0.4, 0.6, 0.8 };
         as.qs = { 0.5 };
         // as.ps = { nullptr };
@@ -27,7 +27,7 @@ int main(int argc, char *argv[]) {
         as.draw = false;
         as.verbose = true;
         as.n_threads = 8;
-        as.CFmodel = new NewCF::OrtExpospaced( 1.2, 128 );
+        as.CFmodel = new NewCF::OrtExpospaced( 1.2, 256 );
     } else {
         string filename = argv[1];
         cout<<"Extracting data from "<<filename<<endl;
