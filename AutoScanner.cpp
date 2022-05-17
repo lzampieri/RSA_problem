@@ -111,10 +111,11 @@ void AutoScanner::string_to_array( const string text, vector<int>& vec ) {
 void AutoScanner::string_to_array( const string text, vector<PolymersFactory*>& vec ) {
     stringstream ss( text );
     string temp;
+    vec.clear();
     while( ss >> temp ) {
         for( PolymersFactory* p : PolymersFactory::StdPolymers ) {
             if( p->factname() == temp ) {
-                ps.push_back( p );
+                vec.push_back( p );
                 break;
             }
         }

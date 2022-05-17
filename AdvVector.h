@@ -3,6 +3,8 @@
 
 #include <vector>
 #include <random>
+#include <time.h>
+#include <thread>
 
 class AdvVector {
 private:

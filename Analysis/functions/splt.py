@@ -16,16 +16,22 @@ def next():
 def goto( i_row, i_col ):
     _plot_params[2] = i_row * _plot_params[1] + i_col + 1
     plt.subplot( *_plot_params )
+def hline( y, format = ':k', xl = [] ):
+    if( len( xl ) == 0 ):
+        xl = plt.xlim()
+    plt.plot( xl, [y, y], format )
+    plt.xlim( xl )
+def vline( x, format = ':k', yl = [] ):
+    if( len( yl ) == 0 ):
+        yl = plt.ylim()
+    plt.plot( [x, x], yl, format )
+    plt.ylim( yl )
 
 def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, each_plot ):
 
-    rows = set()
-    cols = set()
-    legs = set()
-    for d in range(count):
-        rows.add( func_row( d ) )
-        cols.add( func_col( d ) )
-        legs.add( func_leg( d ) )
+    rows = np.unique( [ func_row( i ) for i in range(count) ] )
+    cols = np.unique( [ func_col( i ) for i in range(count) ] )
+    legs = np.unique( [ func_leg( i ) for i in range(count) ] )
 
     splt.init( len( rows ), len( cols ) )
     color_list = plt.rcParams['axes.prop_cycle'].by_key()['color']
@@ -38,8 +44,8 @@ def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, each_p
                 temp_y = []
                 for d in range(count):
                     if(
-                        func_col( d ) == c and
                         func_row( d ) == r and
+                        func_col( d ) == c and
                         func_leg( d ) == l
                     ):
                         temp_x.append( func_x( d ) )
@@ -55,4 +61,4 @@ def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, each_p
 
                     plt.legend()
                 
-                each_plot( r, c )
+            each_plot( r, c )
