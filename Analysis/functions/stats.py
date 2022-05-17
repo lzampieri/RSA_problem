@@ -1,4 +1,3 @@
-import imp
 from scipy.stats import kurtosis
 
 def the_kurtosis( data ):
