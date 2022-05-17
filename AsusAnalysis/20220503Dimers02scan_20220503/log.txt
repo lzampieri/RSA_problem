@@ -19,3 +19,4 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 19:00 | 20220503/f_16 | 1024 |          0.2 |   0.4 |      64 |      0.01 | Disabled   | Dimers | Both | (17 / 28)	 Replicas: 262144
 21:44 | 20220503/f_17 | 1024 |          0.2 |   0.8 |      64 |      0.01 | Disabled   | Dimers | Both | (18 / 28)	 Replicas: 131072
 22:18 | 20220503/f_18 | 1024 |          0.2 |   1.2 |      64 |      0.01 | Disabled   | Dimers | Both | (19 / 28)	 Replicas: 65536
+22:37 | 20220503/f_19 | 1024 |          0.2 |   1.6 |      64 |      0.01 | Disabled   | Dimers | Both | (20 / 28)	 Replicas: 131072
