@@ -13,3 +13,17 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 14:47 | 20220515/f_10 |  513 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Disabled | Both | (11 / 144)	 Replicas: 512
 14:47 | 20220515/f_11 |  513 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Linear trimers | Both | (12 / 144)	 Replicas: 32768
 15:28 | 20220515/f_12 |  513 |         0.05 |   1.2 |     512 |      0.01 | Disabled   | Disabled | Both | (13 / 144)	 Replicas: 512
+15:28 | 20220515/f_13 |  513 |         0.05 |   1.2 |     512 |      0.01 | Disabled   | Linear trimers | Both | (14 / 144)	 Replicas: 131072
+18:25 | 20220515/f_14 |  513 |          0.1 |   1.2 |     512 |      0.01 | Disabled   | Disabled | Both | (15 / 144)	 Replicas: 512
+18:26 | 20220515/f_15 |  513 |          0.1 |   1.2 |     512 |      0.01 | Disabled   | Linear trimers | Both | (16 / 144)	 Replicas: 262144
+00:07 | 20220515/f_16 |  513 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Disabled | Both | (17 / 144)	 Replicas: 512
+00:08 | 20220515/f_17 |  513 |          0.2 |   1.2 |     512 |      0.01 | Disabled   | Linear trimers | Both | (18 / 144)	 Replicas: 262144
+05:28 | 20220515/f_18 |  513 |         0.05 |   1.6 |     512 |      0.01 | Disabled   | Disabled | Both | (19 / 144)	 Replicas: 512
+05:29 | 20220515/f_19 |  513 |         0.05 |   1.6 |     512 |      0.01 | Disabled   | Linear trimers | Both | (20 / 144)	 Replicas: 32768
+06:13 | 20220515/f_20 |  513 |          0.1 |   1.6 |     512 |      0.01 | Disabled   | Disabled | Both | (21 / 144)	 Replicas: 512
+06:13 | 20220515/f_21 |  513 |          0.1 |   1.6 |     512 |      0.01 | Disabled   | Linear trimers | Both | (22 / 144)	 Replicas: 65536
+07:38 | 20220515/f_22 |  513 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Disabled | Both | (23 / 144)	 Replicas: 512
+07:39 | 20220515/f_23 |  513 |          0.2 |   1.6 |     512 |      0.01 | Disabled   | Linear trimers | Both | (24 / 144)	 Replicas: 131072
+10:17 | 20220515/f_24 | 1025 |         0.05 |   0.4 |     512 |      0.01 | Disabled   | Disabled | Both | (25 / 144)	 Replicas: 512
+10:18 | 20220515/f_25 | 1025 |         0.05 |   0.4 |     512 |      0.01 | Disabled   | Linear trimers | Both | (26 / 144)	 Replicas: 65536
+16:46 | 20220515/f_26 | 1025 |          0.1 |   0.4 |     512 |      0.01 | Disabled   | Disabled | Both | (27 / 144)	 Replicas: 512
