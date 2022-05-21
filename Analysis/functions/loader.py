@@ -38,6 +38,10 @@ def load_data( ):
             chunks = json.loads( "[" + lines[-1].replace(",]","]").replace("nan","0") + "]" )[-1]
             item['chunks'] = chunks
 
+        # Correct parity
+        if( item['side'] % 2 == 1 ):
+            item['side'] = item['side'] - 1
+
 
         # Prepare histogram
         bins = np.arange( min( chunks ), max( chunks ) + 1 ) - 0.5

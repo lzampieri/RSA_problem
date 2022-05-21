@@ -12,7 +12,7 @@ def chi_squared( real_ys, exp_ys ):
         if( real_y > 0 ):
             sum = sum + ( real_y - exp_y ) ** 2 / real_y
             count = count + 1
-    return sum / ( count - 1 )
+    return sum
 
 def Gauss(x, A, mu, s):
         y = A / s / sqrt( 2 * pi ) *np.exp(-0.5 * ( ( x - mu ) / s )**2 )
@@ -142,9 +142,15 @@ def rebin_width( x, h, width ):
     step = np.min( x[1:] - x[:-1] )
     return rebin( x, h, max( round( width / step ), 1 ) )
 
+def rebin_n( x, h, n ):
+    max_size = np.ptp( x )
+    return rebin_width( x, h, max_size / n )
+
 def rebinner_byfact( fact ):
     return lambda x, h: rebin( x, h, fact )
 
 def rebinner_bywidth( width ):
     return lambda x, h: rebin_width( x, h, width )
 
+def rebinner_byn( n ):
+    return lambda x, h: rebin_n( x, h, n )

@@ -39,6 +39,7 @@ def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, each_p
     for r in rows:
         for c in cols:
             splt.next()
+            all_x = set()
             for i_l, l in enumerate( legs ):
                 temp_x = []
                 temp_y = []
@@ -50,6 +51,7 @@ def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, each_p
                     ):
                         temp_x.append( func_x( d ) )
                         temp_y.append( func_y( d ) )
+                        all_x.add( func_x( d ) )
                 
                 sort_idx = np.argsort( temp_x )
                 x = np.array( temp_x )[ sort_idx ]
@@ -61,4 +63,5 @@ def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, each_p
 
                     plt.legend()
                 
+            plt.xticks( list( all_x ) )
             each_plot( r, c )
