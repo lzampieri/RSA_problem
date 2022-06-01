@@ -17,3 +17,6 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 18:43 | 20220523/f_14 | 1025 |          0.2 |   0.4 |     512 |      0.01 | Disabled   | Linear trimers | Both | (15 / 72)	 Replicas: 131072
 05:09 | 20220523/f_15 | 1025 |         0.05 |   0.8 |     512 |      0.01 | Disabled   | Linear trimers | Both | (16 / 72)	 Replicas: 65536
 10:57 | 20220523/f_16 | 1025 |          0.1 |   0.8 |     512 |      0.01 | Disabled   | Linear trimers | Both | (17 / 72)	 Replicas: 131072
+22:10 | 20220523/f_17 | 1025 |          0.2 |   0.8 |     512 |      0.01 | Disabled   | Linear trimers | Both | (18 / 72)	 Replicas: 262144
+18:50 | 20220523/f_18 | 1025 |         0.05 |   1.2 |     512 |      0.01 | Disabled   | Linear trimers | Both | (19 / 72)	 Replicas: 262144
+22:12 | 20220523/f_19 | 1025 |          0.1 |   1.2 |     512 |      0.01 | Disabled   | Linear trimers | Both | (20 / 72)	 Replicas: 131072
