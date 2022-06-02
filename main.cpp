@@ -17,16 +17,16 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 1;
+        as.chunk_size = 100;
         as.tolerance = 100;
-        as.sides = { 129 };
-        as.gammas = { 1.6, 1.4, 1.0, 1.2, 0.2, 0.4, 0.6, 0.8 };
+        as.sides = { 510, 511, 512, 513, 514 };
+        as.gammas = { 1.0 };
         as.qs = { 0.3 };
         // as.ps = { nullptr };
         as.percolation = false;
-        as.draw = true;
+        as.draw = false;
         as.verbose = true;
-        as.n_threads = 8;
+        as.n_threads = 1;
         as.CFmodel = nullptr;
     } else {
         string filename = argv[1];

@@ -306,6 +306,10 @@ void Replicator::run() {
             break;
         }
 
+        if( params.tolerance < 0 ) {
+            break;
+        }
+
         stds.push_back( fill_std_fromfit() );
 
         if( stds.size() > 4 ) {
