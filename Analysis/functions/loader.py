@@ -14,10 +14,10 @@ def load_file( filename ):
     text = text.replace(",]", "]" )
     return json.loads( text )
 
-def load_data( ):
+def load_data( regex = "../*Analysis/**/" ):
     data = []
 
-    for file in glob("../*Analysis/**/details.txt", recursive=True):
+    for file in glob( regex + "details.txt", recursive=True):
         item = {}
         d = Path( os.path.dirname( file ) )
 
@@ -25,17 +25,22 @@ def load_data( ):
         if( not (
             ( d / 'details.txt').exists() and
             ( d / 'deposition.txt').exists() and
-            ( d / 'percolation.txt').exists() and
             ( d / 'chunks.txt').exists() ) ):
             continue
 
         # Load data
         item.update( load_file( d / 'details.txt'     ) )
         item.update( load_file( d / 'deposition.txt'  ) )
-        item.update( load_file( d / 'percolation.txt' ) )
+
+        if( ( d / 'percolation.txt').exists() ):
+            item.update( load_file( d / 'percolation.txt' ) )
+
         with open( d / "chunks.txt" ) as file:
             lines = file.readlines()
-            chunks = json.loads( "[" + lines[-1].replace(",]","]").replace("nan","0") + "]" )[-1]
+            if( len( lines ) > 1 ):
+                chunks = json.loads( "[" + lines[-1].replace(",]","]").replace("nan","0") + "]" )[-1]
+            else:
+                chunks = item['occupation_history']
             item['chunks'] = chunks
 
         # Correct parity
