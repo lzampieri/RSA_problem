@@ -6,3 +6,4 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 01:25 | _20220602/f_3 |  512 |         0.05 |   0.4 |  100000 |        -1 | Disabled   | Squared | Disabled | (4 / 48)	 Replicas: 100000
 03:05 | _20220602/f_4 |  512 |          0.1 |   0.4 |  100000 |        -1 | Disabled   | Dimers | Disabled | (5 / 48)	 Replicas: 100000
 05:11 | _20220602/f_5 |  512 |          0.1 |   0.4 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (6 / 48)	 Replicas: 100000
+07:23 | _20220602/f_6 |  512 |          0.1 |   0.4 |  100000 |        -1 | Disabled   | Trimers | Disabled | (7 / 48)	 Replicas: 100000
