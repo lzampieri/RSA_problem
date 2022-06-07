@@ -65,3 +65,89 @@ def iterate( count, func_row, func_col, func_leg, func_x, func_y, params, each_p
                 
             plt.xticks( list( all_x ) )
             each_plot( r, c )
+
+def oneitem_iterate( count, func_item, func_leg, func_x, func_y, params, each_plot ):
+
+    items = np.unique( [ func_item( i ) for i in range(count) ] )
+    n_items = len( items )
+    legs = np.unique( [ func_leg( i ) for i in range(count) ] )
+
+    if( n_items % 3 == 0 ):
+        splt.init( n_items / 3, 3 )
+    elif( n_items % 2 == 0 ):
+        splt.init( n_items / 2, 2 )
+    else:
+        splt.init( n_items, 3 )
+
+    color_list = plt.rcParams['axes.prop_cycle'].by_key()['color']
+
+    for it in items:
+        splt.next()
+        all_x = set()
+        for i_l, l in enumerate( legs ):
+            temp_x = []
+            temp_y = []
+            for d in range(count):
+                if(
+                    func_item( d ) == it and
+                    func_leg( d ) == l
+                ):
+                    temp_x.append( func_x( d ) )
+                    temp_y.append( func_y( d ) )
+                    all_x.add( func_x( d ) )
+            
+            sort_idx = np.argsort( temp_x )
+            x = np.array( temp_x )[ sort_idx ]
+            y = np.array( temp_y )[ sort_idx ]
+            
+            if( len( y ) > 0 ):
+                for i in range( len( y[0] ) ):
+                    plt.plot( x, [ yi[i] for yi in y ], color = color_list[ i_l ], **params( it, l )[i] )
+
+                plt.legend()
+            
+        plt.xticks( list( all_x ) )
+        each_plot( it )
+
+def oneitem_iterate_errorbar( count, func_item, func_leg, func_x, func_y, params, each_plot ):
+
+    items = np.unique( [ func_item( i ) for i in range(count) ] )
+    n_items = len( items )
+    legs = np.unique( [ func_leg( i ) for i in range(count) ] )
+
+    if( n_items % 3 == 0 ):
+        splt.init( n_items / 3, 3 )
+    elif( n_items % 2 == 0 ):
+        splt.init( n_items / 2, 2 )
+    else:
+        splt.init( n_items, 3 )
+
+    color_list = plt.rcParams['axes.prop_cycle'].by_key()['color']
+
+    for it in items:
+        splt.next()
+        all_x = set()
+        for i_l, l in enumerate( legs ):
+            temp_x = []
+            temp_y = []
+            for d in range(count):
+                if(
+                    func_item( d ) == it and
+                    func_leg( d ) == l
+                ):
+                    temp_x.append( func_x( d ) )
+                    temp_y.append( func_y( d ) )
+                    all_x.add( func_x( d ) )
+            
+            sort_idx = np.argsort( temp_x )
+            x = np.array( temp_x )[ sort_idx ]
+            y = np.array( temp_y )[ sort_idx ]
+            
+            if( len( y ) > 0 ):
+                for i in range( len( y[0] ) ):
+                    plt.errorbar( x, [ yi[i].n for yi in y ], [ yi[i].s for yi in y ], color = color_list[ i_l ], **params( it, l )[i] )
+
+                plt.legend()
+            
+        plt.xticks( list( all_x ) )
+        each_plot( it )
