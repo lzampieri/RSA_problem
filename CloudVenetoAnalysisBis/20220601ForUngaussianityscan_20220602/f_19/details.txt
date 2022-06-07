@@ -1,0 +1,13 @@
+{
+"side":	512,
+"defects_frac":	0.1,
+"gamma":	0.8,
+"chunk_size":	100000,
+"tolerance":	-1,
+"runned_replicas":	100000,
+"CF_Model":	"",
+"dep_polymers":	"Squared",
+"save_path":	"20220601ForUngaussianityscan_20220602/f_19",
+"n_threads":	"8",
+"draw":	False
+}
