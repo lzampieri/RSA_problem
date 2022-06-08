@@ -15,4 +15,4 @@ def extract_xy( data, keys, x, y ):
         output[key].setdefault( 'x', [] ).append( x( d ) )
         output[key].setdefault( 'y', [] ).append( y( d ) )
     
-    return output
+    return np.array( list( output.values() ) )
