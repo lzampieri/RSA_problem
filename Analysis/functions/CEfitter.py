@@ -29,4 +29,4 @@ def estimate_B( x, y ):
 
 def estimate_oneovernu( logx, logyB ):
     res, cov = np.polyfit( logx, logyB, 1, cov = True )
-    return ufloat( - res[0], np.sqrt( cov[0,0] ) )
+    return ufloat( - res[0], np.sqrt( cov[0,0] ) ), ufloat( res[1], np.sqrt( cov[1,1] ) )
