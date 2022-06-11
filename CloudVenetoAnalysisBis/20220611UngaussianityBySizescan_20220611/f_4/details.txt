@@ -1,0 +1,13 @@
+{
+"side":	256,
+"defects_frac":	0.2,
+"gamma":	0.4,
+"chunk_size":	100,
+"tolerance":	0.02,
+"runned_replicas":	3200,
+"CF_Model":	"",
+"dep_polymers":	"Linear trimers",
+"save_path":	"20220611UngaussianityBySizescan_20220611/f_4",
+"n_threads":	"8",
+"draw":	False
+}
