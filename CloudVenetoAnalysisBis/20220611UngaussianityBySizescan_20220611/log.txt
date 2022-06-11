@@ -1,0 +1,11 @@
+=== 20220611 10:10 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+10:10 | _20220611/f_0 |   64 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Linear trimers | Disabled | (1 / 12)	 Replicas: 25600
+10:10 | _20220611/f_1 |   64 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Squared | Disabled | (2 / 12)	 Replicas: 1600
+10:10 | _20220611/f_2 |  128 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Linear trimers | Disabled | (3 / 12)	 Replicas: 25600
+10:12 | _20220611/f_3 |  128 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Squared | Disabled | (4 / 12)	 Replicas: 51200
+10:15 | _20220611/f_4 |  256 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Linear trimers | Disabled | (5 / 12)	 Replicas: 3200
+10:16 | _20220611/f_5 |  256 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Squared | Disabled | (6 / 12)	 Replicas: 6400
+10:18 | _20220611/f_6 |  512 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Linear trimers | Disabled | (7 / 12)	 Replicas: 51200
+11:20 | _20220611/f_7 |  512 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Squared | Disabled | (8 / 12)	 Replicas: 12800
+11:33 | _20220611/f_8 | 1024 |          0.2 |   0.4 |     100 |      0.02 | Disabled   | Linear trimers | Disabled | (9 / 12)	 Replicas: 51200

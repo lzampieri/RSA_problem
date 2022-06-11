@@ -244,17 +244,20 @@ double Replicator::fill_avg( unsigned int threshold ) const {
     return result / threshold;
 }
 
-// double Replicator::fill_std( unsigned int threshold ) const {
-//     if( runned_replicas < threshold )
-//         threshold = runned_replicas;
-//     double avg = fill_avg( threshold );
-//     double result = 0;
-//     for( int i = 0; i < threshold; i++ )
-//         result += ( ( fills->at(i) - avg ) * ( fills->at(i) - avg ) );
-//     return sqrt( result / ( threshold - 1 ) );
-// }
+double Replicator::fill_std_fromnp( unsigned int threshold ) const {
+    if( runned_replicas < threshold )
+        threshold = runned_replicas;
 
-double Replicator::fill_std_fromfit( unsigned int threshold ) const {
+    double avg = fill_avg( threshold );
+    double result = 0;
+
+    for( int i = 0; i < threshold; i++ )
+        result += ( ( fills->at(i) - avg ) * ( fills->at(i) - avg ) );
+
+    return sqrt( result / ( threshold - 1 ) );
+}
+
+double Replicator::fill_std_fromgauss( unsigned int threshold ) const {
     if( runned_replicas < threshold )
         threshold = runned_replicas;
     
@@ -281,6 +284,14 @@ double Replicator::fill_std_fromfit( unsigned int threshold ) const {
     auto params = curve_fit( gaussian, { (double)threshold, avg, avg * 0.1 }, x, y );
 
     return abs( params[2] );
+}
+
+double Replicator::fill_std( unsigned int threshold ) const {
+    if( WHICHSTD == STD_FROMFORMULA )
+        return fill_std_fromnp( threshold );
+    else if( WHICHSTD == STD_FROMGAUSS )
+        return fill_std_fromgauss( threshold );
+    return 0;
 }
 
 void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
@@ -310,10 +321,10 @@ void Replicator::run() {
             break;
         }
 
-        stds.push_back( fill_std_fromfit() );
+        stds.push_back( fill_std() );
 
-        if( stds.size() > 4 ) {
-            variation = *max_element( stds.end() - 4, stds.end() ) / *min_element( stds.end() - 4, stds.end() );
+        if( stds.size() > 2 ) {
+            variation = *max_element( stds.end() - 2, stds.end() ) / *min_element( stds.end() - 2, stds.end() );
         }
 
         out_chunks << runned_replicas << ", " << stds.back() << ", " << variation << ", [";
@@ -321,7 +332,7 @@ void Replicator::run() {
             out_chunks<<d<<',';
         out_chunks<<"]"<<endl;
         if( params.verbose )
-            cout << runned_replicas << ", " << stds.back() << " (" << fill_std_fromfit() << "), " << variation << endl;
+            cout << runned_replicas << ", " << stds.back() << " (" << fill_std() << "), " << variation << endl;
 
         if( isnan( variation ) )
             break;
@@ -374,7 +385,7 @@ void Replicator::save_data() {
     // Print polymers deposition results
     if( params.to_deposit ) {
         double avg = fill_avg();
-        double std = fill_std_fromfit();
+        double std = fill_std();
 
         ofstream out_deposition( params.save_path + "/deposition.txt");
         out_deposition<<"{\n\"dep_polymers\":\t\""<<params.to_deposit->keyname<<"\""

@@ -1,9 +1,11 @@
 from math import sqrt, pi, log, inf
-from scipy.optimize import curve_fit
+from struct import Struct
+from scipy.optimize import curve_fit, minimize
 import numpy as np
 from matplotlib import pyplot as plt
 from . import splt
 from scipy.special import gamma, polygamma
+from functools import partial
 
 def chi_squared( real_ys, exp_ys ):
     sum = 0
@@ -31,7 +33,7 @@ def GG(x, A, mu, s, a ):
     return pref * np.exp( - a * ( b * ( x - u ) + np.exp( - b * ( x - u ) ) ) )
 
 
-def fit( x, h, function, p0, bounds = ( -inf, inf ) ):
+def classic_fit( x, h, function, p0, bounds = ( -inf, inf ) ):
     try:
         pars, errs = curve_fit( function, x, h, p0, bounds= bounds )
     except (RuntimeError, RuntimeWarning) as e:
@@ -44,7 +46,7 @@ def fit( x, h, function, p0, bounds = ( -inf, inf ) ):
         'pars' : pars
     }
 
-def fits( x, h, item, threshold = 0, plot = True ):
+def classic_fits( x, h, item, threshold = 0, plot = True ):
     x = np.array( x )
     h = np.array( h )
 
@@ -75,7 +77,7 @@ def fits( x, h, item, threshold = 0, plot = True ):
 
     fits = {}
     for f, p0, bound in zip( functions, p0s, bounds ):
-        fits[ f.__name__ ] = fit( x_tofit, h_tofit, f, p0, bound )
+        fits[ f.__name__ ] = classic_fit( x_tofit, h_tofit, f, p0, bound )
 
     if( plot ):
         plt.scatter( x, h, marker='+', color='k' )
@@ -88,6 +90,71 @@ def fits( x, h, item, threshold = 0, plot = True ):
         plt.ylim( - max( h_tofit ) * 0.1, max( h_tofit ) * 1.1 )
 
     return fits
+
+def logGauss(x, mu, s):
+        y = np.log( 1.0 / s / sqrt( 2 * pi ) ) - 0.5 * ( ( x - mu ) / s )**2
+        return y
+    
+def logGumbel(x, mu, s):
+    alpha = 1.283 / s
+    u = mu - 0.45 * s
+    z = ( x - u ) * alpha
+    return np.log( alpha ) - z - np.exp( - z )
+
+def logGG(x, mu, s, a ):
+    b = 1 / s * sqrt( polygamma(1, a) )
+    u = mu - 1 / b * ( log( a ) - polygamma(0, a) )
+    pref = ( a**a ) * b / gamma( a )
+    return np.log( pref ) - a * ( b * ( x - u ) + np.exp( - b * ( x - u ) ) )
+
+def entropy( x, func, param ):
+    probs = func( x, *param ) 
+    return np.average( - probs )
+
+def entropyc_fit( x, function, p0, bound, x_to_est ):
+
+    score = lambda pars: entropy( x, function, pars )
+    
+    results = minimize( score, x0 = p0, bounds=bound, tol = 1e-15 )
+
+    estimated_y = np.exp( function( x_to_est, *results.x ) ) * np.min( x_to_est[1:] - x_to_est[:-1] )
+
+    return {
+        'est_y': estimated_y,
+        'pars' : results.x
+    }
+
+def entropyc_fits( x, x_to_est ):
+    x = np.array( x )
+    x_to_est = np.array( x_to_est )
+
+    mean = np.mean( x )
+    std  = np.std ( x )
+
+    functions = [
+        logGauss,
+        logGumbel,
+        logGG
+    ]
+
+    p0s = [
+        [ mean, std ],
+        [ mean, std ],
+        [ mean, std, 1.1 ]
+    ]
+
+    bounds = [
+        ( ( 0, 1 ), ( 1e-9, inf ) ),
+        ( ( 0, 1 ), ( 1e-9, inf ) ),
+        ( ( 0, 1 ), ( 1e-9, inf ), ( 0.001, 100 ) )
+    ]
+
+    fits = {}
+    for f, p0, bound in zip( functions, p0s, bounds ):
+        fits[ f.__name__[3:] ] = entropyc_fit( x, f, p0, bound, x_to_est )
+
+    return fits
+
 
 def fits_twocols( data, threshold_1 = 0, threshold_2 = 0.5, data_edit = lambda x, y : ( x, y ), plot = True ):
     all_fits = []
