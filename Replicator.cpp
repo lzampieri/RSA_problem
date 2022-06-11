@@ -323,8 +323,8 @@ void Replicator::run() {
 
         stds.push_back( fill_std() );
 
-        if( stds.size() > 4 ) {
-            variation = *max_element( stds.end() - 4, stds.end() ) / *min_element( stds.end() - 4, stds.end() );
+        if( stds.size() > 2 ) {
+            variation = *max_element( stds.end() - 2, stds.end() ) / *min_element( stds.end() - 2, stds.end() );
         }
 
         out_chunks << runned_replicas << ", " << stds.back() << ", " << variation << ", [";
