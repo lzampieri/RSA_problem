@@ -53,6 +53,7 @@ def load_data( regex = "../*Analysis/**/" ):
         h_all, _ = np.histogram( chunks, bins= bins, density=True )
         h_x_all = ( bins[:-1] + 0.5 ) / ( item['side']**2 )
         
+        item['xs'] = np.array( chunks ) / ( item['side']**2 )
         item['h_x'] = h_x_all[ h_all > 0 ]
         item['h']   = h_all  [ h_all > 0 ]
 
