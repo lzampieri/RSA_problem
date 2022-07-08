@@ -4,6 +4,7 @@
 #define STD_FROMFORMULA 0
 #define STD_FROMGAUSS 1
 #define WHICHSTD STD_FROMFORMULA
+#define MAX_REPS 1e6
 
 #include <string>
 #include <iostream>

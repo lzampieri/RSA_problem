@@ -321,6 +321,10 @@ void Replicator::run() {
             break;
         }
 
+        if( runned_replicas > MAX_REPS ) {
+            break;
+        }
+
         stds.push_back( fill_std() );
 
         if( stds.size() > 2 ) {
