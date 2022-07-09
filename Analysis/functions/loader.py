@@ -14,7 +14,7 @@ def load_file( filename ):
     text = text.replace(",]", "]" )
     return json.loads( text )
 
-def load_data( regex = "../*Analysis/**/" ):
+def load_data( regex = "../*Analysis*/**/" ):
     data = []
 
     for file in glob( regex + "details.txt", recursive=True):
