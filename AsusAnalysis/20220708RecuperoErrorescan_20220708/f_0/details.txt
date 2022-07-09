@@ -1,0 +1,13 @@
+{
+"side":	2048,
+"defects_frac":	0.2,
+"gamma":	1.2,
+"chunk_size":	1000,
+"tolerance":	0.001,
+"runned_replicas":	4000,
+"CF_Model":	"",
+"dep_polymers":	"Squared",
+"save_path":	"20220708RecuperoErrorescan_20220708/f_0",
+"n_threads":	"8",
+"draw":	False
+}
