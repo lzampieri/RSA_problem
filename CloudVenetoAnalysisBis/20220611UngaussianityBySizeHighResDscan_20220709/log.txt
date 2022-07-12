@@ -3,3 +3,5 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 10:57 | _20220709/f_0 | 1024 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (1 / 4)	 Replicas: 16000
 12:18 | _20220709/f_1 | 1024 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (2 / 4)	 Replicas: 64000
 00:07 | _20220709/f_2 | 2048 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (3 / 4)	 Replicas: 8000
+03:43 | _20220709/f_3 | 2048 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (4 / 4)	 Replicas: 64000
+=== Total time: 68:52:22.376264603 ===
