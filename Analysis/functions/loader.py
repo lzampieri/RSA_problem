@@ -28,6 +28,10 @@ def load_data( regex = "../*Analysis*/**/" ):
             ( d / 'chunks.txt').exists() ) ):
             continue
 
+        # Verify that the item should not be excluded
+        if( ( d / 'ignore.txt').exists() ):
+            continue
+
         # Load data
         item.update( load_file( d / 'details.txt'     ) )
         item.update( load_file( d / 'deposition.txt'  ) )
