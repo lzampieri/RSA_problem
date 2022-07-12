@@ -16,7 +16,7 @@ def G( thearray ):
     sum232 = ( np.sum( ( thearray - avg ) ** 2 ) / n ) ** 1.5
     return np.sqrt( n * ( n - 1 ) ) / ( n - 2 ) * sum3 / sum232
 
-def compute_in_decades( thearray, func ):
+def compute_in_decades( thearray, func, method = 'auto' ):
     tot_len = len( thearray )
     extremities = np.linspace( 0, tot_len, 10, dtype = int )
     thearray = np.array( thearray )
@@ -30,4 +30,14 @@ def compute_in_decades( thearray, func ):
         else:
             data = thearray[ np.r_[ :extremities[i], extremities[i+1]: ] ]
         results.append( func( data ) )
-    return ufloat( np.mean( results ), np.std( results ) )
+    
+    if( method == 'ptp' ):
+        return ufloat( func( thearray ), np.ptp( results ) )
+    elif( method == 'uniform' ):
+        return ufloat( func( thearray ), np.ptp( results ) / np.sqrt( 12 ) )
+    elif( method == 'std' ):
+        return ufloat( func( thearray ), np.std( results ) )
+    elif( method == 'auto' ):
+        return ufloat( func( thearray ), np.max( [ np.std( results ), np.ptp( results ) / np.sqrt( 12 ) ] ) )
+    else:
+        raise ValueError( f"{method} is not a recognized method. Use ptp, uniform, std or auto" )
