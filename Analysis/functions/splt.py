@@ -72,7 +72,9 @@ def oneitem_iterate( count, func_item, func_leg, func_x, func_y, params, each_pl
     n_items = len( items )
     legs = np.unique( [ func_leg( i ) for i in range(count) ] )
 
-    if( n_items % 3 == 0 ):
+    if( n_items < 4 ):
+        splt.init( n_items, 1 )
+    elif( n_items % 3 == 0 ):
         splt.init( n_items / 3, 3 )
     elif( n_items % 2 == 0 ):
         splt.init( n_items / 2, 2 )
@@ -115,7 +117,9 @@ def oneitem_iterate_errorbar( count, func_item, func_leg, func_x, func_y, params
     n_items = len( items )
     legs = np.unique( [ func_leg( i ) for i in range(count) ] )
 
-    if( n_items % 3 == 0 ):
+    if( n_items < 4 ):
+        splt.init( n_items, 1 )
+    elif( n_items % 3 == 0 ):
         splt.init( n_items / 3, 3 )
     elif( n_items % 2 == 0 ):
         splt.init( n_items / 2, 2 )
