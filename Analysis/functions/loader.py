@@ -4,6 +4,7 @@ from pathlib import Path
 import os
 from glob import glob
 import re
+import pandas as pd
 
 # Load single file
 def load_file( filename ):
@@ -14,7 +15,10 @@ def load_file( filename ):
     text = text.replace(",]", "]" )
     return json.loads( text )
 
-def load_data( regex = "../*Analysis*/**/" ):
+def load_all_data():
+    return load_data( "../*Analysis*/**/" )
+
+def load_data( regex =  "../CloudVenetoAnalysisHuge/**/" ):
     data = []
 
     for file in glob( regex + "details.txt", recursive=True):
@@ -86,3 +90,11 @@ def filter( data, func ):
             filtered_data.append( d )
     return filtered_data
 
+def export( data, filename, columns = ['side','defects_frac','gamma','dep_polymers','runned_replicas','chunks'], renames = {} ):
+    df = pd.DataFrame.from_records( data )
+    df = df[columns]
+    renames_int = { 'runned_replicas': 'total_replicas', 'chunks': 'jamming_occupations' }
+    renames_int.update( renames )
+    df.rename( columns=renames_int, inplace=True )
+    df.to_json( filename, orient='records', indent = 2 )
+    print( len( df ), " rows exported to ", filename )
