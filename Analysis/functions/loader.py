@@ -84,11 +84,8 @@ def remove_duplicates( data, key, discriminant ):
     return data[ list( choosen_idxs.values() ) ]
 
 def filter( data, func ):
-    filtered_data = []
-    for d in data:
-        if( func( d ) ):
-            filtered_data.append( d )
-    return filtered_data
+    data = np.array( data )
+    return data[ np.vectorize( func )( data ) ]
 
 def export( data, filename, columns = ['side','defects_frac','gamma','dep_polymers','runned_replicas','chunks'], renames = {} ):
     df = pd.DataFrame.from_records( data )

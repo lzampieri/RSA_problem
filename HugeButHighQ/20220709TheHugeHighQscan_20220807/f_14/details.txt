@@ -1,0 +1,13 @@
+{
+"side":	64,
+"defects_frac":	0.4,
+"gamma":	1.6,
+"chunk_size":	1000,
+"tolerance":	0.001,
+"runned_replicas":	16000,
+"CF_Model":	"",
+"dep_polymers":	"Linear trimers",
+"save_path":	"20220709TheHugeHighQscan_20220807/f_14",
+"n_threads":	"8",
+"draw":	False
+}
