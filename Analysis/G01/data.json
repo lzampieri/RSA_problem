@@ -1080,6 +1080,15 @@
     "jamming_frac_std":0.0003341502
   },
   {
+    "side":1024,
+    "defects_frac":0.05,
+    "gamma":0.8,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.7301354456,
+    "jamming_frac_std":0.0004108567
+  },
+  {
     "side":64,
     "defects_frac":0.2,
     "gamma":0.8,
