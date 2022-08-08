@@ -34,6 +34,29 @@ def estimate_B( x, y ):
 
     return B, logx, logyB
 
+def estimate_B_log( x, y ):
+    logx = np.log2( x )
+    Bmin = 1e-15
+    Bmax = np.min( y )
+    BabsMax = np.min( y )
+    cont = 0
+
+    while( np.abs( np.log10( Bmax ) - np.log10( Bmin ) ) > 0.001 ):
+        Bs = np.logspace( np.log10( Bmin ), np.log10( Bmax ), 500 )
+        res = [ is_straight( logx, y, B, BabsMax ) for B in Bs ]
+        i = np.argmin( res )
+        Bmin = Bs[ max( 0, np.min( i ) - 2 ) ]
+        Bmax = Bs[ min( len( Bs ) - 1, np.max( i ) + 2 ) ]
+        cont = cont + 1
+
+    B = ufloat( np.mean( [Bmin, Bmax ] ), ( Bmax - Bmin ) / np.sqrt( 12 ) )
+    logyB = unp.uarray(
+        np.log2( np.array( y ) - B.n ),
+        B.s / np.abs( B.n - np.array( y ) ) / np.log( 2 )
+    )
+
+    return B, logx, logyB
+
 def estimate_oneovernu( logx, logyB ):
     res, cov = np.polyfit(
         logx, unp.nominal_values( logyB ), 1,

@@ -630,6 +630,87 @@
     "jamming_frac_std":0.0005753365
   },
   {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":0.8,
+    "dep_polymers":"Trimers",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.7136062844,
+    "jamming_frac_std":0.0006654949
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":0.8,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.6819273992,
+    "jamming_frac_std":0.0007706604
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":0.8,
+    "dep_polymers":"Squared",
+    "total_replicas":128000,
+    "jamming_frac_avg":0.6353491738,
+    "jamming_frac_std":0.0009668122
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Dimers",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.6662984074,
+    "jamming_frac_std":0.0005519939
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Trimers",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.6241796941,
+    "jamming_frac_std":0.0006588578
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":128000,
+    "jamming_frac_avg":0.5882933646,
+    "jamming_frac_std":0.0007818623
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Squared",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.5340219488,
+    "jamming_frac_std":0.0010834382
+  },
+  {
+    "side":512,
+    "defects_frac":0.05,
+    "gamma":1.2,
+    "dep_polymers":"Dimers",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.8025286436,
+    "jamming_frac_std":0.0005759898
+  },
+  {
+    "side":512,
+    "defects_frac":0.05,
+    "gamma":1.2,
+    "dep_polymers":"Trimers",
+    "total_replicas":512000,
+    "jamming_frac_avg":0.7584146775,
+    "jamming_frac_std":0.0006709584
+  },
+  {
     "side":64,
     "defects_frac":0.1,
     "gamma":0.8,
@@ -637,6 +718,96 @@
     "total_replicas":32000,
     "jamming_frac_avg":0.7137726288,
     "jamming_frac_std":0.0052846581
+  },
+  {
+    "side":512,
+    "defects_frac":0.05,
+    "gamma":1.2,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.7287599638,
+    "jamming_frac_std":0.0007669403
+  },
+  {
+    "side":512,
+    "defects_frac":0.05,
+    "gamma":1.2,
+    "dep_polymers":"Squared",
+    "total_replicas":1024000,
+    "jamming_frac_avg":0.687015918,
+    "jamming_frac_std":0.0009258818
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":1.2,
+    "dep_polymers":"Dimers",
+    "total_replicas":4000,
+    "jamming_frac_avg":0.7565117302,
+    "jamming_frac_std":0.0005740684
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":1.2,
+    "dep_polymers":"Trimers",
+    "total_replicas":8000,
+    "jamming_frac_avg":0.7128630939,
+    "jamming_frac_std":0.0006604384
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":1.2,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.6792567437,
+    "jamming_frac_std":0.0007734265
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":1.2,
+    "dep_polymers":"Squared",
+    "total_replicas":1024000,
+    "jamming_frac_avg":0.6302365026,
+    "jamming_frac_std":0.0009791985
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":1.2,
+    "dep_polymers":"Dimers",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.6648075038,
+    "jamming_frac_std":0.0005517931
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":1.2,
+    "dep_polymers":"Trimers",
+    "total_replicas":16000,
+    "jamming_frac_avg":0.6222214222,
+    "jamming_frac_std":0.0006504306
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":1.2,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.5829862561,
+    "jamming_frac_std":0.0007508655
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":1.2,
+    "dep_polymers":"Squared",
+    "total_replicas":16000,
+    "jamming_frac_avg":0.5238770561,
+    "jamming_frac_std":0.0009546596
   },
   {
     "side":64,
@@ -648,6 +819,96 @@
     "jamming_frac_std":0.0060531244
   },
   {
+    "side":512,
+    "defects_frac":0.05,
+    "gamma":1.6,
+    "dep_polymers":"Dimers",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.8023371696,
+    "jamming_frac_std":0.0005738177
+  },
+  {
+    "side":512,
+    "defects_frac":0.05,
+    "gamma":1.6,
+    "dep_polymers":"Trimers",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.7582343501,
+    "jamming_frac_std":0.0006697526
+  },
+  {
+    "side":512,
+    "defects_frac":0.05,
+    "gamma":1.6,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":16000,
+    "jamming_frac_avg":0.7277838035,
+    "jamming_frac_std":0.0007718378
+  },
+  {
+    "side":512,
+    "defects_frac":0.05,
+    "gamma":1.6,
+    "dep_polymers":"Squared",
+    "total_replicas":128000,
+    "jamming_frac_avg":0.6854027166,
+    "jamming_frac_std":0.0009243585
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":1.6,
+    "dep_polymers":"Dimers",
+    "total_replicas":16000,
+    "jamming_frac_avg":0.7560731578,
+    "jamming_frac_std":0.0005667256
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":1.6,
+    "dep_polymers":"Trimers",
+    "total_replicas":512000,
+    "jamming_frac_avg":0.7123835724,
+    "jamming_frac_std":0.0006669583
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":1.6,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":8000,
+    "jamming_frac_avg":0.6772751484,
+    "jamming_frac_std":0.0007749791
+  },
+  {
+    "side":512,
+    "defects_frac":0.1,
+    "gamma":1.6,
+    "dep_polymers":"Squared",
+    "total_replicas":4000,
+    "jamming_frac_avg":0.6267451553,
+    "jamming_frac_std":0.0009365498
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":1.6,
+    "dep_polymers":"Dimers",
+    "total_replicas":16000,
+    "jamming_frac_avg":0.6637512212,
+    "jamming_frac_std":0.0005543673
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":1.6,
+    "dep_polymers":"Trimers",
+    "total_replicas":512000,
+    "jamming_frac_avg":0.6209663727,
+    "jamming_frac_std":0.0006554347
+  },
+  {
     "side":64,
     "defects_frac":0.1,
     "gamma":0.8,
@@ -655,6 +916,96 @@
     "total_replicas":512000,
     "jamming_frac_avg":0.6354610958,
     "jamming_frac_std":0.0074094172
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":1.6,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.5790379903,
+    "jamming_frac_std":0.0007504785
+  },
+  {
+    "side":512,
+    "defects_frac":0.2,
+    "gamma":1.6,
+    "dep_polymers":"Squared",
+    "total_replicas":1024000,
+    "jamming_frac_avg":0.5165954714,
+    "jamming_frac_std":0.0009792434
+  },
+  {
+    "side":1024,
+    "defects_frac":0.05,
+    "gamma":0.4,
+    "dep_polymers":"Dimers",
+    "total_replicas":16000,
+    "jamming_frac_avg":0.8033051826,
+    "jamming_frac_std":0.0002888468
+  },
+  {
+    "side":1024,
+    "defects_frac":0.05,
+    "gamma":0.4,
+    "dep_polymers":"Trimers",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.7593705985,
+    "jamming_frac_std":0.0003408245
+  },
+  {
+    "side":1024,
+    "defects_frac":0.05,
+    "gamma":0.4,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":64000,
+    "jamming_frac_avg":0.7322209542,
+    "jamming_frac_std":0.0004209487
+  },
+  {
+    "side":1024,
+    "defects_frac":0.05,
+    "gamma":0.4,
+    "dep_polymers":"Squared",
+    "total_replicas":64000,
+    "jamming_frac_avg":0.6937624937,
+    "jamming_frac_std":0.0006266878
+  },
+  {
+    "side":1024,
+    "defects_frac":0.1,
+    "gamma":0.4,
+    "dep_polymers":"Dimers",
+    "total_replicas":1024000,
+    "jamming_frac_avg":0.7582050692,
+    "jamming_frac_std":0.0003033593
+  },
+  {
+    "side":1024,
+    "defects_frac":0.1,
+    "gamma":0.4,
+    "dep_polymers":"Trimers",
+    "total_replicas":64000,
+    "jamming_frac_avg":0.7150705607,
+    "jamming_frac_std":0.0003589089
+  },
+  {
+    "side":1024,
+    "defects_frac":0.1,
+    "gamma":0.4,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.6859664509,
+    "jamming_frac_std":0.0005042606
+  },
+  {
+    "side":1024,
+    "defects_frac":0.1,
+    "gamma":0.4,
+    "dep_polymers":"Squared",
+    "total_replicas":256000,
+    "jamming_frac_avg":0.6434627838,
+    "jamming_frac_std":0.0008603092
   },
   {
     "side":64,
@@ -673,6 +1024,60 @@
     "total_replicas":32000,
     "jamming_frac_avg":0.6666069183,
     "jamming_frac_std":0.0044193893
+  },
+  {
+    "side":1024,
+    "defects_frac":0.2,
+    "gamma":0.4,
+    "dep_polymers":"Dimers",
+    "total_replicas":64000,
+    "jamming_frac_avg":0.6686709395,
+    "jamming_frac_std":0.0003297827
+  },
+  {
+    "side":1024,
+    "defects_frac":0.2,
+    "gamma":0.4,
+    "dep_polymers":"Trimers",
+    "total_replicas":32000,
+    "jamming_frac_avg":0.6275412466,
+    "jamming_frac_std":0.0004211067
+  },
+  {
+    "side":1024,
+    "defects_frac":0.2,
+    "gamma":0.4,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":64000,
+    "jamming_frac_avg":0.5960108475,
+    "jamming_frac_std":0.0006852419
+  },
+  {
+    "side":1024,
+    "defects_frac":0.2,
+    "gamma":0.4,
+    "dep_polymers":"Squared",
+    "total_replicas":128000,
+    "jamming_frac_avg":0.548881594,
+    "jamming_frac_std":0.0012955442
+  },
+  {
+    "side":1024,
+    "defects_frac":0.05,
+    "gamma":0.8,
+    "dep_polymers":"Dimers",
+    "total_replicas":1024000,
+    "jamming_frac_avg":0.8028072835,
+    "jamming_frac_std":0.0002866163
+  },
+  {
+    "side":1024,
+    "defects_frac":0.05,
+    "gamma":0.8,
+    "dep_polymers":"Trimers",
+    "total_replicas":128000,
+    "jamming_frac_avg":0.7587246706,
+    "jamming_frac_std":0.0003341502
   },
   {
     "side":64,
