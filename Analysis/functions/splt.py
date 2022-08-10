@@ -1,7 +1,7 @@
 from turtle import color
 import numpy as np
 import matplotlib.pyplot as plt
-from . import splt
+from . import splt, stats
 
 _plot_params = 0
 def init( numrows, numcols, axis = False ):
@@ -111,7 +111,10 @@ def oneitem_iterate( count, func_item, func_leg, func_x, func_y, params, each_pl
         plt.xticks( list( all_x ) )
         each_plot( it )
 
-def oneitem_iterate_errorbar( count, func_item, func_leg, func_x, func_y, params, each_plot ):
+def oneitem_iterate_errorbar(
+        count, func_item, func_leg, func_x, func_y, params, each_plot,
+        pvals_ys = [], pvals_exp = 0
+    ):
 
     items = np.unique( [ func_item( i ) for i in range(count) ] )
     n_items = len( items )
@@ -149,9 +152,20 @@ def oneitem_iterate_errorbar( count, func_item, func_leg, func_x, func_y, params
             
             if( len( y ) > 0 ):
                 for i in range( len( y[0] ) ):
-                    plt.errorbar( x, [ yi[i].n for yi in y ], [ yi[i].s for yi in y ], color = color_list[ i_l ], **params( it, l )[i] )
+                    plt.errorbar(
+                        x, [ yi[i].n for yi in y ], [ yi[i].s for yi in y ],
+                        color = color_list[ i_l ], **params( it, l )[i] )
 
-                plt.legend()
+                    if( len( pvals_ys ) == len( legs ) ):
+                        for the_x, the_y in zip( x, y ):
+                            plt.annotate(
+                                stats.get_pvalue_string( the_y[i], pvals_exp ),
+                                ( the_x, pvals_ys[ i_l ] ),
+                                ha='center',
+                                color = color_list[ i_l ]
+                            )
+
+                plt.legend( loc='lower right' )
             
         plt.xticks( list( all_x ) )
         each_plot( it )

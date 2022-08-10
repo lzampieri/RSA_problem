@@ -41,3 +41,15 @@ def compute_in_decades( thearray, func, method = 'auto' ):
         return ufloat( func( thearray ), np.max( [ np.std( results ), np.ptp( results ) / np.sqrt( 12 ) ] ) )
     else:
         raise ValueError( f"{method} is not a recognized method. Use ptp, uniform, std or auto" )
+
+def get_pvalue_string( value, expected ):
+    z = np.abs( value.n - expected ) / value.s
+    if( z > 3.7 ):
+        return '⁎⁎⁎⁎'
+    if( z > 3.09 ):
+        return '⁎⁎⁎'
+    if( z > 2.33 ):
+        return '⁎⁎'
+    if( z > 1.65 ):
+        return '⁎'
+    return 'ns'
