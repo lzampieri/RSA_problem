@@ -99,7 +99,7 @@ def estimate_oneovernu( logx, logyB ):
         )
     return ufloat( - res[0], np.sqrt( cov[0,0] ) ), ufloat( res[1], np.sqrt( cov[1,1] ) )
 
-def estimate_oneovernu_bis( logx, logyB ):
+def estimate_oneovernu_bis( logx, logyB, errmin = 0 ):
     resc = np.polyfit(
         logx, unp.nominal_values( logyB ), 1
         )
@@ -112,6 +112,6 @@ def estimate_oneovernu_bis( logx, logyB ):
     res = np.mean( [ resc, resp, resm ], axis = 0 )
     errs_ptp = np.ptp( [ resc, resp, resm ], axis = 0 ) / np.sqrt( 12 )
     errs_cov = np.sqrt( np.diag( cov ) )
-    errs_errmin = errs_cov * 0
+    errs_errmin = errs_cov * 0 + errmin
     errs = np.max( [ errs_ptp, errs_cov, errs_errmin ], axis = 0 )
     return ufloat( - res[0], errs[0] ), ufloat( res[1], errs[1] )    
