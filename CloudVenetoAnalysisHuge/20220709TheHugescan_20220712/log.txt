@@ -207,3 +207,9 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 16:47 | 0220712/f_204 | 1024 |         0.05 |   0.8 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (205 / 288)	 Replicas: 1024000
 18:55 | 0220712/f_205 | 1024 |         0.05 |   0.8 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (206 / 288)	 Replicas: 128000
 20:10 | 0220712/f_206 | 1024 |         0.05 |   0.8 |    1000 |     0.001 | Disabled   | Linear trimers | Disabled | (207 / 288)	 Replicas: 256000
+19:54 | 0220712/f_207 | 1024 |         0.05 |   0.8 |    1000 |     0.001 | Disabled   | Squared | Disabled | (208 / 288)	 Replicas: 1024000
+18:01 | 0220712/f_208 | 1024 |          0.1 |   0.8 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (209 / 288)	 Replicas: 8000
+18:44 | 0220712/f_209 | 1024 |          0.1 |   0.8 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (210 / 288)	 Replicas: 4000
+19:29 | 0220712/f_210 | 1024 |          0.1 |   0.8 |    1000 |     0.001 | Disabled   | Linear trimers | Disabled | (211 / 288)	 Replicas: 1024000
+15:19 | 0220712/f_211 | 1024 |          0.1 |   0.8 |    1000 |     0.001 | Disabled   | Squared | Disabled | (212 / 288)	 Replicas: 1024000
+09:07 | 0220712/f_212 | 1024 |          0.2 |   0.8 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (213 / 288)	 Replicas: 256000
