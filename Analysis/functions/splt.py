@@ -113,7 +113,7 @@ def oneitem_iterate( count, func_item, func_leg, func_x, func_y, params, each_pl
 
 def oneitem_iterate_errorbar(
         count, func_item, func_leg, func_x, func_y, params, each_plot,
-        pvals_ys = [], pvals_exp = 0
+        pvals_ys = [], pvals_exp = 0, pvals_func = None
     ):
 
     items = np.unique( [ func_item( i ) for i in range(count) ] )
@@ -137,6 +137,7 @@ def oneitem_iterate_errorbar(
         for i_l, l in enumerate( legs ):
             temp_x = []
             temp_y = []
+            temp_a = []
             for d in range(count):
                 if(
                     func_item( d ) == it and
@@ -144,22 +145,26 @@ def oneitem_iterate_errorbar(
                 ):
                     temp_x.append( func_x( d ) )
                     temp_y.append( func_y( d ) )
+                    if( pvals_func is None ):
+                        temp_a.append( stats.get_pvalue_string( func_y( d )[0], pvals_exp ) )
+                    else:
+                        temp_a.append( pvals_func( d ) )
                     all_x.add( func_x( d ) )
             
             sort_idx = np.argsort( temp_x )
             x = np.array( temp_x )[ sort_idx ]
             y = np.array( temp_y )[ sort_idx ]
-            
+            a = np.array( temp_a )[ sort_idx ]
+
             if( len( y ) > 0 ):
                 for i in range( len( y[0] ) ):
                     plt.errorbar(
                         x, [ yi[i].n for yi in y ], [ yi[i].s for yi in y ],
                         color = color_list[ i_l ], **params( it, l )[i] )
-
                     if( len( pvals_ys ) == len( legs ) ):
-                        for the_x, the_y in zip( x, y ):
+                        for the_x, the_a in zip( x, a ):
                             plt.annotate(
-                                stats.get_pvalue_string( the_y[i], pvals_exp ),
+                                the_a,
                                 ( the_x, pvals_ys[ i_l ] ),
                                 ha='center',
                                 color = color_list[ i_l ]
