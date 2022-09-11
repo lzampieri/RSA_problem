@@ -16,7 +16,7 @@
 #include <vector>
 #include "date.h"
 #include "Grid.h"
-#include "FourierCoupledGrids.h"
+// #include "FourierCoupledGrids.h"
 #include "FourierComplexGrids.h"
 #include "NewCF.h"
 #include "NewCFH.h"
@@ -64,7 +64,8 @@ private:
     std::thread* thrd;
 // Grid
     Grid<int> g;
-    FourierCoupledGrids fcg;
+    // FourierCoupledGrids fcg;
+    FourierComplexGrids fcg;
     GridFiller_Polymers gfp;
 // Correlator
     NewCF::Calculator* CFcalc;

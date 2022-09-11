@@ -1143,15 +1143,6 @@
     "jamming_frac_std":0.0005048395
   },
   {
-    "side":1024,
-    "defects_frac":0.2,
-    "gamma":0.8,
-    "dep_polymers":"Dimers",
-    "total_replicas":256000,
-    "jamming_frac_avg":0.6662835497,
-    "jamming_frac_std":0.0002785005
-  },
-  {
     "side":64,
     "defects_frac":0.2,
     "gamma":0.8,
@@ -1915,5 +1906,23 @@
     "total_replicas":64000,
     "jamming_frac_avg":0.6935880299,
     "jamming_frac_std":0.0019868929
+  },
+  {
+    "side":1024,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Dimers",
+    "total_replicas":64000,
+    "jamming_frac_avg":0.666307744,
+    "jamming_frac_std":0.0002992034
+  },
+  {
+    "side":1024,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Trimers",
+    "total_replicas":64000,
+    "jamming_frac_avg":0.6241639476,
+    "jamming_frac_std":0.0003376582
   }
 ]

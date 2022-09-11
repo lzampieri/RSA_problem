@@ -36,11 +36,12 @@ void FourierComplexGrids::multiply_fft_new(double gamma) {
     pair< int, int > xy;
     double q,S;
     double beta = ( gamma - 2 ) / 2;
-    double pref = tgamma( beta + 1 );
 
     for(int i=0; i<size_of_f; i++) {
         q = abs_q(i);
-        S = pref * pow( q / 2 , beta ) * cyl_bessel_k( abs(beta), q );
+        if( q == 0 )
+            q = gamma * gamma * 0.4 - gamma * 0.2 + 0.2;
+        S = pow( q / 2 , beta ) * cyl_bessel_k( abs(beta), q );
         f[i][0] *= sqrt( S );
         f[i][1] *= sqrt( S );
     }
@@ -48,14 +49,10 @@ void FourierComplexGrids::multiply_fft_new(double gamma) {
 
 const double FourierComplexGrids::abs_q( int i ) const {
     double x = floor( i / half_n2 );
-    if( x > half_n1 )
-        x = 2 * half_n1 - x;
+    if( x > half_n2 )
+        x = 2 * half_n1 + 1 - x;
     double y = i % half_n2;
-    if( ( abs( x ) < 0.05 ) && ( abs( y ) < 0.05 ) ) {
-        x = 0.1;
-        y = 0.1;
-    }
-    double q_x = 2 * M_PI / half_n1 * x;
-    double q_y = 2 * M_PI / half_n2 * y;
+    double q_x = 2 * M_PI / ( 2 * half_n1 + 1 ) * x;
+    double q_y = 2 * M_PI / ( 2 * half_n2 + 1 ) * y;
     return sqrt( q_x * q_x + q_y * q_y );
 }
