@@ -1,0 +1,4 @@
+=== 20220911 14:52 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+14:52 | _20220911/f_0 |   64 |         0.05 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (1 / 288)	 Replicas: 4000
+14:52 | _20220911/f_1 |   64 |         0.05 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (2 / 288)	 Replicas: 64000
