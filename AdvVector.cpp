@@ -5,7 +5,11 @@ using namespace std;
 minstd_rand AdvVector::engine = minstd_rand{ std::random_device{}() };
 
 AdvVector::AdvVector( int size ) : size( size ) {
-    engine.seed( time(NULL) + hash<thread::id>{}(this_thread::get_id()) );
+    static bool initialized = false;
+    if( !initialized ) {
+        initialized = true;
+        engine.seed( time(NULL) + hash<thread::id>{}(this_thread::get_id()) );
+    }
     data = new int[size];
     whereis = new int[size];
     for( int i=0; i < size; i++ ) {

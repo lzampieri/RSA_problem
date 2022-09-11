@@ -5,6 +5,7 @@ import os
 from glob import glob
 import re
 import pandas as pd
+from . import stats
 
 # Load single file
 def load_file( filename ):
@@ -82,6 +83,17 @@ def remove_duplicates( data, key, discriminant ):
             choosen_idxs[ thekey ] = i
 
     return data[ list( choosen_idxs.values() ) ]
+
+def compute_stds( data ):
+    for d in data:
+        d['jamming_frac_avg'] = stats.compute_in_decades(
+            d['chunks'],
+            lambda arr: np.mean( arr ) / d['side'] / d['side']
+        )
+        d['jamming_frac_std'] = stats.compute_in_decades(
+            d['chunks'],
+            lambda arr: np.std( arr, ddof = 1 ) / d['side'] / d['side']
+        )
 
 def filter( data, func ):
     data = np.array( data )
