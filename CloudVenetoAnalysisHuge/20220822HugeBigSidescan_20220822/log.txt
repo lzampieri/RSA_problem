@@ -46,3 +46,10 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 16:59 | 20220822/f_43 | 1024 |          0.1 |   1.6 |   64000 |        -1 | Disabled   | Squared | Disabled | (44 / 96)	 Replicas: 64000
 21:04 | 20220822/f_44 | 1024 |          0.2 |   1.6 |   64000 |        -1 | Disabled   | Dimers | Disabled | (45 / 96)	 Replicas: 64000
 02:24 | 20220822/f_45 | 1024 |          0.2 |   1.6 |   64000 |        -1 | Disabled   | Trimers | Disabled | (46 / 96)	 Replicas: 64000
+12:57 | 20220822/f_46 | 1024 |          0.2 |   1.6 |   64000 |        -1 | Disabled   | Linear trimers | Disabled | (47 / 96)	 Replicas: 64000
+18:06 | 20220822/f_47 | 1024 |          0.2 |   1.6 |   64000 |        -1 | Disabled   | Squared | Disabled | (48 / 96)	 Replicas: 64000
+21:56 | 20220822/f_48 | 2048 |         0.05 |   0.4 |   64000 |        -1 | Disabled   | Dimers | Disabled | (49 / 96)	 Replicas: 64000
+00:15 | 20220822/f_49 | 2048 |         0.05 |   0.4 |   64000 |        -1 | Disabled   | Trimers | Disabled | (50 / 96)	 Replicas: 64000
+07:03 | 20220822/f_50 | 2048 |         0.05 |   0.4 |   64000 |        -1 | Disabled   | Linear trimers | Disabled | (51 / 96)	 Replicas: 64000
+10:21 | 20220822/f_51 | 2048 |         0.05 |   0.4 |   64000 |        -1 | Disabled   | Squared | Disabled | (52 / 96)	 Replicas: 64000
+05:48 | 20220822/f_52 | 2048 |          0.1 |   0.4 |   64000 |        -1 | Disabled   | Dimers | Disabled | (53 / 96)	 Replicas: 64000
