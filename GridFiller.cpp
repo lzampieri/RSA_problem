@@ -5,7 +5,11 @@ using namespace std;
 
 void GridFiller::iid(Grid<double>& g) {
     static minstd_rand engine(random_device{}());
-    engine.seed( time(NULL) + hash<thread::id>{}(this_thread::get_id()) );
+    static bool initialized = false;
+    if( !initialized ) {
+        initialized = true;
+        engine.seed( time(NULL) + hash<thread::id>{}(this_thread::get_id()) );
+    }
     normal_distribution<double> distribution(0.0,1.0);
     for(int i=0; i < g.imax(); i++ )
         g.u->at(i) = distribution(engine);
