@@ -1,0 +1,13 @@
+{
+"side":	128,
+"defects_frac":	0.1,
+"gamma":	1.2,
+"chunk_size":	1000,
+"tolerance":	0.001,
+"runned_replicas":	128000,
+"CF_Model":	"",
+"dep_polymers":	"Trimers",
+"save_path":	"20220911TheHugescan_20220911/f_77",
+"n_threads":	"8",
+"draw":	False
+}
