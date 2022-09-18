@@ -150,3 +150,16 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 08:31 | 0220911/f_147 |  512 |         0.05 |   0.4 |    1000 |     0.001 | Disabled   | Squared | Disabled | (148 / 288)	 Replicas: 128000
 10:07 | 0220911/f_148 |  512 |          0.1 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (149 / 288)	 Replicas: 256000
 14:19 | 0220911/f_149 |  512 |          0.1 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (150 / 288)	 Replicas: 4000
+14:28 | 0220911/f_150 |  512 |          0.1 |   0.4 |    1000 |     0.001 | Disabled   | Linear trimers | Disabled | (151 / 288)	 Replicas: 1024000
+08:18 | 0220911/f_151 |  512 |          0.1 |   0.4 |    1000 |     0.001 | Disabled   | Squared | Disabled | (152 / 288)	 Replicas: 64000
+09:06 | 0220911/f_152 |  512 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (153 / 288)	 Replicas: 16000
+09:21 | 0220911/f_153 |  512 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (154 / 288)	 Replicas: 1024000
+20:04 | 0220911/f_154 |  512 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Linear trimers | Disabled | (155 / 288)	 Replicas: 32000
+20:35 | 0220911/f_155 |  512 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Squared | Disabled | (156 / 288)	 Replicas: 512000
+02:36 | 0220911/f_156 |  512 |         0.05 |   0.8 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (157 / 288)	 Replicas: 64000
+03:41 | 0220911/f_157 |  512 |         0.05 |   0.8 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (158 / 288)	 Replicas: 64000
+06:08 | 0220911/f_158 |  512 |         0.05 |   0.8 |    1000 |     0.001 | Disabled   | Linear trimers | Disabled | (159 / 288)	 Replicas: 128000
+08:24 | 0220911/f_159 |  512 |         0.05 |   0.8 |    1000 |     0.001 | Disabled   | Squared | Disabled | (160 / 288)	 Replicas: 64000
+09:12 | 0220911/f_160 |  512 |          0.1 |   0.8 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (161 / 288)	 Replicas: 32000
+09:43 | 0220911/f_161 |  512 |          0.1 |   0.8 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (162 / 288)	 Replicas: 128000
+14:22 | 0220911/f_162 |  512 |          0.1 |   0.8 |    1000 |     0.001 | Disabled   | Linear trimers | Disabled | (163 / 288)	 Replicas: 1024000
