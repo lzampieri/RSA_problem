@@ -44,7 +44,7 @@ void FourierGrids::compute_sqrtS( double gamma ) {
     
     // Compute square root
     for( int i = 0; i < size_of_f; i++ ) {
-        sqrtS[i] = sqrt( S[i][0] );
+        sqrtS[i] =  S[i][0] > 0 ? sqrt( S[i][0] ) : 0;
     }
 
     // clean

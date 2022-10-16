@@ -39,6 +39,10 @@ ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
 
     CFcalc  = nullptr;
     CFcalcH = nullptr;
+    if( thrower->params.CF_model ) {
+        CFcalc = new NewCF ::Calculator( thrower->params.CF_model, &g );
+        CFcalcH= new NewCFH::Calculator( thrower->params.CF_model, &fcg.h );
+    }
 
     perc = nullptr;
     if( thrower->params.percolation )
@@ -65,6 +69,18 @@ ReplicatorThread::~ReplicatorThread() {
 
         // Populate h field
         data->fcg.repopulate();
+
+        // Verify population of fcg.h:
+        // Compute and print mean and std
+        // double sum = 0;
+        // double sum2 = 0;
+        // for( int i = 0; i < data->fcg.h.imax(); i++ ) {
+        //     sum += data->fcg.h[i];
+        //     sum2+= data->fcg.h[i] * data->fcg.h[i];
+        // }
+        // data->thrower->mux->lock();
+        // cout<<"Mean: "<<sum / data->fcg.h.imax() <<", std = "<<sqrt( sum2 / data->fcg.h.imax() - sum * sum / data->fcg.h.imax() / data->fcg.h.imax() )<<endl;
+        // data->thrower->mux->unlock();
 
         // Deposit defects
         GridFiller::ranked_insertion(
