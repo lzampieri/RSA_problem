@@ -17,8 +17,7 @@
 #define M_PI 3.14159265
 #endif
 
-class FourierCoupledGrids;
-class FourierComplexGrids;
+class FourierGrids;
 class GridFiller;
 class GridSite;
 
@@ -113,8 +112,7 @@ public:
 public:
     // Friend classes
     friend class GridFiller;
-    friend class FourierCoupledGrids;
-    friend class FourierComplexGrids;
+    friend class FourierGrids;
 };
 
 // Ensure types compilation

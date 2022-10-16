@@ -16,8 +16,7 @@
 #include <vector>
 #include "date.h"
 #include "Grid.h"
-// #include "FourierCoupledGrids.h"
-#include "FourierComplexGrids.h"
+#include "FourierGrids.h"
 #include "NewCF.h"
 #include "NewCFH.h"
 #include "GridFiller.h"
@@ -64,14 +63,11 @@ private:
     std::thread* thrd;
 // Grid
     Grid<int> g;
-    // FourierCoupledGrids fcg;
-    FourierComplexGrids fcg;
+    FourierGrids fcg;
     GridFiller_Polymers gfp;
 // Correlator
     NewCF::Calculator* CFcalc;
     NewCFH::Calculator* CFcalcH;
-    // CorrFunc::Calculator<double>* CF_H;
-    // CorrFunc::Calculator<int>*    CF_D;
 // Percolation
     Percolator* perc;
 
@@ -93,9 +89,6 @@ private:
     std::vector< double >* CFH_avg;
     void update_NewCF_averages( const std::vector< double >* cf );
     void update_NewCFH_averages( const std::vector< double >* cf );
-    // std::vector< double >* CF_H_avg;
-    // std::vector< double >* CF_D_avg;
-    // void update_CF_averages( const std::vector< CorrFunc::Datapoint >* cfh, const std::vector< CorrFunc::Datapoint >* cfd );
 // Filling fraction
     std::vector< unsigned int >* fills;
     void update_dep_averages( double occupied_sites );
