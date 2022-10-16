@@ -44,3 +44,8 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 19:12 | 20221016/f_41 |  512 |          0.1 |   1.6 |   10000 |        -1 | Disabled   | Linear trimers | Disabled | (42 / 48)	 Replicas: 10000
 19:21 | 20221016/f_42 |  512 |          0.1 |   1.6 |   10000 |        -1 | Disabled   | Trimers | Disabled | (43 / 48)	 Replicas: 10000
 19:43 | 20221016/f_43 |  512 |          0.1 |   1.6 |   10000 |        -1 | Disabled   | Squared | Disabled | (44 / 48)	 Replicas: 10000
+19:48 | 20221016/f_44 |  512 |          0.2 |   1.6 |   10000 |        -1 | Disabled   | Dimers | Disabled | (45 / 48)	 Replicas: 10000
+19:56 | 20221016/f_45 |  512 |          0.2 |   1.6 |   10000 |        -1 | Disabled   | Linear trimers | Disabled | (46 / 48)	 Replicas: 10000
+20:04 | 20221016/f_46 |  512 |          0.2 |   1.6 |   10000 |        -1 | Disabled   | Trimers | Disabled | (47 / 48)	 Replicas: 10000
+20:23 | 20221016/f_47 |  512 |          0.2 |   1.6 |   10000 |        -1 | Disabled   | Squared | Disabled | (48 / 48)	 Replicas: 10000
+=== Total time: 08:49:44.647594609 ===
