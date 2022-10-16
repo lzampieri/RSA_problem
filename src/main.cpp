@@ -5,6 +5,7 @@
 #include "Replicator.h"
 #include "Polymer.h"
 #include "Grid.h"
+#include "NewCF.h"
 #include <chrono>
 #include "date.h"
 #include "AutoScanner.h"
@@ -17,17 +18,17 @@ int main(int argc, char *argv[]) {
     if( argc < 2 ) {
         cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
         
-        as.chunk_size = 100;
-        as.tolerance = 100;
-        as.sides = { 510, 511, 512, 513, 514 };
-        as.gammas = { 1.0 };
+        as.chunk_size = 10000;
+        as.tolerance = -1;
+        as.sides = { 512 };
+        as.gammas = { 0.4, 0.8, 1.2, 1.6 };
         as.qs = { 0.3 };
         // as.ps = { nullptr };
         as.percolation = false;
         as.draw = false;
         as.verbose = true;
-        as.n_threads = 1;
-        as.CFmodel = nullptr;
+        as.n_threads = 32;
+        as.CFmodel = new NewCF::OrtExpospaced( 1.4, 256 );
     } else {
         string filename = argv[1];
         cout<<"Extracting data from "<<filename<<endl;
