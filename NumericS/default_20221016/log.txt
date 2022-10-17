@@ -1,2 +1,7 @@
 === 20221016 15:05 ===
 TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+15:05 | _20221016/f_0 |  512 |          0.3 |   0.4 |   10000 |        -1 | OrtExpospaced | Disabled | Disabled | (1 / 4)	 Replicas: 10000
+17:32 | _20221016/f_1 |  512 |          0.3 |   0.8 |   10000 |        -1 | OrtExpospaced | Disabled | Disabled | (2 / 4)	 Replicas: 10000
+23:24 | _20221016/f_2 |  512 |          0.3 |   1.2 |   10000 |        -1 | OrtExpospaced | Disabled | Disabled | (3 / 4)	 Replicas: 10000
+01:43 | _20221016/f_3 |  512 |          0.3 |   1.6 |   10000 |        -1 | OrtExpospaced | Disabled | Disabled | (4 / 4)	 Replicas: 10000
+=== Total time: 12:56:14.842160500 ===
