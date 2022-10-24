@@ -1,0 +1,1 @@
+del NumericS\spcpc.exe && g++.exe src\*.cpp -o NumericS\spcpc.exe -llibfftw3 -llibgsl -std=c++2a && PAUSE

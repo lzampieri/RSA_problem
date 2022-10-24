@@ -22,7 +22,7 @@ int main(int argc, char *argv[]) {
         as.tolerance = -1;
         as.sides = { 512 };
         as.gammas = { 0.4, 0.8, 1.2, 1.6 };
-        as.qs = { 0.3 };
+        as.qs = { 0.5 };
         // as.ps = { nullptr };
         as.percolation = false;
         as.draw = false;
