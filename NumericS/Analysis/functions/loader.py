@@ -66,7 +66,7 @@ def load_data( regex =  "../CloudVenetoAnalysisHuge/**/" ):
         item['h_x'] = h_x_all[ h_all > 0 ]
         item['h']   = h_all  [ h_all > 0 ]
 
-        print( str( d ) )
+        # print( str( d ) )
 
         match = re.match(".+\\\\([^\\\\]+\\\\[^\\\\]+)\\\\.+", str( d ))
         item['thepath'] = match.groups()[0] if match else str( d )
