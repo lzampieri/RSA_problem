@@ -1,0 +1,1 @@
+del TwoCodeComparison\Acer.exe && g++.exe src\*.cpp -o TwoCodeComparison\Acer.exe -llibfftw3 -llibgsl -std=c++2a && PAUSE
