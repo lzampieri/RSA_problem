@@ -13,7 +13,9 @@
 #include "date.h"
 
 class AutoScanner {
-public:
+    
+private:
+
     int chunk_size;
     double tolerance;
 
@@ -22,17 +24,23 @@ public:
     std::vector<double> qs;
     std::vector<PolymersFactory*> ps = { nullptr };
 
-    bool percolation;
     bool draw;
+
+public:
     bool verbose;
 
+private:
     int n_threads;
 
-    std::string filename = "default";
+    std::string filename;
 
-    NewCF::Model* CFmodel = nullptr;
+    NewCF::Model* CFmodel;
 
+public:
     std::vector< ReplicatorParams > rps;
+
+public:
+    AutoScanner();
 
     std::string populate();
 
@@ -50,7 +58,7 @@ private:
     std::string array_to_string( const std::vector<int>& vec );
     std::string array_to_string( const std::vector<PolymersFactory*>& vec );
 
-    void smart_getline( std::ifstream& in, std::string& str );
+    bool smart_getline( std::ifstream& in, std::string& str );
 };
 
 #endif

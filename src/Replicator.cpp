@@ -18,24 +18,18 @@ string ReplicatorParams::to_string() {
        << setw( 7 ) << chunk_size << sep
        << setw( 9 ) << tolerance << sep
        << (CF_model ? CF_model->keyname : "Disabled  ") << sep
-       << (to_deposit ? to_deposit->keyname : "Disabled") << sep
-       << (percolation ? "Both" : "Disabled") << sep;
+       << (to_deposit ? to_deposit->keyname : "Disabled") << sep;
 
     return ss.str();
 }
 
-string ReplicatorParams::header() {
-    return "TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION";
-}
-
-double ReplicatorParams::size() const {
-    return side*side;
+/* static */ string ReplicatorParams::header() {
+    return "TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS ";
 }
 
 ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
     : thrower( thrower ), id( id ),
-    g( thrower->params.side ), fcg( thrower->params.side, thrower->params.gamma ),
-    gfp( thrower->params.to_deposit == nullptr ? 0 : thrower->params.to_deposit->N, thrower->params.size() )  {
+    g( thrower->params.side ), fcg( thrower->params.side, thrower->params.gamma ) {
 
     CFcalc  = nullptr;
     CFcalcH = nullptr;
@@ -44,15 +38,14 @@ ReplicatorThread::ReplicatorThread(Replicator* thrower, int id)
         CFcalcH= new NewCFH::Calculator( thrower->params.CF_model, &fcg.h );
     }
 
-    perc = nullptr;
-    if( thrower->params.percolation )
-        perc = new Percolator( g );
+    if( thrower->params.to_deposit ) {
+        pfl = new PolysFiller( &g, thrower->params.to_deposit );
+    }
 }
 
 ReplicatorThread::~ReplicatorThread() {
     delete CFcalc;
     delete CFcalcH;
-    delete perc;
 }
 
 /*static*/ void ReplicatorThread::thread_worker (ReplicatorThread* data) {
@@ -101,16 +94,8 @@ ReplicatorThread::~ReplicatorThread() {
 
         // Deposit polymers
         if( data->thrower->params.to_deposit != nullptr ) {
-            double occupied_sites = data->gfp.fill( data->g, *data->thrower->params.to_deposit );
+            double occupied_sites = data->pfl->fill();
             data->thrower->update_dep_averages( occupied_sites );
-        }
-
-        // Compute percolation infos
-        if( data->thrower->params.percolation ) {
-            data->thrower->update_perc_averages(
-                data->perc->is_percolating( GridSite::Defect ),
-                data->perc->is_percolating( GridSite::Atom )
-            );
         }
 
         // Print the grid
@@ -168,10 +153,6 @@ Replicator::Replicator( ReplicatorParams suggested_params ) :
     // Initialize occupation stats
     fills = new vector< unsigned int >();
 
-    // Initialize percolation stats
-    defperc_count = 0;
-    atmperc_count = 0;
-
     // Initialize the thread managers
     for( int i=0; i < params.n_threads; i++ ) {
         ongoing.push_back( new ReplicatorThread( this, i ) );
@@ -223,7 +204,7 @@ double Replicator::fill_avg( unsigned int threshold ) const {
     return result / threshold;
 }
 
-double Replicator::fill_std_fromnp( unsigned int threshold ) const {
+double Replicator::fill_std( unsigned int threshold ) const {
     if( runned_replicas < threshold )
         threshold = runned_replicas;
 
@@ -234,50 +215,6 @@ double Replicator::fill_std_fromnp( unsigned int threshold ) const {
         result += ( ( fills->at(i) - avg ) * ( fills->at(i) - avg ) );
 
     return sqrt( result / ( threshold - 1 ) );
-}
-
-double Replicator::fill_std_fromgauss( unsigned int threshold ) const {
-    if( runned_replicas < threshold )
-        threshold = runned_replicas;
-    
-    vector< int > counts( params.size(), 0 );
-    for( int i = 0; i < counts.size(); i++ ) {
-        counts[i] = 0;
-    }
-    for( int i = 0; i < threshold; i++ ) {
-        counts[ fills->at(i) ]++;
-    }
-
-    vector< double > x;
-    vector< double > y;
-    for( int i = 0; i < counts.size(); i++ ) {
-        if( counts[i] > 0 ) {
-            x.push_back( i );
-            y.push_back( counts[i] );
-        }
-    }
-
-    if( x.size() < 3 ) return 0;
-
-    double avg = fill_avg( threshold );
-    auto params = curve_fit( gaussian, { (double)threshold, avg, avg * 0.1 }, x, y );
-
-    return abs( params[2] );
-}
-
-double Replicator::fill_std( unsigned int threshold ) const {
-    if( WHICHSTD == STD_FROMFORMULA )
-        return fill_std_fromnp( threshold );
-    else if( WHICHSTD == STD_FROMGAUSS )
-        return fill_std_fromgauss( threshold );
-    return 0;
-}
-
-void Replicator::update_perc_averages( bool def_perc, bool atm_perc ) {
-    mux->lock();
-    defperc_count += ( def_perc ? 1 : 0 );
-    atmperc_count += ( atm_perc ? 1 : 0 );
-    mux->unlock();
 }
 
 void Replicator::run() {
@@ -373,21 +310,6 @@ void Replicator::save_data() {
         for( unsigned int d : *fills )
             out_deposition<<d<<',';
         out_deposition<<"]\n}"<<endl;
-        out_deposition.close();
-    }
-
-    // Print percolation results
-    if( params.percolation ) {
-        double defperc_avg = defperc_count / runned_replicas;
-        double atmperc_avg = atmperc_count / runned_replicas;
-
-        ofstream out_deposition( params.save_path + "/percolation.txt");
-        out_deposition<<"{"
-                   <<" \n\"defperc_count\":\t"<<defperc_count
-                   <<",\n\"defperc_avg\":\t"<<defperc_avg
-                   <<",\n\"atmperc_count\":\t"<<atmperc_count
-                   <<",\n\"atmperc_avg\":\t"<<atmperc_avg
-                   <<"\n}"<<endl;
         out_deposition.close();
     }
 }

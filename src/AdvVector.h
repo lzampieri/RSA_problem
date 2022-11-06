@@ -7,7 +7,7 @@
 #include <thread>
 
 class AdvVector {
-private:
+public:
     int* data;
     int* whereis;
     int last_id;
@@ -17,17 +17,17 @@ public:
     AdvVector( int size );
     AdvVector(const AdvVector&) = delete; // Copy costruction forbidden
     ~AdvVector();
-    void reset();
+    inline void reset() { last_id = size; }
     int size;
 
-    bool thereis( int i );
+    inline bool thereis( int i ) const { return whereis[i] < last_id; };
     bool remove( int i ); // Return false if it was already removed
 
     void swap_position( int i, int j );
     
     int rnd();
-    int available_sites();
-    bool empty();
+    inline int available_sites() const { return last_id; };
+    inline bool empty() const { return last_id == 0; }
 };
 
 #endif

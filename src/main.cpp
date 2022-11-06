@@ -15,21 +15,7 @@ using namespace std;
 int main(int argc, char *argv[]) {
 
     AutoScanner as;
-    if( argc < 2 ) {
-        cout<<"Scan params not provided. Proceeding with internal ones."<<endl;
-        
-        as.chunk_size = 10000;
-        as.tolerance = -1;
-        as.sides = { 512 };
-        as.gammas = { 0.4, 0.8, 1.2, 1.6 };
-        as.qs = { 0.5 };
-        // as.ps = { nullptr };
-        as.percolation = false;
-        as.draw = false;
-        as.verbose = true;
-        as.n_threads = 32;
-        as.CFmodel = new NewCF::OrtExpospaced( 1.4, 256 );
-    } else {
+    if( argc > 1 ) {
         string filename = argv[1];
         cout<<"Extracting data from "<<filename<<endl;
         as.loadFromTxt( filename );

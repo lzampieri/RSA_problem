@@ -20,16 +20,4 @@ public:
 
 };
 
-class GridFiller_Polymers {
-private:
-    AdvVector* variants;
-    std::vector< AdvVector* >* sites;
-
-public:
-    GridFiller_Polymers( int npolys, int nsites );
-    ~GridFiller_Polymers();
-    double fill(Grid<int>& tofill, Polymers& polys);
-};
-
-
 #endif

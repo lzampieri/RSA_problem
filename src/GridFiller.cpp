@@ -10,7 +10,7 @@ void GridFiller::iid(Grid<double>& g) {
         initialized = true;
         engine.seed( time(NULL) + hash<thread::id>{}(this_thread::get_id()) );
     }
-    normal_distribution<double> distribution(0.0,1.0);
+    static normal_distribution<double> distribution(0.0,1.0);
     for(int i=0; i < g.imax(); i++ )
         g.u->at(i) = distribution(engine);
 }
@@ -52,70 +52,4 @@ void GridFiller::ranked_insertion(Grid<int>& tofill,const Grid<double>& ranks,co
         c += ( tofill[i] == GridSite::Defect );
     }
     assert( c == count );
-}
-
-GridFiller_Polymers::GridFiller_Polymers( int npolys, int nsites ) {
-    variants = new AdvVector( npolys );
-    sites = new vector< AdvVector* >();
-    for( int i=0; i < npolys; i++ )
-        sites->push_back( new AdvVector( nsites ) );
-}
-
-GridFiller_Polymers::~GridFiller_Polymers() {
-    delete variants;
-    for( int i=0; i < sites->size(); i++ )
-        delete sites->at(i);
-    delete sites;
-}
-
-double GridFiller_Polymers::fill(Grid<int>& tofill, Polymers& polys) {
-    // Reset
-    variants->reset();
-
-    // Remove not available sites
-    for( int v=0; v < variants->size; v++ ) {
-        sites->at(v)->reset();
-        for( int i=0; i < sites->at(v)->size; i++ )
-            if( ! ( polys[v]->canStay( tofill, i ) ) )
-                sites->at(v)->remove(i);
-
-        if( sites->at(v)->empty() ) variants->remove( v );
-    }
-
-    double dep_atoms = 0;
-    int var, site;
-
-    // Deposition:
-    while( !variants->empty() ) {
-        // Select a random variant
-        var = variants->rnd();
-
-        // Select a random site
-        site = sites->at(var)->rnd();
-
-        // If the site can host the polymer
-        if( polys[var]->canStay( tofill, site ) ) {
-            // Deposit and remove occupied sites
-            for( int i=0; i < polys.N; i++ ) {
-                if( i == var )
-                    polys[i]->depositAndClean( tofill, *sites->at(i), site );
-                else
-                    polys[i]->clean( tofill, *sites->at(i), site );
-
-                // If this variant cannot be more deposited, remove
-                if( sites->at(i)->empty() )
-                    variants->remove( i );
-            }
-
-            dep_atoms += polys[var]->atoms->size();
-            
-        } else {
-            // Else remove the site
-            if( ! sites->at(var)->remove( site ) )
-                cout<<"Tentando di rimuovere una cosa già rimossa"<<endl;
-            if( sites->at(var)->empty() )
-                variants->remove( var );
-        }
-    }
-    return dep_atoms;
 }

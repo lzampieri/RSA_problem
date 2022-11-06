@@ -5,74 +5,82 @@
 #include <random>
 #include <string>
 #include "Grid.h"
-#include "AdvVector.h"
 
 #ifndef INT_MAX
 #include <climits>
 #endif
 
-class Polymer : public GridProps {
+class Polymer : public GridProps
+{
 public:
-    std::vector< GridSite >* atoms;
-    std::vector< GridSite >* neighbors;
+    std::vector<GridSite> *atoms;
+    std::vector<GridSite> *blocked; // Sites in which cannot be placed a polymers, considering that (0,0) is occupied
 
-private:
-    bool compatiblePosition_lazy( GridSite delta );
-public:
-    Polymer( std::vector< GridSite > gss );
+    Polymer(std::vector<GridSite> gss);
     ~Polymer();
 
-    bool canStay( Grid<int>& grid, int position );
-    void depositAndClean( Grid<int>& thegrid, AdvVector& sites, const int position ) const;
-    void clean( const GridProps& gp, AdvVector& sites, const int position ) const;
+    bool canStay(const Grid<int> &grid, const GridSite position);
 };
 
-class Polymers {
+class Polymers
+{
 public:
-    std::vector< Polymer* > variants;
+    std::vector<Polymer *> variants;
     int N;
     std::string keyname;
 
-    Polymers( std::string keyname );
+    Polymers(std::string keyname);
     ~Polymers();
-    
-    void addVariant( Polymer* p );
-    Polymer* operator[]( int i );
 
-    Polymers(const Polymers&) = delete; // Copy costruction forbidden
+    void addVariant(Polymer *p);
+    inline Polymer* operator[](int i) { return variants[i]; }
+    inline Polymer* at(int i) { return variants[i]; };
+
+    Polymers(const Polymers &) = delete; // Copy costruction forbidden
 };
 
-class PolymersFactory {
+class PolymersFactory
+{
 public:
     virtual std::string factname() const { return "Error"; }
-    virtual Polymers* create( GridProps& gp ) = 0;
-    Polymers* operator()( GridProps& gp ) { return create( gp ); }
-    Polymers* create( int s ) { GridProps gp( s ); return create( gp ); }
-    Polymers* operator()( int s ) { return create( s ); }
+    virtual Polymers *create(GridProps &gp) = 0;
+    Polymers *operator()(GridProps &gp) { return create(gp); }
+    Polymers *create(int s)
+    {
+        GridProps gp(s);
+        return create(gp);
+    }
+    Polymers *operator()(int s) { return create(s); }
 
-    static std::vector<PolymersFactory*> StdPolymers;
+    static std::vector<PolymersFactory *> StdPolymers;
 };
 
-namespace StdPolymers {
-    class Dimers          : public PolymersFactory {
+namespace StdPolymers
+{
+    class Dimers : public PolymersFactory
+    {
         std::string factname() const { return "Dimers"; };
-        Polymers* create( GridProps& gp );
+        Polymers *create(GridProps &gp);
     };
-    class LinearTrimers   : public PolymersFactory {
+    class LinearTrimers : public PolymersFactory
+    {
         std::string factname() const { return "LinearTrimers"; }
-        Polymers* create( GridProps& gp );
+        Polymers *create(GridProps &gp);
     };
-    class Trimers         : public PolymersFactory {
+    class Trimers : public PolymersFactory
+    {
         std::string factname() const { return "Trimers"; }
-        Polymers* create( GridProps& gp );
+        Polymers *create(GridProps &gp);
     };
-    class Squared         : public PolymersFactory {
+    class Squared : public PolymersFactory
+    {
         std::string factname() const { return "Squared"; }
-        Polymers* create( GridProps& gp );
+        Polymers *create(GridProps &gp);
     };
-    class LinearPentamers : public PolymersFactory {
+    class LinearPentamers : public PolymersFactory
+    {
         std::string factname() const { return "LinearPentamers"; }
-        Polymers* create( GridProps& gp );
+        Polymers *create(GridProps &gp);
     };
 }
 

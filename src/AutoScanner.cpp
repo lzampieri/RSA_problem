@@ -10,38 +10,88 @@ string AutoScanner::populate() {
             for( double q : qs )
                 for( PolymersFactory* p : ps )
                     rps.push_back( ReplicatorParams(
-                     // Size DefectsFracs Gamma ChunkSize   Tolerance  CFModel  Polymers                                   Percolation  NThreads,  Draw  Verbose  SavePath
-                        s,   q,           g,    chunk_size, tolerance, CFmodel, ( p == nullptr ? nullptr : p->create(s) ), percolation, n_threads, draw, verbose, folder
+                     // Size DefectsFracs Gamma ChunkSize   Tolerance  CFModel  Polymers                                   NThreads,  Draw  Verbose  SavePath
+                        s,   q,           g,    chunk_size, tolerance, CFmodel, ( p == nullptr ? nullptr : p->create(s) ), n_threads, draw, verbose, folder
                     ));
 
     return folder;
 }
 
+AutoScanner::AutoScanner() {
+
+    // Default params
+    chunk_size = 10000;
+    tolerance = -1;
+
+    sides = { 512 };
+    gammas = { 0.4, 0.8, 1.2, 1.6 };
+    qs = { 0.5 };
+    
+    for( PolymersFactory* p : PolymersFactory::StdPolymers ) {
+        ps.push_back( p );
+    }
+
+    draw = false;
+    verbose = true;
+    n_threads = 32;
+
+    CFmodel = nullptr;
+
+}
+
 void AutoScanner::loadFromTxt( string file ) {
-    ifstream in( file );
-    string temp;
-
-    in  >> chunk_size
-        >> tolerance;
     
-    smart_getline( in, temp );
-    string_to_array( temp, sides );
-    
-    smart_getline( in, temp );
-    string_to_array( temp, gammas );
-
-    smart_getline( in, temp );
-    string_to_array( temp, qs );
-
-    smart_getline( in, temp );
-    string_to_array( temp, ps );
-    
-    in >> percolation
-        >> draw
-        >> verbose
-        >> n_threads;
-
     filename = file;
+    
+    ifstream in( file );
+    string temp, content;
+
+    while( smart_getline( in, temp ) ) {
+        
+        content = temp.substr( 2 );
+
+        switch( temp.at( 0 ) ){
+            case 's':
+                chunk_size = stoi( content );
+                break;
+
+            case 't':
+                tolerance = stod( content );
+                break;
+
+            case 'L':
+                string_to_array( content, sides );
+                break;
+
+            case 'g':
+                string_to_array( content, gammas );
+                break;
+
+            case 'q':
+                string_to_array( content, qs );
+                break;
+
+            case 'p':
+                string_to_array( content, ps );
+                break;
+
+            case 'd':
+                draw = stoi( content );
+                break;
+
+            case 'v':
+                verbose = stoi( content );
+                break;
+
+            case 'T':
+                n_threads = stoi( content );
+                break;
+
+            default:
+                throw invalid_argument("Invalid sintax.");
+
+        }
+    }
 }
 
 string AutoScanner::computeFolder( ) {
@@ -78,16 +128,15 @@ string AutoScanner::computeFolder( ) {
 void AutoScanner::saveToTxt( string file ) {
     ofstream out( file );
 
-    out << chunk_size << '\n'
-        << tolerance << '\n'
-        << array_to_string( sides ) << '\n'
-        << array_to_string( gammas ) << '\n'
-        << array_to_string( qs ) << '\n'
-        << array_to_string( ps ) << '\n'
-        << percolation << '\n'
-        << draw << '\n'
-        << verbose << '\n'
-        << n_threads << endl;
+    out << "s " << chunk_size << '\n'
+        << "t " << tolerance << '\n'
+        << "L " << array_to_string( sides ) << '\n'
+        << "g " << array_to_string( gammas ) << '\n'
+        << "q " << array_to_string( qs ) << '\n'
+        << "p " << array_to_string( ps ) << '\n'
+        << "d " << draw << '\n'
+        << "v " << verbose << '\n'
+        << "T " << n_threads << endl;
 
     out.close();
 }
@@ -143,8 +192,13 @@ string AutoScanner::array_to_string( const std::vector<PolymersFactory*>& vec ) 
     return ss.str();
 }
 
-void AutoScanner::smart_getline( ifstream& in, string& str ) {
+bool AutoScanner::smart_getline( ifstream& in, string& str ) {
     do {
+
+        if( in.eof() ) return false;
         getline( in, str );
+
     } while( str.length() == 0 );
+
+    return true;
 }
