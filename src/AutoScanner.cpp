@@ -104,8 +104,8 @@ string AutoScanner::computeFolder( ) {
         folder.end()
         );
 
-    // Append current date
-    folder += "_" + date::format("%Y%m%d", chrono::system_clock::now());
+    // Append current date and versioning
+    folder += "_" + date::format("%Y%m%d", chrono::system_clock::now()) + "_v2";
 
     // Check for existence
     if( filesystem::exists( folder ) ) {
