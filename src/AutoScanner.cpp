@@ -8,11 +8,12 @@ string AutoScanner::populate() {
     for( int s : sides )
         for( double g : gammas )
             for( double q : qs )
-                for( PolymersFactory* p : ps )
+                for( PolymersFactory* p : ps ) {
                     rps.push_back( ReplicatorParams(
                      // Size DefectsFracs Gamma ChunkSize   Tolerance  CFModel  Polymers                                   NThreads,  Draw  Verbose  SavePath
                         s,   q,           g,    chunk_size, tolerance, CFmodel, ( p == nullptr ? nullptr : p->create(s) ), n_threads, draw, verbose, folder
                     ));
+                }
 
     return folder;
 }

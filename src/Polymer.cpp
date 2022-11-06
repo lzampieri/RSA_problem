@@ -14,8 +14,8 @@ Polymer::Polymer(std::vector<GridSite> gss) : GridProps(gss[0])
     {
         atoms->push_back(gss[i]);
         maxx = max(maxx, gss[i].X);
-        maxy = min(maxy, gss[i].Y);
-        minx = max(minx, gss[i].X);
+        maxy = max(maxy, gss[i].Y);
+        minx = min(minx, gss[i].X);
         miny = min(miny, gss[i].Y);
     }
     maxx = max(abs(maxx), abs(minx));
