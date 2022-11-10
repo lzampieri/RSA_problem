@@ -18,7 +18,7 @@ def G( thearray ):
     return np.sqrt( n * ( n - 1 ) ) / ( n - 2 ) * sum3 / sum232
 
 def compute_in_decades( thearray, func, method = 'auto', plot = False, hist = False ):
-    num_sectors = 50
+    num_sectors = 10
     tot_len = len( thearray )
     extremities = np.linspace( 0, tot_len, num_sectors, dtype = int )
     thearray = np.array( thearray )
