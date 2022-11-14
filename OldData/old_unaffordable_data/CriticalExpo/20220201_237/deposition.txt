@@ -1,9 +1,0 @@
-{
-"dep_polymers":	"Trimers",
-"occupation_average":	29476,
-"occupation_std":	82.874,
-"occupation_fraction_average":	0.449768,
-"occupation_fraction_std":	0.00126456,
-"pj_over_1_minus_q_avg":	0.749614,
-"pj_over_1_minus_q_std":	0.0021076
-}

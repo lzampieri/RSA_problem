@@ -1,8 +1,0 @@
-{
-"dep_polymers":	"Linear trimers",
-"occupation_fraction_average":	0.590799,
-"occupation_fraction_std":	0.000750697,
-"pj_over_1_minus_q_avg":	0.738498,
-"pj_over_1_minus_q_std":	0.000938371,
-"occupation_fraction_std_history":	[0.000783816,0.000766965,0.000747132,0.000749972,0.000745624,0.000753292,0.000749384,0.000755223,0.000753484,0.000746724,0.000750245,0.000750697,]
-}

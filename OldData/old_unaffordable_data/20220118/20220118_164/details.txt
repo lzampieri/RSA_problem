@@ -1,8 +1,0 @@
-{
-"side":	256,
-"defects_frac":	0.3,
-"gamma":	1,
-"replies":100,
-"corr_range":	-1,
-"dep_polymers":	"Dimers"
-}

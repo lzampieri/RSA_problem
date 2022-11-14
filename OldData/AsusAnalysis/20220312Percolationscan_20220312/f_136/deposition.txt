@@ -1,8 +1,0 @@
-{
-"dep_polymers":	"Dimers",
-"occupation_fraction_average":	0.757958,
-"occupation_fraction_std":	0.004649,
-"pj_over_1_minus_q_avg":	0.842176,
-"pj_over_1_minus_q_std":	0.00516555,
-"occupation_fraction_std_history":	[0.0047991,0.0046193,0.0046441,0.00464926,0.004649,]
-}
