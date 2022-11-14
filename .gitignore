@@ -32,3 +32,6 @@
 
 # Python cache
 *.pyc
+
+# vscode
+.vscode
