@@ -27,10 +27,13 @@ def load_data( regex =  "../CloudVenetoAnalysisHuge/**/" ):
         d = Path( os.path.dirname( file ) )
 
         # Verify that everything exists
+        # if( not (
+        #     ( d / 'details.txt').exists() and
+        #     ( d / 'deposition.txt').exists() and
+        #     ( d / 'chunks.txt').exists() ) ):
         if( not (
             ( d / 'details.txt').exists() and
-            ( d / 'deposition.txt').exists() and
-            ( d / 'chunks.txt').exists() ) ):
+            ( d / 'deposition.txt').exists() ):
             continue
 
         # Verify that the item should not be excluded
@@ -44,13 +47,13 @@ def load_data( regex =  "../CloudVenetoAnalysisHuge/**/" ):
         if( ( d / 'percolation.txt').exists() ):
             item.update( load_file( d / 'percolation.txt' ) )
 
-        with open( d / "chunks.txt" ) as file:
-            lines = file.readlines()
-            if( len( lines ) > 1 ):
-                chunks = json.loads( "[" + lines[-1].replace(",]","]").replace("nan","0") + "]" )[-1]
-            else:
-                chunks = item['occupation_history']
-            item['chunks'] = chunks
+        # with open( d / "chunks.txt" ) as file:
+        #     lines = file.readlines()
+        #     if( len( lines ) > 1 ):
+        #         chunks = json.loads( "[" + lines[-1].replace(",]","]").replace("nan","0") + "]" )[-1]
+        #     else:
+        #         chunks = item['occupation_history']
+        item['chunks'] = item['occupation_history'] # only for retrocompatibility
 
         # Correct parity
         if( item['side'] % 2 == 1 ):

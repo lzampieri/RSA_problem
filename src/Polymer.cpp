@@ -26,9 +26,9 @@ Polymer::Polymer(std::vector<GridSite> gss) : GridProps(gss[0])
     {
         for (int y = -maxy - 1; y <= maxy + 1; y++)
         {
+            GridSite delta(x, y, *this);
             for (int i = 0; i < atoms->size(); i++)
             {
-                GridSite delta(x, y, *this);
                 GridSite moved = atoms->at(i) + delta;
                 if (moved == center)
                 {
