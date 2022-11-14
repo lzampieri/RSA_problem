@@ -1,1 +1,0 @@
-del AsusAnalysis\ASUS.exe && g++.exe *.cpp -o AsusAnalysis\ASUS.exe -llibfftw3 -llibgsl -std=c++2a && PAUSE

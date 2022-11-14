@@ -1,9 +1,0 @@
-s 10000
-t -1
-L 512 
-g 0.4 0.8 1.2 1.6 
-q 0.5 
-p Null ptr Dimers LinearTrimers Trimers Squared LinearPentamers 
-d 0
-v 1
-T 32

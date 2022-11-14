@@ -1,8 +1,0 @@
-{
-"side":	512,
-"defects_frac":	0.4,
-"gamma":	1,
-"replies":100,
-"corr_range":	-1,
-"dep_polymers":	"Linear trimers"
-}
