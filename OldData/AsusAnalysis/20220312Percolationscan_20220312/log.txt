@@ -1,0 +1,706 @@
+=== 20220312 22:02 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+22:02 | _20220312/f_0 |   64 |            0 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (1 / 704)	 Chunks: 8
+22:03 | _20220312/f_1 |   64 |            0 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (2 / 704)	 Chunks: 2
+22:03 | _20220312/f_2 |   64 |            0 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (3 / 704)	 Chunks: 3
+22:03 | _20220312/f_3 |   64 |            0 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (4 / 704)	 Chunks: 18
+22:03 | _20220312/f_4 |   64 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (5 / 704)	 Chunks: 5
+22:03 | _20220312/f_5 |   64 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (6 / 704)	 Chunks: 5
+22:03 | _20220312/f_6 |   64 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (7 / 704)	 Chunks: 9
+22:04 | _20220312/f_7 |   64 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (8 / 704)	 Chunks: 8
+22:04 | _20220312/f_8 |   64 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (9 / 704)	 Chunks: 5
+22:04 | _20220312/f_9 |   64 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (10 / 704)	 Chunks: 15
+22:04 | 20220312/f_10 |   64 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (11 / 704)	 Chunks: 10
+22:05 | 20220312/f_11 |   64 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (12 / 704)	 Chunks: 11
+22:05 | 20220312/f_12 |   64 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (13 / 704)	 Chunks: 7
+22:05 | 20220312/f_13 |   64 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (14 / 704)	 Chunks: 11
+22:05 | 20220312/f_14 |   64 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (15 / 704)	 Chunks: 7
+22:06 | 20220312/f_15 |   64 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (16 / 704)	 Chunks: 15
+22:06 | 20220312/f_16 |   64 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (17 / 704)	 Chunks: 12
+22:06 | 20220312/f_17 |   64 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (18 / 704)	 Chunks: 10
+22:06 | 20220312/f_18 |   64 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (19 / 704)	 Chunks: 14
+22:07 | 20220312/f_19 |   64 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (20 / 704)	 Chunks: 13
+22:07 | 20220312/f_20 |   64 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (21 / 704)	 Chunks: 5
+22:07 | 20220312/f_21 |   64 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (22 / 704)	 Chunks: 30
+22:08 | 20220312/f_22 |   64 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (23 / 704)	 Chunks: 12
+22:08 | 20220312/f_23 |   64 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (24 / 704)	 Chunks: 16
+22:09 | 20220312/f_24 |   64 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (25 / 704)	 Chunks: 3
+22:09 | 20220312/f_25 |   64 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (26 / 704)	 Chunks: 6
+22:09 | 20220312/f_26 |   64 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (27 / 704)	 Chunks: 20
+22:09 | 20220312/f_27 |   64 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (28 / 704)	 Chunks: 12
+22:10 | 20220312/f_28 |   64 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (29 / 704)	 Chunks: 22
+22:10 | 20220312/f_29 |   64 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (30 / 704)	 Chunks: 25
+22:11 | 20220312/f_30 |   64 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (31 / 704)	 Chunks: 10
+22:11 | 20220312/f_31 |   64 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (32 / 704)	 Chunks: 7
+22:11 | 20220312/f_32 |   64 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (33 / 704)	 Chunks: 16
+22:11 | 20220312/f_33 |   64 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (34 / 704)	 Chunks: 9
+22:12 | 20220312/f_34 |   64 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (35 / 704)	 Chunks: 10
+22:12 | 20220312/f_35 |   64 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (36 / 704)	 Chunks: 6
+22:12 | 20220312/f_36 |   64 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (37 / 704)	 Chunks: 39
+22:13 | 20220312/f_37 |   64 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (38 / 704)	 Chunks: 10
+22:13 | 20220312/f_38 |   64 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (39 / 704)	 Chunks: 38
+22:14 | 20220312/f_39 |   64 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (40 / 704)	 Chunks: 16
+22:14 | 20220312/f_40 |   64 |            1 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (41 / 704)	 Chunks: 2
+22:14 | 20220312/f_41 |   64 |            1 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (42 / 704)	 Chunks: 2
+22:14 | 20220312/f_42 |   64 |            1 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (43 / 704)	 Chunks: 2
+22:14 | 20220312/f_43 |   64 |            1 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (44 / 704)	 Chunks: 2
+22:15 | 20220312/f_44 |   64 |            0 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (45 / 704)	 Chunks: 12
+22:15 | 20220312/f_45 |   64 |            0 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (46 / 704)	 Chunks: 7
+22:15 | 20220312/f_46 |   64 |            0 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (47 / 704)	 Chunks: 10
+22:15 | 20220312/f_47 |   64 |            0 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (48 / 704)	 Chunks: 10
+22:15 | 20220312/f_48 |   64 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (49 / 704)	 Chunks: 7
+22:16 | 20220312/f_49 |   64 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (50 / 704)	 Chunks: 4
+22:16 | 20220312/f_50 |   64 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (51 / 704)	 Chunks: 6
+22:16 | 20220312/f_51 |   64 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (52 / 704)	 Chunks: 11
+22:16 | 20220312/f_52 |   64 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (53 / 704)	 Chunks: 8
+22:16 | 20220312/f_53 |   64 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (54 / 704)	 Chunks: 22
+22:17 | 20220312/f_54 |   64 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (55 / 704)	 Chunks: 9
+22:17 | 20220312/f_55 |   64 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (56 / 704)	 Chunks: 27
+22:18 | 20220312/f_56 |   64 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (57 / 704)	 Chunks: 9
+22:18 | 20220312/f_57 |   64 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (58 / 704)	 Chunks: 22
+22:18 | 20220312/f_58 |   64 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (59 / 704)	 Chunks: 7
+22:19 | 20220312/f_59 |   64 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (60 / 704)	 Chunks: 19
+22:19 | 20220312/f_60 |   64 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (61 / 704)	 Chunks: 21
+22:20 | 20220312/f_61 |   64 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (62 / 704)	 Chunks: 22
+22:20 | 20220312/f_62 |   64 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (63 / 704)	 Chunks: 7
+22:20 | 20220312/f_63 |   64 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (64 / 704)	 Chunks: 46
+22:21 | 20220312/f_64 |   64 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (65 / 704)	 Chunks: 11
+22:22 | 20220312/f_65 |   64 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (66 / 704)	 Chunks: 38
+22:22 | 20220312/f_66 |   64 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (67 / 704)	 Chunks: 28
+22:23 | 20220312/f_67 |   64 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (68 / 704)	 Chunks: 43
+22:24 | 20220312/f_68 |   64 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (69 / 704)	 Chunks: 10
+22:24 | 20220312/f_69 |   64 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (70 / 704)	 Chunks: 15
+22:25 | 20220312/f_70 |   64 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (71 / 704)	 Chunks: 24
+22:25 | 20220312/f_71 |   64 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (72 / 704)	 Chunks: 70
+22:27 | 20220312/f_72 |   64 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (73 / 704)	 Chunks: 16
+22:27 | 20220312/f_73 |   64 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (74 / 704)	 Chunks: 7
+22:27 | 20220312/f_74 |   64 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (75 / 704)	 Chunks: 11
+22:28 | 20220312/f_75 |   64 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (76 / 704)	 Chunks: 17
+22:28 | 20220312/f_76 |   64 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (77 / 704)	 Chunks: 7
+22:28 | 20220312/f_77 |   64 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (78 / 704)	 Chunks: 12
+22:28 | 20220312/f_78 |   64 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (79 / 704)	 Chunks: 21
+22:29 | 20220312/f_79 |   64 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (80 / 704)	 Chunks: 9
+22:29 | 20220312/f_80 |   64 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (81 / 704)	 Chunks: 15
+22:29 | 20220312/f_81 |   64 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (82 / 704)	 Chunks: 43
+22:30 | 20220312/f_82 |   64 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (83 / 704)	 Chunks: 7
+22:31 | 20220312/f_83 |   64 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (84 / 704)	 Chunks: 18
+22:31 | 20220312/f_84 |   64 |            1 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (85 / 704)	 Chunks: 2
+22:31 | 20220312/f_85 |   64 |            1 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (86 / 704)	 Chunks: 2
+22:31 | 20220312/f_86 |   64 |            1 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (87 / 704)	 Chunks: 2
+22:31 | 20220312/f_87 |   64 |            1 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (88 / 704)	 Chunks: 2
+22:31 | 20220312/f_88 |   64 |            0 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (89 / 704)	 Chunks: 6
+22:31 | 20220312/f_89 |   64 |            0 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (90 / 704)	 Chunks: 15
+22:32 | 20220312/f_90 |   64 |            0 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (91 / 704)	 Chunks: 7
+22:32 | 20220312/f_91 |   64 |            0 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (92 / 704)	 Chunks: 7
+22:32 | 20220312/f_92 |   64 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (93 / 704)	 Chunks: 10
+22:32 | 20220312/f_93 |   64 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (94 / 704)	 Chunks: 14
+22:33 | 20220312/f_94 |   64 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (95 / 704)	 Chunks: 3
+22:33 | 20220312/f_95 |   64 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (96 / 704)	 Chunks: 16
+22:33 | 20220312/f_96 |   64 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (97 / 704)	 Chunks: 8
+22:33 | 20220312/f_97 |   64 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (98 / 704)	 Chunks: 5
+22:33 | 20220312/f_98 |   64 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (99 / 704)	 Chunks: 6
+22:33 | 20220312/f_99 |   64 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (100 / 704)	 Chunks: 22
+22:34 | 0220312/f_100 |   64 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (101 / 704)	 Chunks: 14
+22:34 | 0220312/f_101 |   64 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (102 / 704)	 Chunks: 10
+22:35 | 0220312/f_102 |   64 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (103 / 704)	 Chunks: 6
+22:35 | 0220312/f_103 |   64 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (104 / 704)	 Chunks: 16
+22:35 | 0220312/f_104 |   64 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (105 / 704)	 Chunks: 3
+22:35 | 0220312/f_105 |   64 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (106 / 704)	 Chunks: 18
+22:36 | 0220312/f_106 |   64 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (107 / 704)	 Chunks: 13
+22:36 | 0220312/f_107 |   64 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (108 / 704)	 Chunks: 4
+22:36 | 0220312/f_108 |   64 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (109 / 704)	 Chunks: 12
+22:36 | 0220312/f_109 |   64 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (110 / 704)	 Chunks: 22
+22:37 | 0220312/f_110 |   64 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (111 / 704)	 Chunks: 4
+22:37 | 0220312/f_111 |   64 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (112 / 704)	 Chunks: 13
+22:37 | 0220312/f_112 |   64 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (113 / 704)	 Chunks: 14
+22:37 | 0220312/f_113 |   64 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (114 / 704)	 Chunks: 49
+22:39 | 0220312/f_114 |   64 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (115 / 704)	 Chunks: 18
+22:39 | 0220312/f_115 |   64 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (116 / 704)	 Chunks: 12
+22:39 | 0220312/f_116 |   64 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (117 / 704)	 Chunks: 20
+22:40 | 0220312/f_117 |   64 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (118 / 704)	 Chunks: 32
+22:40 | 0220312/f_118 |   64 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (119 / 704)	 Chunks: 29
+22:41 | 0220312/f_119 |   64 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (120 / 704)	 Chunks: 29
+22:42 | 0220312/f_120 |   64 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (121 / 704)	 Chunks: 18
+22:42 | 0220312/f_121 |   64 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (122 / 704)	 Chunks: 24
+22:43 | 0220312/f_122 |   64 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (123 / 704)	 Chunks: 4
+22:43 | 0220312/f_123 |   64 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (124 / 704)	 Chunks: 7
+22:43 | 0220312/f_124 |   64 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (125 / 704)	 Chunks: 22
+22:43 | 0220312/f_125 |   64 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (126 / 704)	 Chunks: 31
+22:44 | 0220312/f_126 |   64 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (127 / 704)	 Chunks: 9
+22:44 | 0220312/f_127 |   64 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (128 / 704)	 Chunks: 17
+22:45 | 0220312/f_128 |   64 |            1 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (129 / 704)	 Chunks: 2
+22:45 | 0220312/f_129 |   64 |            1 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (130 / 704)	 Chunks: 2
+22:45 | 0220312/f_130 |   64 |            1 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (131 / 704)	 Chunks: 2
+22:45 | 0220312/f_131 |   64 |            1 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (132 / 704)	 Chunks: 2
+22:45 | 0220312/f_132 |   64 |            0 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (133 / 704)	 Chunks: 12
+22:45 | 0220312/f_133 |   64 |            0 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (134 / 704)	 Chunks: 3
+22:45 | 0220312/f_134 |   64 |            0 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (135 / 704)	 Chunks: 8
+22:45 | 0220312/f_135 |   64 |            0 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (136 / 704)	 Chunks: 6
+22:46 | 0220312/f_136 |   64 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (137 / 704)	 Chunks: 5
+22:46 | 0220312/f_137 |   64 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (138 / 704)	 Chunks: 14
+22:46 | 0220312/f_138 |   64 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (139 / 704)	 Chunks: 5
+22:46 | 0220312/f_139 |   64 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (140 / 704)	 Chunks: 3
+22:46 | 0220312/f_140 |   64 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (141 / 704)	 Chunks: 2
+22:46 | 0220312/f_141 |   64 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (142 / 704)	 Chunks: 20
+22:47 | 0220312/f_142 |   64 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (143 / 704)	 Chunks: 14
+22:47 | 0220312/f_143 |   64 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (144 / 704)	 Chunks: 10
+22:47 | 0220312/f_144 |   64 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (145 / 704)	 Chunks: 14
+22:48 | 0220312/f_145 |   64 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (146 / 704)	 Chunks: 10
+22:48 | 0220312/f_146 |   64 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (147 / 704)	 Chunks: 10
+22:48 | 0220312/f_147 |   64 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (148 / 704)	 Chunks: 8
+22:49 | 0220312/f_148 |   64 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (149 / 704)	 Chunks: 11
+22:49 | 0220312/f_149 |   64 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (150 / 704)	 Chunks: 3
+22:49 | 0220312/f_150 |   64 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (151 / 704)	 Chunks: 4
+22:49 | 0220312/f_151 |   64 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (152 / 704)	 Chunks: 17
+22:49 | 0220312/f_152 |   64 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (153 / 704)	 Chunks: 17
+22:50 | 0220312/f_153 |   64 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (154 / 704)	 Chunks: 28
+22:50 | 0220312/f_154 |   64 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (155 / 704)	 Chunks: 7
+22:51 | 0220312/f_155 |   64 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (156 / 704)	 Chunks: 6
+22:51 | 0220312/f_156 |   64 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (157 / 704)	 Chunks: 15
+22:51 | 0220312/f_157 |   64 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (158 / 704)	 Chunks: 15
+22:51 | 0220312/f_158 |   64 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (159 / 704)	 Chunks: 17
+22:52 | 0220312/f_159 |   64 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (160 / 704)	 Chunks: 28
+22:53 | 0220312/f_160 |   64 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (161 / 704)	 Chunks: 21
+22:53 | 0220312/f_161 |   64 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (162 / 704)	 Chunks: 10
+22:53 | 0220312/f_162 |   64 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (163 / 704)	 Chunks: 17
+22:54 | 0220312/f_163 |   64 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (164 / 704)	 Chunks: 16
+22:54 | 0220312/f_164 |   64 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (165 / 704)	 Chunks: 32
+22:55 | 0220312/f_165 |   64 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (166 / 704)	 Chunks: 20
+22:55 | 0220312/f_166 |   64 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (167 / 704)	 Chunks: 12
+22:56 | 0220312/f_167 |   64 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (168 / 704)	 Chunks: 51
+22:57 | 0220312/f_168 |   64 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (169 / 704)	 Chunks: 18
+22:57 | 0220312/f_169 |   64 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (170 / 704)	 Chunks: 32
+22:58 | 0220312/f_170 |   64 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (171 / 704)	 Chunks: 13
+22:58 | 0220312/f_171 |   64 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (172 / 704)	 Chunks: 42
+22:59 | 0220312/f_172 |   64 |            1 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (173 / 704)	 Chunks: 2
+22:59 | 0220312/f_173 |   64 |            1 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (174 / 704)	 Chunks: 2
+22:59 | 0220312/f_174 |   64 |            1 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (175 / 704)	 Chunks: 2
+22:59 | 0220312/f_175 |   64 |            1 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (176 / 704)	 Chunks: 2
+22:59 | 0220312/f_176 |  128 |            0 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (177 / 704)	 Chunks: 6
+23:00 | 0220312/f_177 |  128 |            0 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (178 / 704)	 Chunks: 10
+23:01 | 0220312/f_178 |  128 |            0 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (179 / 704)	 Chunks: 7
+23:02 | 0220312/f_179 |  128 |            0 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (180 / 704)	 Chunks: 5
+23:02 | 0220312/f_180 |  128 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (181 / 704)	 Chunks: 10
+23:03 | 0220312/f_181 |  128 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (182 / 704)	 Chunks: 16
+23:05 | 0220312/f_182 |  128 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (183 / 704)	 Chunks: 5
+23:06 | 0220312/f_183 |  128 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (184 / 704)	 Chunks: 11
+23:07 | 0220312/f_184 |  128 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (185 / 704)	 Chunks: 8
+23:08 | 0220312/f_185 |  128 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (186 / 704)	 Chunks: 5
+23:08 | 0220312/f_186 |  128 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (187 / 704)	 Chunks: 9
+23:09 | 0220312/f_187 |  128 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (188 / 704)	 Chunks: 11
+23:11 | 0220312/f_188 |  128 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (189 / 704)	 Chunks: 8
+23:11 | 0220312/f_189 |  128 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (190 / 704)	 Chunks: 14
+23:13 | 0220312/f_190 |  128 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (191 / 704)	 Chunks: 4
+23:13 | 0220312/f_191 |  128 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (192 / 704)	 Chunks: 2
+23:14 | 0220312/f_192 |  128 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (193 / 704)	 Chunks: 8
+23:14 | 0220312/f_193 |  128 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (194 / 704)	 Chunks: 9
+23:15 | 0220312/f_194 |  128 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (195 / 704)	 Chunks: 20
+23:18 | 0220312/f_195 |  128 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (196 / 704)	 Chunks: 15
+23:19 | 0220312/f_196 |  128 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (197 / 704)	 Chunks: 6
+23:20 | 0220312/f_197 |  128 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (198 / 704)	 Chunks: 15
+23:22 | 0220312/f_198 |  128 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (199 / 704)	 Chunks: 36
+23:26 | 0220312/f_199 |  128 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (200 / 704)	 Chunks: 10
+23:27 | 0220312/f_200 |  128 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (201 / 704)	 Chunks: 6
+23:27 | 0220312/f_201 |  128 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (202 / 704)	 Chunks: 19
+23:29 | 0220312/f_202 |  128 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (203 / 704)	 Chunks: 30
+23:33 | 0220312/f_203 |  128 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (204 / 704)	 Chunks: 27
+23:35 | 0220312/f_204 |  128 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (205 / 704)	 Chunks: 30
+23:38 | 0220312/f_205 |  128 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (206 / 704)	 Chunks: 26
+23:41 | 0220312/f_206 |  128 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (207 / 704)	 Chunks: 7
+23:42 | 0220312/f_207 |  128 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (208 / 704)	 Chunks: 37
+23:45 | 0220312/f_208 |  128 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (209 / 704)	 Chunks: 21
+23:48 | 0220312/f_209 |  128 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (210 / 704)	 Chunks: 8
+23:48 | 0220312/f_210 |  128 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (211 / 704)	 Chunks: 23
+23:51 | 0220312/f_211 |  128 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (212 / 704)	 Chunks: 15
+23:52 | 0220312/f_212 |  128 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (213 / 704)	 Chunks: 20
+23:54 | 0220312/f_213 |  128 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (214 / 704)	 Chunks: 16
+23:56 | 0220312/f_214 |  128 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (215 / 704)	 Chunks: 23
+23:58 | 0220312/f_215 |  128 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (216 / 704)	 Chunks: 28
+00:01 | 0220312/f_216 |  128 |            1 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (217 / 704)	 Chunks: 2
+00:01 | 0220312/f_217 |  128 |            1 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (218 / 704)	 Chunks: 2
+00:01 | 0220312/f_218 |  128 |            1 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (219 / 704)	 Chunks: 2
+00:02 | 0220312/f_219 |  128 |            1 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (220 / 704)	 Chunks: 2
+00:02 | 0220312/f_220 |  128 |            0 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (221 / 704)	 Chunks: 7
+00:03 | 0220312/f_221 |  128 |            0 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (222 / 704)	 Chunks: 6
+00:03 | 0220312/f_222 |  128 |            0 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (223 / 704)	 Chunks: 4
+00:04 | 0220312/f_223 |  128 |            0 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (224 / 704)	 Chunks: 15
+00:05 | 0220312/f_224 |  128 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (225 / 704)	 Chunks: 5
+00:06 | 0220312/f_225 |  128 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (226 / 704)	 Chunks: 6
+00:06 | 0220312/f_226 |  128 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (227 / 704)	 Chunks: 3
+00:07 | 0220312/f_227 |  128 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (228 / 704)	 Chunks: 7
+00:07 | 0220312/f_228 |  128 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (229 / 704)	 Chunks: 7
+00:08 | 0220312/f_229 |  128 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (230 / 704)	 Chunks: 14
+00:10 | 0220312/f_230 |  128 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (231 / 704)	 Chunks: 11
+00:11 | 0220312/f_231 |  128 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (232 / 704)	 Chunks: 10
+00:12 | 0220312/f_232 |  128 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (233 / 704)	 Chunks: 2
+00:12 | 0220312/f_233 |  128 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (234 / 704)	 Chunks: 5
+00:13 | 0220312/f_234 |  128 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (235 / 704)	 Chunks: 12
+00:14 | 0220312/f_235 |  128 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (236 / 704)	 Chunks: 8
+00:15 | 0220312/f_236 |  128 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (237 / 704)	 Chunks: 3
+00:15 | 0220312/f_237 |  128 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (238 / 704)	 Chunks: 11
+00:16 | 0220312/f_238 |  128 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (239 / 704)	 Chunks: 10
+00:18 | 0220312/f_239 |  128 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (240 / 704)	 Chunks: 13
+00:19 | 0220312/f_240 |  128 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (241 / 704)	 Chunks: 21
+00:21 | 0220312/f_241 |  128 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (242 / 704)	 Chunks: 21
+00:23 | 0220312/f_242 |  128 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (243 / 704)	 Chunks: 5
+00:24 | 0220312/f_243 |  128 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (244 / 704)	 Chunks: 26
+00:26 | 0220312/f_244 |  128 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (245 / 704)	 Chunks: 14
+00:28 | 0220312/f_245 |  128 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (246 / 704)	 Chunks: 3
+00:28 | 0220312/f_246 |  128 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (247 / 704)	 Chunks: 7
+00:29 | 0220312/f_247 |  128 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (248 / 704)	 Chunks: 15
+00:30 | 0220312/f_248 |  128 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (249 / 704)	 Chunks: 23
+00:33 | 0220312/f_249 |  128 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (250 / 704)	 Chunks: 23
+00:35 | 0220312/f_250 |  128 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (251 / 704)	 Chunks: 15
+00:36 | 0220312/f_251 |  128 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (252 / 704)	 Chunks: 31
+00:39 | 0220312/f_252 |  128 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (253 / 704)	 Chunks: 31
+00:42 | 0220312/f_253 |  128 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (254 / 704)	 Chunks: 12
+00:44 | 0220312/f_254 |  128 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (255 / 704)	 Chunks: 24
+00:46 | 0220312/f_255 |  128 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (256 / 704)	 Chunks: 20
+00:48 | 0220312/f_256 |  128 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (257 / 704)	 Chunks: 27
+00:51 | 0220312/f_257 |  128 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (258 / 704)	 Chunks: 16
+00:52 | 0220312/f_258 |  128 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (259 / 704)	 Chunks: 6
+00:53 | 0220312/f_259 |  128 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (260 / 704)	 Chunks: 3
+00:53 | 0220312/f_260 |  128 |            1 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (261 / 704)	 Chunks: 2
+00:53 | 0220312/f_261 |  128 |            1 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (262 / 704)	 Chunks: 2
+00:54 | 0220312/f_262 |  128 |            1 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (263 / 704)	 Chunks: 2
+00:54 | 0220312/f_263 |  128 |            1 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (264 / 704)	 Chunks: 2
+00:54 | 0220312/f_264 |  128 |            0 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (265 / 704)	 Chunks: 6
+00:55 | 0220312/f_265 |  128 |            0 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (266 / 704)	 Chunks: 4
+00:55 | 0220312/f_266 |  128 |            0 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (267 / 704)	 Chunks: 8
+00:56 | 0220312/f_267 |  128 |            0 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (268 / 704)	 Chunks: 7
+00:57 | 0220312/f_268 |  128 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (269 / 704)	 Chunks: 15
+00:58 | 0220312/f_269 |  128 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (270 / 704)	 Chunks: 14
+01:00 | 0220312/f_270 |  128 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (271 / 704)	 Chunks: 10
+01:01 | 0220312/f_271 |  128 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (272 / 704)	 Chunks: 8
+01:02 | 0220312/f_272 |  128 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (273 / 704)	 Chunks: 25
+01:04 | 0220312/f_273 |  128 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (274 / 704)	 Chunks: 13
+01:06 | 0220312/f_274 |  128 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (275 / 704)	 Chunks: 4
+01:06 | 0220312/f_275 |  128 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (276 / 704)	 Chunks: 16
+01:08 | 0220312/f_276 |  128 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (277 / 704)	 Chunks: 10
+01:09 | 0220312/f_277 |  128 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (278 / 704)	 Chunks: 9
+01:10 | 0220312/f_278 |  128 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (279 / 704)	 Chunks: 11
+01:11 | 0220312/f_279 |  128 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (280 / 704)	 Chunks: 25
+01:14 | 0220312/f_280 |  128 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (281 / 704)	 Chunks: 14
+01:15 | 0220312/f_281 |  128 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (282 / 704)	 Chunks: 6
+01:16 | 0220312/f_282 |  128 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (283 / 704)	 Chunks: 19
+01:18 | 0220312/f_283 |  128 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (284 / 704)	 Chunks: 24
+01:20 | 0220312/f_284 |  128 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (285 / 704)	 Chunks: 16
+01:22 | 0220312/f_285 |  128 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (286 / 704)	 Chunks: 21
+01:24 | 0220312/f_286 |  128 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (287 / 704)	 Chunks: 6
+01:25 | 0220312/f_287 |  128 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (288 / 704)	 Chunks: 30
+01:28 | 0220312/f_288 |  128 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (289 / 704)	 Chunks: 21
+01:30 | 0220312/f_289 |  128 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (290 / 704)	 Chunks: 6
+01:30 | 0220312/f_290 |  128 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (291 / 704)	 Chunks: 16
+01:32 | 0220312/f_291 |  128 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (292 / 704)	 Chunks: 13
+01:33 | 0220312/f_292 |  128 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (293 / 704)	 Chunks: 9
+01:34 | 0220312/f_293 |  128 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (294 / 704)	 Chunks: 8
+01:35 | 0220312/f_294 |  128 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (295 / 704)	 Chunks: 20
+01:37 | 0220312/f_295 |  128 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (296 / 704)	 Chunks: 9
+01:38 | 0220312/f_296 |  128 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (297 / 704)	 Chunks: 11
+01:39 | 0220312/f_297 |  128 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (298 / 704)	 Chunks: 19
+01:41 | 0220312/f_298 |  128 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (299 / 704)	 Chunks: 26
+01:44 | 0220312/f_299 |  128 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (300 / 704)	 Chunks: 24
+01:46 | 0220312/f_300 |  128 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (301 / 704)	 Chunks: 34
+01:49 | 0220312/f_301 |  128 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (302 / 704)	 Chunks: 26
+01:52 | 0220312/f_302 |  128 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (303 / 704)	 Chunks: 27
+01:55 | 0220312/f_303 |  128 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (304 / 704)	 Chunks: 36
+01:58 | 0220312/f_304 |  128 |            1 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (305 / 704)	 Chunks: 2
+01:58 | 0220312/f_305 |  128 |            1 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (306 / 704)	 Chunks: 2
+01:59 | 0220312/f_306 |  128 |            1 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (307 / 704)	 Chunks: 2
+01:59 | 0220312/f_307 |  128 |            1 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (308 / 704)	 Chunks: 2
+01:59 | 0220312/f_308 |  128 |            0 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (309 / 704)	 Chunks: 13
+02:00 | 0220312/f_309 |  128 |            0 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (310 / 704)	 Chunks: 10
+02:01 | 0220312/f_310 |  128 |            0 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (311 / 704)	 Chunks: 4
+02:02 | 0220312/f_311 |  128 |            0 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (312 / 704)	 Chunks: 9
+02:03 | 0220312/f_312 |  128 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (313 / 704)	 Chunks: 9
+02:04 | 0220312/f_313 |  128 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (314 / 704)	 Chunks: 6
+02:05 | 0220312/f_314 |  128 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (315 / 704)	 Chunks: 11
+02:06 | 0220312/f_315 |  128 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (316 / 704)	 Chunks: 6
+02:07 | 0220312/f_316 |  128 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (317 / 704)	 Chunks: 14
+02:08 | 0220312/f_317 |  128 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (318 / 704)	 Chunks: 10
+02:09 | 0220312/f_318 |  128 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (319 / 704)	 Chunks: 3
+02:09 | 0220312/f_319 |  128 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (320 / 704)	 Chunks: 10
+02:10 | 0220312/f_320 |  128 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (321 / 704)	 Chunks: 8
+02:11 | 0220312/f_321 |  128 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (322 / 704)	 Chunks: 10
+02:12 | 0220312/f_322 |  128 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (323 / 704)	 Chunks: 2
+02:13 | 0220312/f_323 |  128 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (324 / 704)	 Chunks: 18
+02:15 | 0220312/f_324 |  128 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (325 / 704)	 Chunks: 4
+02:15 | 0220312/f_325 |  128 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (326 / 704)	 Chunks: 6
+02:16 | 0220312/f_326 |  128 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (327 / 704)	 Chunks: 8
+02:17 | 0220312/f_327 |  128 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (328 / 704)	 Chunks: 19
+02:18 | 0220312/f_328 |  128 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (329 / 704)	 Chunks: 2
+02:19 | 0220312/f_329 |  128 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (330 / 704)	 Chunks: 15
+02:20 | 0220312/f_330 |  128 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (331 / 704)	 Chunks: 4
+02:21 | 0220312/f_331 |  128 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (332 / 704)	 Chunks: 11
+02:22 | 0220312/f_332 |  128 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (333 / 704)	 Chunks: 14
+02:23 | 0220312/f_333 |  128 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (334 / 704)	 Chunks: 23
+02:26 | 0220312/f_334 |  128 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (335 / 704)	 Chunks: 7
+02:26 | 0220312/f_335 |  128 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (336 / 704)	 Chunks: 6
+02:27 | 0220312/f_336 |  128 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (337 / 704)	 Chunks: 10
+02:28 | 0220312/f_337 |  128 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (338 / 704)	 Chunks: 10
+02:29 | 0220312/f_338 |  128 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (339 / 704)	 Chunks: 9
+02:30 | 0220312/f_339 |  128 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (340 / 704)	 Chunks: 31
+02:33 | 0220312/f_340 |  128 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (341 / 704)	 Chunks: 8
+02:34 | 0220312/f_341 |  128 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (342 / 704)	 Chunks: 24
+02:36 | 0220312/f_342 |  128 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (343 / 704)	 Chunks: 13
+02:38 | 0220312/f_343 |  128 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (344 / 704)	 Chunks: 14
+02:39 | 0220312/f_344 |  128 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (345 / 704)	 Chunks: 24
+02:42 | 0220312/f_345 |  128 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (346 / 704)	 Chunks: 34
+02:45 | 0220312/f_346 |  128 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (347 / 704)	 Chunks: 8
+02:46 | 0220312/f_347 |  128 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (348 / 704)	 Chunks: 27
+02:48 | 0220312/f_348 |  128 |            1 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (349 / 704)	 Chunks: 2
+02:49 | 0220312/f_349 |  128 |            1 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (350 / 704)	 Chunks: 2
+02:49 | 0220312/f_350 |  128 |            1 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (351 / 704)	 Chunks: 2
+02:49 | 0220312/f_351 |  128 |            1 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (352 / 704)	 Chunks: 2
+02:49 | 0220312/f_352 |  256 |            0 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (353 / 704)	 Chunks: 13
+02:55 | 0220312/f_353 |  256 |            0 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (354 / 704)	 Chunks: 16
+03:01 | 0220312/f_354 |  256 |            0 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (355 / 704)	 Chunks: 9
+03:06 | 0220312/f_355 |  256 |            0 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (356 / 704)	 Chunks: 13
+03:11 | 0220312/f_356 |  256 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (357 / 704)	 Chunks: 4
+03:12 | 0220312/f_357 |  256 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (358 / 704)	 Chunks: 14
+03:18 | 0220312/f_358 |  256 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (359 / 704)	 Chunks: 10
+03:23 | 0220312/f_359 |  256 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (360 / 704)	 Chunks: 6
+03:25 | 0220312/f_360 |  256 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (361 / 704)	 Chunks: 18
+03:33 | 0220312/f_361 |  256 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (362 / 704)	 Chunks: 14
+03:38 | 0220312/f_362 |  256 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (363 / 704)	 Chunks: 9
+03:43 | 0220312/f_363 |  256 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (364 / 704)	 Chunks: 7
+03:45 | 0220312/f_364 |  256 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (365 / 704)	 Chunks: 4
+03:47 | 0220312/f_365 |  256 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (366 / 704)	 Chunks: 7
+03:50 | 0220312/f_366 |  256 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (367 / 704)	 Chunks: 6
+03:53 | 0220312/f_367 |  256 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (368 / 704)	 Chunks: 25
+04:02 | 0220312/f_368 |  256 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (369 / 704)	 Chunks: 11
+04:06 | 0220312/f_369 |  256 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (370 / 704)	 Chunks: 8
+04:10 | 0220312/f_370 |  256 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (371 / 704)	 Chunks: 23
+04:20 | 0220312/f_371 |  256 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (372 / 704)	 Chunks: 6
+04:22 | 0220312/f_372 |  256 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (373 / 704)	 Chunks: 20
+04:30 | 0220312/f_373 |  256 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (374 / 704)	 Chunks: 14
+04:36 | 0220312/f_374 |  256 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (375 / 704)	 Chunks: 16
+04:43 | 0220312/f_375 |  256 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (376 / 704)	 Chunks: 19
+04:50 | 0220312/f_376 |  256 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (377 / 704)	 Chunks: 20
+04:58 | 0220312/f_377 |  256 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (378 / 704)	 Chunks: 12
+05:02 | 0220312/f_378 |  256 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (379 / 704)	 Chunks: 18
+05:10 | 0220312/f_379 |  256 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (380 / 704)	 Chunks: 17
+05:17 | 0220312/f_380 |  256 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (381 / 704)	 Chunks: 4
+05:18 | 0220312/f_381 |  256 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (382 / 704)	 Chunks: 21
+05:26 | 0220312/f_382 |  256 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (383 / 704)	 Chunks: 13
+05:32 | 0220312/f_383 |  256 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (384 / 704)	 Chunks: 13
+05:36 | 0220312/f_384 |  256 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (385 / 704)	 Chunks: 11
+05:40 | 0220312/f_385 |  256 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (386 / 704)	 Chunks: 8
+05:43 | 0220312/f_386 |  256 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (387 / 704)	 Chunks: 7
+05:46 | 0220312/f_387 |  256 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (388 / 704)	 Chunks: 19
+05:53 | 0220312/f_388 |  256 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (389 / 704)	 Chunks: 17
+06:00 | 0220312/f_389 |  256 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (390 / 704)	 Chunks: 30
+06:11 | 0220312/f_390 |  256 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (391 / 704)	 Chunks: 16
+06:17 | 0220312/f_391 |  256 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (392 / 704)	 Chunks: 27
+06:27 | 0220312/f_392 |  256 |            1 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (393 / 704)	 Chunks: 2
+06:28 | 0220312/f_393 |  256 |            1 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (394 / 704)	 Chunks: 2
+06:28 | 0220312/f_394 |  256 |            1 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (395 / 704)	 Chunks: 2
+06:29 | 0220312/f_395 |  256 |            1 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (396 / 704)	 Chunks: 2
+06:30 | 0220312/f_396 |  256 |            0 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (397 / 704)	 Chunks: 10
+06:34 | 0220312/f_397 |  256 |            0 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (398 / 704)	 Chunks: 15
+06:40 | 0220312/f_398 |  256 |            0 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (399 / 704)	 Chunks: 5
+06:42 | 0220312/f_399 |  256 |            0 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (400 / 704)	 Chunks: 7
+06:45 | 0220312/f_400 |  256 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (401 / 704)	 Chunks: 7
+06:48 | 0220312/f_401 |  256 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (402 / 704)	 Chunks: 10
+06:52 | 0220312/f_402 |  256 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (403 / 704)	 Chunks: 6
+06:55 | 0220312/f_403 |  256 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (404 / 704)	 Chunks: 7
+06:57 | 0220312/f_404 |  256 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (405 / 704)	 Chunks: 6
+07:00 | 0220312/f_405 |  256 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (406 / 704)	 Chunks: 9
+07:03 | 0220312/f_406 |  256 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (407 / 704)	 Chunks: 11
+07:09 | 0220312/f_407 |  256 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (408 / 704)	 Chunks: 19
+07:16 | 0220312/f_408 |  256 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (409 / 704)	 Chunks: 15
+07:22 | 0220312/f_409 |  256 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (410 / 704)	 Chunks: 11
+07:26 | 0220312/f_410 |  256 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (411 / 704)	 Chunks: 3
+07:27 | 0220312/f_411 |  256 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (412 / 704)	 Chunks: 4
+07:29 | 0220312/f_412 |  256 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (413 / 704)	 Chunks: 7
+07:31 | 0220312/f_413 |  256 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (414 / 704)	 Chunks: 13
+07:36 | 0220312/f_414 |  256 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (415 / 704)	 Chunks: 5
+07:39 | 0220312/f_415 |  256 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (416 / 704)	 Chunks: 17
+07:45 | 0220312/f_416 |  256 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (417 / 704)	 Chunks: 14
+07:50 | 0220312/f_417 |  256 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (418 / 704)	 Chunks: 6
+07:53 | 0220312/f_418 |  256 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (419 / 704)	 Chunks: 15
+07:59 | 0220312/f_419 |  256 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (420 / 704)	 Chunks: 13
+08:04 | 0220312/f_420 |  256 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (421 / 704)	 Chunks: 10
+08:08 | 0220312/f_421 |  256 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (422 / 704)	 Chunks: 19
+08:15 | 0220312/f_422 |  256 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (423 / 704)	 Chunks: 4
+08:17 | 0220312/f_423 |  256 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (424 / 704)	 Chunks: 22
+08:25 | 0220312/f_424 |  256 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (425 / 704)	 Chunks: 8
+08:27 | 0220312/f_425 |  256 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (426 / 704)	 Chunks: 15
+08:33 | 0220312/f_426 |  256 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (427 / 704)	 Chunks: 15
+08:39 | 0220312/f_427 |  256 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (428 / 704)	 Chunks: 2
+08:40 | 0220312/f_428 |  256 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (429 / 704)	 Chunks: 12
+08:44 | 0220312/f_429 |  256 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (430 / 704)	 Chunks: 11
+08:48 | 0220312/f_430 |  256 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (431 / 704)	 Chunks: 4
+08:50 | 0220312/f_431 |  256 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (432 / 704)	 Chunks: 23
+08:58 | 0220312/f_432 |  256 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (433 / 704)	 Chunks: 7
+09:01 | 0220312/f_433 |  256 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (434 / 704)	 Chunks: 26
+09:10 | 0220312/f_434 |  256 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (435 / 704)	 Chunks: 25
+09:20 | 0220312/f_435 |  256 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (436 / 704)	 Chunks: 28
+09:29 | 0220312/f_436 |  256 |            1 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (437 / 704)	 Chunks: 2
+09:30 | 0220312/f_437 |  256 |            1 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (438 / 704)	 Chunks: 2
+09:31 | 0220312/f_438 |  256 |            1 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (439 / 704)	 Chunks: 2
+09:32 | 0220312/f_439 |  256 |            1 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (440 / 704)	 Chunks: 2
+09:32 | 0220312/f_440 |  256 |            0 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (441 / 704)	 Chunks: 4
+09:34 | 0220312/f_441 |  256 |            0 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (442 / 704)	 Chunks: 10
+09:38 | 0220312/f_442 |  256 |            0 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (443 / 704)	 Chunks: 6
+09:41 | 0220312/f_443 |  256 |            0 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (444 / 704)	 Chunks: 12
+09:45 | 0220312/f_444 |  256 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (445 / 704)	 Chunks: 2
+09:46 | 0220312/f_445 |  256 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (446 / 704)	 Chunks: 7
+09:49 | 0220312/f_446 |  256 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (447 / 704)	 Chunks: 21
+09:59 | 0220312/f_447 |  256 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (448 / 704)	 Chunks: 3
+10:00 | 0220312/f_448 |  256 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (449 / 704)	 Chunks: 7
+10:03 | 0220312/f_449 |  256 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (450 / 704)	 Chunks: 8
+10:06 | 0220312/f_450 |  256 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (451 / 704)	 Chunks: 8
+10:10 | 0220312/f_451 |  256 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (452 / 704)	 Chunks: 8
+10:13 | 0220312/f_452 |  256 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (453 / 704)	 Chunks: 19
+10:21 | 0220312/f_453 |  256 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (454 / 704)	 Chunks: 11
+10:25 | 0220312/f_454 |  256 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (455 / 704)	 Chunks: 14
+10:32 | 0220312/f_455 |  256 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (456 / 704)	 Chunks: 13
+10:36 | 0220312/f_456 |  256 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (457 / 704)	 Chunks: 15
+10:42 | 0220312/f_457 |  256 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (458 / 704)	 Chunks: 12
+10:47 | 0220312/f_458 |  256 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (459 / 704)	 Chunks: 7
+10:50 | 0220312/f_459 |  256 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (460 / 704)	 Chunks: 6
+10:52 | 0220312/f_460 |  256 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (461 / 704)	 Chunks: 8
+10:55 | 0220312/f_461 |  256 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (462 / 704)	 Chunks: 23
+11:04 | 0220312/f_462 |  256 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (463 / 704)	 Chunks: 6
+11:07 | 0220312/f_463 |  256 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (464 / 704)	 Chunks: 19
+11:14 | 0220312/f_464 |  256 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (465 / 704)	 Chunks: 10
+11:17 | 0220312/f_465 |  256 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (466 / 704)	 Chunks: 22
+11:26 | 0220312/f_466 |  256 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (467 / 704)	 Chunks: 6
+11:28 | 0220312/f_467 |  256 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (468 / 704)	 Chunks: 16
+11:34 | 0220312/f_468 |  256 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (469 / 704)	 Chunks: 15
+11:40 | 0220312/f_469 |  256 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (470 / 704)	 Chunks: 19
+11:47 | 0220312/f_470 |  256 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (471 / 704)	 Chunks: 16
+11:53 | 0220312/f_471 |  256 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (472 / 704)	 Chunks: 5
+11:55 | 0220312/f_472 |  256 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (473 / 704)	 Chunks: 18
+12:02 | 0220312/f_473 |  256 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (474 / 704)	 Chunks: 26
+12:11 | 0220312/f_474 |  256 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (475 / 704)	 Chunks: 21
+12:20 | 0220312/f_475 |  256 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (476 / 704)	 Chunks: 23
+12:28 | 0220312/f_476 |  256 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (477 / 704)	 Chunks: 16
+12:34 | 0220312/f_477 |  256 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (478 / 704)	 Chunks: 6
+12:36 | 0220312/f_478 |  256 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (479 / 704)	 Chunks: 5
+12:38 | 0220312/f_479 |  256 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (480 / 704)	 Chunks: 14
+12:43 | 0220312/f_480 |  256 |            1 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (481 / 704)	 Chunks: 2
+12:43 | 0220312/f_481 |  256 |            1 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (482 / 704)	 Chunks: 2
+12:44 | 0220312/f_482 |  256 |            1 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (483 / 704)	 Chunks: 2
+12:45 | 0220312/f_483 |  256 |            1 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (484 / 704)	 Chunks: 2
+12:46 | 0220312/f_484 |  256 |            0 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (485 / 704)	 Chunks: 9
+12:49 | 0220312/f_485 |  256 |            0 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (486 / 704)	 Chunks: 12
+12:54 | 0220312/f_486 |  256 |            0 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (487 / 704)	 Chunks: 9
+12:59 | 0220312/f_487 |  256 |            0 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (488 / 704)	 Chunks: 4
+13:00 | 0220312/f_488 |  256 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (489 / 704)	 Chunks: 6
+13:03 | 0220312/f_489 |  256 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (490 / 704)	 Chunks: 3
+13:04 | 0220312/f_490 |  256 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (491 / 704)	 Chunks: 11
+13:10 | 0220312/f_491 |  256 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (492 / 704)	 Chunks: 4
+13:11 | 0220312/f_492 |  256 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (493 / 704)	 Chunks: 7
+13:14 | 0220312/f_493 |  256 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (494 / 704)	 Chunks: 6
+13:16 | 0220312/f_494 |  256 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (495 / 704)	 Chunks: 5
+13:19 | 0220312/f_495 |  256 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (496 / 704)	 Chunks: 18
+13:26 | 0220312/f_496 |  256 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (497 / 704)	 Chunks: 8
+13:29 | 0220312/f_497 |  256 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (498 / 704)	 Chunks: 17
+13:36 | 0220312/f_498 |  256 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (499 / 704)	 Chunks: 9
+13:40 | 0220312/f_499 |  256 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (500 / 704)	 Chunks: 10
+13:44 | 0220312/f_500 |  256 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (501 / 704)	 Chunks: 11
+13:48 | 0220312/f_501 |  256 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (502 / 704)	 Chunks: 7
+13:51 | 0220312/f_502 |  256 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (503 / 704)	 Chunks: 9
+13:55 | 0220312/f_503 |  256 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (504 / 704)	 Chunks: 10
+13:59 | 0220312/f_504 |  256 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (505 / 704)	 Chunks: 13
+14:04 | 0220312/f_505 |  256 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (506 / 704)	 Chunks: 8
+14:07 | 0220312/f_506 |  256 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (507 / 704)	 Chunks: 6
+14:10 | 0220312/f_507 |  256 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (508 / 704)	 Chunks: 20
+14:18 | 0220312/f_508 |  256 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (509 / 704)	 Chunks: 9
+14:21 | 0220312/f_509 |  256 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (510 / 704)	 Chunks: 13
+14:26 | 0220312/f_510 |  256 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (511 / 704)	 Chunks: 9
+14:30 | 0220312/f_511 |  256 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (512 / 704)	 Chunks: 7
+14:33 | 0220312/f_512 |  256 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (513 / 704)	 Chunks: 6
+14:35 | 0220312/f_513 |  256 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (514 / 704)	 Chunks: 21
+14:43 | 0220312/f_514 |  256 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (515 / 704)	 Chunks: 9
+14:47 | 0220312/f_515 |  256 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (516 / 704)	 Chunks: 8
+14:50 | 0220312/f_516 |  256 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (517 / 704)	 Chunks: 8
+14:53 | 0220312/f_517 |  256 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (518 / 704)	 Chunks: 14
+14:58 | 0220312/f_518 |  256 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (519 / 704)	 Chunks: 14
+15:04 | 0220312/f_519 |  256 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (520 / 704)	 Chunks: 17
+15:11 | 0220312/f_520 |  256 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (521 / 704)	 Chunks: 15
+15:16 | 0220312/f_521 |  256 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (522 / 704)	 Chunks: 33
+15:28 | 0220312/f_522 |  256 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (523 / 704)	 Chunks: 7
+15:31 | 0220312/f_523 |  256 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (524 / 704)	 Chunks: 9
+15:34 | 0220312/f_524 |  256 |            1 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (525 / 704)	 Chunks: 2
+15:35 | 0220312/f_525 |  256 |            1 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (526 / 704)	 Chunks: 2
+15:36 | 0220312/f_526 |  256 |            1 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (527 / 704)	 Chunks: 2
+15:37 | 0220312/f_527 |  256 |            1 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (528 / 704)	 Chunks: 2
+15:37 | 0220312/f_528 | 1024 |            0 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (529 / 704)	 Chunks: 13
+17:13 | 0220312/f_529 | 1024 |            0 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (530 / 704)	 Chunks: 10
+18:26 | 0220312/f_530 | 1024 |            0 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (531 / 704)	 Chunks: 9
+19:57 | 0220312/f_531 | 1024 |            0 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (532 / 704)	 Chunks: 8
+20:50 | 0220312/f_532 | 1024 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (533 / 704)	 Chunks: 3
+21:12 | 0220312/f_533 | 1024 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (534 / 704)	 Chunks: 9
+22:17 | 0220312/f_534 | 1024 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (535 / 704)	 Chunks: 10
+23:56 | 0220312/f_535 | 1024 |          0.1 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (536 / 704)	 Chunks: 11
+01:08 | 0220312/f_536 | 1024 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (537 / 704)	 Chunks: 8
+02:05 | 0220312/f_537 | 1024 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (538 / 704)	 Chunks: 10
+03:16 | 0220312/f_538 | 1024 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (539 / 704)	 Chunks: 12
+05:11 | 0220312/f_539 | 1024 |          0.2 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (540 / 704)	 Chunks: 21
+07:27 | 0220312/f_540 | 1024 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (541 / 704)	 Chunks: 2
+07:41 | 0220312/f_541 | 1024 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (542 / 704)	 Chunks: 11
+08:57 | 0220312/f_542 | 1024 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (543 / 704)	 Chunks: 17
+11:33 | 0220312/f_543 | 1024 |          0.3 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (544 / 704)	 Chunks: 5
+12:06 | 0220312/f_544 | 1024 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (545 / 704)	 Chunks: 8
+13:00 | 0220312/f_545 | 1024 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (546 / 704)	 Chunks: 4
+13:28 | 0220312/f_546 | 1024 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (547 / 704)	 Chunks: 9
+14:49 | 0220312/f_547 | 1024 |          0.4 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (548 / 704)	 Chunks: 8
+15:40 | 0220312/f_548 | 1024 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (549 / 704)	 Chunks: 8
+16:33 | 0220312/f_549 | 1024 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (550 / 704)	 Chunks: 8
+17:27 | 0220312/f_550 | 1024 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (551 / 704)	 Chunks: 7
+18:26 | 0220312/f_551 | 1024 |          0.5 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (552 / 704)	 Chunks: 10
+19:29 | 0220312/f_552 | 1024 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (553 / 704)	 Chunks: 12
+20:47 | 0220312/f_553 | 1024 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (554 / 704)	 Chunks: 13
+22:12 | 0220312/f_554 | 1024 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (555 / 704)	 Chunks: 12
+23:48 | 0220312/f_555 | 1024 |          0.6 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (556 / 704)	 Chunks: 2
+00:01 | 0220312/f_556 | 1024 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (557 / 704)	 Chunks: 4
+00:26 | 0220312/f_557 | 1024 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (558 / 704)	 Chunks: 8
+01:17 | 0220312/f_558 | 1024 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (559 / 704)	 Chunks: 7
+02:10 | 0220312/f_559 | 1024 |          0.7 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (560 / 704)	 Chunks: 14
+03:35 | 0220312/f_560 | 1024 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (561 / 704)	 Chunks: 9
+04:31 | 0220312/f_561 | 1024 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (562 / 704)	 Chunks: 13
+05:52 | 0220312/f_562 | 1024 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (563 / 704)	 Chunks: 14
+07:32 | 0220312/f_563 | 1024 |          0.8 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (564 / 704)	 Chunks: 8
+08:20 | 0220312/f_564 | 1024 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (565 / 704)	 Chunks: 4
+08:44 | 0220312/f_565 | 1024 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (566 / 704)	 Chunks: 8
+09:33 | 0220312/f_566 | 1024 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (567 / 704)	 Chunks: 18
+11:32 | 0220312/f_567 | 1024 |          0.9 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (568 / 704)	 Chunks: 11
+12:38 | 0220312/f_568 | 1024 |            1 |   0.4 |     512 |     0.001 | Disabled   | Dimers | Both | (569 / 704)	 Chunks: 2
+12:50 | 0220312/f_569 | 1024 |            1 |   0.4 |     512 |     0.001 | Disabled   | Linear trimers | Both | (570 / 704)	 Chunks: 2
+13:02 | 0220312/f_570 | 1024 |            1 |   0.4 |     512 |     0.001 | Disabled   | Trimers | Both | (571 / 704)	 Chunks: 2
+13:14 | 0220312/f_571 | 1024 |            1 |   0.4 |     512 |     0.001 | Disabled   | Squared | Both | (572 / 704)	 Chunks: 2
+13:26 | 0220312/f_572 | 1024 |            0 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (573 / 704)	 Chunks: 14
+15:06 | 0220312/f_573 | 1024 |            0 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (574 / 704)	 Chunks: 4
+15:35 | 0220312/f_574 | 1024 |            0 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (575 / 704)	 Chunks: 7
+16:44 | 0220312/f_575 | 1024 |            0 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (576 / 704)	 Chunks: 6
+17:23 | 0220312/f_576 | 1024 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (577 / 704)	 Chunks: 11
+18:41 | 0220312/f_577 | 1024 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (578 / 704)	 Chunks: 9
+19:45 | 0220312/f_578 | 1024 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (579 / 704)	 Chunks: 5
+20:34 | 0220312/f_579 | 1024 |          0.1 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (580 / 704)	 Chunks: 3
+20:53 | 0220312/f_580 | 1024 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (581 / 704)	 Chunks: 6
+21:35 | 0220312/f_581 | 1024 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (582 / 704)	 Chunks: 8
+22:30 | 0220312/f_582 | 1024 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (583 / 704)	 Chunks: 12
+00:23 | 0220312/f_583 | 1024 |          0.2 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (584 / 704)	 Chunks: 8
+01:14 | 0220312/f_584 | 1024 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (585 / 704)	 Chunks: 12
+02:36 | 0220312/f_585 | 1024 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (586 / 704)	 Chunks: 11
+03:51 | 0220312/f_586 | 1024 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (587 / 704)	 Chunks: 9
+05:13 | 0220312/f_587 | 1024 |          0.3 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (588 / 704)	 Chunks: 4
+05:38 | 0220312/f_588 | 1024 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (589 / 704)	 Chunks: 6
+06:18 | 0220312/f_589 | 1024 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (590 / 704)	 Chunks: 10
+07:25 | 0220312/f_590 | 1024 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (591 / 704)	 Chunks: 6
+08:18 | 0220312/f_591 | 1024 |          0.4 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (592 / 704)	 Chunks: 5
+08:48 | 0220312/f_592 | 1024 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (593 / 704)	 Chunks: 4
+09:14 | 0220312/f_593 | 1024 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (594 / 704)	 Chunks: 12
+10:33 | 0220312/f_594 | 1024 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (595 / 704)	 Chunks: 9
+11:48 | 0220312/f_595 | 1024 |          0.5 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (596 / 704)	 Chunks: 10
+12:49 | 0220312/f_596 | 1024 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (597 / 704)	 Chunks: 12
+14:05 | 0220312/f_597 | 1024 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (598 / 704)	 Chunks: 10
+15:09 | 0220312/f_598 | 1024 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (599 / 704)	 Chunks: 7
+16:05 | 0220312/f_599 | 1024 |          0.6 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (600 / 704)	 Chunks: 11
+17:11 | 0220312/f_600 | 1024 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (601 / 704)	 Chunks: 5
+17:42 | 0220312/f_601 | 1024 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (602 / 704)	 Chunks: 8
+18:32 | 0220312/f_602 | 1024 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (603 / 704)	 Chunks: 5
+19:09 | 0220312/f_603 | 1024 |          0.7 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (604 / 704)	 Chunks: 8
+19:57 | 0220312/f_604 | 1024 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (605 / 704)	 Chunks: 5
+20:27 | 0220312/f_605 | 1024 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (606 / 704)	 Chunks: 12
+21:41 | 0220312/f_606 | 1024 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (607 / 704)	 Chunks: 3
+22:02 | 0220312/f_607 | 1024 |          0.8 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (608 / 704)	 Chunks: 6
+22:37 | 0220312/f_608 | 1024 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (609 / 704)	 Chunks: 11
+23:42 | 0220312/f_609 | 1024 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (610 / 704)	 Chunks: 10
+00:41 | 0220312/f_610 | 1024 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (611 / 704)	 Chunks: 8
+01:34 | 0220312/f_611 | 1024 |          0.9 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (612 / 704)	 Chunks: 18
+03:18 | 0220312/f_612 | 1024 |            1 |   0.8 |     512 |     0.001 | Disabled   | Dimers | Both | (613 / 704)	 Chunks: 2
+03:30 | 0220312/f_613 | 1024 |            1 |   0.8 |     512 |     0.001 | Disabled   | Linear trimers | Both | (614 / 704)	 Chunks: 2
+03:41 | 0220312/f_614 | 1024 |            1 |   0.8 |     512 |     0.001 | Disabled   | Trimers | Both | (615 / 704)	 Chunks: 2
+03:53 | 0220312/f_615 | 1024 |            1 |   0.8 |     512 |     0.001 | Disabled   | Squared | Both | (616 / 704)	 Chunks: 2
+04:05 | 0220312/f_616 | 1024 |            0 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (617 / 704)	 Chunks: 6
+04:48 | 0220312/f_617 | 1024 |            0 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (618 / 704)	 Chunks: 10
+06:00 | 0220312/f_618 | 1024 |            0 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (619 / 704)	 Chunks: 4
+06:40 | 0220312/f_619 | 1024 |            0 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (620 / 704)	 Chunks: 6
+07:18 | 0220312/f_620 | 1024 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (621 / 704)	 Chunks: 9
+08:22 | 0220312/f_621 | 1024 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (622 / 704)	 Chunks: 5
+08:57 | 0220312/f_622 | 1024 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (623 / 704)	 Chunks: 12
+10:54 | 0220312/f_623 | 1024 |          0.1 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (624 / 704)	 Chunks: 12
+12:11 | 0220312/f_624 | 1024 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (625 / 704)	 Chunks: 5
+12:46 | 0220312/f_625 | 1024 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (626 / 704)	 Chunks: 13
+14:16 | 0220312/f_626 | 1024 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (627 / 704)	 Chunks: 8
+15:32 | 0220312/f_627 | 1024 |          0.2 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (628 / 704)	 Chunks: 15
+17:07 | 0220312/f_628 | 1024 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (629 / 704)	 Chunks: 7
+17:55 | 0220312/f_629 | 1024 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (630 / 704)	 Chunks: 12
+19:17 | 0220312/f_630 | 1024 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (631 / 704)	 Chunks: 12
+21:07 | 0220312/f_631 | 1024 |          0.3 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (632 / 704)	 Chunks: 8
+21:58 | 0220312/f_632 | 1024 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (633 / 704)	 Chunks: 6
+22:38 | 0220312/f_633 | 1024 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (634 / 704)	 Chunks: 8
+23:31 | 0220312/f_634 | 1024 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (635 / 704)	 Chunks: 3
+23:58 | 0220312/f_635 | 1024 |          0.4 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (636 / 704)	 Chunks: 10
+01:00 | 0220312/f_636 | 1024 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (637 / 704)	 Chunks: 9
+01:58 | 0220312/f_637 | 1024 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (638 / 704)	 Chunks: 5
+02:31 | 0220312/f_638 | 1024 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (639 / 704)	 Chunks: 10
+03:55 | 0220312/f_639 | 1024 |          0.5 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (640 / 704)	 Chunks: 8
+04:44 | 0220312/f_640 | 1024 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (641 / 704)	 Chunks: 7
+05:29 | 0220312/f_641 | 1024 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (642 / 704)	 Chunks: 9
+06:26 | 0220312/f_642 | 1024 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (643 / 704)	 Chunks: 7
+07:22 | 0220312/f_643 | 1024 |          0.6 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (644 / 704)	 Chunks: 14
+08:47 | 0220312/f_644 | 1024 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (645 / 704)	 Chunks: 4
+09:12 | 0220312/f_645 | 1024 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (646 / 704)	 Chunks: 6
+09:49 | 0220312/f_646 | 1024 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (647 / 704)	 Chunks: 21
+12:28 | 0220312/f_647 | 1024 |          0.7 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (648 / 704)	 Chunks: 3
+12:46 | 0220312/f_648 | 1024 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (649 / 704)	 Chunks: 11
+13:52 | 0220312/f_649 | 1024 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (650 / 704)	 Chunks: 6
+14:29 | 0220312/f_650 | 1024 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (651 / 704)	 Chunks: 10
+15:40 | 0220312/f_651 | 1024 |          0.8 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (652 / 704)	 Chunks: 18
+17:25 | 0220312/f_652 | 1024 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (653 / 704)	 Chunks: 8
+18:13 | 0220312/f_653 | 1024 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (654 / 704)	 Chunks: 11
+19:18 | 0220312/f_654 | 1024 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (655 / 704)	 Chunks: 10
+20:24 | 0220312/f_655 | 1024 |          0.9 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (656 / 704)	 Chunks: 3
+20:41 | 0220312/f_656 | 1024 |            1 |   1.2 |     512 |     0.001 | Disabled   | Dimers | Both | (657 / 704)	 Chunks: 2
+20:53 | 0220312/f_657 | 1024 |            1 |   1.2 |     512 |     0.001 | Disabled   | Linear trimers | Both | (658 / 704)	 Chunks: 2
+21:04 | 0220312/f_658 | 1024 |            1 |   1.2 |     512 |     0.001 | Disabled   | Trimers | Both | (659 / 704)	 Chunks: 2
+21:16 | 0220312/f_659 | 1024 |            1 |   1.2 |     512 |     0.001 | Disabled   | Squared | Both | (660 / 704)	 Chunks: 2
+21:28 | 0220312/f_660 | 1024 |            0 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (661 / 704)	 Chunks: 8
+22:26 | 0220312/f_661 | 1024 |            0 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (662 / 704)	 Chunks: 8
+23:25 | 0220312/f_662 | 1024 |            0 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (663 / 704)	 Chunks: 13
+01:36 | 0220312/f_663 | 1024 |            0 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (664 / 704)	 Chunks: 12
+02:56 | 0220312/f_664 | 1024 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (665 / 704)	 Chunks: 11
+04:16 | 0220312/f_665 | 1024 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (666 / 704)	 Chunks: 16
+06:12 | 0220312/f_666 | 1024 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (667 / 704)	 Chunks: 14
+08:31 | 0220312/f_667 | 1024 |          0.1 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (668 / 704)	 Chunks: 4
+08:57 | 0220312/f_668 | 1024 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (669 / 704)	 Chunks: 11
+10:15 | 0220312/f_669 | 1024 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (670 / 704)	 Chunks: 11
+11:33 | 0220312/f_670 | 1024 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (671 / 704)	 Chunks: 4
+12:12 | 0220312/f_671 | 1024 |          0.2 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (672 / 704)	 Chunks: 11
+13:24 | 0220312/f_672 | 1024 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (673 / 704)	 Chunks: 8
+14:19 | 0220312/f_673 | 1024 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (674 / 704)	 Chunks: 5
+14:54 | 0220312/f_674 | 1024 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (675 / 704)	 Chunks: 4
+15:32 | 0220312/f_675 | 1024 |          0.3 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (676 / 704)	 Chunks: 3
+15:51 | 0220312/f_676 | 1024 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (677 / 704)	 Chunks: 14
+17:27 | 0220312/f_677 | 1024 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (678 / 704)	 Chunks: 7
+18:14 | 0220312/f_678 | 1024 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (679 / 704)	 Chunks: 13
+20:12 | 0220312/f_679 | 1024 |          0.4 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (680 / 704)	 Chunks: 7
+20:57 | 0220312/f_680 | 1024 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (681 / 704)	 Chunks: 8
+21:50 | 0220312/f_681 | 1024 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (682 / 704)	 Chunks: 5
+22:24 | 0220312/f_682 | 1024 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (683 / 704)	 Chunks: 5
+23:07 | 0220312/f_683 | 1024 |          0.5 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (684 / 704)	 Chunks: 5
+23:39 | 0220312/f_684 | 1024 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (685 / 704)	 Chunks: 10
+00:44 | 0220312/f_685 | 1024 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (686 / 704)	 Chunks: 11
+01:56 | 0220312/f_686 | 1024 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (687 / 704)	 Chunks: 2
+02:13 | 0220312/f_687 | 1024 |          0.6 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (688 / 704)	 Chunks: 15
+03:46 | 0220312/f_688 | 1024 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (689 / 704)	 Chunks: 15
+05:22 | 0220312/f_689 | 1024 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (690 / 704)	 Chunks: 7
+06:07 | 0220312/f_690 | 1024 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (691 / 704)	 Chunks: 12
+07:40 | 0220312/f_691 | 1024 |          0.7 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (692 / 704)	 Chunks: 10
+08:41 | 0220312/f_692 | 1024 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (693 / 704)	 Chunks: 14
+10:08 | 0220312/f_693 | 1024 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (694 / 704)	 Chunks: 9
+11:05 | 0220312/f_694 | 1024 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (695 / 704)	 Chunks: 8
+12:03 | 0220312/f_695 | 1024 |          0.8 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (696 / 704)	 Chunks: 5
+12:33 | 0220312/f_696 | 1024 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (697 / 704)	 Chunks: 5
+13:04 | 0220312/f_697 | 1024 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (698 / 704)	 Chunks: 7
+13:46 | 0220312/f_698 | 1024 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (699 / 704)	 Chunks: 6
+14:27 | 0220312/f_699 | 1024 |          0.9 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (700 / 704)	 Chunks: 8
+15:14 | 0220312/f_700 | 1024 |            1 |   1.6 |     512 |     0.001 | Disabled   | Dimers | Both | (701 / 704)	 Chunks: 2
+15:26 | 0220312/f_701 | 1024 |            1 |   1.6 |     512 |     0.001 | Disabled   | Linear trimers | Both | (702 / 704)	 Chunks: 2
+15:38 | 0220312/f_702 | 1024 |            1 |   1.6 |     512 |     0.001 | Disabled   | Trimers | Both | (703 / 704)	 Chunks: 2
+15:51 | 0220312/f_703 | 1024 |            1 |   1.6 |     512 |     0.001 | Disabled   | Squared | Both | (704 / 704)	 Chunks: 2

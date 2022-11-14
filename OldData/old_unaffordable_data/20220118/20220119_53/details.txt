@@ -1,0 +1,8 @@
+{
+"side":	2048,
+"defects_frac":	0.4,
+"gamma":	1.4,
+"replies":100,
+"corr_range":	-1,
+"dep_polymers":	"Squared"
+}

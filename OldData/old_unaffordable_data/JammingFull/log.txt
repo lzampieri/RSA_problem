@@ -1,0 +1,498 @@
+=== 20220205 18:37 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+18:37 |    20220205_0 |  512 |          0.1 |   0.2 |      1024 | Disabled   | Dimers | Both | 
+=== 20220205 18:43 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+18:43 |    20220205_1 |  512 |          0.1 |   0.2 |        50 | Disabled   | Dimers | Both | 
+=== 20220205 18:43 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+18:43 |    20220205_2 |  512 |          0.1 |   0.2 |        50 | Disabled   | Dimers | Both | 
+=== 20220205 18:46 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+18:46 |    20220205_0 |  512 |          0.1 |   0.2 |        50 | Disabled   | Dimers | Both | 
+=== 20220205 18:47 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+18:47 |    20220205_0 |  512 |          0.1 |   0.2 |        50 | Disabled   | Dimers | Both | 
+=== 20220205 18:53 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+18:53 |    20220205_0 |  512 |          0.1 |   0.2 |      1024 | Disabled   | Dimers | Both | 
+=== 20220207 19:01 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+19:01 |    20220207_0 |   64 |         0.05 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:01 |    20220207_1 |   64 |         0.05 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:02 |    20220207_2 |   64 |         0.05 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:02 |    20220207_3 |   64 |         0.05 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:02 |    20220207_4 |   64 |          0.1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:02 |    20220207_5 |   64 |          0.1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:02 |    20220207_6 |   64 |          0.1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:02 |    20220207_7 |   64 |          0.1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:02 |    20220207_8 |   64 |          0.2 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:02 |    20220207_9 |   64 |          0.2 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:02 |   20220207_10 |   64 |          0.2 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:02 |   20220207_11 |   64 |          0.2 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:02 |   20220207_12 |   64 |         0.05 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:02 |   20220207_13 |   64 |         0.05 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:02 |   20220207_14 |   64 |         0.05 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:02 |   20220207_15 |   64 |         0.05 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:02 |   20220207_16 |   64 |          0.1 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:02 |   20220207_17 |   64 |          0.1 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:02 |   20220207_18 |   64 |          0.1 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:02 |   20220207_19 |   64 |          0.1 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:02 |   20220207_20 |   64 |          0.2 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:02 |   20220207_21 |   64 |          0.2 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:03 |   20220207_22 |   64 |          0.2 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:03 |   20220207_23 |   64 |          0.2 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:03 |   20220207_24 |   64 |         0.05 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:03 |   20220207_25 |   64 |         0.05 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:03 |   20220207_26 |   64 |         0.05 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:03 |   20220207_27 |   64 |         0.05 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:03 |   20220207_28 |   64 |          0.1 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:03 |   20220207_29 |   64 |          0.1 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:03 |   20220207_30 |   64 |          0.1 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:03 |   20220207_31 |   64 |          0.1 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:03 |   20220207_32 |   64 |          0.2 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:03 |   20220207_33 |   64 |          0.2 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:03 |   20220207_34 |   64 |          0.2 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:03 |   20220207_35 |   64 |          0.2 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:03 |   20220207_36 |   64 |         0.05 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:03 |   20220207_37 |   64 |         0.05 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:03 |   20220207_38 |   64 |         0.05 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:03 |   20220207_39 |   64 |         0.05 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:03 |   20220207_40 |   64 |          0.1 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:04 |   20220207_41 |   64 |          0.1 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:04 |   20220207_42 |   64 |          0.1 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:04 |   20220207_43 |   64 |          0.1 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:04 |   20220207_44 |   64 |          0.2 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:04 |   20220207_45 |   64 |          0.2 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:04 |   20220207_46 |   64 |          0.2 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:04 |   20220207_47 |   64 |          0.2 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:04 |   20220207_48 |  128 |         0.05 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:04 |   20220207_49 |  128 |         0.05 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:04 |   20220207_50 |  128 |         0.05 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:05 |   20220207_51 |  128 |         0.05 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:05 |   20220207_52 |  128 |          0.1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:05 |   20220207_53 |  128 |          0.1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:05 |   20220207_54 |  128 |          0.1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:06 |   20220207_55 |  128 |          0.1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:06 |   20220207_56 |  128 |          0.2 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:06 |   20220207_57 |  128 |          0.2 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:06 |   20220207_58 |  128 |          0.2 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:06 |   20220207_59 |  128 |          0.2 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:07 |   20220207_60 |  128 |         0.05 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:07 |   20220207_61 |  128 |         0.05 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:07 |   20220207_62 |  128 |         0.05 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:07 |   20220207_63 |  128 |         0.05 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:08 |   20220207_64 |  128 |          0.1 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:08 |   20220207_65 |  128 |          0.1 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:08 |   20220207_66 |  128 |          0.1 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:08 |   20220207_67 |  128 |          0.1 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:08 |   20220207_68 |  128 |          0.2 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:09 |   20220207_69 |  128 |          0.2 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:09 |   20220207_70 |  128 |          0.2 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:09 |   20220207_71 |  128 |          0.2 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:09 |   20220207_72 |  128 |         0.05 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:10 |   20220207_73 |  128 |         0.05 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:10 |   20220207_74 |  128 |         0.05 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:10 |   20220207_75 |  128 |         0.05 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:10 |   20220207_76 |  128 |          0.1 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:10 |   20220207_77 |  128 |          0.1 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:11 |   20220207_78 |  128 |          0.1 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:11 |   20220207_79 |  128 |          0.1 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:11 |   20220207_80 |  128 |          0.2 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:11 |   20220207_81 |  128 |          0.2 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:12 |   20220207_82 |  128 |          0.2 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:12 |   20220207_83 |  128 |          0.2 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:12 |   20220207_84 |  128 |         0.05 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:12 |   20220207_85 |  128 |         0.05 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:13 |   20220207_86 |  128 |         0.05 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:13 |   20220207_87 |  128 |         0.05 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:13 |   20220207_88 |  128 |          0.1 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:13 |   20220207_89 |  128 |          0.1 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:13 |   20220207_90 |  128 |          0.1 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:14 |   20220207_91 |  128 |          0.1 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:14 |   20220207_92 |  128 |          0.2 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:14 |   20220207_93 |  128 |          0.2 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:14 |   20220207_94 |  128 |          0.2 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:15 |   20220207_95 |  128 |          0.2 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:15 |   20220207_96 |  256 |         0.05 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:16 |   20220207_97 |  256 |         0.05 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:17 |   20220207_98 |  256 |         0.05 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:18 |   20220207_99 |  256 |         0.05 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:18 |  20220207_100 |  256 |          0.1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:19 |  20220207_101 |  256 |          0.1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:20 |  20220207_102 |  256 |          0.1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:21 |  20220207_103 |  256 |          0.1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:22 |  20220207_104 |  256 |          0.2 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:23 |  20220207_105 |  256 |          0.2 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:24 |  20220207_106 |  256 |          0.2 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+19:25 |  20220207_107 |  256 |          0.2 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:26 |  20220207_108 |  256 |         0.05 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:26 |  20220207_109 |  256 |         0.05 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:27 |  20220207_110 |  256 |         0.05 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:28 |  20220207_111 |  256 |         0.05 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:29 |  20220207_112 |  256 |          0.1 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:30 |  20220207_113 |  256 |          0.1 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:31 |  20220207_114 |  256 |          0.1 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:32 |  20220207_115 |  256 |          0.1 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:33 |  20220207_116 |  256 |          0.2 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:33 |  20220207_117 |  256 |          0.2 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+19:34 |  20220207_118 |  256 |          0.2 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:35 |  20220207_119 |  256 |          0.2 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:36 |  20220207_120 |  256 |         0.05 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:37 |  20220207_121 |  256 |         0.05 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:38 |  20220207_122 |  256 |         0.05 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:39 |  20220207_123 |  256 |         0.05 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:40 |  20220207_124 |  256 |          0.1 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:40 |  20220207_125 |  256 |          0.1 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:41 |  20220207_126 |  256 |          0.1 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:42 |  20220207_127 |  256 |          0.1 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:43 |  20220207_128 |  256 |          0.2 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:44 |  20220207_129 |  256 |          0.2 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+19:45 |  20220207_130 |  256 |          0.2 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+19:46 |  20220207_131 |  256 |          0.2 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:47 |  20220207_132 |  256 |         0.05 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:47 |  20220207_133 |  256 |         0.05 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:48 |  20220207_134 |  256 |         0.05 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:49 |  20220207_135 |  256 |         0.05 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:50 |  20220207_136 |  256 |          0.1 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:51 |  20220207_137 |  256 |          0.1 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:52 |  20220207_138 |  256 |          0.1 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:53 |  20220207_139 |  256 |          0.1 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:54 |  20220207_140 |  256 |          0.2 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+19:55 |  20220207_141 |  256 |          0.2 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+19:56 |  20220207_142 |  256 |          0.2 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+19:56 |  20220207_143 |  256 |          0.2 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:57 |  20220207_144 |  512 |         0.05 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+20:01 |  20220207_145 |  512 |         0.05 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+20:06 |  20220207_146 |  512 |         0.05 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+20:09 |  20220207_147 |  512 |         0.05 |   0.4 |      1024 | Disabled   | Squared | Both | 
+20:12 |  20220207_148 |  512 |          0.1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+20:16 |  20220207_149 |  512 |          0.1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+20:21 |  20220207_150 |  512 |          0.1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+20:24 |  20220207_151 |  512 |          0.1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+20:27 |  20220207_152 |  512 |          0.2 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+20:31 |  20220207_153 |  512 |          0.2 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+20:35 |  20220207_154 |  512 |          0.2 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+20:39 |  20220207_155 |  512 |          0.2 |   0.4 |      1024 | Disabled   | Squared | Both | 
+20:42 |  20220207_156 |  512 |         0.05 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+20:46 |  20220207_157 |  512 |         0.05 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+20:50 |  20220207_158 |  512 |         0.05 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+20:54 |  20220207_159 |  512 |         0.05 |   0.8 |      1024 | Disabled   | Squared | Both | 
+20:57 |  20220207_160 |  512 |          0.1 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+21:00 |  20220207_161 |  512 |          0.1 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+21:05 |  20220207_162 |  512 |          0.1 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+21:08 |  20220207_163 |  512 |          0.1 |   0.8 |      1024 | Disabled   | Squared | Both | 
+21:12 |  20220207_164 |  512 |          0.2 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+21:15 |  20220207_165 |  512 |          0.2 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+21:19 |  20220207_166 |  512 |          0.2 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+21:23 |  20220207_167 |  512 |          0.2 |   0.8 |      1024 | Disabled   | Squared | Both | 
+21:26 |  20220207_168 |  512 |         0.05 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+21:30 |  20220207_169 |  512 |         0.05 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+21:34 |  20220207_170 |  512 |         0.05 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+21:38 |  20220207_171 |  512 |         0.05 |   1.2 |      1024 | Disabled   | Squared | Both | 
+21:41 |  20220207_172 |  512 |          0.1 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+21:44 |  20220207_173 |  512 |          0.1 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+21:49 |  20220207_174 |  512 |          0.1 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+21:52 |  20220207_175 |  512 |          0.1 |   1.2 |      1024 | Disabled   | Squared | Both | 
+21:56 |  20220207_176 |  512 |          0.2 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+21:59 |  20220207_177 |  512 |          0.2 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+22:03 |  20220207_178 |  512 |          0.2 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+22:07 |  20220207_179 |  512 |          0.2 |   1.2 |      1024 | Disabled   | Squared | Both | 
+22:10 |  20220207_180 |  512 |         0.05 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+22:14 |  20220207_181 |  512 |         0.05 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+22:18 |  20220207_182 |  512 |         0.05 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+22:22 |  20220207_183 |  512 |         0.05 |   1.6 |      1024 | Disabled   | Squared | Both | 
+22:25 |  20220207_184 |  512 |          0.1 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+22:29 |  20220207_185 |  512 |          0.1 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+22:33 |  20220207_186 |  512 |          0.1 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+22:37 |  20220207_187 |  512 |          0.1 |   1.6 |      1024 | Disabled   | Squared | Both | 
+22:40 |  20220207_188 |  512 |          0.2 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+22:44 |  20220207_189 |  512 |          0.2 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+22:48 |  20220207_190 |  512 |          0.2 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+22:52 |  20220207_191 |  512 |          0.2 |   1.6 |      1024 | Disabled   | Squared | Both | 
+22:55 |  20220207_192 | 1024 |         0.05 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+23:09 |  20220207_193 | 1024 |         0.05 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+23:29 |  20220207_194 | 1024 |         0.05 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+23:43 |  20220207_195 | 1024 |         0.05 |   0.4 |      1024 | Disabled   | Squared | Both | 
+23:56 |  20220207_196 | 1024 |          0.1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+00:10 |    20220208_0 | 1024 |          0.1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+00:29 |    20220208_1 | 1024 |          0.1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+00:44 |    20220208_2 | 1024 |          0.1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+00:57 |    20220208_3 | 1024 |          0.2 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+01:11 |    20220208_4 | 1024 |          0.2 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+01:29 |    20220208_5 | 1024 |          0.2 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+01:43 |    20220208_6 | 1024 |          0.2 |   0.4 |      1024 | Disabled   | Squared | Both | 
+01:56 |    20220208_7 | 1024 |         0.05 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+02:10 |    20220208_8 | 1024 |         0.05 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+02:29 |    20220208_9 | 1024 |         0.05 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+02:43 |   20220208_10 | 1024 |         0.05 |   0.8 |      1024 | Disabled   | Squared | Both | 
+02:56 |   20220208_11 | 1024 |          0.1 |   0.8 |      1024 | Disabled   | Dimers | Both | === 20220208 18:06 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+18:06 |   20220208_43 | 2048 |         0.05 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+19:09 |   20220208_44 | 2048 |         0.05 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+20:40 |   20220208_45 | 2048 |         0.05 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+21:44 |   20220208_46 | 2048 |         0.05 |   0.4 |      1024 | Disabled   | Squared | Both | 
+22:41 |   20220208_47 | 2048 |          0.1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+23:45 |   20220208_48 | 2048 |          0.1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+01:13 |    20220209_0 | 2048 |          0.1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+02:15 |    20220209_1 | 2048 |          0.1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+03:11 |    20220209_2 | 2048 |          0.2 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+04:14 |    20220209_3 | 2048 |          0.2 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+05:39 |    20220209_4 | 2048 |          0.2 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+06:41 |    20220209_5 | 2048 |          0.2 |   0.4 |      1024 | Disabled   | Squared | Both | 
+07:38 |    20220209_6 | 2048 |         0.05 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+08:41 |    20220209_7 | 2048 |         0.05 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+10:09 |    20220209_8 | 2048 |         0.05 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+11:11 |    20220209_9 | 2048 |         0.05 |   0.8 |      1024 | Disabled   | Squared | Both | 
+12:06 |   20220209_10 | 2048 |          0.1 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+13:08 |   20220209_11 | 2048 |          0.1 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+14:35 |   20220209_12 | 2048 |          0.1 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+15:38 |   20220209_13 | 2048 |          0.1 |   0.8 |      1024 | Disabled   | Squared | Both | 
+16:33 |   20220209_14 | 2048 |          0.2 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+17:34 |   20220209_15 | 2048 |          0.2 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+18:58 |   20220209_16 | 2048 |          0.2 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:58 |   20220209_17 | 2048 |          0.2 |   0.8 |      1024 | Disabled   | Squared | Both | 
+20:53 |   20220209_18 | 2048 |         0.05 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+21:56 |   20220209_19 | 2048 |         0.05 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+23:23 |   20220209_20 | 2048 |         0.05 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+00:26 |    20220210_0 | 2048 |         0.05 |   1.2 |      1024 | Disabled   | Squared | Both | 
+01:21 |    20220210_1 | 2048 |          0.1 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+02:22 |    20220210_2 | 2048 |          0.1 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+03:49 |    20220210_3 | 2048 |          0.1 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+04:51 |    20220210_4 | 2048 |          0.1 |   1.2 |      1024 | Disabled   | Squared | Both | 
+05:46 |    20220210_5 | 2048 |          0.2 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+06:47 |    20220210_6 | 2048 |          0.2 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+08:11 |    20220210_7 | 2048 |          0.2 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+09:12 |    20220210_8 | 2048 |          0.2 |   1.2 |      1024 | Disabled   | Squared | Both | 
+10:07 |    20220210_9 | 2048 |         0.05 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+11:10 |   20220210_10 | 2048 |         0.05 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+12:40 |   20220210_11 | 2048 |         0.05 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+13:43 |   20220210_12 | 2048 |         0.05 |   1.6 |      1024 | Disabled   | Squared | Both | 
+14:39 |   20220210_13 | 2048 |          0.1 |   1.6 |      1024 | Disabled   | Dimers | Both | === 20220211 06:40 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+06:40 |    20220211_0 | 4096 |         0.05 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+10:47 |    20220211_1 | 4096 |         0.05 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+20:57 |    20220211_2 | 4096 |         0.05 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+01:01 |    20220212_0 | 4096 |         0.05 |   0.4 |      1024 | Disabled   | Squared | Both | 
+04:32 |    20220212_1 | 4096 |          0.1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+08:33 |    20220212_2 | 4096 |          0.1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+20:38 |    20220212_3 | 4096 |          0.1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+00:45 |    20220213_0 | 4096 |          0.1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+04:16 |    20220213_1 | 4096 |          0.2 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+08:17 |    20220213_2 | 4096 |          0.2 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+19:31 |    20220213_3 | 4096 |          0.2 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+23:30 |    20220213_4 | 4096 |          0.2 |   0.4 |      1024 | Disabled   | Squared | Both | 
+02:59 |    20220214_0 | 4096 |         0.05 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+06:59 |    20220214_1 | 4096 |         0.05 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+16:36 |    20220214_2 | 4096 |         0.05 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+20:37 |    20220214_3 | 4096 |         0.05 |   0.8 |      1024 | Disabled   | Squared | Both | 
+00:03 |    20220215_0 | 4096 |          0.1 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+04:00 |    20220215_1 | 4096 |          0.1 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+15:18 |    20220215_2 | 4096 |          0.1 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:18 |    20220215_3 | 4096 |          0.1 |   0.8 |      1024 | Disabled   | Squared | Both | 
+22:45 |    20220215_4 | 4096 |          0.2 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+02:35 |    20220216_0 | 4096 |          0.2 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+12:42 |    20220216_1 | 4096 |          0.2 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+16:33 |    20220216_2 | 4096 |          0.2 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:55 |    20220216_3 | 4096 |         0.05 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+23:54 |    20220216_4 | 4096 |         0.05 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+09:44 |    20220217_0 | 4096 |         0.05 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+13:43 |    20220217_1 | 4096 |         0.05 |   1.2 |      1024 | Disabled   | Squared | Both | 
+17:10 |    20220217_2 | 4096 |          0.1 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+21:07 |    20220217_3 | 4096 |          0.1 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+07:01 |    20220218_0 | 4096 |          0.1 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+11:01 |    20220218_1 | 4096 |          0.1 |   1.2 |      1024 | Disabled   | Squared | Both | 
+14:26 |    20220218_2 | 4096 |          0.2 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+18:18 |    20220218_3 | 4096 |          0.2 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+02:41 |    20220219_0 | 4096 |          0.2 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+06:32 |    20220219_1 | 4096 |          0.2 |   1.2 |      1024 | Disabled   | Squared | Both | 
+09:53 |    20220219_2 | 4096 |         0.05 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+13:57 |    20220219_3 | 4096 |         0.05 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+22:58 |    20220219_4 | 4096 |         0.05 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+02:59 |    20220220_0 | 4096 |         0.05 |   1.6 |      1024 | Disabled   | Squared | Both | 
+06:33 |    20220220_1 | 4096 |          0.1 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+10:34 |    20220220_2 | 4096 |          0.1 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+20:25 |    20220220_3 | 4096 |          0.1 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+00:27 |    20220221_0 | 4096 |          0.1 |   1.6 |      1024 | Disabled   | Squared | Both | 
+03:58 |    20220221_1 | 4096 |          0.2 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+07:54 |    20220221_2 | 4096 |          0.2 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+18:32 |    20220221_3 | 4096 |          0.2 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+22:28 |    20220221_4 | 4096 |          0.2 |   1.6 |      1024 | Disabled   | Squared | Both | 
+=== 20220226 14:41 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_REPLIES | CORR_RANGE | POLYMERS | PERCOLATION
+14:41 |    20220226_1 | 2048 |            0 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+15:48 |    20220226_2 | 2048 |            0 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+17:54 |    20220226_3 | 2048 |            0 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+18:59 |    20220226_4 | 2048 |            0 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:57 |    20220226_5 | 2048 |          0.1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+20:59 |    20220226_6 | 2048 |          0.1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+23:20 |    20220226_7 | 2048 |          0.1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+00:23 |    20220227_0 | 2048 |          0.1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+01:20 |    20220227_1 | 2048 |          0.2 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+02:23 |    20220227_2 | 2048 |          0.2 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+04:03 |    20220227_3 | 2048 |          0.2 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+05:05 |    20220227_4 | 2048 |          0.2 |   0.4 |      1024 | Disabled   | Squared | Both | 
+06:01 |    20220227_5 | 2048 |          0.3 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+07:03 |    20220227_6 | 2048 |          0.3 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+08:44 |    20220227_7 | 2048 |          0.3 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+09:47 |    20220227_8 | 2048 |          0.3 |   0.4 |      1024 | Disabled   | Squared | Both | 
+10:42 |    20220227_9 | 2048 |          0.4 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+11:41 |   20220227_10 | 2048 |          0.4 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+13:16 |   20220227_11 | 2048 |          0.4 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+14:16 |   20220227_12 | 2048 |          0.4 |   0.4 |      1024 | Disabled   | Squared | Both | 
+15:11 |   20220227_13 | 2048 |          0.5 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+16:11 |   20220227_14 | 2048 |          0.5 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+17:34 |   20220227_15 | 2048 |          0.5 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+18:33 |   20220227_16 | 2048 |          0.5 |   0.4 |      1024 | Disabled   | Squared | Both | 
+19:28 |   20220227_17 | 2048 |          0.6 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+20:25 |   20220227_18 | 2048 |          0.6 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+21:46 |   20220227_19 | 2048 |          0.6 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+22:44 |   20220227_20 | 2048 |          0.6 |   0.4 |      1024 | Disabled   | Squared | Both | 
+23:38 |   20220227_21 | 2048 |          0.7 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+00:34 |    20220228_0 | 2048 |          0.7 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+01:44 |    20220228_1 | 2048 |          0.7 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+02:40 |    20220228_2 | 2048 |          0.7 |   0.4 |      1024 | Disabled   | Squared | Both | 
+03:34 |    20220228_3 | 2048 |          0.8 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+04:28 |    20220228_4 | 2048 |          0.8 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+05:33 |    20220228_5 | 2048 |          0.8 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+06:27 |    20220228_6 | 2048 |          0.8 |   0.4 |      1024 | Disabled   | Squared | Both | 
+07:20 |    20220228_7 | 2048 |          0.9 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+08:13 |    20220228_8 | 2048 |          0.9 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+09:13 |    20220228_9 | 2048 |          0.9 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+10:07 |   20220228_10 | 2048 |          0.9 |   0.4 |      1024 | Disabled   | Squared | Both | 
+10:59 |   20220228_11 | 2048 |            1 |   0.4 |      1024 | Disabled   | Dimers | Both | 
+11:51 |   20220228_12 | 2048 |            1 |   0.4 |      1024 | Disabled   | Trimers | Both | 
+12:46 |   20220228_13 | 2048 |            1 |   0.4 |      1024 | Disabled   | Linear trimers | Both | 
+13:38 |   20220228_14 | 2048 |            1 |   0.4 |      1024 | Disabled   | Squared | Both | 
+14:30 |   20220228_15 | 2048 |            0 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+15:34 |   20220228_16 | 2048 |            0 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+18:00 |   20220228_17 | 2048 |            0 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+19:03 |   20220228_18 | 2048 |            0 |   0.8 |      1024 | Disabled   | Squared | Both | 
+19:59 |   20220228_19 | 2048 |          0.1 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+21:02 |   20220228_20 | 2048 |          0.1 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+23:02 |   20220228_21 | 2048 |          0.1 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+00:05 |    20220301_0 | 2048 |          0.1 |   0.8 |      1024 | Disabled   | Squared | Both | 
+01:01 |    20220301_1 | 2048 |          0.2 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+02:02 |    20220301_2 | 2048 |          0.2 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+03:36 |    20220301_3 | 2048 |          0.2 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+04:37 |    20220301_4 | 2048 |          0.2 |   0.8 |      1024 | Disabled   | Squared | Both | 
+05:33 |    20220301_5 | 2048 |          0.3 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+06:33 |    20220301_6 | 2048 |          0.3 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+07:55 |    20220301_7 | 2048 |          0.3 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+08:56 |    20220301_8 | 2048 |          0.3 |   0.8 |      1024 | Disabled   | Squared | Both | 
+09:51 |    20220301_9 | 2048 |          0.4 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+10:48 |   20220301_10 | 2048 |          0.4 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+12:18 |   20220301_11 | 2048 |          0.4 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+13:17 |   20220301_12 | 2048 |          0.4 |   0.8 |      1024 | Disabled   | Squared | Both | 
+14:11 |   20220301_13 | 2048 |          0.5 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+15:09 |   20220301_14 | 2048 |          0.5 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+16:35 |   20220301_15 | 2048 |          0.5 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+17:33 |   20220301_16 | 2048 |          0.5 |   0.8 |      1024 | Disabled   | Squared | Both | 
+18:26 |   20220301_17 | 2048 |          0.6 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+19:23 |   20220301_18 | 2048 |          0.6 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+20:54 |   20220301_19 | 2048 |          0.6 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+21:50 |   20220301_20 | 2048 |          0.6 |   0.8 |      1024 | Disabled   | Squared | Both | 
+22:43 |   20220301_21 | 2048 |          0.7 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+23:38 |   20220301_22 | 2048 |          0.7 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+00:50 |    20220302_0 | 2048 |          0.7 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+01:48 |    20220302_1 | 2048 |          0.7 |   0.8 |      1024 | Disabled   | Squared | Both | 
+02:40 |    20220302_2 | 2048 |          0.8 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+03:34 |    20220302_3 | 2048 |          0.8 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+04:37 |    20220302_4 | 2048 |          0.8 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+05:31 |    20220302_5 | 2048 |          0.8 |   0.8 |      1024 | Disabled   | Squared | Both | 
+06:23 |    20220302_6 | 2048 |          0.9 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+07:16 |    20220302_7 | 2048 |          0.9 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+08:17 |    20220302_8 | 2048 |          0.9 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+09:09 |    20220302_9 | 2048 |          0.9 |   0.8 |      1024 | Disabled   | Squared | Both | 
+10:00 |   20220302_10 | 2048 |            1 |   0.8 |      1024 | Disabled   | Dimers | Both | 
+10:52 |   20220302_11 | 2048 |            1 |   0.8 |      1024 | Disabled   | Trimers | Both | 
+11:44 |   20220302_12 | 2048 |            1 |   0.8 |      1024 | Disabled   | Linear trimers | Both | 
+12:36 |   20220302_13 | 2048 |            1 |   0.8 |      1024 | Disabled   | Squared | Both | 
+13:26 |   20220302_14 | 2048 |            0 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+14:29 |   20220302_15 | 2048 |            0 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+17:01 |   20220302_16 | 2048 |            0 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+18:03 |   20220302_17 | 2048 |            0 |   1.2 |      1024 | Disabled   | Squared | Both | 
+19:00 |   20220302_18 | 2048 |          0.1 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+20:01 |   20220302_19 | 2048 |          0.1 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+22:20 |   20220302_20 | 2048 |          0.1 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+23:23 |   20220302_21 | 2048 |          0.1 |   1.2 |      1024 | Disabled   | Squared | Both | 
+00:19 |    20220303_0 | 2048 |          0.2 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+01:20 |    20220303_1 | 2048 |          0.2 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+03:11 |    20220303_2 | 2048 |          0.2 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+04:13 |    20220303_3 | 2048 |          0.2 |   1.2 |      1024 | Disabled   | Squared | Both | 
+05:09 |    20220303_4 | 2048 |          0.3 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+06:12 |    20220303_5 | 2048 |          0.3 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+08:15 |    20220303_6 | 2048 |          0.3 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+09:15 |    20220303_7 | 2048 |          0.3 |   1.2 |      1024 | Disabled   | Squared | Both | 
+10:09 |    20220303_8 | 2048 |          0.4 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+11:09 |    20220303_9 | 2048 |          0.4 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+12:33 |   20220303_10 | 2048 |          0.4 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+13:33 |   20220303_11 | 2048 |          0.4 |   1.2 |      1024 | Disabled   | Squared | Both | 
+14:27 |   20220303_12 | 2048 |          0.5 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+15:25 |   20220303_13 | 2048 |          0.5 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+16:55 |   20220303_14 | 2048 |          0.5 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+17:54 |   20220303_15 | 2048 |          0.5 |   1.2 |      1024 | Disabled   | Squared | Both | 
+18:48 |   20220303_16 | 2048 |          0.6 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+19:44 |   20220303_17 | 2048 |          0.6 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+21:04 |   20220303_18 | 2048 |          0.6 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+22:02 |   20220303_19 | 2048 |          0.6 |   1.2 |      1024 | Disabled   | Squared | Both | 
+22:56 |   20220303_20 | 2048 |          0.7 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+23:50 |   20220303_21 | 2048 |          0.7 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+01:00 |    20220304_0 | 2048 |          0.7 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+01:55 |    20220304_1 | 2048 |          0.7 |   1.2 |      1024 | Disabled   | Squared | Both | 
+02:48 |    20220304_2 | 2048 |          0.8 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+03:42 |    20220304_3 | 2048 |          0.8 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+04:50 |    20220304_4 | 2048 |          0.8 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+05:44 |    20220304_5 | 2048 |          0.8 |   1.2 |      1024 | Disabled   | Squared | Both | 
+06:36 |    20220304_6 | 2048 |          0.9 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+07:28 |    20220304_7 | 2048 |          0.9 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+08:28 |    20220304_8 | 2048 |          0.9 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+09:22 |    20220304_9 | 2048 |          0.9 |   1.2 |      1024 | Disabled   | Squared | Both | 
+10:13 |   20220304_10 | 2048 |            1 |   1.2 |      1024 | Disabled   | Dimers | Both | 
+11:04 |   20220304_11 | 2048 |            1 |   1.2 |      1024 | Disabled   | Trimers | Both | 
+12:03 |   20220304_12 | 2048 |            1 |   1.2 |      1024 | Disabled   | Linear trimers | Both | 
+12:54 |   20220304_13 | 2048 |            1 |   1.2 |      1024 | Disabled   | Squared | Both | 
+13:44 |   20220304_14 | 2048 |            0 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+14:49 |   20220304_15 | 2048 |            0 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+16:58 |   20220304_16 | 2048 |            0 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+18:03 |   20220304_17 | 2048 |            0 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:00 |   20220304_18 | 2048 |          0.1 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+20:03 |   20220304_19 | 2048 |          0.1 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+22:07 |   20220304_20 | 2048 |          0.1 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+23:11 |   20220304_21 | 2048 |          0.1 |   1.6 |      1024 | Disabled   | Squared | Both | 
+00:08 |    20220305_0 | 2048 |          0.2 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+01:12 |    20220305_1 | 2048 |          0.2 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+03:41 |    20220305_2 | 2048 |          0.2 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+04:43 |    20220305_3 | 2048 |          0.2 |   1.6 |      1024 | Disabled   | Squared | Both | 
+05:40 |    20220305_4 | 2048 |          0.3 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+06:42 |    20220305_5 | 2048 |          0.3 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+08:41 |    20220305_6 | 2048 |          0.3 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+09:43 |    20220305_7 | 2048 |          0.3 |   1.6 |      1024 | Disabled   | Squared | Both | 
+10:39 |    20220305_8 | 2048 |          0.4 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+11:40 |    20220305_9 | 2048 |          0.4 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+13:25 |   20220305_10 | 2048 |          0.4 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+14:26 |   20220305_11 | 2048 |          0.4 |   1.6 |      1024 | Disabled   | Squared | Both | 
+15:22 |   20220305_12 | 2048 |          0.5 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+16:21 |   20220305_13 | 2048 |          0.5 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+17:43 |   20220305_14 | 2048 |          0.5 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+18:43 |   20220305_15 | 2048 |          0.5 |   1.6 |      1024 | Disabled   | Squared | Both | 
+19:38 |   20220305_16 | 2048 |          0.6 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+20:35 |   20220305_17 | 2048 |          0.6 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+21:58 |   20220305_18 | 2048 |          0.6 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+22:56 |   20220305_19 | 2048 |          0.6 |   1.6 |      1024 | Disabled   | Squared | Both | 
+23:50 |   20220305_20 | 2048 |          0.7 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+00:47 |    20220306_0 | 2048 |          0.7 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+01:59 |    20220306_1 | 2048 |          0.7 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+02:56 |    20220306_2 | 2048 |          0.7 |   1.6 |      1024 | Disabled   | Squared | Both | 
+03:50 |    20220306_3 | 2048 |          0.8 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+04:45 |    20220306_4 | 2048 |          0.8 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+05:54 |    20220306_5 | 2048 |          0.8 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+06:50 |    20220306_6 | 2048 |          0.8 |   1.6 |      1024 | Disabled   | Squared | Both | 
+07:43 |    20220306_7 | 2048 |          0.9 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+08:37 |    20220306_8 | 2048 |          0.9 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+09:36 |    20220306_9 | 2048 |          0.9 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+10:30 |   20220306_10 | 2048 |          0.9 |   1.6 |      1024 | Disabled   | Squared | Both | 
+11:23 |   20220306_11 | 2048 |            1 |   1.6 |      1024 | Disabled   | Dimers | Both | 
+12:15 |   20220306_12 | 2048 |            1 |   1.6 |      1024 | Disabled   | Trimers | Both | 
+13:12 |   20220306_13 | 2048 |            1 |   1.6 |      1024 | Disabled   | Linear trimers | Both | 
+14:04 |   20220306_14 | 2048 |            1 |   1.6 |      1024 | Disabled   | Squared | Both | 

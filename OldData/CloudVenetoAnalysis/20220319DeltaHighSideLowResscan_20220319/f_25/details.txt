@@ -1,0 +1,14 @@
+{
+"side":	1024,
+"defects_frac":	0.05,
+"gamma":	1.2,
+"chunk_size":	256,
+"tolerance":	0.001,
+"runned_replicas":	1280,
+"runned_chunks":	5,
+"CF_Model":	"",
+"dep_polymers":	"Linear trimers",
+"save_path":	"20220319DeltaHighSideLowResscan_20220319/f_25",
+"n_threads":	"8",
+"draw":	False
+}

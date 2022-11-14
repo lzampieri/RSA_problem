@@ -1,0 +1,98 @@
+=== 20220319 10:26 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+10:26 | _20220319/f_0 | 1024 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Dimers | Both | (1 / 144)	 Chunks: 11
+10:51 | _20220319/f_1 | 1024 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Linear trimers | Both | (2 / 144)	 Chunks: 8
+11:08 | _20220319/f_2 | 1024 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Trimers | Both | (3 / 144)	 Chunks: 11
+11:51 | _20220319/f_3 | 1024 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Squared | Both | (4 / 144)	 Chunks: 6
+12:01 | _20220319/f_4 | 1024 |          0.1 |   0.4 |     256 |     0.001 | Disabled   | Dimers | Both | (5 / 144)	 Chunks: 7
+12:16 | _20220319/f_5 | 1024 |          0.1 |   0.4 |     256 |     0.001 | Disabled   | Linear trimers | Both | (6 / 144)	 Chunks: 17
+12:52 | _20220319/f_6 | 1024 |          0.1 |   0.4 |     256 |     0.001 | Disabled   | Trimers | Both | (7 / 144)	 Chunks: 3
+13:03 | _20220319/f_7 | 1024 |          0.1 |   0.4 |     256 |     0.001 | Disabled   | Squared | Both | (8 / 144)	 Chunks: 3
+13:08 | _20220319/f_8 | 1024 |          0.2 |   0.4 |     256 |     0.001 | Disabled   | Dimers | Both | (9 / 144)	 Chunks: 5
+13:18 | _20220319/f_9 | 1024 |          0.2 |   0.4 |     256 |     0.001 | Disabled   | Linear trimers | Both | (10 / 144)	 Chunks: 8
+13:35 | 20220319/f_10 | 1024 |          0.2 |   0.4 |     256 |     0.001 | Disabled   | Trimers | Both | (11 / 144)	 Chunks: 2
+13:42 | 20220319/f_11 | 1024 |          0.2 |   0.4 |     256 |     0.001 | Disabled   | Squared | Both | (12 / 144)	 Chunks: 3
+13:47 | 20220319/f_12 | 1024 |         0.05 |   0.8 |     256 |     0.001 | Disabled   | Dimers | Both | (13 / 144)	 Chunks: 10
+14:09 | 20220319/f_13 | 1024 |         0.05 |   0.8 |     256 |     0.001 | Disabled   | Linear trimers | Both | (14 / 144)	 Chunks: 13
+14:37 | 20220319/f_14 | 1024 |         0.05 |   0.8 |     256 |     0.001 | Disabled   | Trimers | Both | (15 / 144)	 Chunks: 10
+15:16 | 20220319/f_15 | 1024 |         0.05 |   0.8 |     256 |     0.001 | Disabled   | Squared | Both | (16 / 144)	 Chunks: 6
+15:26 | 20220319/f_16 | 1024 |          0.1 |   0.8 |     256 |     0.001 | Disabled   | Dimers | Both | (17 / 144)	 Chunks: 7
+15:41 | 20220319/f_17 | 1024 |          0.1 |   0.8 |     256 |     0.001 | Disabled   | Linear trimers | Both | (18 / 144)	 Chunks: 9
+16:00 | 20220319/f_18 | 1024 |          0.1 |   0.8 |     256 |     0.001 | Disabled   | Trimers | Both | (19 / 144)	 Chunks: 2
+16:08 | 20220319/f_19 | 1024 |          0.1 |   0.8 |     256 |     0.001 | Disabled   | Squared | Both | (20 / 144)	 Chunks: 2
+16:12 | 20220319/f_20 | 1024 |          0.2 |   0.8 |     256 |     0.001 | Disabled   | Dimers | Both | (21 / 144)	 Chunks: 5
+16:22 | 20220319/f_21 | 1024 |          0.2 |   0.8 |     256 |     0.001 | Disabled   | Linear trimers | Both | (22 / 144)	 Chunks: 12
+16:47 | 20220319/f_22 | 1024 |          0.2 |   0.8 |     256 |     0.001 | Disabled   | Trimers | Both | (23 / 144)	 Chunks: 4
+17:01 | 20220319/f_23 | 1024 |          0.2 |   0.8 |     256 |     0.001 | Disabled   | Squared | Both | (24 / 144)	 Chunks: 17
+17:29 | 20220319/f_24 | 1024 |         0.05 |   1.2 |     256 |     0.001 | Disabled   | Dimers | Both | (25 / 144)	 Chunks: 9
+17:49 | 20220319/f_25 | 1024 |         0.05 |   1.2 |     256 |     0.001 | Disabled   | Linear trimers | Both | (26 / 144)	 Chunks: 5
+18:00 | 20220319/f_26 | 1024 |         0.05 |   1.2 |     256 |     0.001 | Disabled   | Trimers | Both | (27 / 144)	 Chunks: 9
+18:36 | 20220319/f_27 | 1024 |         0.05 |   1.2 |     256 |     0.001 | Disabled   | Squared | Both | (28 / 144)	 Chunks: 14
+19:00 | 20220319/f_28 | 1024 |          0.1 |   1.2 |     256 |     0.001 | Disabled   | Dimers | Both | (29 / 144)	 Chunks: 9
+19:19 | 20220319/f_29 | 1024 |          0.1 |   1.2 |     256 |     0.001 | Disabled   | Linear trimers | Both | (30 / 144)	 Chunks: 25
+20:14 | 20220319/f_30 | 1024 |          0.1 |   1.2 |     256 |     0.001 | Disabled   | Trimers | Both | (31 / 144)	 Chunks: 9
+20:48 | 20220319/f_31 | 1024 |          0.1 |   1.2 |     256 |     0.001 | Disabled   | Squared | Both | (32 / 144)	 Chunks: 8
+21:02 | 20220319/f_32 | 1024 |          0.2 |   1.2 |     256 |     0.001 | Disabled   | Dimers | Both | (33 / 144)	 Chunks: 13
+21:29 | 20220319/f_33 | 1024 |          0.2 |   1.2 |     256 |     0.001 | Disabled   | Linear trimers | Both | (34 / 144)	 Chunks: 8
+21:45 | 20220319/f_34 | 1024 |          0.2 |   1.2 |     256 |     0.001 | Disabled   | Trimers | Both | (35 / 144)	 Chunks: 11
+22:25 | 20220319/f_35 | 1024 |          0.2 |   1.2 |     256 |     0.001 | Disabled   | Squared | Both | (36 / 144)	 Chunks: 32
+23:17 | 20220319/f_36 | 1024 |         0.05 |   1.6 |     256 |     0.001 | Disabled   | Dimers | Both | (37 / 144)	 Chunks: 3
+23:24 | 20220319/f_37 | 1024 |         0.05 |   1.6 |     256 |     0.001 | Disabled   | Linear trimers | Both | (38 / 144)	 Chunks: 11
+23:49 | 20220319/f_38 | 1024 |         0.05 |   1.6 |     256 |     0.001 | Disabled   | Trimers | Both | (39 / 144)	 Chunks: 8
+00:20 | 20220319/f_39 | 1024 |         0.05 |   1.6 |     256 |     0.001 | Disabled   | Squared | Both | (40 / 144)	 Chunks: 11
+00:40 | 20220319/f_40 | 1024 |          0.1 |   1.6 |     256 |     0.001 | Disabled   | Dimers | Both | (41 / 144)	 Chunks: 6
+00:53 | 20220319/f_41 | 1024 |          0.1 |   1.6 |     256 |     0.001 | Disabled   | Linear trimers | Both | (42 / 144)	 Chunks: 8
+01:11 | 20220319/f_42 | 1024 |          0.1 |   1.6 |     256 |     0.001 | Disabled   | Trimers | Both | (43 / 144)	 Chunks: 20
+02:27 | 20220319/f_43 | 1024 |          0.1 |   1.6 |     256 |     0.001 | Disabled   | Squared | Both | (44 / 144)	 Chunks: 9
+02:42 | 20220319/f_44 | 1024 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Dimers | Both | (45 / 144)	 Chunks: 3
+02:48 | 20220319/f_45 | 1024 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Linear trimers | Both | (46 / 144)	 Chunks: 17
+03:23 | 20220319/f_46 | 1024 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Trimers | Both | (47 / 144)	 Chunks: 8
+03:49 | 20220319/f_47 | 1024 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Squared | Both | (48 / 144)	 Chunks: 18
+04:15 | 20220319/f_48 | 2048 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Dimers | Both | (49 / 144)	 Chunks: 12
+05:54 | 20220319/f_49 | 2048 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Linear trimers | Both | (50 / 144)	 Chunks: 12
+07:31 | 20220319/f_50 | 2048 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Trimers | Both | (51 / 144)	 Chunks: 4
+08:28 | 20220319/f_51 | 2048 |         0.05 |   0.4 |     256 |     0.001 | Disabled   | Squared | Both | (52 / 144)	 Chunks: 11
+09:37 | 20220319/f_52 | 2048 |          0.1 |   0.4 |     256 |     0.001 | Disabled   | Dimers | Both | (53 / 144)	 Chunks: 7
+10:32 | 20220319/f_53 | 2048 |          0.1 |   0.4 |     256 |     0.001 | Disabled   | Linear trimers | Both | (54 / 144)	 Chunks: 18
+12:52 | 20220319/f_54 | 2048 |          0.1 |   0.4 |     256 |     0.001 | Disabled   | Trimers | Both | (55 / 144)	 Chunks: 4
+14:02 | 20220319/f_55 | 2048 |          0.1 |   0.4 |     256 |     0.001 | Disabled   | Squared | Both | (56 / 144)	 Chunks: 18
+16:24 | 20220319/f_56 | 2048 |          0.2 |   0.4 |     256 |     0.001 | Disabled   | Dimers | Both | (57 / 144)	 Chunks: 10
+18:03 | 20220319/f_57 | 2048 |          0.2 |   0.4 |     256 |     0.001 | Disabled   | Linear trimers | Both | (58 / 144)	 Chunks: 5
+18:53 | 20220319/f_58 | 2048 |          0.2 |   0.4 |     256 |     0.001 | Disabled   | Trimers | Both | (59 / 144)	 Chunks: 13
+22:52 | 20220319/f_59 | 2048 |          0.2 |   0.4 |     256 |     0.001 | Disabled   | Squared | Both | (60 / 144)	 Chunks: 9
+00:01 | 20220319/f_60 | 2048 |         0.05 |   0.8 |     256 |     0.001 | Disabled   | Dimers | Both | (61 / 144)	 Chunks: 23
+04:00 | 20220319/f_61 | 2048 |         0.05 |   0.8 |     256 |     0.001 | Disabled   | Linear trimers | Both | (62 / 144)	 Chunks: 7
+05:12 | 20220319/f_62 | 2048 |         0.05 |   0.8 |     256 |     0.001 | Disabled   | Trimers | Both | (63 / 144)	 Chunks: 12
+09:18 | 20220319/f_63 | 2048 |         0.05 |   0.8 |     256 |     0.001 | Disabled   | Squared | Both | (64 / 144)	 Chunks: 4
+09:50 | 20220319/f_64 | 2048 |          0.1 |   0.8 |     256 |     0.001 | Disabled   | Dimers | Both | (65 / 144)	 Chunks: 16
+12:41 | 20220319/f_65 | 2048 |          0.1 |   0.8 |     256 |     0.001 | Disabled   | Linear trimers | Both | (66 / 144)	 Chunks: 8
+14:09 | 20220319/f_66 | 2048 |          0.1 |   0.8 |     256 |     0.001 | Disabled   | Trimers | Both | (67 / 144)	 Chunks: 15
+19:33 | 20220319/f_67 | 2048 |          0.1 |   0.8 |     256 |     0.001 | Disabled   | Squared | Both | (68 / 144)	 Chunks: 5
+20:20 | 20220319/f_68 | 2048 |          0.2 |   0.8 |     256 |     0.001 | Disabled   | Dimers | Both | (69 / 144)	 Chunks: 13
+22:53 | 20220319/f_69 | 2048 |          0.2 |   0.8 |     256 |     0.001 | Disabled   | Linear trimers | Both | (70 / 144)	 Chunks: 4
+23:41 | 20220319/f_70 | 2048 |          0.2 |   0.8 |     256 |     0.001 | Disabled   | Trimers | Both | (71 / 144)	 Chunks: 18
+06:01 | 20220319/f_71 | 2048 |          0.2 |   0.8 |     256 |     0.001 | Disabled   | Squared | Both | (72 / 144)	 Chunks: 5
+06:40 | 20220319/f_72 | 2048 |         0.05 |   1.2 |     256 |     0.001 | Disabled   | Dimers | Both | (73 / 144)	 Chunks: 6
+07:43 | 20220319/f_73 | 2048 |         0.05 |   1.2 |     256 |     0.001 | Disabled   | Linear trimers | Both | (74 / 144)	 Chunks: 8
+09:16 | 20220319/f_74 | 2048 |         0.05 |   1.2 |     256 |     0.001 | Disabled   | Trimers | Both | (75 / 144)	 Chunks: 7
+11:53 | 20220319/f_75 | 2048 |         0.05 |   1.2 |     256 |     0.001 | Disabled   | Squared | Both | (76 / 144)	 Chunks: 6
+12:50 | 20220319/f_76 | 2048 |          0.1 |   1.2 |     256 |     0.001 | Disabled   | Dimers | Both | (77 / 144)	 Chunks: 13
+15:28 | 20220319/f_77 | 2048 |          0.1 |   1.2 |     256 |     0.001 | Disabled   | Linear trimers | Both | (78 / 144)	 Chunks: 8
+16:53 | 20220319/f_78 | 2048 |          0.1 |   1.2 |     256 |     0.001 | Disabled   | Trimers | Both | (79 / 144)	 Chunks: 6
+18:56 | 20220319/f_79 | 2048 |          0.1 |   1.2 |     256 |     0.001 | Disabled   | Squared | Both | (80 / 144)	 Chunks: 6
+20:00 | 20220319/f_80 | 2048 |          0.2 |   1.2 |     256 |     0.001 | Disabled   | Dimers | Both | (81 / 144)	 Chunks: 5
+21:10 | 20220319/f_81 | 2048 |          0.2 |   1.2 |     256 |     0.001 | Disabled   | Linear trimers | Both | (82 / 144)	 Chunks: 43
+05:58 | 20220319/f_82 | 2048 |          0.2 |   1.2 |     256 |     0.001 | Disabled   | Trimers | Both | (83 / 144)	 Chunks: 5
+07:48 | 20220319/f_83 | 2048 |          0.2 |   1.2 |     256 |     0.001 | Disabled   | Squared | Both | (84 / 144)	 Chunks: 8
+09:01 | 20220319/f_84 | 2048 |         0.05 |   1.6 |     256 |     0.001 | Disabled   | Dimers | Both | (85 / 144)	 Chunks: 11
+11:11 | 20220319/f_85 | 2048 |         0.05 |   1.6 |     256 |     0.001 | Disabled   | Linear trimers | Both | (86 / 144)	 Chunks: 9
+13:12 | 20220319/f_86 | 2048 |         0.05 |   1.6 |     256 |     0.001 | Disabled   | Trimers | Both | (87 / 144)	 Chunks: 11
+17:38 | 20220319/f_87 | 2048 |         0.05 |   1.6 |     256 |     0.001 | Disabled   | Squared | Both | (88 / 144)	 Chunks: 15
+19:51 | 20220319/f_88 | 2048 |          0.1 |   1.6 |     256 |     0.001 | Disabled   | Dimers | Both | (89 / 144)	 Chunks: 14
+22:25 | 20220319/f_89 | 2048 |          0.1 |   1.6 |     256 |     0.001 | Disabled   | Linear trimers | Both | (90 / 144)	 Chunks: 6
+23:29 | 20220319/f_90 | 2048 |          0.1 |   1.6 |     256 |     0.001 | Disabled   | Trimers | Both | (91 / 144)	 Chunks: 5
+01:01 | 20220319/f_91 | 2048 |          0.1 |   1.6 |     256 |     0.001 | Disabled   | Squared | Both | (92 / 144)	 Chunks: 13
+02:32 | 20220319/f_92 | 2048 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Dimers | Both | (93 / 144)	 Chunks: 12
+04:13 | 20220319/f_93 | 2048 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Linear trimers | Both | (94 / 144)	 Chunks: 10
+05:39 | 20220319/f_94 | 2048 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Trimers | Both | (95 / 144)	 Chunks: 4
+06:41 | 20220319/f_95 | 2048 |          0.2 |   1.6 |     256 |     0.001 | Disabled   | Squared | Both | (96 / 144)	 Chunks: 9

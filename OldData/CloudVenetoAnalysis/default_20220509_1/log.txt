@@ -1,0 +1,9 @@
+=== 20220509 22:06 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+22:06 | 0220509_1/f_0 |  128 |          0.5 |   0.2 |     128 |       100 | Expospaced | Disabled | Disabled | (1 / 6)	 Replicas: 128
+22:10 | 0220509_1/f_1 |  128 |          0.5 |   0.4 |     128 |       100 | Expospaced | Disabled | Disabled | (2 / 6)	 Replicas: 128
+22:14 | 0220509_1/f_2 |  128 |          0.5 |   0.6 |     128 |       100 | Expospaced | Disabled | Disabled | (3 / 6)	 Replicas: 128
+22:19 | 0220509_1/f_3 |  128 |          0.5 |   0.8 |     128 |       100 | Expospaced | Disabled | Disabled | (4 / 6)	 Replicas: 128
+22:24 | 0220509_1/f_4 |  128 |          0.5 |   1.2 |     128 |       100 | Expospaced | Disabled | Disabled | (5 / 6)	 Replicas: 128
+22:28 | 0220509_1/f_5 |  128 |          0.5 |   1.6 |     128 |       100 | Expospaced | Disabled | Disabled | (6 / 6)	 Replicas: 128
+=== Total time: 00:27:00.806297536 ===

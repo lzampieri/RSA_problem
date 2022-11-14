@@ -1,0 +1,51 @@
+=== 20221016 21:25 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+21:25 | _20221016/f_0 |  512 |         0.05 |   0.4 |  100000 |        -1 | Disabled   | Dimers | Disabled | (1 / 48)	 Replicas: 100000
+22:52 | _20221016/f_1 |  512 |         0.05 |   0.4 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (2 / 48)	 Replicas: 100000
+00:23 | _20221016/f_2 |  512 |         0.05 |   0.4 |  100000 |        -1 | Disabled   | Trimers | Disabled | (3 / 48)	 Replicas: 100000
+03:55 | _20221016/f_3 |  512 |         0.05 |   0.4 |  100000 |        -1 | Disabled   | Squared | Disabled | (4 / 48)	 Replicas: 100000
+04:51 | _20221016/f_4 |  512 |          0.1 |   0.4 |  100000 |        -1 | Disabled   | Dimers | Disabled | (5 / 48)	 Replicas: 100000
+06:15 | _20221016/f_5 |  512 |          0.1 |   0.4 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (6 / 48)	 Replicas: 100000
+07:41 | _20221016/f_6 |  512 |          0.1 |   0.4 |  100000 |        -1 | Disabled   | Trimers | Disabled | (7 / 48)	 Replicas: 100000
+11:01 | _20221016/f_7 |  512 |          0.1 |   0.4 |  100000 |        -1 | Disabled   | Squared | Disabled | (8 / 48)	 Replicas: 100000
+11:55 | _20221016/f_8 |  512 |          0.2 |   0.4 |  100000 |        -1 | Disabled   | Dimers | Disabled | (9 / 48)	 Replicas: 100000
+13:11 | _20221016/f_9 |  512 |          0.2 |   0.4 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (10 / 48)	 Replicas: 100000
+14:32 | 20221016/f_10 |  512 |          0.2 |   0.4 |  100000 |        -1 | Disabled   | Trimers | Disabled | (11 / 48)	 Replicas: 100000
+17:34 | 20221016/f_11 |  512 |          0.2 |   0.4 |  100000 |        -1 | Disabled   | Squared | Disabled | (12 / 48)	 Replicas: 100000
+18:27 | 20221016/f_12 |  512 |         0.05 |   0.8 |  100000 |        -1 | Disabled   | Dimers | Disabled | (13 / 48)	 Replicas: 100000
+19:50 | 20221016/f_13 |  512 |         0.05 |   0.8 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (14 / 48)	 Replicas: 100000
+21:17 | 20221016/f_14 |  512 |         0.05 |   0.8 |  100000 |        -1 | Disabled   | Trimers | Disabled | (15 / 48)	 Replicas: 100000
+00:54 | 20221016/f_15 |  512 |         0.05 |   0.8 |  100000 |        -1 | Disabled   | Squared | Disabled | (16 / 48)	 Replicas: 100000
+01:49 | 20221016/f_16 |  512 |          0.1 |   0.8 |  100000 |        -1 | Disabled   | Dimers | Disabled | (17 / 48)	 Replicas: 100000
+03:14 | 20221016/f_17 |  512 |          0.1 |   0.8 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (18 / 48)	 Replicas: 100000
+04:41 | 20221016/f_18 |  512 |          0.1 |   0.8 |  100000 |        -1 | Disabled   | Trimers | Disabled | (19 / 48)	 Replicas: 100000
+08:03 | 20221016/f_19 |  512 |          0.1 |   0.8 |  100000 |        -1 | Disabled   | Squared | Disabled | (20 / 48)	 Replicas: 100000
+08:58 | 20221016/f_20 |  512 |          0.2 |   0.8 |  100000 |        -1 | Disabled   | Dimers | Disabled | (21 / 48)	 Replicas: 100000
+10:13 | 20221016/f_21 |  512 |          0.2 |   0.8 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (22 / 48)	 Replicas: 100000
+11:29 | 20221016/f_22 |  512 |          0.2 |   0.8 |  100000 |        -1 | Disabled   | Trimers | Disabled | (23 / 48)	 Replicas: 100000
+14:27 | 20221016/f_23 |  512 |          0.2 |   0.8 |  100000 |        -1 | Disabled   | Squared | Disabled | (24 / 48)	 Replicas: 100000
+15:22 | 20221016/f_24 |  512 |         0.05 |   1.2 |  100000 |        -1 | Disabled   | Dimers | Disabled | (25 / 48)	 Replicas: 100000
+16:46 | 20221016/f_25 |  512 |         0.05 |   1.2 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (26 / 48)	 Replicas: 100000
+18:15 | 20221016/f_26 |  512 |         0.05 |   1.2 |  100000 |        -1 | Disabled   | Trimers | Disabled | (27 / 48)	 Replicas: 100000
+21:47 | 20221016/f_27 |  512 |         0.05 |   1.2 |  100000 |        -1 | Disabled   | Squared | Disabled | (28 / 48)	 Replicas: 100000
+22:43 | 20221016/f_28 |  512 |          0.1 |   1.2 |  100000 |        -1 | Disabled   | Dimers | Disabled | (29 / 48)	 Replicas: 100000
+00:06 | 20221016/f_29 |  512 |          0.1 |   1.2 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (30 / 48)	 Replicas: 100000
+01:32 | 20221016/f_30 |  512 |          0.1 |   1.2 |  100000 |        -1 | Disabled   | Trimers | Disabled | (31 / 48)	 Replicas: 100000
+04:58 | 20221016/f_31 |  512 |          0.1 |   1.2 |  100000 |        -1 | Disabled   | Squared | Disabled | (32 / 48)	 Replicas: 100000
+05:50 | 20221016/f_32 |  512 |          0.2 |   1.2 |  100000 |        -1 | Disabled   | Dimers | Disabled | (33 / 48)	 Replicas: 100000
+07:11 | 20221016/f_33 |  512 |          0.2 |   1.2 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (34 / 48)	 Replicas: 100000
+08:26 | 20221016/f_34 |  512 |          0.2 |   1.2 |  100000 |        -1 | Disabled   | Trimers | Disabled | (35 / 48)	 Replicas: 100000
+11:24 | 20221016/f_35 |  512 |          0.2 |   1.2 |  100000 |        -1 | Disabled   | Squared | Disabled | (36 / 48)	 Replicas: 100000
+12:19 | 20221016/f_36 |  512 |         0.05 |   1.6 |  100000 |        -1 | Disabled   | Dimers | Disabled | (37 / 48)	 Replicas: 100000
+13:45 | 20221016/f_37 |  512 |         0.05 |   1.6 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (38 / 48)	 Replicas: 100000
+15:16 | 20221016/f_38 |  512 |         0.05 |   1.6 |  100000 |        -1 | Disabled   | Trimers | Disabled | (39 / 48)	 Replicas: 100000
+18:52 | 20221016/f_39 |  512 |         0.05 |   1.6 |  100000 |        -1 | Disabled   | Squared | Disabled | (40 / 48)	 Replicas: 100000
+19:50 | 20221016/f_40 |  512 |          0.1 |   1.6 |  100000 |        -1 | Disabled   | Dimers | Disabled | (41 / 48)	 Replicas: 100000
+21:15 | 20221016/f_41 |  512 |          0.1 |   1.6 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (42 / 48)	 Replicas: 100000
+22:40 | 20221016/f_42 |  512 |          0.1 |   1.6 |  100000 |        -1 | Disabled   | Trimers | Disabled | (43 / 48)	 Replicas: 100000
+01:58 | 20221016/f_43 |  512 |          0.1 |   1.6 |  100000 |        -1 | Disabled   | Squared | Disabled | (44 / 48)	 Replicas: 100000
+02:54 | 20221016/f_44 |  512 |          0.2 |   1.6 |  100000 |        -1 | Disabled   | Dimers | Disabled | (45 / 48)	 Replicas: 100000
+04:13 | 20221016/f_45 |  512 |          0.2 |   1.6 |  100000 |        -1 | Disabled   | Linear trimers | Disabled | (46 / 48)	 Replicas: 100000
+05:30 | 20221016/f_46 |  512 |          0.2 |   1.6 |  100000 |        -1 | Disabled   | Trimers | Disabled | (47 / 48)	 Replicas: 100000
+08:25 | 20221016/f_47 |  512 |          0.2 |   1.6 |  100000 |        -1 | Disabled   | Squared | Disabled | (48 / 48)	 Replicas: 100000
+=== Total time: 83:52:35.871608571 ===

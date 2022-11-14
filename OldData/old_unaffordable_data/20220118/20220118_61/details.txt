@@ -1,0 +1,8 @@
+{
+"side":	64,
+"defects_frac":	0.5,
+"gamma":	1.4,
+"replies":100,
+"corr_range":	-1,
+"dep_polymers":	"Trimers"
+}

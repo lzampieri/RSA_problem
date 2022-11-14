@@ -1,0 +1,14 @@
+{
+"side":	2048,
+"defects_frac":	0.1,
+"gamma":	0.8,
+"chunk_size":	256,
+"tolerance":	0.001,
+"runned_replicas":	4096,
+"runned_chunks":	16,
+"CF_Model":	"",
+"dep_polymers":	"Dimers",
+"save_path":	"20220319DeltaHighSideLowResscan_20220319/f_64",
+"n_threads":	"8",
+"draw":	False
+}

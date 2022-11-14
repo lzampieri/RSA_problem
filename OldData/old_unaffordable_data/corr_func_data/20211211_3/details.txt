@@ -1,0 +1,5 @@
+Side:	1024
+Defects frac:	0.3
+Gamma:	0.6
+Replies:100
+Corr. Range:	40

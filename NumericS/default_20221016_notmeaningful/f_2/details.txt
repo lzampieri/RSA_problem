@@ -1,0 +1,13 @@
+{
+"side":	512,
+"defects_frac":	0.3,
+"gamma":	1.2,
+"chunk_size":	10000,
+"tolerance":	-1,
+"runned_replicas":	10000,
+"CF_Model":	"OrtExpospaced",
+"dep_polymers":	"",
+"save_path":	"default_20221016/f_2",
+"n_threads":	"32",
+"draw":	False
+}

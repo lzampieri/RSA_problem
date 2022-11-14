@@ -1,0 +1,8 @@
+{
+"dep_polymers":	"Squared",
+"occupation_fraction_average":	0.552126,
+"occupation_fraction_std":	0.000494579,
+"pj_over_1_minus_q_avg":	0.690157,
+"pj_over_1_minus_q_std":	0.000618223,
+"occupation_fraction_std_history":	[0.00055196,0.000535286,0.000504842,0.000494542,0.000494579,]
+}

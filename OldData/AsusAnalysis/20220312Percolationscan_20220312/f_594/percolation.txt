@@ -1,0 +1,6 @@
+{ 
+"defperc_count":	4222,
+"defperc_avg":	0.916233,
+"atmperc_count":	3516,
+"atmperc_avg":	0.763021
+}

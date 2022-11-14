@@ -1,0 +1,11 @@
+=== 20220622 21:30 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS | PERCOLATION
+21:30 | _20220622/f_0 |   64 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (1 / 12)	 Replicas: 16000
+21:30 | _20220622/f_1 |   64 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (2 / 12)	 Replicas: 256000
+21:38 | _20220622/f_2 |  128 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (3 / 12)	 Replicas: 32000
+21:41 | _20220622/f_3 |  128 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (4 / 12)	 Replicas: 16000
+21:43 | _20220622/f_4 |  256 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (5 / 12)	 Replicas: 64000
+22:01 | _20220622/f_5 |  256 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (6 / 12)	 Replicas: 256000
+00:20 | _20220622/f_6 |  512 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (7 / 12)	 Replicas: 1024000
+20:59 | _20220622/f_7 |  512 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Trimers | Disabled | (8 / 12)	 Replicas: 512000
+18:01 | _20220622/f_8 | 1024 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | Disabled | (9 / 12)	 Replicas: 256000

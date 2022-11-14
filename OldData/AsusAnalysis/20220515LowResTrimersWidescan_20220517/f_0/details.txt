@@ -1,0 +1,13 @@
+{
+"side":	513,
+"defects_frac":	0.05,
+"gamma":	0.4,
+"chunk_size":	512,
+"tolerance":	0.01,
+"runned_replicas":	131072,
+"CF_Model":	"",
+"dep_polymers":	"Trimers",
+"save_path":	"20220515LowResTrimersWidescan_20220517/f_0",
+"n_threads":	"32",
+"draw":	False
+}

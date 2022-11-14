@@ -1,0 +1,13 @@
+{
+"side":	128,
+"defects_frac":	0.2,
+"gamma":	0.8,
+"chunk_size":	1000,
+"tolerance":	0.001,
+"runned_replicas":	4000,
+"CF_Model":	"",
+"dep_polymers":	"Trimers",
+"save_path":	"Plans20221024TheHugescan_20221024/f_108",
+"n_threads":	"8",
+"draw":	False
+}
