@@ -1,7 +1,3 @@
-{
-"dep_polymers":	"Linear trimers",
-"occupation_average":	2.16687e+06,
-"occupation_std":	nan,
-"occupation_fraction_average":	0.516623,
-"occupation_fraction_std":	nan
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:f57b2a62333e50d6f4720087380e880bfcd7b48f8eac5c478b7d021db881b82e
+size 175

@@ -1,7 +1,3 @@
-{
-"dep_polymers":	"Dimers",
-"occupation_average":	2394.58,
-"occupation_std":	16.4293,
-"occupation_fraction_average":	0.584614,
-"occupation_fraction_std":	0.00401107
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:afdfdb07eaabe32573d2edaa75b0045108f0af01cb1850cc463638bc70d08d39
+size 174

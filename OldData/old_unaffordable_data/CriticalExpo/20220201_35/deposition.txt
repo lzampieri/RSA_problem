@@ -1,9 +1,3 @@
-{
-"dep_polymers":	"Squared",
-"occupation_average":	2837.14,
-"occupation_std":	29.8554,
-"occupation_fraction_average":	0.69266,
-"occupation_fraction_std":	0.00728891,
-"pj_over_1_minus_q_avg":	0.729116,
-"pj_over_1_minus_q_std":	0.00767254
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:b32413946b90925e2faed64e9c82785ed8adca063d52296893ce39e168697ce1
+size 248

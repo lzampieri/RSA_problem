@@ -1,8 +1,3 @@
-{
-"dep_polymers":	"Trimers",
-"occupation_fraction_average":	0.12559,
-"occupation_fraction_std":	0.001918,
-"pj_over_1_minus_q_avg":	0.627949,
-"pj_over_1_minus_q_std":	0.00959001,
-"occupation_fraction_std_history":	[0.0020344,0.00208358,0.00195324,0.00190511,0.0020408,0.00202779,0.00201115,0.00199392,0.0019544,0.00195642,0.00193334,0.00191791,0.001918,]
-}
+version https://git-lfs.github.com/spec/v1
+oid sha256:963faaac6197ed68858719840c229667290cbee4cd9ce930771331e6e255ad79
+size 364
