@@ -33,7 +33,7 @@ def load_data( regex =  "../CloudVenetoAnalysisHuge/**/" ):
         #     ( d / 'chunks.txt').exists() ) ):
         if( not (
             ( d / 'details.txt').exists() and
-            ( d / 'deposition.txt').exists() ):
+            ( d / 'deposition.txt').exists() ) ):
             continue
 
         # Verify that the item should not be excluded
