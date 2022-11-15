@@ -66,6 +66,7 @@ for f in folders:
         ( d / 'details.txt').exists() and
         ( d / 'deposition.txt').exists() ) ):
         print("Folder", f, "skipped")
+        continue
 
     item = load_file( d / 'details.txt' )
 
@@ -78,6 +79,6 @@ for f in folders:
 
 data = pd.DataFrame.from_records( data )
 
-data.to_parquet( d / 'summary.parquet' )
+data.to_parquet( path + '/summary.parquet' )
 
 print("Done!")
