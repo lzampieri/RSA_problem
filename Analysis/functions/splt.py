@@ -113,7 +113,8 @@ def oneitem_iterate( count, func_item, func_leg, func_x, func_y, params, each_pl
 
 def oneitem_iterate_errorbar(
         count, func_item, func_leg, func_x, func_y, params, each_plot,
-        pvals_ys = [], pvals_exp = 0, pvals_func = None
+        pvals_ys = [], pvals_exp = 0, pvals_func = None,
+        loc='lower right', sort = True
     ):
 
     items = np.unique( [ func_item( i ) for i in range(count) ] )
@@ -151,7 +152,9 @@ def oneitem_iterate_errorbar(
                         temp_a.append( pvals_func( d ) )
                     all_x.add( func_x( d ) )
             
-            sort_idx = np.argsort( temp_x )
+            sort_idx = list( range( len( temp_x ) ) )
+            if( sort ):
+                sort_idx = np.argsort( temp_x )
             x = np.array( temp_x )[ sort_idx ]
             y = np.array( temp_y )[ sort_idx ]
             a = np.array( temp_a )[ sort_idx ]
@@ -170,7 +173,8 @@ def oneitem_iterate_errorbar(
                                 color = color_list[ i_l ]
                             )
 
-                plt.legend( loc='lower right' )
+                if( loc ):
+                    plt.legend( loc = loc )
             
         plt.xticks( list( all_x ) )
         each_plot( it )
