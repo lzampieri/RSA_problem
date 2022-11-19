@@ -6,6 +6,7 @@ from glob import glob
 import re
 import pandas as pd
 from . import stats
+from uncertainties import ufloat
 
 # Load single file
 def load_file( filename ):
@@ -16,10 +17,7 @@ def load_file( filename ):
     text = text.replace(",]", "]" )
     return json.loads( text )
 
-def load_all_data():
-    return load_data( "../*Analysis*/**/" )
-
-def load_data( regex =  "../CloudVenetoAnalysisHuge/**/" ):
+def load_raw_data( regex =  "../Plans20221106ForUngaussianityscan_20221106_v2/**/" ):
     data = []
 
     for file in glob( regex + "details.txt", recursive=True):
@@ -90,26 +88,22 @@ def remove_duplicates( data, key, discriminant ):
 
     return data[ list( choosen_idxs.values() ) ]
 
-def compute_stds( data ):
-    for d in data:
-        d['jamming_frac_avg'] = stats.compute_in_decades(
-            d['chunks'],
-            lambda arr: np.mean( arr ) / d['side'] / d['side']
-        )
-        d['jamming_frac_std'] = stats.compute_in_decades(
-            d['chunks'],
-            lambda arr: np.std( arr, ddof = 1 ) / d['side'] / d['side']
-        )
-
 def filter( data, func ):
     data = np.array( data )
     return data[ np.vectorize( func )( data ) ]
 
-def export( data, filename, columns = ['side','defects_frac','gamma','dep_polymers','runned_replicas','chunks'], renames = {} ):
+def export( data, filename, columns = ['side','defects_frac','gamma','dep_polymers','runned_replicas','occupation_mean','occupation_std'], renames = {} ):
     df = pd.DataFrame.from_records( data )
     df = df[columns]
-    renames_int = { 'runned_replicas': 'total_replicas', 'chunks': 'jamming_occupations' }
+    renames_int = { 'runned_replicas': 'total_replicas' }
     renames_int.update( renames )
     df.rename( columns=renames_int, inplace=True )
     df.to_json( filename, orient='records', indent = 2 )
     print( len( df ), " rows exported to ", filename )
+
+def load_data( folder ):
+    data = pd.read_parquet( folder + '/summary.parquet' ).to_dict( 'records' )
+    for d in data:
+        d['occupation_mean'] = ufloat( d['mean_v'], d['mean_s'] )
+        d['occupation_std'] = ufloat( d['std_v'], d['std_s'] )
+    return np.array( data )
