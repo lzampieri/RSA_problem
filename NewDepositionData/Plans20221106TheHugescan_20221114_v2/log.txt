@@ -9,3 +9,23 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 00:16 | 221114_v2/f_6 |   64 |          0.1 |   0.4 |    1000 |    0.0001 | Disabled   | Linear trimers | (7 / 288)	 Replicas: 16384000
 03:12 | 221114_v2/f_7 |   64 |          0.1 |   0.4 |    1000 |    0.0001 | Disabled   | Squared | (8 / 288)	 Replicas: 16384000
 05:39 | 221114_v2/f_8 |   64 |          0.2 |   0.4 |    1000 |    0.0001 | Disabled   | Dimers | (9 / 288)	 Replicas: 4096000
+06:24 | 221114_v2/f_9 |   64 |          0.2 |   0.4 |    1000 |    0.0001 | Disabled   | Trimers | (10 / 288)	 Replicas: 32768000
+00:51 | 21114_v2/f_10 |   64 |          0.2 |   0.4 |    1000 |    0.0001 | Disabled   | Linear trimers | (11 / 288)	 Replicas: 16384000
+03:44 | 21114_v2/f_11 |   64 |          0.2 |   0.4 |    1000 |    0.0001 | Disabled   | Squared | (12 / 288)	 Replicas: 4096000
+04:21 | 21114_v2/f_12 |   64 |         0.05 |   0.8 |    1000 |    0.0001 | Disabled   | Dimers | (13 / 288)	 Replicas: 8192000
+05:45 | 21114_v2/f_13 |   64 |         0.05 |   0.8 |    1000 |    0.0001 | Disabled   | Trimers | (14 / 288)	 Replicas: 32768000
+21:42 | 21114_v2/f_14 |   64 |         0.05 |   0.8 |    1000 |    0.0001 | Disabled   | Linear trimers | (15 / 288)	 Replicas: 4096000
+22:24 | 21114_v2/f_15 |   64 |         0.05 |   0.8 |    1000 |    0.0001 | Disabled   | Squared | (16 / 288)	 Replicas: 2048000
+22:41 | 21114_v2/f_16 |   64 |          0.1 |   0.8 |    1000 |    0.0001 | Disabled   | Dimers | (17 / 288)	 Replicas: 16384000
+01:30 | 21114_v2/f_17 |   64 |          0.1 |   0.8 |    1000 |    0.0001 | Disabled   | Trimers | (18 / 288)	 Replicas: 8192000
+05:17 | 21114_v2/f_18 |   64 |          0.1 |   0.8 |    1000 |    0.0001 | Disabled   | Linear trimers | (19 / 288)	 Replicas: 16384000
+07:55 | 21114_v2/f_19 |   64 |          0.1 |   0.8 |    1000 |    0.0001 | Disabled   | Squared | (20 / 288)	 Replicas: 65536000
+17:00 | 21114_v2/f_20 |   64 |          0.2 |   0.8 |    1000 |    0.0001 | Disabled   | Dimers | (21 / 288)	 Replicas: 2048000
+17:20 | 21114_v2/f_21 |   64 |          0.2 |   0.8 |    1000 |    0.0001 | Disabled   | Trimers | (22 / 288)	 Replicas: 8192000
+21:19 | 21114_v2/f_22 |   64 |          0.2 |   0.8 |    1000 |    0.0001 | Disabled   | Linear trimers | (23 / 288)	 Replicas: 8192000
+22:39 | 21114_v2/f_23 |   64 |          0.2 |   0.8 |    1000 |    0.0001 | Disabled   | Squared | (24 / 288)	 Replicas: 4096000
+23:13 | 21114_v2/f_24 |   64 |         0.05 |   1.2 |    1000 |    0.0001 | Disabled   | Dimers | (25 / 288)	 Replicas: 65536000
+10:22 | 21114_v2/f_25 |   64 |         0.05 |   1.2 |    1000 |    0.0001 | Disabled   | Trimers | (26 / 288)	 Replicas: 32768000
+04:11 | 21114_v2/f_26 |   64 |         0.05 |   1.2 |    1000 |    0.0001 | Disabled   | Linear trimers | (27 / 288)	 Replicas: 8192000
+05:42 | 21114_v2/f_27 |   64 |         0.05 |   1.2 |    1000 |    0.0001 | Disabled   | Squared | (28 / 288)	 Replicas: 4096000
+06:20 | 21114_v2/f_28 |   64 |          0.1 |   1.2 |    1000 |    0.0001 | Disabled   | Dimers | (29 / 288)	 Replicas: 2048000
