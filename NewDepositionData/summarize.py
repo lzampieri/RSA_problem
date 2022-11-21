@@ -73,9 +73,11 @@ for f in folders:
     chunks = load_file( d / 'deposition.txt' )["occupation_history"]
 
     item['mean_v'],item['mean_s'] = compute_in_decades( chunks, lambda arr: np.mean( arr ) )
+    item['med_v'],item['med_s'] = compute_in_decades( chunks, lambda arr: np.median( arr ) )
     item['std_v'],item['std_s'] = compute_in_decades( chunks, lambda arr: np.std( arr, ddof = 1 ) )
 
     data.append( item )
+    print( '*', end = '' )
 
 data = pd.DataFrame.from_records( data )
 

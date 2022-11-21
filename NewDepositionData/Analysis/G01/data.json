@@ -1,6 +1,69 @@
 [
   {
     "side":64,
+    "defects_frac":0.05,
+    "gamma":1.2,
+    "dep_polymers":"Trimers",
+    "total_replicas":32768000,
+    "occupation_mean":{
+      "derivatives":{
+        "3308.269+\/-0.007":1.0
+      },
+      "n":3308.269269104,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "20.059+\/-0.011":1.0
+      },
+      "n":20.0588788248,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Dimers",
+    "total_replicas":2048000,
+    "occupation_mean":{
+      "derivatives":{
+        "2895.275+\/-0.026":1.0
+      },
+      "n":2895.2749658203,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "15.831+\/-0.035":1.0
+      },
+      "n":15.8311626701,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.1,
+    "gamma":0.8,
+    "dep_polymers":"Squared",
+    "total_replicas":65536000,
+    "occupation_mean":{
+      "derivatives":{
+        "2628.767+\/-0.018":1.0
+      },
+      "n":2628.7670001831,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "30.344+\/-0.007":1.0
+      },
+      "n":30.3440225418,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
     "defects_frac":0.1,
     "gamma":0.4,
     "dep_polymers":"Linear trimers",
@@ -17,6 +80,69 @@
         "23.124+\/-0.009":1.0
       },
       "n":23.1243686038,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.2,
+    "gamma":0.4,
+    "dep_polymers":"Squared",
+    "total_replicas":4096000,
+    "occupation_mean":{
+      "derivatives":{
+        "2275.04+\/-0.06":1.0
+      },
+      "n":2275.0440185547,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "31.762+\/-0.027":1.0
+      },
+      "n":31.7616398149,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.2,
+    "gamma":0.4,
+    "dep_polymers":"Trimers",
+    "total_replicas":32768000,
+    "occupation_mean":{
+      "derivatives":{
+        "2731.649+\/-0.013":1.0
+      },
+      "n":2731.649473114,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "20.185+\/-0.005":1.0
+      },
+      "n":20.184929876,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.05,
+    "gamma":1.2,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":8192000,
+    "occupation_mean":{
+      "derivatives":{
+        "3230.408+\/-0.025":1.0
+      },
+      "n":3230.4080313721,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "22.470+\/-0.009":1.0
+      },
+      "n":22.4699244007,
       "tag":null
     }
   },
@@ -44,6 +170,27 @@
   {
     "side":64,
     "defects_frac":0.1,
+    "gamma":0.8,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":16384000,
+    "occupation_mean":{
+      "derivatives":{
+        "3021.256+\/-0.023":1.0
+      },
+      "n":3021.2559655151,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "22.854+\/-0.015":1.0
+      },
+      "n":22.8544135545,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.1,
     "gamma":0.4,
     "dep_polymers":"Trimers",
     "total_replicas":32000,
@@ -59,6 +206,111 @@
         "19.99+\/-0.23":1.0
       },
       "n":19.9863263556,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.05,
+    "gamma":0.8,
+    "dep_polymers":"Trimers",
+    "total_replicas":32768000,
+    "occupation_mean":{
+      "derivatives":{
+        "3310.946+\/-0.025":1.0
+      },
+      "n":3310.9455637207,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "20.040+\/-0.012":1.0
+      },
+      "n":20.0399403026,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.1,
+    "gamma":0.8,
+    "dep_polymers":"Dimers",
+    "total_replicas":16384000,
+    "occupation_mean":{
+      "derivatives":{
+        "3298.527+\/-0.012":1.0
+      },
+      "n":3298.5267856445,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "15.832+\/-0.009":1.0
+      },
+      "n":15.8322974966,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Squared",
+    "total_replicas":4096000,
+    "occupation_mean":{
+      "derivatives":{
+        "2236.33+\/-0.07":1.0
+      },
+      "n":2236.3266699219,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "30.819+\/-0.023":1.0
+      },
+      "n":30.8187819898,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.05,
+    "gamma":0.8,
+    "dep_polymers":"Squared",
+    "total_replicas":2048000,
+    "occupation_mean":{
+      "derivatives":{
+        "2838.05+\/-0.06":1.0
+      },
+      "n":2838.0452460937,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "30.12+\/-0.05":1.0
+      },
+      "n":30.1222761563,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.1,
+    "gamma":0.8,
+    "dep_polymers":"Trimers",
+    "total_replicas":8192000,
+    "occupation_mean":{
+      "derivatives":{
+        "3110.228+\/-0.026":1.0
+      },
+      "n":3110.2284169922,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "20.065+\/-0.013":1.0
+      },
+      "n":20.064883713,
       "tag":null
     }
   },
@@ -80,6 +332,27 @@
         "15.944+\/-0.018":1.0
       },
       "n":15.9440874796,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.2,
+    "gamma":0.4,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":16384000,
+    "occupation_mean":{
+      "derivatives":{
+        "2635.77+\/-0.05":1.0
+      },
+      "n":2635.7690502319,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "24.106+\/-0.007":1.0
+      },
+      "n":24.1059632019,
       "tag":null
     }
   },
@@ -107,6 +380,69 @@
   {
     "side":64,
     "defects_frac":0.05,
+    "gamma":1.2,
+    "dep_polymers":"Dimers",
+    "total_replicas":65536000,
+    "occupation_mean":{
+      "derivatives":{
+        "3500.880+\/-0.006":1.0
+      },
+      "n":3500.8804839783,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "15.803+\/-0.005":1.0
+      },
+      "n":15.8030427076,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.05,
+    "gamma":0.8,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":4096000,
+    "occupation_mean":{
+      "derivatives":{
+        "3238.14+\/-0.04":1.0
+      },
+      "n":3238.1376730957,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "22.553+\/-0.028":1.0
+      },
+      "n":22.5534396226,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Linear trimers",
+    "total_replicas":8192000,
+    "occupation_mean":{
+      "derivatives":{
+        "2606.801+\/-0.022":1.0
+      },
+      "n":2606.8009855957,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "23.434+\/-0.018":1.0
+      },
+      "n":23.4343294439,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.05,
     "gamma":0.4,
     "dep_polymers":"Linear trimers",
     "total_replicas":64000,
@@ -122,6 +458,48 @@
         "22.59+\/-0.15":1.0
       },
       "n":22.5945913784,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.05,
+    "gamma":1.2,
+    "dep_polymers":"Squared",
+    "total_replicas":4096000,
+    "occupation_mean":{
+      "derivatives":{
+        "2828.59+\/-0.05":1.0
+      },
+      "n":2828.5906308594,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "30.013+\/-0.026":1.0
+      },
+      "n":30.0131775764,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.1,
+    "gamma":1.2,
+    "dep_polymers":"Dimers",
+    "total_replicas":2048000,
+    "occupation_mean":{
+      "derivatives":{
+        "3292.32+\/-0.05":1.0
+      },
+      "n":3292.3201279297,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "15.846+\/-0.027":1.0
+      },
+      "n":15.8457671943,
       "tag":null
     }
   },
@@ -164,6 +542,48 @@
         "30.749+\/-0.020":1.0
       },
       "n":30.7494018063,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.05,
+    "gamma":0.8,
+    "dep_polymers":"Dimers",
+    "total_replicas":8192000,
+    "occupation_mean":{
+      "derivatives":{
+        "3504.121+\/-0.014":1.0
+      },
+      "n":3504.1213679199,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "15.801+\/-0.009":1.0
+      },
+      "n":15.8006635236,
+      "tag":null
+    }
+  },
+  {
+    "side":64,
+    "defects_frac":0.2,
+    "gamma":0.8,
+    "dep_polymers":"Trimers",
+    "total_replicas":8192000,
+    "occupation_mean":{
+      "derivatives":{
+        "2717.229+\/-0.021":1.0
+      },
+      "n":2717.2291658936,
+      "tag":null
+    },
+    "occupation_std":{
+      "derivatives":{
+        "20.055+\/-0.015":1.0
+      },
+      "n":20.0551425369,
       "tag":null
     }
   },
