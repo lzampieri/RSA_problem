@@ -61,3 +61,5 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 09:04 | 21114_v2/f_58 |  128 |          0.2 |   0.4 |    1000 |    0.0001 | Disabled   | Linear trimers | (59 / 288)	 Replicas: 16384000
 20:18 | 21114_v2/f_59 |  128 |          0.2 |   0.4 |    1000 |    0.0001 | Disabled   | Squared | (60 / 288)	 Replicas: 131072000
 21:45 | 21114_v2/f_60 |  128 |         0.05 |   0.8 |    1000 |    0.0001 | Disabled   | Dimers | (61 / 288)	 Replicas: 4096000
+00:37 | 21114_v2/f_61 |  128 |         0.05 |   0.8 |    1000 |    0.0001 | Disabled   | Trimers | (62 / 288)	 Replicas: 131072000
+07:20 | 21114_v2/f_62 |  128 |         0.05 |   0.8 |    1000 |    0.0001 | Disabled   | Linear trimers | (63 / 288)	 Replicas: 512000
