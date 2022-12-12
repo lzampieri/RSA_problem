@@ -1,2 +1,6 @@
 === 20221212 20:59 ===
 TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS 
+20:59 | 221212_v2/f_0 |   64 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | (1 / 24)	 Replicas: 256000
+21:02 | 221212_v2/f_1 |   64 |          0.2 |   0.8 |    1000 |     0.001 | Disabled   | Dimers | (2 / 24)	 Replicas: 64000
+21:03 | 221212_v2/f_2 |   64 |          0.2 |   1.2 |    1000 |     0.001 | Disabled   | Dimers | (3 / 24)	 Replicas: 256000
+21:05 | 221212_v2/f_3 |   64 |          0.2 |   1.6 |    1000 |     0.001 | Disabled   | Dimers | (4 / 24)	 Replicas: 4000
