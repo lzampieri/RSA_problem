@@ -21,3 +21,7 @@ TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR
 13:37 | 21212_v2/f_18 | 1024 |          0.2 |   1.2 |    1000 |     0.001 | Disabled   | Dimers | (19 / 24)	 Replicas: 128000
 19:36 | 21212_v2/f_19 | 1024 |          0.2 |   1.6 |    1000 |     0.001 | Disabled   | Dimers | (20 / 24)	 Replicas: 512000
 19:26 | 21212_v2/f_20 | 2048 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Dimers | (21 / 24)	 Replicas: 512000
+02:49 | 21212_v2/f_21 | 2048 |          0.2 |   0.8 |    1000 |     0.001 | Disabled   | Dimers | (22 / 24)	 Replicas: 512000
+09:32 | 21212_v2/f_22 | 2048 |          0.2 |   1.2 |    1000 |     0.001 | Disabled   | Dimers | (23 / 24)	 Replicas: 256000
+12:48 | 21212_v2/f_23 | 2048 |          0.2 |   1.6 |    1000 |     0.001 | Disabled   | Dimers | (24 / 24)	 Replicas: 64000
+=== Total time: 508:36:58.232157223 ===
