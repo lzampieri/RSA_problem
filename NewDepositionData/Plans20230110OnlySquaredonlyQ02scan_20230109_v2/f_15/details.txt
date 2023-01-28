@@ -1,0 +1,13 @@
+{
+"side":	512,
+"defects_frac":	0.2,
+"gamma":	1.6,
+"chunk_size":	1000,
+"tolerance":	0.001,
+"runned_replicas":	256000,
+"CF_Model":	"",
+"dep_polymers":	"Squared",
+"save_path":	"Plans20230110OnlySquaredonlyQ02scan_20230109_v2/f_15",
+"n_threads":	"8",
+"draw":	False
+}

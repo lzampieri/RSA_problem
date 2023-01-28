@@ -1,0 +1,22 @@
+=== 20230109 23:06 ===
+TIME  | PATHNAME      | SIDE | DEFECTS_FRAC | GAMMA | N_CHUNK | TOLERANCE | CORR_RANGE | POLYMERS 
+23:06 | 230109_v2/f_0 |   64 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Squared | (1 / 24)	 Replicas: 64000
+23:07 | 230109_v2/f_1 |   64 |          0.2 |   0.8 |    1000 |     0.001 | Disabled   | Squared | (2 / 24)	 Replicas: 128000
+23:08 | 230109_v2/f_2 |   64 |          0.2 |   1.2 |    1000 |     0.001 | Disabled   | Squared | (3 / 24)	 Replicas: 128000
+23:09 | 230109_v2/f_3 |   64 |          0.2 |   1.6 |    1000 |     0.001 | Disabled   | Squared | (4 / 24)	 Replicas: 256000
+23:12 | 230109_v2/f_4 |  128 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Squared | (5 / 24)	 Replicas: 512000
+23:31 | 230109_v2/f_5 |  128 |          0.2 |   0.8 |    1000 |     0.001 | Disabled   | Squared | (6 / 24)	 Replicas: 64000
+23:33 | 230109_v2/f_6 |  128 |          0.2 |   1.2 |    1000 |     0.001 | Disabled   | Squared | (7 / 24)	 Replicas: 4000
+23:33 | 230109_v2/f_7 |  128 |          0.2 |   1.6 |    1000 |     0.001 | Disabled   | Squared | (8 / 24)	 Replicas: 32000
+23:34 | 230109_v2/f_8 |  256 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Squared | (9 / 24)	 Replicas: 8000
+23:35 | 230109_v2/f_9 |  256 |          0.2 |   0.8 |    1000 |     0.001 | Disabled   | Squared | (10 / 24)	 Replicas: 8000
+23:37 | 30109_v2/f_10 |  256 |          0.2 |   1.2 |    1000 |     0.001 | Disabled   | Squared | (11 / 24)	 Replicas: 32000
+23:41 | 30109_v2/f_11 |  256 |          0.2 |   1.6 |    1000 |     0.001 | Disabled   | Squared | (12 / 24)	 Replicas: 128000
+00:00 | 30109_v2/f_12 |  512 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Squared | (13 / 24)	 Replicas: 16384000
+00:19 | 30109_v2/f_13 |  512 |          0.2 |   0.8 |    1000 |     0.001 | Disabled   | Squared | (14 / 24)	 Replicas: 64000
+00:53 | 30109_v2/f_14 |  512 |          0.2 |   1.2 |    1000 |     0.001 | Disabled   | Squared | (15 / 24)	 Replicas: 128000
+02:00 | 30109_v2/f_15 |  512 |          0.2 |   1.6 |    1000 |     0.001 | Disabled   | Squared | (16 / 24)	 Replicas: 256000
+04:15 | 30109_v2/f_16 | 1024 |          0.2 |   0.4 |    1000 |     0.001 | Disabled   | Squared | (17 / 24)	 Replicas: 1024000
+17:22 | 30109_v2/f_17 | 1024 |          0.2 |   0.8 |    1000 |     0.001 | Disabled   | Squared | (18 / 24)	 Replicas: 4096000
+20:43 | 30109_v2/f_18 | 1024 |          0.2 |   1.2 |    1000 |     0.001 | Disabled   | Squared | (19 / 24)	 Replicas: 2048000
+21:47 | 30109_v2/f_19 | 1024 |          0.2 |   1.6 |    1000 |     0.001 | Disabled   | Squared | (20 / 24)	 Replicas: 1024000
